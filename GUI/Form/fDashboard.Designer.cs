@@ -58,6 +58,7 @@
             this.btnDoiTac = new System.Windows.Forms.Button();
             this.btnBanHang = new System.Windows.Forms.Button();
             this.btnTongQuan = new System.Windows.Forms.Button();
+            this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -96,7 +97,6 @@
             this.label2.Size = new System.Drawing.Size(112, 23);
             this.label2.TabIndex = 1;
             this.label2.Text = "Restaurant";
-            this.label2.Click += new System.EventHandler(this.label1_Click);
             // 
             // button8
             // 
@@ -124,7 +124,6 @@
             this.label1.Size = new System.Drawing.Size(88, 23);
             this.label1.TabIndex = 1;
             this.label1.Text = "Penguin";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
@@ -138,6 +137,7 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.btnThoat);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -157,7 +157,6 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "Penguin Restaurant ♥ Hoàng Quốc Việt, Cầu Giấy, Hà Nội\r\n";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnThoat
             // 
@@ -200,7 +199,6 @@
             this.lblTime.Size = new System.Drawing.Size(106, 23);
             this.lblTime.TabIndex = 1;
             this.lblTime.Text = "HH:MM:SS";
-            this.lblTime.Click += new System.EventHandler(this.label1_Click);
             // 
             // label7
             // 
@@ -212,7 +210,6 @@
             this.label7.Size = new System.Drawing.Size(88, 27);
             this.label7.TabIndex = 1;
             this.label7.Text = "Quản lý";
-            this.label7.Click += new System.EventHandler(this.label1_Click);
             // 
             // label5
             // 
@@ -224,7 +221,6 @@
             this.label5.Size = new System.Drawing.Size(98, 27);
             this.label5.TabIndex = 1;
             this.label5.Text = "Chức vụ:";
-            this.label5.Click += new System.EventHandler(this.label1_Click);
             // 
             // label6
             // 
@@ -236,7 +232,6 @@
             this.label6.Size = new System.Drawing.Size(150, 27);
             this.label6.TabIndex = 1;
             this.label6.Text = "Nguyễn Văn A";
-            this.label6.Click += new System.EventHandler(this.label1_Click);
             // 
             // label4
             // 
@@ -248,7 +243,6 @@
             this.label4.Size = new System.Drawing.Size(102, 27);
             this.label4.TabIndex = 1;
             this.label4.Text = "Xin chào,";
-            this.label4.Click += new System.EventHandler(this.label1_Click);
             // 
             // timer1
             // 
@@ -265,6 +259,7 @@
             // 
             // pnlControl
             // 
+            this.pnlControl.BackColor = System.Drawing.Color.White;
             this.pnlControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlControl.Location = new System.Drawing.Point(215, 140);
             this.pnlControl.Name = "pnlControl";
@@ -418,6 +413,13 @@
             this.btnTongQuan.UseVisualStyleBackColor = true;
             this.btnTongQuan.Click += new System.EventHandler(this.btnTongQuan_Click);
             // 
+            // bunifuDragControl1
+            // 
+            this.bunifuDragControl1.Fixed = true;
+            this.bunifuDragControl1.Horizontal = true;
+            this.bunifuDragControl1.TargetControl = this.panel3;
+            this.bunifuDragControl1.Vertical = true;
+            // 
             // fDashboard
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -472,5 +474,6 @@
         private System.Windows.Forms.Button btnKhuyenMai;
         private System.Windows.Forms.Button btnDoiTac;
         private System.Windows.Forms.Button btnTongQuan;
+        private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
     }
 }
