@@ -15,7 +15,7 @@ namespace QuanLyKhachHang
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);//quang
+            Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new fLogin());
         }
     }
