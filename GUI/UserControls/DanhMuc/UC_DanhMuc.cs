@@ -28,12 +28,14 @@ namespace QuanLyKhachHang.UserControls
         private void btnBanAn_Click(object sender, EventArgs e)
         {
             DanhMuc_BanAn dm_ba = new DanhMuc_BanAn();
+
             addPaneltoPanel(dm_ba);
         }
 
         private void btnMonAn_Click(object sender, EventArgs e)
         {
             DanhMuc_MonAn dm_ma = new DanhMuc_MonAn();
+            this.Focus();
             addPaneltoPanel(dm_ma);
         }
 

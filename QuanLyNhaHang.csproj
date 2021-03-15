@@ -185,6 +185,30 @@
     <Compile Include="GUI\Form\fDoiMK.Designer.cs">
       <DependentUpon>fDoiMK.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserControls\DanhMuc\UC_DanhMucNew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\DanhMuc\UC_DanhMucNew.Designer.cs">
+      <DependentUpon>UC_DanhMucNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\DoiTac\UC_DoiTacNew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\DoiTac\UC_DoiTacNew.Designer.cs">
+      <DependentUpon>UC_DoiTacNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\ThongKe\UC_ThongKeNew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\ThongKe\UC_ThongKeNew.Designer.cs">
+      <DependentUpon>UC_ThongKeNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_BanHangNew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UserControls\UC_BanHangNew.Designer.cs">
+      <DependentUpon>UC_BanHangNew.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GUI\Form\fThanhToan.cs">
@@ -324,6 +348,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form\fDoiMK.resx">
       <DependentUpon>fDoiMK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\DanhMuc\UC_DanhMucNew.resx">
+      <DependentUpon>UC_DanhMucNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\DoiTac\UC_DoiTacNew.resx">
+      <DependentUpon>UC_DoiTacNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\ThongKe\UC_ThongKeNew.resx">
+      <DependentUpon>UC_ThongKeNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserControls\UC_BanHangNew.resx">
+      <DependentUpon>UC_BanHangNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

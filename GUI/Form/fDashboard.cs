@@ -1,4 +1,7 @@
-﻿using QuanLyKhachHang.UserControls;
+﻿using QuanLyKhachHang.GUI.UserControls;
+using QuanLyKhachHang.GUI.UserControls.DanhMuc;
+using QuanLyKhachHang.GUI.UserControls.DoiTac;
+using QuanLyKhachHang.UserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +30,7 @@ namespace QuanLyKhachHang
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(isCollapse)
+            if (isCollapse)
             {
                 pnlLeft.Width = pnlLeft.Width + 26;
                 if (pnlLeft.Width >= panelWidth)
@@ -35,12 +38,12 @@ namespace QuanLyKhachHang
                     timer1.Stop();
                     isCollapse = false;
                     this.Refresh();
-                }             
+                }
             }
             else
             {
                 pnlLeft.Width = pnlLeft.Width - 26;
-                if(pnlLeft.Width<=62)
+                if (pnlLeft.Width <= 62)
                 {
                     timer1.Stop();
                     isCollapse = true;
@@ -49,21 +52,32 @@ namespace QuanLyKhachHang
             }
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void btnCollapse_Click(object sender, EventArgs e)
         {
             timer1.Start();
+        }
+
+        private void timerDongHo_Tick(object sender, EventArgs e)
+        {
+            DateTime dt = DateTime.Now;
+            lblTime.Text = dt.ToString("HH:MM:ss");
         }
         private void moveSidePanel(Control btn)
         {
             pnlSide.Top = btn.Top;
             pnlSide.Height = btn.Height;
         }
+        private void hideAllSubMenu()
+        {
+            pnlSubThongKe.Visible = false;
+        }
         private void addControltoPanel(Control c)
         {
+            hideAllSubMenu();
             c.Dock = DockStyle.Fill;
             pnlControl.Controls.Clear();
             pnlControl.Controls.Add(c);
-            
+
         }
         private void btnTongQuan_Click(object sender, EventArgs e)
         {
@@ -71,13 +85,15 @@ namespace QuanLyKhachHang
             UC_TongQuan uctq = new UC_TongQuan();
             addControltoPanel(uctq);
         }
-        
+
 
         private void btnBanHang_Click(object sender, EventArgs e)
-        {   
+        {
             moveSidePanel(btnBanHang);
-            UC_BanHang ucbh = new UC_BanHang();
-            addControltoPanel(ucbh);
+            //UC_BanHang ucbh = new UC_BanHang();
+            //addControltoPanel(ucbh);
+            UC_BanHangNew uctq = new UC_BanHangNew();
+            addControltoPanel(uctq);
         }
         private void btnNhapHang_Click(object sender, EventArgs e)
         {
@@ -89,15 +105,18 @@ namespace QuanLyKhachHang
         private void btnDanhMuc_Click(object sender, EventArgs e)
         {
             moveSidePanel(btnDanhMuc);
-            UC_DanhMuc ucdm = new UC_DanhMuc();
+            UC_DanhMucNew ucdm = new UC_DanhMucNew();
             addControltoPanel(ucdm);
         }
         private void btnDoiTac_Click(object sender, EventArgs e)
         {
             moveSidePanel(btnDoiTac);
-            UC_DoiTac ucdt = new UC_DoiTac();
+            //UC_DoiTac ucdt = new UC_DoiTac();
+            //addControltoPanel(ucdt);
+            UC_DoiTacNew ucdt = new UC_DoiTacNew();
             addControltoPanel(ucdt);
-            
+
+
         }
         private void btnKhuyenMai_Click(object sender, EventArgs e)
         {
@@ -111,33 +130,24 @@ namespace QuanLyKhachHang
             moveSidePanel(btnThongKe);
             UC_ThongKe uctk = new UC_ThongKe();
             addControltoPanel(uctk);
+
+
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
-            moveSidePanel(btnDangXuat);
+
+            hideAllSubMenu();
             if (MessageBox.Show("Bạn thực sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
                 this.Close();
-        }
-
-        private void timerDongHo_Tick(object sender, EventArgs e)
-        {
-            DateTime dt = DateTime.Now;
-            lblTime.Text = dt.ToString("HH:MM:ss");
-        }
-
-       
-       
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
 
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn thực sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
-                this.Close();
+                this.Dispose();
         }
+
     }
 }

@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QuanLyKhachHang.UserControls
+namespace QuanLyKhachHang.GUI.UserControls.ThongKe
 {
-    public partial class UC_NhapHang : UserControl
+    public partial class UC_ThongKeNew : UserControl
     {
-        public UC_NhapHang()
+        public UC_ThongKeNew()
         {
             InitializeComponent();
-        }
-
-        private void UC_NhapHang_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
