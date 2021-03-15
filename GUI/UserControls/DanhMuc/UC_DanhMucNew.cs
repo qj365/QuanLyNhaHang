@@ -36,10 +36,8 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
         {
             pageDanhMuc.SelectTab(3);
         }
+        
 
-        private void bunifuTextBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

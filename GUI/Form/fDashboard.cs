@@ -1,6 +1,8 @@
-﻿using QuanLyKhachHang.GUI.UserControls;
+﻿using BunifuAnimatorNS;
+using QuanLyKhachHang.GUI.UserControls;
 using QuanLyKhachHang.GUI.UserControls.DanhMuc;
 using QuanLyKhachHang.GUI.UserControls.DoiTac;
+using QuanLyKhachHang.GUI.UserControls.ThongKe;
 using QuanLyKhachHang.UserControls;
 using System;
 using System.Collections.Generic;
@@ -67,13 +69,10 @@ namespace QuanLyKhachHang
             pnlSide.Top = btn.Top;
             pnlSide.Height = btn.Height;
         }
-        private void hideAllSubMenu()
-        {
-            pnlSubThongKe.Visible = false;
-        }
+        
         private void addControltoPanel(Control c)
         {
-            hideAllSubMenu();
+            
             c.Dock = DockStyle.Fill;
             pnlControl.Controls.Clear();
             pnlControl.Controls.Add(c);
@@ -128,26 +127,28 @@ namespace QuanLyKhachHang
         private void btnThongKe_Click(object sender, EventArgs e)
         {
             moveSidePanel(btnThongKe);
-            UC_ThongKe uctk = new UC_ThongKe();
+            UC_ThongKeNew uctk = new UC_ThongKeNew();
             addControltoPanel(uctk);
-
+            
 
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
 
-            hideAllSubMenu();
             if (MessageBox.Show("Bạn thực sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
-                this.Close();
+               this.Close();
 
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn thực sự muốn thoát chương trình?", "Thông báo", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
-                this.Dispose();
+                this.Close();
         }
 
+      
+
+       
     }
 }
