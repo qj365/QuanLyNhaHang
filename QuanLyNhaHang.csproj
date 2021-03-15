@@ -217,90 +217,6 @@
     <Compile Include="GUI\Form\fThanhToan.Designer.cs">
       <DependentUpon>fThanhToan.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\DanhMuc\DanhMuc_BanAn.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\UserControls\DanhMuc\DanhMuc_BanAn.Designer.cs">
-      <DependentUpon>DanhMuc_BanAn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\UserControls\DanhMuc\DanhMuc_LoaiMon.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\UserControls\DanhMuc\DanhMuc_LoaiMon.Designer.cs">
-      <DependentUpon>DanhMuc_LoaiMon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\UserControls\DanhMuc\DanhMuc_MonAn.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\UserControls\DanhMuc\DanhMuc_MonAn.Designer.cs">
-      <DependentUpon>DanhMuc_MonAn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\UserControls\DanhMuc\DanhMuc_NhanVien.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\UserControls\DanhMuc\DanhMuc_NhanVien.Designer.cs">
-      <DependentUpon>DanhMuc_NhanVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\UserControls\DoiTac\DoiTac_KhachHang.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\UserControls\DoiTac\DoiTac_KhachHang.Designer.cs">
-      <DependentUpon>DoiTac_KhachHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\UserControls\DoiTac\DoiTac_NhaCC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\UserControls\DoiTac\DoiTac_NhaCC.Designer.cs">
-      <DependentUpon>DoiTac_NhaCC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\UserControls\ThongKe\ThongKe_HoaDon.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\UserControls\ThongKe\ThongKe_HoaDon.Designer.cs">
-      <DependentUpon>ThongKe_HoaDon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\UserControls\ThongKe\ThongKe_MonAn.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\UserControls\ThongKe\ThongKe_MonAn.Designer.cs">
-      <DependentUpon>ThongKe_MonAn.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\UserControls\ThongKe\ThongKe_PhieuNhap.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\UserControls\ThongKe\ThongKe_PhieuNhap.Designer.cs">
-      <DependentUpon>ThongKe_PhieuNhap.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\UserControls\ThongKe\ThongKe_TaiKhoan.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\UserControls\ThongKe\ThongKe_TaiKhoan.Designer.cs">
-      <DependentUpon>ThongKe_TaiKhoan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\UserControls\ThongKe\ThongKe_TheoBan.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\UserControls\ThongKe\ThongKe_TheoBan.Designer.cs">
-      <DependentUpon>ThongKe_TheoBan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\UserControls\UC_BanHang.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\UserControls\UC_BanHang.Designer.cs">
-      <DependentUpon>UC_BanHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\UserControls\DanhMuc\UC_DanhMuc.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\UserControls\DanhMuc\UC_DanhMuc.Designer.cs">
-      <DependentUpon>UC_DanhMuc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\UserControls\DoiTac\UC_DoiTac.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\UserControls\DoiTac\UC_DoiTac.Designer.cs">
-      <DependentUpon>UC_DoiTac.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\UserControls\UC_KhuyenMai.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -312,12 +228,6 @@
     </Compile>
     <Compile Include="GUI\UserControls\UC_NhapHang.Designer.cs">
       <DependentUpon>UC_NhapHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GUI\UserControls\ThongKe\UC_ThongKe.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="GUI\UserControls\ThongKe\UC_ThongKe.Designer.cs">
-      <DependentUpon>UC_ThongKe.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserControls\UC_TongQuan.cs">
       <SubType>UserControl</SubType>
@@ -372,56 +282,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="GUI\UserControls\DanhMuc\DanhMuc_BanAn.resx">
-      <DependentUpon>DanhMuc_BanAn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\DanhMuc\DanhMuc_LoaiMon.resx">
-      <DependentUpon>DanhMuc_LoaiMon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\DanhMuc\DanhMuc_MonAn.resx">
-      <DependentUpon>DanhMuc_MonAn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\DanhMuc\DanhMuc_NhanVien.resx">
-      <DependentUpon>DanhMuc_NhanVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\DoiTac\DoiTac_KhachHang.resx">
-      <DependentUpon>DoiTac_KhachHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\DoiTac\DoiTac_NhaCC.resx">
-      <DependentUpon>DoiTac_NhaCC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\ThongKe\ThongKe_HoaDon.resx">
-      <DependentUpon>ThongKe_HoaDon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\ThongKe\ThongKe_MonAn.resx">
-      <DependentUpon>ThongKe_MonAn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\ThongKe\ThongKe_PhieuNhap.resx">
-      <DependentUpon>ThongKe_PhieuNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\ThongKe\ThongKe_TaiKhoan.resx">
-      <DependentUpon>ThongKe_TaiKhoan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\ThongKe\ThongKe_TheoBan.resx">
-      <DependentUpon>ThongKe_TheoBan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\UC_BanHang.resx">
-      <DependentUpon>UC_BanHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\DanhMuc\UC_DanhMuc.resx">
-      <DependentUpon>UC_DanhMuc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\DoiTac\UC_DoiTac.resx">
-      <DependentUpon>UC_DoiTac.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\UC_KhuyenMai.resx">
       <DependentUpon>UC_KhuyenMai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\UC_NhapHang.resx">
       <DependentUpon>UC_NhapHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\ThongKe\UC_ThongKe.resx">
-      <DependentUpon>UC_ThongKe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\UC_TongQuan.resx">
       <DependentUpon>UC_TongQuan.cs</DependentUpon>
