@@ -47,5 +47,29 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
             using (Add_NhanVien f = new Add_NhanVien())
                 f.ShowDialog();
         }
+
+        #region Món ăn
+
+        #endregion
+
+
+        #region Loại món
+
+        #endregion
+
+
+        #region Nhân viên
+
+        #endregion
+
+
+        #region Bàn ăn
+
+        #endregion
+
+
+        #region Nguyên liệu
+
+        #endregion
     }
 }

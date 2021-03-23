@@ -26,5 +26,7 @@ namespace QuanLyKhachHang.GUI.UserControls.DoiTac
         {
             pageDoiTac.SelectTab(1);
         }
+
+
     }
 }

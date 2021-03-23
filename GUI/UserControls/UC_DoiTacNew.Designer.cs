@@ -149,7 +149,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.bunifuButton2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.btnThem = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.label3 = new System.Windows.Forms.Label();
             this.bunifuButton3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -193,6 +193,7 @@
             this.btnKhach.IconZoom = 65D;
             this.btnKhach.IsTab = true;
             this.btnKhach.Location = new System.Drawing.Point(123, 11);
+            this.btnKhach.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnKhach.Name = "btnKhach";
             this.btnKhach.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.btnKhach.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(137)))), ((int)(((byte)(175)))));
@@ -229,6 +230,7 @@
             this.btnNhaCungCap.IconZoom = 65D;
             this.btnNhaCungCap.IsTab = true;
             this.btnNhaCungCap.Location = new System.Drawing.Point(337, 11);
+            this.btnNhaCungCap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNhaCungCap.Name = "btnNhaCungCap";
             this.btnNhaCungCap.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.btnNhaCungCap.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(137)))), ((int)(((byte)(175)))));
@@ -251,10 +253,10 @@
             this.pageDoiTac.Location = new System.Drawing.Point(3, 66);
             this.pageDoiTac.Multiline = true;
             this.pageDoiTac.Name = "pageDoiTac";
-            this.pageDoiTac.Page = this.tabPage2;
-            this.pageDoiTac.PageIndex = 1;
-            this.pageDoiTac.PageName = "tabPage2";
-            this.pageDoiTac.PageTitle = "tabPage2";
+            this.pageDoiTac.Page = this.tabPage1;
+            this.pageDoiTac.PageIndex = 0;
+            this.pageDoiTac.PageName = "tabPage1";
+            this.pageDoiTac.PageTitle = "tabPage1";
             this.pageDoiTac.SelectedIndex = 0;
             this.pageDoiTac.Size = new System.Drawing.Size(1145, 559);
             this.pageDoiTac.TabIndex = 3;
@@ -284,7 +286,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1137, 533);
+            this.tabPage1.Size = new System.Drawing.Size(1137, 530);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -499,7 +501,7 @@
             this.bunifuTextBox12.SelectionLength = 0;
             this.bunifuTextBox12.SelectionStart = 0;
             this.bunifuTextBox12.ShortcutsEnabled = true;
-            this.bunifuTextBox12.Size = new System.Drawing.Size(253, 35);
+            this.bunifuTextBox12.Size = new System.Drawing.Size(253, 37);
             this.bunifuTextBox12.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox12.TabIndex = 23;
             this.bunifuTextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -572,7 +574,7 @@
             this.bunifuTextBox13.SelectionLength = 0;
             this.bunifuTextBox13.SelectionStart = 0;
             this.bunifuTextBox13.ShortcutsEnabled = true;
-            this.bunifuTextBox13.Size = new System.Drawing.Size(253, 35);
+            this.bunifuTextBox13.Size = new System.Drawing.Size(253, 37);
             this.bunifuTextBox13.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox13.TabIndex = 22;
             this.bunifuTextBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -708,7 +710,7 @@
             this.bunifuTextBox11.SelectionLength = 0;
             this.bunifuTextBox11.SelectionStart = 0;
             this.bunifuTextBox11.ShortcutsEnabled = true;
-            this.bunifuTextBox11.Size = new System.Drawing.Size(253, 35);
+            this.bunifuTextBox11.Size = new System.Drawing.Size(253, 37);
             this.bunifuTextBox11.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox11.TabIndex = 22;
             this.bunifuTextBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -727,7 +729,7 @@
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label10.Location = new System.Drawing.Point(9, 134);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(138, 22);
+            this.label10.Size = new System.Drawing.Size(168, 27);
             this.label10.TabIndex = 20;
             this.label10.Text = "Tên khách hàng";
             // 
@@ -739,7 +741,7 @@
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label11.Location = new System.Drawing.Point(41, 187);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(40, 22);
+            this.label11.Size = new System.Drawing.Size(50, 27);
             this.label11.TabIndex = 21;
             this.label11.Text = "SĐT";
             // 
@@ -814,7 +816,7 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label9.Location = new System.Drawing.Point(11, 81);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(134, 22);
+            this.label9.Size = new System.Drawing.Size(162, 27);
             this.label9.TabIndex = 21;
             this.label9.Text = "Mã khách hàng";
             // 
@@ -1022,7 +1024,7 @@
             this.bunifuTextBox9.SelectionLength = 0;
             this.bunifuTextBox9.SelectionStart = 0;
             this.bunifuTextBox9.ShortcutsEnabled = true;
-            this.bunifuTextBox9.Size = new System.Drawing.Size(253, 35);
+            this.bunifuTextBox9.Size = new System.Drawing.Size(253, 37);
             this.bunifuTextBox9.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox9.TabIndex = 23;
             this.bunifuTextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1095,7 +1097,7 @@
             this.bunifuTextBox10.SelectionLength = 0;
             this.bunifuTextBox10.SelectionStart = 0;
             this.bunifuTextBox10.ShortcutsEnabled = true;
-            this.bunifuTextBox10.Size = new System.Drawing.Size(253, 35);
+            this.bunifuTextBox10.Size = new System.Drawing.Size(253, 37);
             this.bunifuTextBox10.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox10.TabIndex = 22;
             this.bunifuTextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1114,7 +1116,7 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label7.Location = new System.Drawing.Point(22, 84);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 22);
+            this.label7.Size = new System.Drawing.Size(168, 27);
             this.label7.TabIndex = 20;
             this.label7.Text = "Tên khách hàng";
             // 
@@ -1126,7 +1128,7 @@
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label8.Location = new System.Drawing.Point(24, 30);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(134, 22);
+            this.label8.Size = new System.Drawing.Size(162, 27);
             this.label8.TabIndex = 21;
             this.label8.Text = "Mã khách hàng";
             // 
@@ -1153,6 +1155,7 @@
             this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(6, 137);
             this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
             this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.bunifuCustomDataGrid1.RowHeadersWidth = 51;
             this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(654, 393);
             this.bunifuCustomDataGrid1.TabIndex = 0;
             // 
@@ -1164,7 +1167,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1137, 533);
+            this.tabPage2.Size = new System.Drawing.Size(1137, 530);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1181,7 +1184,7 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.bunifuButton2);
+            this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.bunifuButton3);
             this.groupBox1.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1381,7 +1384,7 @@
             this.bunifuTextBox1.SelectionLength = 0;
             this.bunifuTextBox1.SelectionStart = 0;
             this.bunifuTextBox1.ShortcutsEnabled = true;
-            this.bunifuTextBox1.Size = new System.Drawing.Size(253, 35);
+            this.bunifuTextBox1.Size = new System.Drawing.Size(253, 37);
             this.bunifuTextBox1.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox1.TabIndex = 23;
             this.bunifuTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1454,7 +1457,7 @@
             this.bunifuTextBox6.SelectionLength = 0;
             this.bunifuTextBox6.SelectionStart = 0;
             this.bunifuTextBox6.ShortcutsEnabled = true;
-            this.bunifuTextBox6.Size = new System.Drawing.Size(253, 35);
+            this.bunifuTextBox6.Size = new System.Drawing.Size(253, 37);
             this.bunifuTextBox6.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox6.TabIndex = 22;
             this.bunifuTextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1527,7 +1530,7 @@
             this.bunifuTextBox2.SelectionLength = 0;
             this.bunifuTextBox2.SelectionStart = 0;
             this.bunifuTextBox2.ShortcutsEnabled = true;
-            this.bunifuTextBox2.Size = new System.Drawing.Size(253, 35);
+            this.bunifuTextBox2.Size = new System.Drawing.Size(253, 37);
             this.bunifuTextBox2.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox2.TabIndex = 22;
             this.bunifuTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1663,7 +1666,7 @@
             this.bunifuTextBox3.SelectionLength = 0;
             this.bunifuTextBox3.SelectionStart = 0;
             this.bunifuTextBox3.ShortcutsEnabled = true;
-            this.bunifuTextBox3.Size = new System.Drawing.Size(253, 35);
+            this.bunifuTextBox3.Size = new System.Drawing.Size(253, 37);
             this.bunifuTextBox3.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox3.TabIndex = 22;
             this.bunifuTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1682,7 +1685,7 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label6.Location = new System.Drawing.Point(49, 233);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 22);
+            this.label6.Size = new System.Drawing.Size(79, 27);
             this.label6.TabIndex = 21;
             this.label6.Text = "Địa chỉ";
             // 
@@ -1694,7 +1697,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label1.Location = new System.Drawing.Point(13, 127);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 22);
+            this.label1.Size = new System.Drawing.Size(184, 27);
             this.label1.TabIndex = 20;
             this.label1.Text = "Tên nhà cung cấp";
             // 
@@ -1706,49 +1709,49 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label2.Location = new System.Drawing.Point(49, 180);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 22);
+            this.label2.Size = new System.Drawing.Size(50, 27);
             this.label2.TabIndex = 21;
             this.label2.Text = "SĐT";
             // 
-            // bunifuButton2
+            // btnThem
             // 
-            this.bunifuButton2.AllowToggling = false;
-            this.bunifuButton2.AnimationSpeed = 200;
-            this.bunifuButton2.AutoGenerateColors = true;
-            this.bunifuButton2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuButton2.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(175)))), ((int)(((byte)(85)))));
-            this.bunifuButton2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton2.BackgroundImage")));
-            this.bunifuButton2.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton2.ButtonText = "Thêm";
-            this.bunifuButton2.ButtonTextMarginLeft = 15;
-            this.bunifuButton2.ColorContrastOnClick = 45;
-            this.bunifuButton2.ColorContrastOnHover = 45;
-            this.bunifuButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThem.AllowToggling = false;
+            this.btnThem.AnimationSpeed = 200;
+            this.btnThem.AutoGenerateColors = true;
+            this.btnThem.BackColor = System.Drawing.Color.Transparent;
+            this.btnThem.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(175)))), ((int)(((byte)(85)))));
+            this.btnThem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnThem.BackgroundImage")));
+            this.btnThem.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnThem.ButtonText = "Thêm";
+            this.btnThem.ButtonTextMarginLeft = 15;
+            this.btnThem.ColorContrastOnClick = 45;
+            this.btnThem.ColorContrastOnHover = 45;
+            this.btnThem.Cursor = System.Windows.Forms.Cursors.Hand;
             borderEdges10.BottomLeft = true;
             borderEdges10.BottomRight = true;
             borderEdges10.TopLeft = true;
             borderEdges10.TopRight = true;
-            this.bunifuButton2.CustomizableEdges = borderEdges10;
-            this.bunifuButton2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.bunifuButton2.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.bunifuButton2.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuButton2.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.bunifuButton2.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton2.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuButton2.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton2.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuButton2.IconMarginLeft = 11;
-            this.bunifuButton2.IconPadding = 10;
-            this.bunifuButton2.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuButton2.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(175)))), ((int)(((byte)(85)))));
-            this.bunifuButton2.IdleBorderRadius = 5;
-            this.bunifuButton2.IdleBorderThickness = 1;
-            this.bunifuButton2.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(175)))), ((int)(((byte)(85)))));
-            this.bunifuButton2.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton2.IdleIconLeftImage")));
-            this.bunifuButton2.IdleIconRightImage = null;
-            this.bunifuButton2.IndicateFocus = false;
-            this.bunifuButton2.Location = new System.Drawing.Point(32, 296);
-            this.bunifuButton2.Name = "bunifuButton2";
+            this.btnThem.CustomizableEdges = borderEdges10;
+            this.btnThem.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnThem.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnThem.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnThem.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnThem.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnThem.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThem.IconMarginLeft = 11;
+            this.btnThem.IconPadding = 10;
+            this.btnThem.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThem.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(175)))), ((int)(((byte)(85)))));
+            this.btnThem.IdleBorderRadius = 5;
+            this.btnThem.IdleBorderThickness = 1;
+            this.btnThem.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(175)))), ((int)(((byte)(85)))));
+            this.btnThem.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnThem.IdleIconLeftImage")));
+            this.btnThem.IdleIconRightImage = null;
+            this.btnThem.IndicateFocus = false;
+            this.btnThem.Location = new System.Drawing.Point(32, 296);
+            this.btnThem.Name = "btnThem";
             stateProperties55.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(162)))), ((int)(((byte)(211)))), ((int)(((byte)(161)))));
             stateProperties55.BorderRadius = 5;
             stateProperties55.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
@@ -1757,7 +1760,7 @@
             stateProperties55.ForeColor = System.Drawing.Color.White;
             stateProperties55.IconLeftImage = null;
             stateProperties55.IconRightImage = null;
-            this.bunifuButton2.onHoverState = stateProperties55;
+            this.btnThem.onHoverState = stateProperties55;
             stateProperties56.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(96)))), ((int)(((byte)(46)))));
             stateProperties56.BorderRadius = 5;
             stateProperties56.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
@@ -1766,12 +1769,12 @@
             stateProperties56.ForeColor = System.Drawing.Color.White;
             stateProperties56.IconLeftImage = null;
             stateProperties56.IconRightImage = null;
-            this.bunifuButton2.OnPressedState = stateProperties56;
-            this.bunifuButton2.Size = new System.Drawing.Size(118, 45);
-            this.bunifuButton2.TabIndex = 24;
-            this.bunifuButton2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuButton2.TextMarginLeft = 15;
-            this.bunifuButton2.UseDefaultRadiusAndThickness = true;
+            this.btnThem.OnPressedState = stateProperties56;
+            this.btnThem.Size = new System.Drawing.Size(118, 45);
+            this.btnThem.TabIndex = 24;
+            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnThem.TextMarginLeft = 15;
+            this.btnThem.UseDefaultRadiusAndThickness = true;
             // 
             // label3
             // 
@@ -1781,7 +1784,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label3.Location = new System.Drawing.Point(15, 74);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 22);
+            this.label3.Size = new System.Drawing.Size(178, 27);
             this.label3.TabIndex = 21;
             this.label3.Text = "Mã nhà cung cấp";
             // 
@@ -1989,7 +1992,7 @@
             this.bunifuTextBox4.SelectionLength = 0;
             this.bunifuTextBox4.SelectionStart = 0;
             this.bunifuTextBox4.ShortcutsEnabled = true;
-            this.bunifuTextBox4.Size = new System.Drawing.Size(253, 35);
+            this.bunifuTextBox4.Size = new System.Drawing.Size(253, 37);
             this.bunifuTextBox4.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox4.TabIndex = 23;
             this.bunifuTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -2062,7 +2065,7 @@
             this.bunifuTextBox5.SelectionLength = 0;
             this.bunifuTextBox5.SelectionStart = 0;
             this.bunifuTextBox5.ShortcutsEnabled = true;
-            this.bunifuTextBox5.Size = new System.Drawing.Size(253, 35);
+            this.bunifuTextBox5.Size = new System.Drawing.Size(253, 37);
             this.bunifuTextBox5.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox5.TabIndex = 22;
             this.bunifuTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -2081,7 +2084,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label4.Location = new System.Drawing.Point(22, 84);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(150, 22);
+            this.label4.Size = new System.Drawing.Size(184, 27);
             this.label4.TabIndex = 20;
             this.label4.Text = "Tên nhà cung cấp";
             // 
@@ -2093,7 +2096,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label5.Location = new System.Drawing.Point(24, 30);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(146, 22);
+            this.label5.Size = new System.Drawing.Size(178, 27);
             this.label5.TabIndex = 21;
             this.label5.Text = "Mã nhà cung cấp";
             // 
@@ -2120,6 +2123,7 @@
             this.bunifuCustomDataGrid2.Location = new System.Drawing.Point(6, 137);
             this.bunifuCustomDataGrid2.Name = "bunifuCustomDataGrid2";
             this.bunifuCustomDataGrid2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.bunifuCustomDataGrid2.RowHeadersWidth = 51;
             this.bunifuCustomDataGrid2.Size = new System.Drawing.Size(672, 393);
             this.bunifuCustomDataGrid2.TabIndex = 39;
             // 
@@ -2181,7 +2185,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton2;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnThem;
         private System.Windows.Forms.Label label3;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton3;
         private System.Windows.Forms.GroupBox groupBox2;
