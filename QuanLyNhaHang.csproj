@@ -143,6 +143,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\ChiTietDatMonDAO.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\PhieuYeuCauDAO.cs" />
+    <Compile Include="DAO\TableDAO.cs" />
+    <Compile Include="DTO\ChiTietDatMon.cs" />
+    <Compile Include="DTO\PhieuYeuCau.cs" />
+    <Compile Include="DTO\Table.cs" />
     <Compile Include="GUI\Form\DanhMuc\Add_BanAn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,40 +175,40 @@
     <Compile Include="GUI\Form\DanhMuc\Add_NhanVien.Designer.cs">
       <DependentUpon>Add_NhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Form\fDashboard.cs">
+    <Compile Include="GUI\Form\frDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Form\fDashboard.Designer.cs">
-      <DependentUpon>fDashboard.cs</DependentUpon>
+    <Compile Include="GUI\Form\frDashboard.Designer.cs">
+      <DependentUpon>frDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Form\fLogin.cs">
+    <Compile Include="GUI\Form\frLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Form\fLogin.Designer.cs">
-      <DependentUpon>fLogin.cs</DependentUpon>
+    <Compile Include="GUI\Form\frLogin.Designer.cs">
+      <DependentUpon>frLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Form\fDoiMK.cs">
+    <Compile Include="GUI\Form\frDoiMK.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Form\fDoiMK.Designer.cs">
-      <DependentUpon>fDoiMK.cs</DependentUpon>
+    <Compile Include="GUI\Form\frDoiMK.Designer.cs">
+      <DependentUpon>frDoiMK.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\DanhMuc\UC_DanhMucNew.cs">
+    <Compile Include="GUI\UserControls\UC_DanhMucNew.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControls\DanhMuc\UC_DanhMucNew.Designer.cs">
+    <Compile Include="GUI\UserControls\UC_DanhMucNew.Designer.cs">
       <DependentUpon>UC_DanhMucNew.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\DoiTac\UC_DoiTacNew.cs">
+    <Compile Include="GUI\UserControls\UC_DoiTacNew.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControls\DoiTac\UC_DoiTacNew.Designer.cs">
+    <Compile Include="GUI\UserControls\UC_DoiTacNew.Designer.cs">
       <DependentUpon>UC_DoiTacNew.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\UserControls\ThongKe\UC_ThongKeNew.cs">
+    <Compile Include="GUI\UserControls\UC_ThongKeNew.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\UserControls\ThongKe\UC_ThongKeNew.Designer.cs">
+    <Compile Include="GUI\UserControls\UC_ThongKeNew.Designer.cs">
       <DependentUpon>UC_ThongKeNew.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserControls\UC_BanHangNew.cs">
@@ -211,11 +219,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="GUI\Form\fThanhToan.cs">
+    <Compile Include="GUI\Form\frThanhToan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Form\fThanhToan.Designer.cs">
-      <DependentUpon>fThanhToan.cs</DependentUpon>
+    <Compile Include="GUI\Form\frThanhToan.Designer.cs">
+      <DependentUpon>frThanhToan.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserControls\UC_KhuyenMai.cs">
       <SubType>UserControl</SubType>
@@ -247,25 +255,25 @@
     <EmbeddedResource Include="GUI\Form\DanhMuc\Add_NhanVien.resx">
       <DependentUpon>Add_NhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Form\fDashboard.resx">
-      <DependentUpon>fDashboard.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Form\frDashboard.resx">
+      <DependentUpon>frDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Form\fLogin.resx">
-      <DependentUpon>fLogin.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Form\frLogin.resx">
+      <DependentUpon>frLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Form\fThanhToan.resx">
-      <DependentUpon>fThanhToan.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Form\frThanhToan.resx">
+      <DependentUpon>frThanhToan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Form\fDoiMK.resx">
-      <DependentUpon>fDoiMK.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Form\frDoiMK.resx">
+      <DependentUpon>frDoiMK.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\DanhMuc\UC_DanhMucNew.resx">
+    <EmbeddedResource Include="GUI\UserControls\UC_DanhMucNew.resx">
       <DependentUpon>UC_DanhMucNew.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\DoiTac\UC_DoiTacNew.resx">
+    <EmbeddedResource Include="GUI\UserControls\UC_DoiTacNew.resx">
       <DependentUpon>UC_DoiTacNew.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\UserControls\ThongKe\UC_ThongKeNew.resx">
+    <EmbeddedResource Include="GUI\UserControls\UC_ThongKeNew.resx">
       <DependentUpon>UC_ThongKeNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserControls\UC_BanHangNew.resx">

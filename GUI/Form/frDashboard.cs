@@ -16,11 +16,11 @@ using System.Windows.Forms;
 
 namespace QuanLyKhachHang
 {
-    public partial class fDashboard : Form
+    public partial class frDashboard : Form
     {
         int panelWidth;
         bool isCollapse;
-        public fDashboard()
+        public frDashboard()
         {
             InitializeComponent();
             panelWidth = pnlLeft.Width;

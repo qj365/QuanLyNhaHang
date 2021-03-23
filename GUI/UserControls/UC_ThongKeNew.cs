@@ -13,7 +13,7 @@ namespace QuanLyKhachHang.GUI.UserControls.ThongKe
 
         private void dateNgayLap_ValueChanged(object sender, EventArgs e)
         {
-            dateNgayLap.CustomFormat = "dd-mm-yyyy";
+            dateNgayLapTK.CustomFormat = "dd-mm-yyyy";
         }
 
         private void btnHoaDon_Click(object sender, EventArgs e)
@@ -41,11 +41,29 @@ namespace QuanLyKhachHang.GUI.UserControls.ThongKe
             pageThongKe.SelectTab(4);
         }
 
-        private void bunifuTextBox1_TextChanged(object sender, EventArgs e)
+        private void dateNgayLapTK_ValueChanged(object sender, EventArgs e)
+        {
+            dateNgayLapTK.CustomFormat = "dd-MM-yyyy";
+        }
+
+        private void bunifuTextBox11_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        
+        private void bunifuTextBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuTextBox10_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuTextBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

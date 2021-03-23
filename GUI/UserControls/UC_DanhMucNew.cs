@@ -36,8 +36,16 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
         {
             pageDanhMuc.SelectTab(3);
         }
-        
 
-      
+        private void btnNguyenLieu_Click(object sender, EventArgs e)
+        {
+            pageDanhMuc.SelectTab(4);
+        }
+
+        private void btnThemNV_Click(object sender, EventArgs e)
+        {
+            using (Add_NhanVien f = new Add_NhanVien())
+                f.ShowDialog();
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace QuanLyKhachHang
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fDashboard());
+            Application.Run(new frDashboard());
         }
     }
 }

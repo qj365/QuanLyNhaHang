@@ -66,13 +66,15 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.bunifuButton18 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.btnThanhToan = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.bunifuDropdown1 = new Bunifu.UI.WinForms.BunifuDropdown();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.pageThanhToan = new Bunifu.UI.WinForms.BunifuPages();
             this.tabBan = new System.Windows.Forms.TabPage();
+            this.fpnlBanAn = new System.Windows.Forms.FlowLayoutPanel();
             this.tabThucDon = new System.Windows.Forms.TabPage();
             this.bunifuDropdown2 = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -81,7 +83,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnThucDon = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnBan = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.listThucDon = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -89,6 +91,7 @@
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.pageThanhToan.SuspendLayout();
+            this.tabBan.SuspendLayout();
             this.tabThucDon.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -391,6 +394,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.listThucDon);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.panel2);
@@ -418,7 +422,7 @@
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.Controls.Add(this.label2);
             this.panel5.Controls.Add(this.label1);
-            this.panel5.Controls.Add(this.bunifuButton18);
+            this.panel5.Controls.Add(this.btnThanhToan);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 50);
             this.panel5.Name = "panel5";
@@ -432,7 +436,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(141)))));
             this.label2.Location = new System.Drawing.Point(115, 87);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 28);
+            this.label2.Size = new System.Drawing.Size(133, 37);
             this.label2.TabIndex = 5;
             this.label2.Text = "100,000đ";
             // 
@@ -443,49 +447,49 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(59)))), ((int)(((byte)(141)))));
             this.label1.Location = new System.Drawing.Point(104, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 28);
+            this.label1.Size = new System.Drawing.Size(162, 37);
             this.label1.TabIndex = 6;
             this.label1.Text = "Tổng cộng:";
             // 
-            // bunifuButton18
+            // btnThanhToan
             // 
-            this.bunifuButton18.AllowToggling = false;
-            this.bunifuButton18.AnimationSpeed = 200;
-            this.bunifuButton18.AutoGenerateColors = true;
-            this.bunifuButton18.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuButton18.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
-            this.bunifuButton18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton18.BackgroundImage")));
-            this.bunifuButton18.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton18.ButtonText = "Thanh toán";
-            this.bunifuButton18.ButtonTextMarginLeft = 0;
-            this.bunifuButton18.ColorContrastOnClick = 45;
-            this.bunifuButton18.ColorContrastOnHover = 45;
-            this.bunifuButton18.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThanhToan.AllowToggling = false;
+            this.btnThanhToan.AnimationSpeed = 200;
+            this.btnThanhToan.AutoGenerateColors = true;
+            this.btnThanhToan.BackColor = System.Drawing.Color.Transparent;
+            this.btnThanhToan.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
+            this.btnThanhToan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnThanhToan.BackgroundImage")));
+            this.btnThanhToan.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnThanhToan.ButtonText = "Thanh toán";
+            this.btnThanhToan.ButtonTextMarginLeft = 0;
+            this.btnThanhToan.ColorContrastOnClick = 45;
+            this.btnThanhToan.ColorContrastOnHover = 45;
+            this.btnThanhToan.Cursor = System.Windows.Forms.Cursors.Hand;
             borderEdges5.BottomLeft = true;
             borderEdges5.BottomRight = true;
             borderEdges5.TopLeft = true;
             borderEdges5.TopRight = true;
-            this.bunifuButton18.CustomizableEdges = borderEdges5;
-            this.bunifuButton18.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.bunifuButton18.DisabledBorderColor = System.Drawing.Color.Empty;
-            this.bunifuButton18.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuButton18.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.bunifuButton18.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton18.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold);
-            this.bunifuButton18.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton18.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuButton18.IconMarginLeft = 11;
-            this.bunifuButton18.IconPadding = 10;
-            this.bunifuButton18.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuButton18.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
-            this.bunifuButton18.IdleBorderRadius = 8;
-            this.bunifuButton18.IdleBorderThickness = 1;
-            this.bunifuButton18.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
-            this.bunifuButton18.IdleIconLeftImage = null;
-            this.bunifuButton18.IdleIconRightImage = null;
-            this.bunifuButton18.IndicateFocus = false;
-            this.bunifuButton18.Location = new System.Drawing.Point(332, 27);
-            this.bunifuButton18.Name = "bunifuButton18";
+            this.btnThanhToan.CustomizableEdges = borderEdges5;
+            this.btnThanhToan.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnThanhToan.DisabledBorderColor = System.Drawing.Color.Empty;
+            this.btnThanhToan.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnThanhToan.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnThanhToan.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnThanhToan.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold);
+            this.btnThanhToan.ForeColor = System.Drawing.Color.White;
+            this.btnThanhToan.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThanhToan.IconMarginLeft = 11;
+            this.btnThanhToan.IconPadding = 10;
+            this.btnThanhToan.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnThanhToan.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
+            this.btnThanhToan.IdleBorderRadius = 8;
+            this.btnThanhToan.IdleBorderThickness = 1;
+            this.btnThanhToan.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
+            this.btnThanhToan.IdleIconLeftImage = null;
+            this.btnThanhToan.IdleIconRightImage = null;
+            this.btnThanhToan.IndicateFocus = false;
+            this.btnThanhToan.Location = new System.Drawing.Point(332, 27);
+            this.btnThanhToan.Name = "btnThanhToan";
             stateProperties9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(177)))), ((int)(((byte)(218)))));
             stateProperties9.BorderRadius = 8;
             stateProperties9.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
@@ -494,7 +498,7 @@
             stateProperties9.ForeColor = System.Drawing.Color.White;
             stateProperties9.IconLeftImage = null;
             stateProperties9.IconRightImage = null;
-            this.bunifuButton18.onHoverState = stateProperties9;
+            this.btnThanhToan.onHoverState = stateProperties9;
             stateProperties10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(62)))), ((int)(((byte)(103)))));
             stateProperties10.BorderRadius = 8;
             stateProperties10.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
@@ -503,12 +507,13 @@
             stateProperties10.ForeColor = System.Drawing.Color.White;
             stateProperties10.IconLeftImage = null;
             stateProperties10.IconRightImage = null;
-            this.bunifuButton18.OnPressedState = stateProperties10;
-            this.bunifuButton18.Size = new System.Drawing.Size(132, 99);
-            this.bunifuButton18.TabIndex = 4;
-            this.bunifuButton18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuButton18.TextMarginLeft = 0;
-            this.bunifuButton18.UseDefaultRadiusAndThickness = true;
+            this.btnThanhToan.OnPressedState = stateProperties10;
+            this.btnThanhToan.Size = new System.Drawing.Size(132, 99);
+            this.btnThanhToan.TabIndex = 4;
+            this.btnThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnThanhToan.TextMarginLeft = 0;
+            this.btnThanhToan.UseDefaultRadiusAndThickness = true;
+            this.btnThanhToan.Click += new System.EventHandler(this.btnThanhToan_Click);
             // 
             // panel3
             // 
@@ -578,7 +583,15 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(599, 628);
             this.panel8.TabIndex = 11;
-            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel7.Location = new System.Drawing.Point(589, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(10, 628);
+            this.panel7.TabIndex = 18;
             // 
             // pageThanhToan
             // 
@@ -587,15 +600,15 @@
             this.pageThanhToan.Controls.Add(this.tabBan);
             this.pageThanhToan.Controls.Add(this.tabThucDon);
             this.pageThanhToan.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pageThanhToan.Location = new System.Drawing.Point(20, 87);
+            this.pageThanhToan.Location = new System.Drawing.Point(16, 87);
             this.pageThanhToan.Multiline = true;
             this.pageThanhToan.Name = "pageThanhToan";
-            this.pageThanhToan.Page = this.tabThucDon;
-            this.pageThanhToan.PageIndex = 1;
-            this.pageThanhToan.PageName = "tabThucDon";
-            this.pageThanhToan.PageTitle = "ThucDon";
+            this.pageThanhToan.Page = this.tabBan;
+            this.pageThanhToan.PageIndex = 0;
+            this.pageThanhToan.PageName = "tabBan";
+            this.pageThanhToan.PageTitle = "Ban";
             this.pageThanhToan.SelectedIndex = 0;
-            this.pageThanhToan.Size = new System.Drawing.Size(515, 490);
+            this.pageThanhToan.Size = new System.Drawing.Size(567, 517);
             this.pageThanhToan.TabIndex = 14;
             animation1.AnimateOnlyDifferences = true;
             animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
@@ -617,13 +630,22 @@
             // 
             // tabBan
             // 
+            this.tabBan.Controls.Add(this.fpnlBanAn);
             this.tabBan.Location = new System.Drawing.Point(4, 4);
             this.tabBan.Name = "tabBan";
             this.tabBan.Padding = new System.Windows.Forms.Padding(3);
-            this.tabBan.Size = new System.Drawing.Size(507, 459);
+            this.tabBan.Size = new System.Drawing.Size(559, 482);
             this.tabBan.TabIndex = 0;
             this.tabBan.Text = "Ban";
             this.tabBan.UseVisualStyleBackColor = true;
+            // 
+            // fpnlBanAn
+            // 
+            this.fpnlBanAn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fpnlBanAn.Location = new System.Drawing.Point(3, 3);
+            this.fpnlBanAn.Name = "fpnlBanAn";
+            this.fpnlBanAn.Size = new System.Drawing.Size(553, 476);
+            this.fpnlBanAn.TabIndex = 0;
             // 
             // tabThucDon
             // 
@@ -635,7 +657,7 @@
             this.tabThucDon.Location = new System.Drawing.Point(4, 4);
             this.tabThucDon.Name = "tabThucDon";
             this.tabThucDon.Padding = new System.Windows.Forms.Padding(3);
-            this.tabThucDon.Size = new System.Drawing.Size(507, 459);
+            this.tabThucDon.Size = new System.Drawing.Size(559, 482);
             this.tabThucDon.TabIndex = 1;
             this.tabThucDon.Text = "ThucDon";
             this.tabThucDon.UseVisualStyleBackColor = true;
@@ -667,7 +689,7 @@
             this.bunifuDropdown2.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
             this.bunifuDropdown2.Items.AddRange(new object[] {
             "Tuần này"});
-            this.bunifuDropdown2.Location = new System.Drawing.Point(127, 71);
+            this.bunifuDropdown2.Location = new System.Drawing.Point(198, 88);
             this.bunifuDropdown2.Name = "bunifuDropdown2";
             this.bunifuDropdown2.Size = new System.Drawing.Size(253, 32);
             this.bunifuDropdown2.TabIndex = 18;
@@ -710,7 +732,7 @@
             this.bunifuButton1.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton1.IdleIconLeftImage")));
             this.bunifuButton1.IdleIconRightImage = null;
             this.bunifuButton1.IndicateFocus = false;
-            this.bunifuButton1.Location = new System.Drawing.Point(262, 206);
+            this.bunifuButton1.Location = new System.Drawing.Point(333, 223);
             this.bunifuButton1.Name = "bunifuButton1";
             stateProperties11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(193)))), ((int)(((byte)(255)))));
             stateProperties11.BorderRadius = 5;
@@ -764,7 +786,7 @@
             this.bunifuTextBox4.IconRight = null;
             this.bunifuTextBox4.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
             this.bunifuTextBox4.Lines = new string[0];
-            this.bunifuTextBox4.Location = new System.Drawing.Point(127, 138);
+            this.bunifuTextBox4.Location = new System.Drawing.Point(198, 155);
             this.bunifuTextBox4.MaxLength = 32767;
             this.bunifuTextBox4.MinimumSize = new System.Drawing.Size(100, 35);
             this.bunifuTextBox4.Modified = false;
@@ -799,7 +821,7 @@
             this.bunifuTextBox4.SelectionLength = 0;
             this.bunifuTextBox4.SelectionStart = 0;
             this.bunifuTextBox4.ShortcutsEnabled = true;
-            this.bunifuTextBox4.Size = new System.Drawing.Size(253, 35);
+            this.bunifuTextBox4.Size = new System.Drawing.Size(253, 37);
             this.bunifuTextBox4.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox4.TabIndex = 16;
             this.bunifuTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -815,9 +837,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
-            this.label4.Location = new System.Drawing.Point(26, 144);
+            this.label4.Location = new System.Drawing.Point(97, 161);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 22);
+            this.label4.Size = new System.Drawing.Size(99, 27);
             this.label4.TabIndex = 15;
             this.label4.Text = "Tên món";
             // 
@@ -826,9 +848,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
-            this.label3.Location = new System.Drawing.Point(21, 76);
+            this.label3.Location = new System.Drawing.Point(92, 93);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 22);
+            this.label3.Size = new System.Drawing.Size(103, 27);
             this.label3.TabIndex = 13;
             this.label3.Text = "Loại món";
             // 
@@ -908,23 +930,24 @@
             this.btnBan.TextFont = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBan.Click += new System.EventHandler(this.btnBan_Click);
             // 
-            // panel7
+            // listThucDon
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel7.Location = new System.Drawing.Point(589, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(10, 628);
-            this.panel7.TabIndex = 18;
+            this.listThucDon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listThucDon.HideSelection = false;
+            this.listThucDon.Location = new System.Drawing.Point(0, 0);
+            this.listThucDon.Name = "listThucDon";
+            this.listThucDon.Size = new System.Drawing.Size(542, 420);
+            this.listThucDon.TabIndex = 4;
+            this.listThucDon.UseCompatibleStateImageBehavior = false;
             // 
-            // UC_TongQuanNew
+            // UC_BanHangNew
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Name = "UC_TongQuanNew";
+            this.Name = "UC_BanHangNew";
             this.Size = new System.Drawing.Size(1151, 628);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -934,6 +957,7 @@
             this.panel9.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.pageThanhToan.ResumeLayout(false);
+            this.tabBan.ResumeLayout(false);
             this.tabThucDon.ResumeLayout(false);
             this.tabThucDon.PerformLayout();
             this.ResumeLayout(false);
@@ -957,7 +981,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel8;
         private Bunifu.UI.WinForms.BunifuPages pageThanhToan;
-        private System.Windows.Forms.TabPage tabBan;
         private System.Windows.Forms.TabPage tabThucDon;
         private Bunifu.Framework.UI.BunifuFlatButton btnThucDon;
         private Bunifu.Framework.UI.BunifuFlatButton btnBan;
@@ -968,9 +991,12 @@
         private Bunifu.UI.WinForms.BunifuDropdown bunifuDropdown2;
         private System.Windows.Forms.Panel panel9;
         private Bunifu.UI.WinForms.BunifuDropdown bunifuDropdown1;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton18;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnThanhToan;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.FlowLayoutPanel fpnlBanAn;
+        private System.Windows.Forms.TabPage tabBan;
+        private System.Windows.Forms.ListView listThucDon;
     }
 }
