@@ -18,8 +18,8 @@ namespace QuanLyKhachHang
 {
     public partial class frDashboard : Form
     {
-        int panelWidth;
-        bool isCollapse;
+
+        
         public frDashboard()
         {
             InitializeComponent();
@@ -28,8 +28,13 @@ namespace QuanLyKhachHang
             timerDongHo.Start();
             UC_TongQuan uctq = new UC_TongQuan();
             addControltoPanel(uctq);
-        }
 
+        }
+        #region Giao diện
+
+
+        int panelWidth;
+        bool isCollapse;
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (isCollapse)
@@ -147,8 +152,7 @@ namespace QuanLyKhachHang
                 this.Close();
         }
 
-      
 
-       
+        #endregion
     }
 }

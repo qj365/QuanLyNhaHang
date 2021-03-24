@@ -24,10 +24,7 @@ namespace QuanLyKhachHang.DTO
         public PhieuYeuCau(DataRow row)
         {
             Mapyc = row["mapyc"].ToString();
-            //Ngaylap = (DateTime?)row["ngaylap"];
-            var ngaylapTemp = row["Ngaylap"];
-            if (ngaylapTemp.ToString() != "")
-                Ngaylap = (DateTime?)ngaylapTemp;
+            Ngaylap = (DateTime?)row["ngaylap"];
             Username = row["username"].ToString();
             Makh = row["makh"].ToString();
         }

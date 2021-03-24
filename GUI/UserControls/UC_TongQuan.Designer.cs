@@ -66,10 +66,9 @@
             this.label1.Location = new System.Drawing.Point(521, 48);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 22);
+            this.label1.Size = new System.Drawing.Size(116, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tổng quan";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
@@ -90,7 +89,7 @@
             this.label3.Location = new System.Drawing.Point(28, 26);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 19);
+            this.label3.Size = new System.Drawing.Size(82, 23);
             this.label3.TabIndex = 3;
             this.label3.Text = "450.000";
             // 
@@ -102,7 +101,7 @@
             this.label2.Location = new System.Drawing.Point(18, 45);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 30);
+            this.label2.Size = new System.Drawing.Size(110, 39);
             this.label2.TabIndex = 2;
             this.label2.Text = "Doanh thu";
             // 
@@ -125,7 +124,7 @@
             this.label4.Location = new System.Drawing.Point(30, 26);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 22);
+            this.label4.Size = new System.Drawing.Size(84, 27);
             this.label4.TabIndex = 3;
             this.label4.Text = "600.000";
             // 
@@ -137,7 +136,7 @@
             this.label5.Location = new System.Drawing.Point(27, 45);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 22);
+            this.label5.Size = new System.Drawing.Size(94, 27);
             this.label5.TabIndex = 2;
             this.label5.Text = "Tổng chi";
             // 
@@ -160,7 +159,7 @@
             this.label6.Location = new System.Drawing.Point(49, 26);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 22);
+            this.label6.Size = new System.Drawing.Size(45, 27);
             this.label6.TabIndex = 3;
             this.label6.Text = "100";
             // 
@@ -172,7 +171,7 @@
             this.label7.Location = new System.Drawing.Point(25, 45);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 22);
+            this.label7.Size = new System.Drawing.Size(122, 27);
             this.label7.TabIndex = 2;
             this.label7.Text = "Số hoá đơn";
             // 
@@ -208,7 +207,7 @@
             this.label10.Location = new System.Drawing.Point(28, 26);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(69, 22);
+            this.label10.Size = new System.Drawing.Size(84, 27);
             this.label10.TabIndex = 3;
             this.label10.Text = "450.000";
             // 
@@ -227,7 +226,7 @@
             this.label9.Location = new System.Drawing.Point(18, 45);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(97, 22);
+            this.label9.Size = new System.Drawing.Size(117, 27);
             this.label9.TabIndex = 2;
             this.label9.Text = "Doanh thu";
             // 
@@ -243,7 +242,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 100);
             this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
             // panel2
             // 
@@ -257,7 +255,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 100);
             this.panel2.TabIndex = 2;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
             // chartTongQuan
             // 
@@ -281,7 +278,7 @@
             this.chartTongQuan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.chartTongQuan.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chartTongQuan.Location = new System.Drawing.Point(162, 268);
-            this.chartTongQuan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chartTongQuan.Margin = new System.Windows.Forms.Padding(4);
             this.chartTongQuan.Name = "chartTongQuan";
             this.chartTongQuan.Size = new System.Drawing.Size(827, 322);
             this.chartTongQuan.TabIndex = 3;
@@ -296,10 +293,9 @@
             this.label8.Location = new System.Drawing.Point(51, 66);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 22);
+            this.label8.Size = new System.Drawing.Size(104, 27);
             this.label8.TabIndex = 0;
             this.label8.Text = "Thời gian";
-            this.label8.Click += new System.EventHandler(this.label1_Click);
             // 
             // bunifuDropdown1
             // 

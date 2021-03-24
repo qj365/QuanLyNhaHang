@@ -71,7 +71,17 @@ namespace QuanLyKhachHang.GUI.UserControls
 
         void showBill(string maban)
         {
+            lsvThucDon.Items.Clear();
             List<ChiTietDatMon> ctList = ChiTietDatMonDAO.Instance.getChiTietDatMon(PhieuYeuCauDAO.Instance.getPycByMaban(maban));
+            foreach (ChiTietDatMon item in ctList)
+            {
+             
+                ListViewItem listItem = new ListViewItem(MonAnDAO.Instance.getTenMonByMaMon(item.Mama.ToString()));
+                listItem.SubItems.Add(item.Dongia.ToString());
+                listItem.SubItems.Add(item.Soluong.ToString());
+                listItem.SubItems.Add(item.Thanhtien.ToString());
+                lsvThucDon.Items.Add(listItem);
+            }
         }
 
 

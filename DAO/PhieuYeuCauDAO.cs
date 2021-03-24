@@ -25,7 +25,7 @@ namespace QuanLyKhachHang.DAO
             DataTable data = DataProvider.Instance.executeQuery("select * from BANAN where MABAN = '"+maban+"' and MAPYC is not null");
             if(data.Rows.Count > 0)
             {
-                PhieuYeuCau pyc = new PhieuYeuCau(data.Rows[0]);
+                Table pyc = new Table(data.Rows[0]);
                 return pyc.Mapyc;
             }
             return "-1";

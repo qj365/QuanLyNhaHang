@@ -15,11 +15,7 @@ namespace QuanLyKhachHang.UserControls
         public UC_TongQuan()
         {
             InitializeComponent();
-        }
-
-        private void panel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
+            bunifuDropdown1.SelectedIndex = 0;
         }
         private void loadChart()
         {
@@ -50,13 +46,11 @@ namespace QuanLyKhachHang.UserControls
             chartTongQuan.Render(canvas);
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            loadChart();
-        }
+        
 
         private void UC_TongQuan_Load(object sender, EventArgs e)
         {
+            loadChart();
 
         }
     }

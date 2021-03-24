@@ -23,5 +23,10 @@ namespace QuanLyKhachHang.DAO
             DataTable result = DataProvider.Instance.executeQuery(q); 
             return result.Rows.Count>0;
         }
+        public string getNameByUsername(string username)
+        {
+            string data = DataProvider.Instance.executeScalar("select HOTEN from TAIKHOAN where USERNAME = '" + username + "'").ToString();
+            return data;
+        }
     }
 }
