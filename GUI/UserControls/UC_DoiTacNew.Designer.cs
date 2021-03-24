@@ -204,7 +204,7 @@
             this.btnKhach.Text = "Khách hàng";
             this.btnKhach.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnKhach.Textcolor = System.Drawing.Color.White;
-            this.btnKhach.TextFont = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKhach.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKhach.Click += new System.EventHandler(this.btnKhach_Click);
             // 
             // btnNhaCungCap
@@ -241,7 +241,7 @@
             this.btnNhaCungCap.Text = "Nhà cung cấp";
             this.btnNhaCungCap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnNhaCungCap.Textcolor = System.Drawing.Color.White;
-            this.btnNhaCungCap.TextFont = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhaCungCap.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhaCungCap.Click += new System.EventHandler(this.btnNhaCungCap_Click);
             // 
             // pageDoiTac
@@ -253,10 +253,10 @@
             this.pageDoiTac.Location = new System.Drawing.Point(3, 66);
             this.pageDoiTac.Multiline = true;
             this.pageDoiTac.Name = "pageDoiTac";
-            this.pageDoiTac.Page = this.tabPage1;
-            this.pageDoiTac.PageIndex = 0;
-            this.pageDoiTac.PageName = "tabPage1";
-            this.pageDoiTac.PageTitle = "tabPage1";
+            this.pageDoiTac.Page = this.tabPage2;
+            this.pageDoiTac.PageIndex = 1;
+            this.pageDoiTac.PageName = "tabPage2";
+            this.pageDoiTac.PageTitle = "tabPage2";
             this.pageDoiTac.SelectedIndex = 0;
             this.pageDoiTac.Size = new System.Drawing.Size(1145, 559);
             this.pageDoiTac.TabIndex = 3;
@@ -304,7 +304,7 @@
             this.groupBox4.Controls.Add(this.bunifuButton8);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.bunifuButton9);
-            this.groupBox4.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.groupBox4.Location = new System.Drawing.Point(682, 6);
             this.groupBox4.Name = "groupBox4";
@@ -337,7 +337,7 @@
             this.bunifuButton10.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.bunifuButton10.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.bunifuButton10.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton10.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.bunifuButton10.ForeColor = System.Drawing.Color.White;
             this.bunifuButton10.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuButton10.IconMarginLeft = 11;
@@ -400,7 +400,7 @@
             this.bunifuButton11.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.bunifuButton11.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.bunifuButton11.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton11.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.bunifuButton11.ForeColor = System.Drawing.Color.White;
             this.bunifuButton11.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuButton11.IconMarginLeft = 11;
@@ -456,7 +456,7 @@
             this.bunifuTextBox12.BorderThickness = 1;
             this.bunifuTextBox12.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.bunifuTextBox12.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTextBox12.DefaultFont = new System.Drawing.Font("Open Sans", 11.25F);
+            this.bunifuTextBox12.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.bunifuTextBox12.DefaultText = "";
             this.bunifuTextBox12.FillColor = System.Drawing.Color.White;
             this.bunifuTextBox12.HideSelection = true;
@@ -501,7 +501,7 @@
             this.bunifuTextBox12.SelectionLength = 0;
             this.bunifuTextBox12.SelectionStart = 0;
             this.bunifuTextBox12.ShortcutsEnabled = true;
-            this.bunifuTextBox12.Size = new System.Drawing.Size(253, 37);
+            this.bunifuTextBox12.Size = new System.Drawing.Size(253, 35);
             this.bunifuTextBox12.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox12.TabIndex = 23;
             this.bunifuTextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -529,7 +529,7 @@
             this.bunifuTextBox13.BorderThickness = 1;
             this.bunifuTextBox13.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.bunifuTextBox13.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTextBox13.DefaultFont = new System.Drawing.Font("Open Sans", 11.25F);
+            this.bunifuTextBox13.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.bunifuTextBox13.DefaultText = "";
             this.bunifuTextBox13.FillColor = System.Drawing.Color.White;
             this.bunifuTextBox13.HideSelection = true;
@@ -574,7 +574,7 @@
             this.bunifuTextBox13.SelectionLength = 0;
             this.bunifuTextBox13.SelectionStart = 0;
             this.bunifuTextBox13.ShortcutsEnabled = true;
-            this.bunifuTextBox13.Size = new System.Drawing.Size(253, 37);
+            this.bunifuTextBox13.Size = new System.Drawing.Size(253, 35);
             this.bunifuTextBox13.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox13.TabIndex = 22;
             this.bunifuTextBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -609,7 +609,7 @@
             this.bunifuButton7.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.bunifuButton7.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.bunifuButton7.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton7.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.bunifuButton7.ForeColor = System.Drawing.Color.White;
             this.bunifuButton7.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuButton7.IconMarginLeft = 11;
@@ -665,7 +665,7 @@
             this.bunifuTextBox11.BorderThickness = 1;
             this.bunifuTextBox11.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.bunifuTextBox11.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTextBox11.DefaultFont = new System.Drawing.Font("Open Sans", 11.25F);
+            this.bunifuTextBox11.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.bunifuTextBox11.DefaultText = "";
             this.bunifuTextBox11.FillColor = System.Drawing.Color.White;
             this.bunifuTextBox11.HideSelection = true;
@@ -710,7 +710,7 @@
             this.bunifuTextBox11.SelectionLength = 0;
             this.bunifuTextBox11.SelectionStart = 0;
             this.bunifuTextBox11.ShortcutsEnabled = true;
-            this.bunifuTextBox11.Size = new System.Drawing.Size(253, 37);
+            this.bunifuTextBox11.Size = new System.Drawing.Size(253, 35);
             this.bunifuTextBox11.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox11.TabIndex = 22;
             this.bunifuTextBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -725,11 +725,11 @@
             // 
             this.label10.AutoSize = true;
             this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label10.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label10.Location = new System.Drawing.Point(9, 134);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(168, 27);
+            this.label10.Size = new System.Drawing.Size(168, 25);
             this.label10.TabIndex = 20;
             this.label10.Text = "Tên khách hàng";
             // 
@@ -737,11 +737,11 @@
             // 
             this.label11.AutoSize = true;
             this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label11.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label11.Location = new System.Drawing.Point(41, 187);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 27);
+            this.label11.Size = new System.Drawing.Size(56, 25);
             this.label11.TabIndex = 21;
             this.label11.Text = "SĐT";
             // 
@@ -769,7 +769,7 @@
             this.bunifuButton8.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.bunifuButton8.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.bunifuButton8.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton8.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.bunifuButton8.ForeColor = System.Drawing.Color.White;
             this.bunifuButton8.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuButton8.IconMarginLeft = 11;
@@ -807,16 +807,17 @@
             this.bunifuButton8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuButton8.TextMarginLeft = 15;
             this.bunifuButton8.UseDefaultRadiusAndThickness = true;
+            this.bunifuButton8.Click += new System.EventHandler(this.bunifuButton8_Click);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label9.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label9.Location = new System.Drawing.Point(11, 81);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(162, 27);
+            this.label9.Size = new System.Drawing.Size(160, 25);
             this.label9.TabIndex = 21;
             this.label9.Text = "Mã khách hàng";
             // 
@@ -844,7 +845,7 @@
             this.bunifuButton9.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.bunifuButton9.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.bunifuButton9.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton9.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.bunifuButton9.ForeColor = System.Drawing.Color.White;
             this.bunifuButton9.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuButton9.IconMarginLeft = 11;
@@ -890,7 +891,7 @@
             this.groupBox3.Controls.Add(this.bunifuTextBox10);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
@@ -923,7 +924,7 @@
             this.bunifuButton5.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.bunifuButton5.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.bunifuButton5.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton5.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.bunifuButton5.ForeColor = System.Drawing.Color.White;
             this.bunifuButton5.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuButton5.IconMarginLeft = 11;
@@ -979,7 +980,7 @@
             this.bunifuTextBox9.BorderThickness = 1;
             this.bunifuTextBox9.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.bunifuTextBox9.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTextBox9.DefaultFont = new System.Drawing.Font("Open Sans", 11.25F);
+            this.bunifuTextBox9.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.bunifuTextBox9.DefaultText = "";
             this.bunifuTextBox9.FillColor = System.Drawing.Color.White;
             this.bunifuTextBox9.HideSelection = true;
@@ -1024,7 +1025,7 @@
             this.bunifuTextBox9.SelectionLength = 0;
             this.bunifuTextBox9.SelectionStart = 0;
             this.bunifuTextBox9.ShortcutsEnabled = true;
-            this.bunifuTextBox9.Size = new System.Drawing.Size(253, 37);
+            this.bunifuTextBox9.Size = new System.Drawing.Size(253, 35);
             this.bunifuTextBox9.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox9.TabIndex = 23;
             this.bunifuTextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1052,7 +1053,7 @@
             this.bunifuTextBox10.BorderThickness = 1;
             this.bunifuTextBox10.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.bunifuTextBox10.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTextBox10.DefaultFont = new System.Drawing.Font("Open Sans", 11.25F);
+            this.bunifuTextBox10.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.bunifuTextBox10.DefaultText = "";
             this.bunifuTextBox10.FillColor = System.Drawing.Color.White;
             this.bunifuTextBox10.HideSelection = true;
@@ -1097,7 +1098,7 @@
             this.bunifuTextBox10.SelectionLength = 0;
             this.bunifuTextBox10.SelectionStart = 0;
             this.bunifuTextBox10.ShortcutsEnabled = true;
-            this.bunifuTextBox10.Size = new System.Drawing.Size(253, 37);
+            this.bunifuTextBox10.Size = new System.Drawing.Size(253, 35);
             this.bunifuTextBox10.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox10.TabIndex = 22;
             this.bunifuTextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1112,11 +1113,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label7.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label7.Location = new System.Drawing.Point(22, 84);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(168, 27);
+            this.label7.Size = new System.Drawing.Size(168, 25);
             this.label7.TabIndex = 20;
             this.label7.Text = "Tên khách hàng";
             // 
@@ -1124,11 +1125,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label8.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label8.Location = new System.Drawing.Point(24, 30);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(162, 27);
+            this.label8.Size = new System.Drawing.Size(160, 25);
             this.label8.TabIndex = 21;
             this.label8.Text = "Mã khách hàng";
             // 
@@ -1187,7 +1188,7 @@
             this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.bunifuButton3);
-            this.groupBox1.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.groupBox1.Location = new System.Drawing.Point(708, 3);
             this.groupBox1.Name = "groupBox1";
@@ -1220,7 +1221,7 @@
             this.bunifuButton6.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.bunifuButton6.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.bunifuButton6.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton6.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.bunifuButton6.ForeColor = System.Drawing.Color.White;
             this.bunifuButton6.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuButton6.IconMarginLeft = 11;
@@ -1283,7 +1284,7 @@
             this.bunifuButton12.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.bunifuButton12.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.bunifuButton12.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton12.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuButton12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.bunifuButton12.ForeColor = System.Drawing.Color.White;
             this.bunifuButton12.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuButton12.IconMarginLeft = 11;
@@ -1339,7 +1340,7 @@
             this.bunifuTextBox1.BorderThickness = 1;
             this.bunifuTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.bunifuTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTextBox1.DefaultFont = new System.Drawing.Font("Open Sans", 11.25F);
+            this.bunifuTextBox1.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.bunifuTextBox1.DefaultText = "";
             this.bunifuTextBox1.FillColor = System.Drawing.Color.White;
             this.bunifuTextBox1.HideSelection = true;
@@ -1384,7 +1385,7 @@
             this.bunifuTextBox1.SelectionLength = 0;
             this.bunifuTextBox1.SelectionStart = 0;
             this.bunifuTextBox1.ShortcutsEnabled = true;
-            this.bunifuTextBox1.Size = new System.Drawing.Size(253, 37);
+            this.bunifuTextBox1.Size = new System.Drawing.Size(253, 35);
             this.bunifuTextBox1.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox1.TabIndex = 23;
             this.bunifuTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1412,7 +1413,7 @@
             this.bunifuTextBox6.BorderThickness = 1;
             this.bunifuTextBox6.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.bunifuTextBox6.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTextBox6.DefaultFont = new System.Drawing.Font("Open Sans", 11.25F);
+            this.bunifuTextBox6.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.bunifuTextBox6.DefaultText = "";
             this.bunifuTextBox6.FillColor = System.Drawing.Color.White;
             this.bunifuTextBox6.HideSelection = true;
@@ -1457,7 +1458,7 @@
             this.bunifuTextBox6.SelectionLength = 0;
             this.bunifuTextBox6.SelectionStart = 0;
             this.bunifuTextBox6.ShortcutsEnabled = true;
-            this.bunifuTextBox6.Size = new System.Drawing.Size(253, 37);
+            this.bunifuTextBox6.Size = new System.Drawing.Size(253, 35);
             this.bunifuTextBox6.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox6.TabIndex = 22;
             this.bunifuTextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1485,7 +1486,7 @@
             this.bunifuTextBox2.BorderThickness = 1;
             this.bunifuTextBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.bunifuTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTextBox2.DefaultFont = new System.Drawing.Font("Open Sans", 11.25F);
+            this.bunifuTextBox2.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.bunifuTextBox2.DefaultText = "";
             this.bunifuTextBox2.FillColor = System.Drawing.Color.White;
             this.bunifuTextBox2.HideSelection = true;
@@ -1530,7 +1531,7 @@
             this.bunifuTextBox2.SelectionLength = 0;
             this.bunifuTextBox2.SelectionStart = 0;
             this.bunifuTextBox2.ShortcutsEnabled = true;
-            this.bunifuTextBox2.Size = new System.Drawing.Size(253, 37);
+            this.bunifuTextBox2.Size = new System.Drawing.Size(253, 35);
             this.bunifuTextBox2.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox2.TabIndex = 22;
             this.bunifuTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1565,7 +1566,7 @@
             this.bunifuButton1.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.bunifuButton1.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.bunifuButton1.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton1.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.bunifuButton1.ForeColor = System.Drawing.Color.White;
             this.bunifuButton1.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuButton1.IconMarginLeft = 11;
@@ -1621,7 +1622,7 @@
             this.bunifuTextBox3.BorderThickness = 1;
             this.bunifuTextBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.bunifuTextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTextBox3.DefaultFont = new System.Drawing.Font("Open Sans", 11.25F);
+            this.bunifuTextBox3.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.bunifuTextBox3.DefaultText = "";
             this.bunifuTextBox3.FillColor = System.Drawing.Color.White;
             this.bunifuTextBox3.HideSelection = true;
@@ -1666,7 +1667,7 @@
             this.bunifuTextBox3.SelectionLength = 0;
             this.bunifuTextBox3.SelectionStart = 0;
             this.bunifuTextBox3.ShortcutsEnabled = true;
-            this.bunifuTextBox3.Size = new System.Drawing.Size(253, 37);
+            this.bunifuTextBox3.Size = new System.Drawing.Size(253, 35);
             this.bunifuTextBox3.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox3.TabIndex = 22;
             this.bunifuTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1681,11 +1682,11 @@
             // 
             this.label6.AutoSize = true;
             this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label6.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label6.Location = new System.Drawing.Point(49, 233);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 27);
+            this.label6.Size = new System.Drawing.Size(78, 25);
             this.label6.TabIndex = 21;
             this.label6.Text = "Địa chỉ";
             // 
@@ -1693,11 +1694,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label1.Location = new System.Drawing.Point(13, 127);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(184, 27);
+            this.label1.Size = new System.Drawing.Size(186, 25);
             this.label1.TabIndex = 20;
             this.label1.Text = "Tên nhà cung cấp";
             // 
@@ -1705,11 +1706,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label2.Location = new System.Drawing.Point(49, 180);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 27);
+            this.label2.Size = new System.Drawing.Size(56, 25);
             this.label2.TabIndex = 21;
             this.label2.Text = "SĐT";
             // 
@@ -1737,7 +1738,7 @@
             this.btnThem.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnThem.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnThem.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnThem.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
             this.btnThem.IconMarginLeft = 11;
@@ -1775,16 +1776,17 @@
             this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnThem.TextMarginLeft = 15;
             this.btnThem.UseDefaultRadiusAndThickness = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label3.Location = new System.Drawing.Point(15, 74);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(178, 27);
+            this.label3.Size = new System.Drawing.Size(178, 25);
             this.label3.TabIndex = 21;
             this.label3.Text = "Mã nhà cung cấp";
             // 
@@ -1812,7 +1814,7 @@
             this.bunifuButton3.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.bunifuButton3.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.bunifuButton3.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton3.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.bunifuButton3.ForeColor = System.Drawing.Color.White;
             this.bunifuButton3.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuButton3.IconMarginLeft = 11;
@@ -1858,7 +1860,7 @@
             this.groupBox2.Controls.Add(this.bunifuTextBox5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
@@ -1891,7 +1893,7 @@
             this.bunifuButton4.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.bunifuButton4.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.bunifuButton4.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton4.Font = new System.Drawing.Font("Open Sans SemiBold", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.bunifuButton4.ForeColor = System.Drawing.Color.White;
             this.bunifuButton4.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuButton4.IconMarginLeft = 11;
@@ -1947,7 +1949,7 @@
             this.bunifuTextBox4.BorderThickness = 1;
             this.bunifuTextBox4.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.bunifuTextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTextBox4.DefaultFont = new System.Drawing.Font("Open Sans", 11.25F);
+            this.bunifuTextBox4.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.bunifuTextBox4.DefaultText = "";
             this.bunifuTextBox4.FillColor = System.Drawing.Color.White;
             this.bunifuTextBox4.HideSelection = true;
@@ -1992,7 +1994,7 @@
             this.bunifuTextBox4.SelectionLength = 0;
             this.bunifuTextBox4.SelectionStart = 0;
             this.bunifuTextBox4.ShortcutsEnabled = true;
-            this.bunifuTextBox4.Size = new System.Drawing.Size(253, 37);
+            this.bunifuTextBox4.Size = new System.Drawing.Size(253, 35);
             this.bunifuTextBox4.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox4.TabIndex = 23;
             this.bunifuTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -2020,7 +2022,7 @@
             this.bunifuTextBox5.BorderThickness = 1;
             this.bunifuTextBox5.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             this.bunifuTextBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuTextBox5.DefaultFont = new System.Drawing.Font("Open Sans", 11.25F);
+            this.bunifuTextBox5.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.bunifuTextBox5.DefaultText = "";
             this.bunifuTextBox5.FillColor = System.Drawing.Color.White;
             this.bunifuTextBox5.HideSelection = true;
@@ -2065,7 +2067,7 @@
             this.bunifuTextBox5.SelectionLength = 0;
             this.bunifuTextBox5.SelectionStart = 0;
             this.bunifuTextBox5.ShortcutsEnabled = true;
-            this.bunifuTextBox5.Size = new System.Drawing.Size(253, 37);
+            this.bunifuTextBox5.Size = new System.Drawing.Size(253, 35);
             this.bunifuTextBox5.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox5.TabIndex = 22;
             this.bunifuTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -2080,11 +2082,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label4.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label4.Location = new System.Drawing.Point(22, 84);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(184, 27);
+            this.label4.Size = new System.Drawing.Size(186, 25);
             this.label4.TabIndex = 20;
             this.label4.Text = "Tên nhà cung cấp";
             // 
@@ -2092,11 +2094,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label5.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label5.Location = new System.Drawing.Point(24, 30);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(178, 27);
+            this.label5.Size = new System.Drawing.Size(178, 25);
             this.label5.TabIndex = 21;
             this.label5.Text = "Mã nhà cung cấp";
             // 
