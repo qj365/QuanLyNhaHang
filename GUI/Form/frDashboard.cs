@@ -1,4 +1,5 @@
 ﻿using BunifuAnimatorNS;
+using QuanLyKhachHang.DAO;
 using QuanLyKhachHang.GUI.UserControls;
 using QuanLyKhachHang.GUI.UserControls.DanhMuc;
 using QuanLyKhachHang.GUI.UserControls.DoiTac;
@@ -28,6 +29,8 @@ namespace QuanLyKhachHang
             timerDongHo.Start();
             UC_TongQuan uctq = new UC_TongQuan();
             addControltoPanel(uctq);
+            lblHoTen.Text = AccountDAO.hoten;
+            lblPhanQuyen.Text = AccountDAO.phanquyen;
 
         }
         #region Giao diện

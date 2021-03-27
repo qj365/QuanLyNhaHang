@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyKhachHang.DAO;
+using QuanLyKhachHang.DTO;
 
 namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
 {
@@ -15,16 +17,21 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
         public UC_DanhMucNew()
         {
             InitializeComponent();
+            loadMonAn();
         }
 
         private void btnMon_Click(object sender, EventArgs e)
         {
             pageDanhMuc.SelectTab(0);
+            clearAllBindings();
+            loadMonAn();
         }
 
         private void btnLoai_Click(object sender, EventArgs e)
         {
             pageDanhMuc.SelectTab(1);
+            clearAllBindings();
+            loadLoaiMon();
         }
 
         private void btnNhanVien_Click(object sender, EventArgs e)
@@ -48,13 +55,72 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
                 f.ShowDialog();
         }
 
-        #region Món ăn
+        void clearAllBindings()
+        {
+            ClearAllBindingsLoaiMon();
+            ClearAllBindingsMonAn();
+        }
 
+        #region Món ăn
+        void loadMonAn()
+        {
+            loadMonAnList();
+            monAnBinding();
+            loadLoaiMonComboBox();
+            
+            
+        }
+        void loadMonAnList()
+        {
+            dtgvMonAn.DataSource = MonAnDAO.Instance.getMonAnList();
+        }
+
+        void loadLoaiMonComboBox()
+        {
+            List<LoaiMon> list = LoaiMonDAO.Instance.getListLoaiMon();
+            cbbLoaiMon.DataSource = list;
+            cbbLoaiMon.DisplayMember = "Tenlm";
+
+        }
+
+        void monAnBinding()
+        {
+            txtMaMon.DataBindings.Add(new Binding("text", dtgvMonAn.DataSource, "mama"));
+            txtTenMon.DataBindings.Add(new Binding("text", dtgvMonAn.DataSource, "tenmonan"));
+            txtDVT.DataBindings.Add(new Binding("text", dtgvMonAn.DataSource, "dvt"));
+            txtDonGia.DataBindings.Add(new Binding("text", dtgvMonAn.DataSource, "dongia"));
+            cbbLoaiMon.DataBindings.Add(new Binding("Text", dtgvMonAn.DataSource, "Maloai"));
+        }
+        void ClearAllBindingsMonAn()
+        {
+            foreach (Control c in grbChinhSuaMon.Controls)
+                c.DataBindings.Clear();
+        }
         #endregion
 
 
         #region Loại món
 
+        void loadLoaiMon()
+        {
+            loadLoaiMonList();
+            loaiMonBinding();
+            
+        }
+        void loadLoaiMonList()
+        {
+            dtgvLoaiMon.DataSource = LoaiMonDAO.Instance.getListLoaiMon();
+        }
+        void loaiMonBinding()
+        {
+            txtMaLoaiMon.DataBindings.Add(new Binding("Text", dtgvLoaiMon.DataSource, "Malm"));
+            txtTenLoaiMon.DataBindings.Add(new Binding("text", dtgvLoaiMon.DataSource, "Tenlm"));
+        }
+        void ClearAllBindingsLoaiMon()
+        {
+            foreach (Control c in grbChinhSuaLoai.Controls)
+                c.DataBindings.Clear();
+        }
         #endregion
 
 

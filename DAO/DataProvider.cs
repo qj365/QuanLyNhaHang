@@ -12,7 +12,7 @@ namespace QuanLyKhachHang.DAO
     {
         private static DataProvider instance;
 
-        string connectionStr = @"Data Source=DESKTOP-EIE72SO;Initial Catalog=QUANLYNHAHANG;Integrated Security=True";
+        string connectionStr = @"Data Source=.\sqlexpress;Initial Catalog=QUANLYNHAHANG;Integrated Security=True";
 
         internal static DataProvider Instance 
         {

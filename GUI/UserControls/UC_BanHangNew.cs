@@ -18,8 +18,10 @@ namespace QuanLyKhachHang.GUI.UserControls
         {
             InitializeComponent();
             loadTable();
+            loadLoaiMon();
         }
 
+        #region Giao Diện
         private void btnBan_Click(object sender, EventArgs e)
         {
             pageThanhToan.SetPage(tabBan);
@@ -38,6 +40,7 @@ namespace QuanLyKhachHang.GUI.UserControls
                 frtt.ShowDialog();
             }
         }
+        #endregion
 
         #region Methods
         void loadTable()
@@ -73,17 +76,32 @@ namespace QuanLyKhachHang.GUI.UserControls
         {
             lsvThucDon.Items.Clear();
             List<ChiTietDatMon> ctList = ChiTietDatMonDAO.Instance.getChiTietDatMon(PhieuYeuCauDAO.Instance.getPycByMaban(maban));
+            int tongTien = 0;
             foreach (ChiTietDatMon item in ctList)
-            {
-             
+            {   
                 ListViewItem listItem = new ListViewItem(MonAnDAO.Instance.getTenMonByMaMon(item.Mama.ToString()));
                 listItem.SubItems.Add(item.Dongia.ToString());
                 listItem.SubItems.Add(item.Soluong.ToString());
                 listItem.SubItems.Add(item.Thanhtien.ToString());
                 lsvThucDon.Items.Add(listItem);
+
+                tongTien += item.Thanhtien;
             }
+            lblTongTien.Text = tongTien.ToString("N0") + "đ";
         }
 
+        void loadLoaiMon()
+        {
+            List<LoaiMon> list = LoaiMonDAO.Instance.getListLoaiMon();
+            cbLoaiMon.DataSource = list;
+            cbLoaiMon.DisplayMember = "Tenlm";
+        }
+        void loadMonAnbyLoaiMon(string maloai)
+        {
+            List<MonAn> list = MonAnDAO.Instance.getMonAnByLoaiMon(maloai);
+            cbMonAn.DataSource = list;
+            cbMonAn.DisplayMember = "Tenmon";
+        }
 
         #endregion
 
@@ -94,9 +112,20 @@ namespace QuanLyKhachHang.GUI.UserControls
             string maban = ((sender as Button).Tag as Table).Maban;
             showBill(maban);
         }
-
+        private void cbLoaiMon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string maloai = "";
+            ComboBox cb = sender as ComboBox;
+            if (cb.SelectedItem == null)
+                return;
+            LoaiMon selected = cb.SelectedItem as LoaiMon;
+            maloai = selected.Malm;
+            loadMonAnbyLoaiMon(maloai);
+        }
 
 
         #endregion
+
+
     }
 }

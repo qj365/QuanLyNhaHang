@@ -41,9 +41,9 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblTime = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblPhanQuyen = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblHoTen = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
@@ -177,9 +177,9 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.panel4.Controls.Add(this.lblTime);
-            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.lblPhanQuyen);
             this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.lblHoTen);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(215, 48);
@@ -199,16 +199,16 @@
             this.lblTime.TabIndex = 1;
             this.lblTime.Text = "HH:MM:SS";
             // 
-            // label7
+            // lblPhanQuyen
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(181, 46);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(88, 27);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Quản lý";
+            this.lblPhanQuyen.AutoSize = true;
+            this.lblPhanQuyen.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhanQuyen.ForeColor = System.Drawing.Color.White;
+            this.lblPhanQuyen.Location = new System.Drawing.Point(181, 46);
+            this.lblPhanQuyen.Name = "lblPhanQuyen";
+            this.lblPhanQuyen.Size = new System.Drawing.Size(88, 27);
+            this.lblPhanQuyen.TabIndex = 1;
+            this.lblPhanQuyen.Text = "Quản lý";
             // 
             // label5
             // 
@@ -221,16 +221,16 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "Chức vụ:";
             // 
-            // label6
+            // lblHoTen
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(158, 18);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(150, 27);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Nguyễn Văn A";
+            this.lblHoTen.AutoSize = true;
+            this.lblHoTen.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHoTen.ForeColor = System.Drawing.Color.White;
+            this.lblHoTen.Location = new System.Drawing.Point(158, 18);
+            this.lblHoTen.Name = "lblHoTen";
+            this.lblHoTen.Size = new System.Drawing.Size(150, 27);
+            this.lblHoTen.TabIndex = 1;
+            this.lblHoTen.Text = "Nguyễn Văn A";
             // 
             // label4
             // 
@@ -457,9 +457,9 @@
         private System.Windows.Forms.Button btnCollapse;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblPhanQuyen;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblHoTen;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Timer timer1;

@@ -17,16 +17,27 @@ namespace QuanLyKhachHang.DAO
             private set { instance = value; }
         }
         private AccountDAO() { }
+        public static string username;
+        public static string hoten;
+        public static string phanquyen;
         public bool Login(string user,string pass)
         {
             string q = "select * from TAIKHOAN where USERNAME = '" + @user + "' and PASSWORD = '" + @pass + "'";
             DataTable result = DataProvider.Instance.executeQuery(q); 
-            return result.Rows.Count>0;
+            if (result.Rows.Count>0)
+            {
+                username = result.Rows[0].Field<string>(0);
+                hoten = result.Rows[0].Field<string>(2);
+                phanquyen = result.Rows[0].Field<string>(3);
+                return true;
+            }
+            return false;
         }
         public string getNameByUsername(string username)
         {
             string data = DataProvider.Instance.executeScalar("select HOTEN from TAIKHOAN where USERNAME = '" + username + "'").ToString();
             return data;
         }
+        
     }
 }

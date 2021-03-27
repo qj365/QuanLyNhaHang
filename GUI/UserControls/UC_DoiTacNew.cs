@@ -28,7 +28,7 @@ namespace QuanLyKhachHang.GUI.UserControls.DoiTac
             pageDoiTac.SelectTab(1);
         }
 
-        private string connectionStr = @"Data Source=DESKTOP-EIE72SO;Initial Catalog=QUANLYNHAHANG;Integrated Security=True";
+        private string connectionStr = @"Data Source=.\sqlexpress;Initial Catalog=QUANLYNHAHANG;Integrated Security=True";
 
         #region KhachHang
         private void bunifuButton8_Click(object sender, EventArgs e)
