@@ -53,10 +53,13 @@ namespace QuanLyKhachHang.DAO
         public int executeNonQuery(string q, object[] parameter = null)
         {
             int data = 0;
+
             using (SqlConnection connection = new SqlConnection(connectionStr))
             {
                 connection.Open();
+
                 SqlCommand command = new SqlCommand(q, connection);
+
                 if (parameter != null)
                 {
                     string[] listPara = q.Split(' ');
@@ -65,15 +68,17 @@ namespace QuanLyKhachHang.DAO
                     {
                         if (item.Contains('@'))
                         {
-                            command.Parameters.AddWithValue(item, listPara[i]);
+                            command.Parameters.AddWithValue(item, parameter[i]);
                             i++;
                         }
                     }
                 }
-                data = command.ExecuteNonQuery();
-                connection.Close();
 
+                data = command.ExecuteNonQuery();
+
+                connection.Close();
             }
+
             return data;
         }
 

@@ -32,5 +32,9 @@ namespace QuanLyKhachHang.DAO
             }
             return ctList;
         }
+        public void insertCTDatMon(string mapyc,string mama, int soluong)
+        {
+            DataProvider.Instance.executeNonQuery("exec [dbo].[ThemCTDatMon] @mapyc , @mama , @soluong", new object[] { mapyc, mama, soluong });
+        }
     }
 }

@@ -310,6 +310,7 @@
             this.btnThemMon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnThemMon.TextMarginLeft = 15;
             this.btnThemMon.UseDefaultRadiusAndThickness = true;
+            this.btnThemMon.Click += new System.EventHandler(this.btnThemMon_Click);
             // 
             // label4
             // 

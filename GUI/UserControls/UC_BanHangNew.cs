@@ -25,7 +25,10 @@ namespace QuanLyKhachHang.GUI.UserControls
         private void btnBan_Click(object sender, EventArgs e)
         {
             pageThanhToan.SetPage(tabBan);
-            
+            fpnlBanAn.Controls.Clear();
+            loadTable();
+
+
         }
 
         private void btnThucDon_Click(object sender, EventArgs e)
@@ -54,28 +57,32 @@ namespace QuanLyKhachHang.GUI.UserControls
                 btn.Font = f;
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.ForeColor = Color.White;
+                
                 btn.Click += btn_Click;
+                
                 btn.Tag = item;
 
                 switch (item.Mapyc)
                 {
                     case "":
                         btn.BackColor = Color.FromArgb(233, 137, 126);
-                        btn.Text = "    Bàn " + item.Maban + Environment.NewLine + Environment.NewLine + "Trống";
+                        btn.Text = "Bàn " + item.Maban + Environment.NewLine + Environment.NewLine + "Trống";
                         break;
                     default:
                         btn.BackColor = Color.FromArgb(210, 56, 108);
-                        btn.Text = "    Bàn " + item.Maban + Environment.NewLine + Environment.NewLine + "Có người";
+                        btn.Text = "Bàn " + item.Maban + Environment.NewLine + Environment.NewLine + "Có người";
                         break;
                 }
                 fpnlBanAn.Controls.Add(btn);
             }
         }
 
+        
+
         void showBill(string maban)
         {
             lsvThucDon.Items.Clear();
-            List<ChiTietDatMon> ctList = ChiTietDatMonDAO.Instance.getChiTietDatMon(PhieuYeuCauDAO.Instance.getPycByMaban(maban));
+            List<ChiTietDatMon> ctList = ChiTietDatMonDAO.Instance.getChiTietDatMon(PhieuYeuCauDAO.Instance.getPycByMabanChuaThanhToan(maban));
             int tongTien = 0;
             foreach (ChiTietDatMon item in ctList)
             {   
@@ -110,7 +117,11 @@ namespace QuanLyKhachHang.GUI.UserControls
         private void btn_Click(object sender, EventArgs e)
         {
             string maban = ((sender as Button).Tag as Table).Maban;
+            lsvThucDon.Tag = (sender as Button).Tag;
             showBill(maban);
+            btnThucDon_Click(sender, e);
+            btnThucDon.selected = true;
+            btnBan.selected = false;
         }
         private void cbLoaiMon_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -122,7 +133,23 @@ namespace QuanLyKhachHang.GUI.UserControls
             maloai = selected.Malm;
             loadMonAnbyLoaiMon(maloai);
         }
-
+        private void btnThemMon_Click(object sender, EventArgs e)
+        {
+            Table table = lsvThucDon.Tag as Table;
+            string mapyc = PhieuYeuCauDAO.Instance.getPycByMabanChuaThanhToan(table.Maban);
+            string mamon = (cbMonAn.SelectedItem as MonAn).Mama;
+            if (mapyc == "-1")
+            {
+                PhieuYeuCauDAO.Instance.insertPYC("NV1", table.Maban); // chú ý
+                ChiTietDatMonDAO.Instance.insertCTDatMon(PhieuYeuCauDAO.Instance.getMaxPYC(), mamon, 1);
+            }
+            else
+            {
+                ChiTietDatMonDAO.Instance.insertCTDatMon(mapyc, mamon, 1);
+            }
+            showBill(table.Maban);
+        }
+        
 
         #endregion
 
