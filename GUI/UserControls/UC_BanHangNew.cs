@@ -19,6 +19,7 @@ namespace QuanLyKhachHang.GUI.UserControls
             InitializeComponent();
             loadTable();
             loadLoaiMon();
+            lblBan.Visible = false;
         }
 
         #region Giao Diện
@@ -86,7 +87,8 @@ namespace QuanLyKhachHang.GUI.UserControls
             int tongTien = 0;
             foreach (ChiTietDatMon item in ctList)
             {   
-                ListViewItem listItem = new ListViewItem(MonAnDAO.Instance.getTenMonByMaMon(item.Mama.ToString()));
+                ListViewItem listItem = new ListViewItem(item.Mama);
+                listItem.SubItems.Add(MonAnDAO.Instance.getTenMonByMaMon(item.Mama.ToString()));
                 listItem.SubItems.Add(item.Dongia.ToString());
                 listItem.SubItems.Add(item.Soluong.ToString());
                 listItem.SubItems.Add(item.Thanhtien.ToString());
@@ -122,6 +124,8 @@ namespace QuanLyKhachHang.GUI.UserControls
             btnThucDon_Click(sender, e);
             btnThucDon.selected = true;
             btnBan.selected = false;
+            lblBan.Text = "Bàn    " + maban;
+            lblBan.Visible = true;
         }
         private void cbLoaiMon_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -138,21 +142,88 @@ namespace QuanLyKhachHang.GUI.UserControls
             Table table = lsvThucDon.Tag as Table;
             string mapyc = PhieuYeuCauDAO.Instance.getPycByMabanChuaThanhToan(table.Maban);
             string mamon = (cbMonAn.SelectedItem as MonAn).Mama;
-            if (mapyc == "-1")
-            {
-                PhieuYeuCauDAO.Instance.insertPYC("NV1", table.Maban); // chú ý
-                ChiTietDatMonDAO.Instance.insertCTDatMon(PhieuYeuCauDAO.Instance.getMaxPYC(), mamon, 1);
-            }
+            if (txtSoLuong.Text == "")
+                return;
             else
             {
-                ChiTietDatMonDAO.Instance.insertCTDatMon(mapyc, mamon, 1);
+                int soluong = int.Parse(txtSoLuong.Text);
+
+                if (mapyc == "-1")
+                {
+                    PhieuYeuCauDAO.Instance.insertPYC("NV1", table.Maban); // chú ý
+                    ChiTietDatMonDAO.Instance.insertCTDatMon(PhieuYeuCauDAO.Instance.getMaxPYC(), mamon, soluong);
+                }
+                else
+                {
+                    ChiTietDatMonDAO.Instance.insertCTDatMon(mapyc, mamon, soluong);
+                }
+                showBill(table.Maban);
             }
-            showBill(table.Maban);
+            
         }
-        
+
+
 
         #endregion
 
+        
 
+        private void btnXoaMon_Click(object sender, EventArgs e)
+        {
+            if (pageThanhToan.Tag != null)
+            {
+                Table table = lsvThucDon.Tag as Table;
+                string mapyc = PhieuYeuCauDAO.Instance.getPycByMabanChuaThanhToan(table.Maban);
+                string mama = pageThanhToan.Tag.ToString();
+                DataProvider.Instance.executeNonQuery("delete CHITIETDATMON where MAPYC = '" + mapyc + "' and MAMA = '" + mama + "'");
+                showBill(table.Maban);
+            }
+            else return;
+        }
+
+        private void lsvThucDon_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (lsvThucDon.SelectedItems.Count == 0)
+                return;
+            ListViewItem item = lsvThucDon.SelectedItems[0];
+            pageThanhToan.Tag = item.Text;
+
+        }
+
+        private void btnCong_Click(object sender, EventArgs e)
+        {
+            if (pageThanhToan.Tag != null)
+            {
+                Table table = lsvThucDon.Tag as Table;
+                string mamon = pageThanhToan.Tag.ToString();
+                string mapyc = PhieuYeuCauDAO.Instance.getPycByMabanChuaThanhToan(table.Maban);
+                ChiTietDatMonDAO.Instance.insertCTDatMon(mapyc, mamon, 1);
+                showBill(table.Maban);
+            }
+            else return;
+        }
+
+        private void btnTru_Click(object sender, EventArgs e)
+        {
+            if (pageThanhToan.Tag != null)
+            {
+                Table table = lsvThucDon.Tag as Table;
+                string mamon = pageThanhToan.Tag.ToString();
+                string mapyc = PhieuYeuCauDAO.Instance.getPycByMabanChuaThanhToan(table.Maban);
+                ChiTietDatMonDAO.Instance.insertCTDatMon(mapyc, mamon, -1);
+                showBill(table.Maban);
+            }
+            else return;
+        }
+
+        private void btnHuyBan_Click(object sender, EventArgs e)
+        {
+            Table table = lsvThucDon.Tag as Table;
+            string mapyc = PhieuYeuCauDAO.Instance.getPycByMabanChuaThanhToan(table.Maban);
+            DataProvider.Instance.executeNonQuery("exec HuyBan @maban", new object[] {table.Maban });
+            showBill(table.Maban);
+            
+            
+        }
     }
 }
