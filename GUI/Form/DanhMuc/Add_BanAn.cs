@@ -16,8 +16,8 @@ namespace QuanLyKhachHang
 {
     public partial class Add_BanAn : Form
     {
-        BanAnDTO bandto = new BanAnDTO();
-        BanAnDAO bandao = new BanAnDAO();
+        readonly BanAnDTO bandto = new BanAnDTO();
+        readonly BanAnDAO bandao = new BanAnDAO();
         public Add_BanAn()
         {
             InitializeComponent();
@@ -35,16 +35,19 @@ namespace QuanLyKhachHang
 
         private void bunifuButtonXacNhan_Click(object sender, EventArgs e)
         {
-            
-            bandto.MABAN = textBoxmabanan.Text.ToString().Trim();
-            bandto.SOCHONGOI = int.Parse(textBoxsochongoi.Text.ToString().Trim());
-            bool themBan = bandao.ThemBA(bandto);
-            if (CheckThemBA() && themBan == true)
+
+            if (CheckThemBA())
             {
-                DialogResult result = MessageBox.Show("Thành công", "Thêm", MessageBoxButtons.OK);
-                if (result == DialogResult.OK)
+                bandto.MABAN = textBoxmabanan.Text.ToString().Trim();
+                bandto.SOCHONGOI = int.Parse(textBoxsochongoi.Text.ToString().Trim());
+                bool themBan = bandao.ThemBA(bandto);
+                if (themBan == true)
                 {
-                    btnThoat_Click(sender, e);
+                    DialogResult result = MessageBox.Show("Thành công", "Thêm", MessageBoxButtons.OK);
+                    if (result == DialogResult.OK)
+                    {
+                        btnThoat_Click(sender, e);
+                    }
                 }
             }
         }

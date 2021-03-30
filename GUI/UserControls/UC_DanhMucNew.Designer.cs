@@ -314,10 +314,10 @@
             this.pageDanhMuc.Location = new System.Drawing.Point(0, 77);
             this.pageDanhMuc.Multiline = true;
             this.pageDanhMuc.Name = "pageDanhMuc";
-            this.pageDanhMuc.Page = this.tabPage4;
-            this.pageDanhMuc.PageIndex = 3;
-            this.pageDanhMuc.PageName = "tabPage4";
-            this.pageDanhMuc.PageTitle = "tabPage4";
+            this.pageDanhMuc.Page = this.tabPage5;
+            this.pageDanhMuc.PageIndex = 4;
+            this.pageDanhMuc.PageName = "tabPage5";
+            this.pageDanhMuc.PageTitle = "tabPage5";
             this.pageDanhMuc.SelectedIndex = 0;
             this.pageDanhMuc.Size = new System.Drawing.Size(1148, 554);
             this.pageDanhMuc.TabIndex = 1;
@@ -3278,6 +3278,7 @@
             this.BtnHuyNguyenLieu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnHuyNguyenLieu.TextMarginLeft = 15;
             this.BtnHuyNguyenLieu.UseDefaultRadiusAndThickness = true;
+            this.BtnHuyNguyenLieu.Click += new System.EventHandler(this.BtnHuyNguyenLieu_Click);
             // 
             // BtnLuuNguyenLieu
             // 
@@ -3341,6 +3342,7 @@
             this.BtnLuuNguyenLieu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnLuuNguyenLieu.TextMarginLeft = 15;
             this.BtnLuuNguyenLieu.UseDefaultRadiusAndThickness = true;
+            this.BtnLuuNguyenLieu.Click += new System.EventHandler(this.BtnLuuNguyenLieu_Click);
             // 
             // BtnSuaNguyenLieu
             // 
@@ -3404,6 +3406,7 @@
             this.BtnSuaNguyenLieu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnSuaNguyenLieu.TextMarginLeft = 15;
             this.BtnSuaNguyenLieu.UseDefaultRadiusAndThickness = true;
+            this.BtnSuaNguyenLieu.Click += new System.EventHandler(this.BtnSuaNguyenLieu_Click);
             // 
             // BtnThemNguyenLieu
             // 
@@ -3467,6 +3470,7 @@
             this.BtnThemNguyenLieu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnThemNguyenLieu.TextMarginLeft = 15;
             this.BtnThemNguyenLieu.UseDefaultRadiusAndThickness = true;
+            this.BtnThemNguyenLieu.Click += new System.EventHandler(this.BtnThemNguyenLieu_Click);
             // 
             // bunifuTextBoxMaNL
             // 
@@ -3603,6 +3607,7 @@
             this.BtnXoaNguyenLieu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnXoaNguyenLieu.TextMarginLeft = 15;
             this.BtnXoaNguyenLieu.UseDefaultRadiusAndThickness = true;
+            this.BtnXoaNguyenLieu.Click += new System.EventHandler(this.BtnXoaNguyenLieu_Click);
             // 
             // label14
             // 
@@ -3970,6 +3975,7 @@
             this.bunifuCustomDataGridNL.RowHeadersWidth = 51;
             this.bunifuCustomDataGridNL.Size = new System.Drawing.Size(686, 417);
             this.bunifuCustomDataGridNL.TabIndex = 42;
+            this.bunifuCustomDataGridNL.SelectionChanged += new System.EventHandler(this.BunifuCustomDataGridNL_SelectionChanged);
             // 
             // btnBan
             // 
