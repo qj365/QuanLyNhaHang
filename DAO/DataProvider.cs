@@ -20,7 +20,7 @@ namespace QuanLyKhachHang.DAO
             private set { DataProvider.instance = value; }
         }
 
-        private DataProvider() { }
+        public DataProvider() { }
 
         public DataTable executeQuery(string q, object[] parameter = null)
         {

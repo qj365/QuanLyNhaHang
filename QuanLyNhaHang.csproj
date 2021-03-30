@@ -155,6 +155,7 @@
     <Compile Include="DAO\MonAnDAO.cs" />
     <Compile Include="DAO\PhieuYeuCauDAO.cs" />
     <Compile Include="DAO\TableDAO.cs" />
+    <Compile Include="DTO\BanAnDTO.cs" />
     <Compile Include="DTO\ChiTietDatMon.cs" />
     <Compile Include="DTO\LoaiMon.cs" />
     <Compile Include="DTO\MonAn.cs" />
