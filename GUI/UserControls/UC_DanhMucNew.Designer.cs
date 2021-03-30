@@ -2650,6 +2650,7 @@
             this.BtnHuyBanAn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnHuyBanAn.TextMarginLeft = 15;
             this.BtnHuyBanAn.UseDefaultRadiusAndThickness = true;
+            this.BtnHuyBanAn.Click += new System.EventHandler(this.BtnHuyBanAn_Click);
             // 
             // BtnLuuBanAn
             // 
@@ -2713,6 +2714,7 @@
             this.BtnLuuBanAn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnLuuBanAn.TextMarginLeft = 15;
             this.BtnLuuBanAn.UseDefaultRadiusAndThickness = true;
+            this.BtnLuuBanAn.Click += new System.EventHandler(this.BunifuButtonLuuBanAn_Click);
             // 
             // BtnSuaBanAn
             // 
@@ -2776,6 +2778,7 @@
             this.BtnSuaBanAn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnSuaBanAn.TextMarginLeft = 15;
             this.BtnSuaBanAn.UseDefaultRadiusAndThickness = true;
+            this.BtnSuaBanAn.Click += new System.EventHandler(this.BtnSuaBanAn_Click);
             // 
             // BtnThemBanAn
             // 
@@ -2839,6 +2842,7 @@
             this.BtnThemBanAn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnThemBanAn.TextMarginLeft = 15;
             this.BtnThemBanAn.UseDefaultRadiusAndThickness = true;
+            this.BtnThemBanAn.Click += new System.EventHandler(this.BtnThemBanAn_Click);
             // 
             // bunifuTextBoxmabanan
             // 
@@ -2975,6 +2979,7 @@
             this.BtnXoaBanAn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnXoaBanAn.TextMarginLeft = 15;
             this.BtnXoaBanAn.UseDefaultRadiusAndThickness = true;
+            this.BtnXoaBanAn.Click += new System.EventHandler(this.BtnXoaBanAn_Click);
             // 
             // label1
             // 
@@ -3172,6 +3177,7 @@
             this.bunifuCustomDataGridBanAn.RowHeadersWidth = 51;
             this.bunifuCustomDataGridBanAn.Size = new System.Drawing.Size(686, 417);
             this.bunifuCustomDataGridBanAn.TabIndex = 20;
+            this.bunifuCustomDataGridBanAn.SelectionChanged += new System.EventHandler(this.BunifuCustomDataGridBanAn_SelectionChanged);
             // 
             // tabPage5
             // 

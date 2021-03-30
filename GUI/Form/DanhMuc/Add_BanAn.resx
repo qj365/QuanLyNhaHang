@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="bunifuButton1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="bunifuButtonXacNhan.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAGUAAAAsCAYAAAB8K3ZrAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFeSURBVHhe7dsxSwMxGMbxVxHtoFAEQXqpt/qR/BIuKmJR
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFeSURBVHhe7dsxSwMxGMbxVxHtoFAEQXqpt/qR/BIuKmJR
         u4i42NwhTi4ufgwpDoKISMfSRQRxqZMO1sudRqIRKWY1PMPzwm97s+QP2SIc8FH5x4rqmN5Sbi3F4e5b
         ZdVOemprPsPvKF10Fw6Gz7XWrZW1c4rE3Xd9736U6GIwFkbpanV+//EldIjimG33TZKZM59EJNHmbnrr
         OrhMcUxuXNhmVr36JCLubQstUlxfHX6GUTAwCiBGAcQogBgFEKMAYhRAjAKIUQAxCiBGAcQogBgFEKMA
@@ -132,11 +132,12 @@
   </data>
   <data name="btnThoat.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAtCAYAAADP5GkqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAC7SURBVFhH7ZixDcIwEEVdUlIyAiOxBBswSWrmoKVMiWho
-        6EgFBUhENjzsL0UMYEPxv3SydXfye1K6hL9KSmlF9a9K+bxNbbjOhJzCYEddy2q9wHhQR66TBI01dSsr
-        9QPrSW2FzwInzZoF5l34ENRrHuEtYAELWMACFrCABSxgAQtYwAIWsIAFLJD/EQ3qNQvMUfgs0MUYR82a
-        BGYvfP4EcxrnMqofWBeOpfAlNBYM9nmjYmAcOL7hv0sIbzpE8uI0oy1qAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAsCAYAAACQXhN9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADMSURBVFhH7ZcxCgIxFERTWlp6BI/kJbyBJ7H2HLaWW4rN
+        NnZaaaHgkuiYDCx2A8lazYNPwv8/82C7DX8npbRCde8Kvu9RG1xnjB3BYI+6ldU6kPNEnXAdRWisUfey
+        0gbkvVA7KrKk56wpyH1QEQJ7k0CFJRpUWKJBhSUaVFiiQYUlGlRYokGFJRpUWKJBhSUaVFiiQYUlGlTk
+        37kre01B7kBFlmxjjANnzUBuR0X+XHM0zmXUBuRdcCypKKCxwOCQNypBzhHHr2BaQvgAMZ3np1D9z0kA
+        AAAASUVORK5CYII=
 </value>
   </data>
 </root>

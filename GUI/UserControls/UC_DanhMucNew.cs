@@ -42,6 +42,9 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
         private void btnBan_Click(object sender, EventArgs e)
         {
             pageDanhMuc.SelectTab(3);
+            bunifuCustomDataGridBanAn.DataSource = (new BanAnDAO()).GetListBanAn();
+            Load_BanAN();
+            MacDinhBanAn();
         }
 
         private void btnNguyenLieu_Click(object sender, EventArgs e)
@@ -130,9 +133,93 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
 
 
         #region Bàn ăn
+        readonly BanAnDTO bandto = new BanAnDTO();
+        readonly BanAnDAO bandao = new BanAnDAO();
+        public void MacDinhBanAn()
+        {
+            bunifuTextBoxmabanan.Enabled = false;
+            bunifuTextBoxsochongoi.Enabled = false;
 
+            BtnThemBanAn.Enabled = true;
+            BtnSuaBanAn.Enabled = true;
+            BtnXoaBanAn.Enabled = true;
+            BtnLuuBanAn.Enabled = false;
+            BtnHuyBanAn.Enabled = false;
+        }
+        public void SuaBanAn()
+        {
+            bunifuTextBoxsochongoi.Enabled = true;
+            bunifuTextBoxmabanan.Enabled = true;
+
+            BtnThemBanAn.Enabled = false;
+            BtnSuaBanAn.Enabled = true;
+            BtnXoaBanAn.Enabled = false;
+            BtnLuuBanAn.Enabled = true;
+            BtnHuyBanAn.Enabled = true;
+        }
+
+        private void Load_BanAN()
+        {
+
+            bunifuCustomDataGridBanAn.Columns["MABAN"].HeaderText = "Mã Bàn Ăn";
+            bunifuCustomDataGridBanAn.Columns["SOCHONGOI"].HeaderText = "Số Ngồi Tối Đa";
+            bunifuCustomDataGridBanAn.Columns["MAPYC"].HeaderText = "Mã Phiếu Yêu Cầu";
+            bunifuCustomDataGridBanAn.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //bunifuCustomDataGridBanAn.Columns["MABANAN"].Width = 100;
+            //bunifuCustomDataGridBanAn.Columns["SOCHONGOI"].Width = 200;
+            //bunifuCustomDataGridBanAn.Columns["MAPYC"].Width = 200;
+            bunifuCustomDataGridBanAn.DataSource = bandao.GetListBanAn();
+        }
+        public void Load_Lai_BanAn()
+        {
+            bunifuCustomDataGridBanAn.DataSource = (bandao.GetListBanAn());
+        }
+
+
+        private void BunifuCustomDataGridBanAn_SelectionChanged(object sender, EventArgs e)
+        {
+            int index = bunifuCustomDataGridBanAn.CurrentCell == null ? -1 : bunifuCustomDataGridBanAn.CurrentCell.RowIndex;
+            if (index != -1)
+            {
+                bunifuTextBoxmabanan.Text = bunifuCustomDataGridBanAn.Rows[bunifuCustomDataGridBanAn.CurrentRow.Index].Cells[0].Value.ToString().Trim();
+                bunifuTextBoxsochongoi.Text = bunifuCustomDataGridBanAn.Rows[bunifuCustomDataGridBanAn.CurrentRow.Index].Cells[2].Value.ToString().Trim();
+            }
+        }
+        private void BtnThemBanAn_Click(object sender, EventArgs e)
+        {
+
+            Add_BanAn BanAn = new Add_BanAn();
+            BanAn.ShowDialog();
+            Load_Lai_BanAn();
+        }
+        private void BtnSuaBanAn_Click(object sender, EventArgs e)
+        {
+            SuaBanAn();
+        }
+        private void BunifuButtonLuuBanAn_Click(object sender, EventArgs e)
+        {
+            MacDinhBanAn();
+            bandto.MABAN = bunifuTextBoxmabanan.Text.ToString().Trim();
+            bandto.SOCHONGOI = int.Parse(bunifuTextBoxsochongoi.Text.ToString().Trim());
+            bandto.MAPYC = "";
+            bool suaban = bandao.Update_ban(bandto);
+            if (suaban == true)
+            {
+                DialogResult result = MessageBox.Show("Thành công", "Chỉnh sửa", MessageBoxButtons.OK);// _ = MessageBox.Show("Thành công", "Chỉnh sửa", MessageBoxButtons.OK);
+                Load_Lai_BanAn();
+            }
+        }
+        private void BtnXoaBanAn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnHuyBanAn_Click(object sender, EventArgs e)
+        {
+            Load_Lai_BanAn();
+            MacDinhBanAn();
+        }
         #endregion
-
 
         #region Nguyên liệu
 
