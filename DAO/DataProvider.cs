@@ -12,8 +12,8 @@ namespace QuanLyKhachHang.DAO
     {
         private static DataProvider instance;
 
-        string connectionStr = @"Data Source=.\sqlexpress;Initial Catalog=QUANLYNHAHANG;Integrated Security=True";
-
+        static string connectionStr = @"Data Source=.\sqlexpress;Initial Catalog=QUANLYNHAHANG;Integrated Security=True";
+        private static readonly SqlConnection con = new SqlConnection(connectionStr);
         internal static DataProvider Instance 
         {
             get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; }
@@ -107,6 +107,42 @@ namespace QuanLyKhachHang.DAO
 
             }
             return data;
+        }
+        internal void NonQuery(string sql, params SqlParameter[] pr)
+        {
+            DataTable dt = new DataTable();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            con.Open();
+            if (sql.Trim().Contains(' '))
+                cmd.CommandType = CommandType.Text;
+            else
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                pr.ToList().ForEach(x => cmd.Parameters.Add(x));
+            }
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public DataTable Query(string sql, params SqlParameter[] pr)
+        {
+            SqlDataAdapter da = null;
+            DataTable dt = new DataTable();
+            con.Open();
+            if (sql.Trim().Contains(' '))
+                da = new SqlDataAdapter(sql, con);
+            else
+            {
+                SqlCommand cmd = new SqlCommand(sql, con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                pr.ToList().ForEach(x => cmd.Parameters.Add(x));
+                da = new SqlDataAdapter(cmd);
+            }
+            da.Fill(dt);
+            con.Close();
+            return dt;
         }
     }
 }
