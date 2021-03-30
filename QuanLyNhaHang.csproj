@@ -153,12 +153,14 @@
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\LoaiMonDAO.cs" />
     <Compile Include="DAO\MonAnDAO.cs" />
+    <Compile Include="DAO\NguyenLieuDAO.cs" />
     <Compile Include="DAO\PhieuYeuCauDAO.cs" />
     <Compile Include="DAO\TableDAO.cs" />
     <Compile Include="DTO\BanAnDTO.cs" />
     <Compile Include="DTO\ChiTietDatMon.cs" />
     <Compile Include="DTO\LoaiMon.cs" />
     <Compile Include="DTO\MonAn.cs" />
+    <Compile Include="DTO\NguyenLieuDTO.cs" />
     <Compile Include="DTO\PhieuYeuCau.cs" />
     <Compile Include="DTO\Table.cs" />
     <Compile Include="GUI\Form\DanhMuc\Add_BanAn.cs">
