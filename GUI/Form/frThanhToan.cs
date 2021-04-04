@@ -21,5 +21,24 @@ namespace QuanLyKhachHang
         {
             this.Close();
         }
+
+        private void chkKhachHang_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkKhachHang.Checked)
+            {
+                txtSDT.ReadOnly = false;
+                txtTenKH.ReadOnly = false;
+            }
+            else
+            {
+                txtSDT.ReadOnly = true;
+                txtTenKH.ReadOnly = true;
+            }
+        }
+
+        private void cbKhuyeMai_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

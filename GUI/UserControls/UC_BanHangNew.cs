@@ -17,36 +17,18 @@ namespace QuanLyKhachHang.GUI.UserControls
         public UC_BanHangNew()
         {
             InitializeComponent();
+            loadBanHang();
+        }
+
+
+        #region Methods
+        void loadBanHang()
+        {
             loadTable();
             loadLoaiMon();
             lblBan.Visible = false;
+            loadChuyenBan();
         }
-
-        #region Giao Diện
-        private void btnBan_Click(object sender, EventArgs e)
-        {
-            pageThanhToan.SetPage(tabBan);
-            fpnlBanAn.Controls.Clear();
-            loadTable();
-
-
-        }
-
-        private void btnThucDon_Click(object sender, EventArgs e)
-        {
-            pageThanhToan.SetPage(tabThucDon);
-        }
-
-        private void btnThanhToan_Click(object sender, EventArgs e)
-        {
-            using(frThanhToan frtt = new frThanhToan())
-            {
-                frtt.ShowDialog();
-            }
-        }
-        #endregion
-
-        #region Methods
         void loadTable()
         {
             List<Table> tableList = TableDAO.Instance.loadTableList();
@@ -58,7 +40,13 @@ namespace QuanLyKhachHang.GUI.UserControls
                 btn.Font = f;
                 btn.FlatStyle = FlatStyle.Flat;
                 btn.ForeColor = Color.White;
-                
+
+                CheckBox chk = new CheckBox();
+                chk.Parent = btn;
+                chk.Location = new Point(5, 5);
+                chk.BackColor = Color.Transparent;
+                chk.Visible = false;
+
                 btn.Click += btn_Click;
                 
                 btn.Tag = item;
@@ -112,10 +100,41 @@ namespace QuanLyKhachHang.GUI.UserControls
             cbMonAn.DisplayMember = "Tenmon";
         }
 
+        void loadChuyenBan()
+        {
+            cbChuyenBan.DataSource = TableDAO.Instance.loadTableList();
+            cbChuyenBan.DisplayMember = "maban";
+            cbChuyenBan.SelectedIndex = -1;
+            cbChuyenBan.Text = "  Chuyển bàn";
+        }
+
         #endregion
 
         #region Events
+        private void btnBan_Click(object sender, EventArgs e)
+        {
+            pageThanhToan.SetPage(tabBan);
+            fpnlBanAn.Controls.Clear();
+            pageThanhToan.Tag = null;
+            loadTable();
+            ckbChonNhieuBan.Visible = true;
+            cbChuyenBan.SelectedIndex = -1;
+            cbChuyenBan.Text = "  Chuyển bàn";
+        }
 
+        private void btnThucDon_Click(object sender, EventArgs e)
+        {
+            pageThanhToan.SetPage(tabThucDon);
+            ckbChonNhieuBan.Visible = false;
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            using (frThanhToan frtt = new frThanhToan())
+            {
+                frtt.ShowDialog();
+            }
+        }
         private void btn_Click(object sender, EventArgs e)
         {
             string maban = ((sender as Button).Tag as Table).Maban;
@@ -126,6 +145,8 @@ namespace QuanLyKhachHang.GUI.UserControls
             btnBan.selected = false;
             lblBan.Text = "Bàn    " + maban;
             lblBan.Visible = true;
+            cbChuyenBan.SelectedIndex = -1;
+            cbChuyenBan.Text = "  Chuyển bàn";
         }
         private void cbLoaiMon_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -156,18 +177,13 @@ namespace QuanLyKhachHang.GUI.UserControls
                 else
                 {
                     ChiTietDatMonDAO.Instance.insertCTDatMon(mapyc, mamon, soluong);
+                    if (ChiTietDatMonDAO.Instance.kiemTraCTDatMon(mapyc) == 0)
+                        DataProvider.Instance.executeNonQuery("exec HuyBan @maban", new object[] { table.Maban });
                 }
                 showBill(table.Maban);
             }
             
         }
-
-
-
-        #endregion
-
-        
-
         private void btnXoaMon_Click(object sender, EventArgs e)
         {
             if (pageThanhToan.Tag != null)
@@ -192,15 +208,21 @@ namespace QuanLyKhachHang.GUI.UserControls
 
         private void btnCong_Click(object sender, EventArgs e)
         {
-            if (pageThanhToan.Tag != null)
+            try
             {
-                Table table = lsvThucDon.Tag as Table;
-                string mamon = pageThanhToan.Tag.ToString();
-                string mapyc = PhieuYeuCauDAO.Instance.getPycByMabanChuaThanhToan(table.Maban);
-                ChiTietDatMonDAO.Instance.insertCTDatMon(mapyc, mamon, 1);
-                showBill(table.Maban);
+                if (pageThanhToan.Tag != null)
+                {
+                    Table table = lsvThucDon.Tag as Table;
+                    string mamon = pageThanhToan.Tag.ToString();
+                    string mapyc = PhieuYeuCauDAO.Instance.getPycByMabanChuaThanhToan(table.Maban);
+                    ChiTietDatMonDAO.Instance.insertCTDatMon(mapyc, mamon, 1);
+                    showBill(table.Maban);
+                }
             }
-            else return;
+            catch (Exception a)
+            {
+                return;
+            }
         }
 
         private void btnTru_Click(object sender, EventArgs e)
@@ -212,18 +234,122 @@ namespace QuanLyKhachHang.GUI.UserControls
                 string mapyc = PhieuYeuCauDAO.Instance.getPycByMabanChuaThanhToan(table.Maban);
                 ChiTietDatMonDAO.Instance.insertCTDatMon(mapyc, mamon, -1);
                 showBill(table.Maban);
+                int check = ChiTietDatMonDAO.Instance.kiemTraCTDatMon(mapyc);
+                if (check == 0)
+                    DataProvider.Instance.executeNonQuery("exec HuyBan @maban", new object[] { table.Maban });
             }
-            else return;
+            else
+                return;
         }
 
         private void btnHuyBan_Click(object sender, EventArgs e)
         {
-            Table table = lsvThucDon.Tag as Table;
-            string mapyc = PhieuYeuCauDAO.Instance.getPycByMabanChuaThanhToan(table.Maban);
-            DataProvider.Instance.executeNonQuery("exec HuyBan @maban", new object[] {table.Maban });
-            showBill(table.Maban);
+            if (lsvThucDon.Tag != null)
+            {
+                Table table = lsvThucDon.Tag as Table;
+                DataProvider.Instance.executeNonQuery("exec HuyBan @maban", new object[] { table.Maban });
+                showBill(table.Maban);
+                fpnlBanAn.Controls.Clear();
+                loadTable();
+            }
             
+
+
+        }
+
+
+
+
+
+        #endregion
+
+        private void ckbChonNhieuBan_CheckedChanged(object sender, EventArgs e)
+        {
             
+            if (ckbChonNhieuBan.Checked)
+            {
+                
+                foreach (Control btn in fpnlBanAn.Controls)
+                {
+                    if (btn is Button)
+                    {
+                        foreach (Control chk in btn.Controls)
+                        {
+                            chk.Visible = true;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                foreach (Control btn in fpnlBanAn.Controls)
+                {
+                    if (btn is Button)
+                    {
+                        foreach (Control chk in btn.Controls)
+                        {
+                            chk.Visible = false;
+                        }
+
+                    }
+                }
+            }
+
+        }
+        void chuyenBan(string ban1,string ban2)
+        {
+            string mapyc1 = PhieuYeuCauDAO.Instance.getPycByMabanChuaThanhToan(ban1);
+            string mapyc2 = PhieuYeuCauDAO.Instance.getPycByMabanChuaThanhToan(ban2);
+            if(mapyc1 != "-1")
+            {
+                List<ChiTietDatMon> list = ChiTietDatMonDAO.Instance.getChiTietDatMon(mapyc1);
+                if (mapyc2 == "-1")
+                {
+                    PhieuYeuCauDAO.Instance.insertPYC("NV1", ban2); // chú ý                  
+                    foreach (ChiTietDatMon item in list)
+                    {
+                        ChiTietDatMonDAO.Instance.insertCTDatMon(PhieuYeuCauDAO.Instance.getMaxPYC(), item.Mama, item.Soluong);
+                    }
+                    
+                }
+                else
+                {
+                    foreach (ChiTietDatMon item in list)
+                    {
+                        ChiTietDatMonDAO.Instance.insertCTDatMon(mapyc2, item.Mama, item.Soluong);
+                    }
+                    
+                }
+                DataProvider.Instance.executeNonQuery("exec HuyBan @maban", new object[] { ban1 });
+            }
+        }
+        private void cbChuyenBan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbChuyenBan.SelectedIndex != -1)
+            {
+                if (lsvThucDon.Tag != null)
+                {
+                    string ban1 = (lsvThucDon.Tag as Table).Maban;
+                    string ban2 = (cbChuyenBan.SelectedItem as Table).Maban;
+                    if (ban1 == ban2)
+                        MessageBox.Show("Không thể chuyển bàn đến bàn hiện tại");
+
+                    else
+                    {
+                        if (MessageBox.Show(string.Format("Bạn thực sự muốn chuyển bàn {0} qua bàn {1}", ban1, ban2), "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            chuyenBan(ban1, ban2);
+                            btnBan_Click(sender, e);
+                            btnBan.selected = true;
+                            btnThucDon.selected = false;
+                            lsvThucDon.Tag = null;
+                            lblBan.Visible = false;
+                            lsvThucDon.Items.Clear();
+                            lblTongTien.Text = "0đ";
+                        }
+                    }
+                }
+            }
         }
     }
 }

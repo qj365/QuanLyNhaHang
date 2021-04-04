@@ -48,20 +48,20 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuDropdown1 = new Bunifu.UI.WinForms.BunifuDropdown();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTongTien = new System.Windows.Forms.TextBox();
+            this.txtKhachTra = new System.Windows.Forms.TextBox();
+            this.txtGiam = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnThoat = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkKhachHang = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtMaKH = new System.Windows.Forms.TextBox();
+            this.txtTenKH = new System.Windows.Forms.TextBox();
+            this.txtSDT = new System.Windows.Forms.TextBox();
+            this.cbKhuyeMai = new Bunifu.UI.WinForms.BunifuDropdown();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,7 +118,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label1.Location = new System.Drawing.Point(209, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 22);
+            this.label1.Size = new System.Drawing.Size(126, 27);
             this.label1.TabIndex = 5;
             this.label1.Text = "Thanh toán";
             // 
@@ -129,7 +129,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label2.Location = new System.Drawing.Point(57, 140);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 22);
+            this.label2.Size = new System.Drawing.Size(136, 27);
             this.label2.TabIndex = 5;
             this.label2.Text = "Khuyến mãi:";
             // 
@@ -140,7 +140,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label3.Location = new System.Drawing.Point(57, 184);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 22);
+            this.label3.Size = new System.Drawing.Size(70, 27);
             this.label3.TabIndex = 5;
             this.label3.Text = "Giảm:";
             // 
@@ -151,7 +151,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label4.Location = new System.Drawing.Point(57, 228);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 22);
+            this.label4.Size = new System.Drawing.Size(111, 27);
             this.label4.TabIndex = 5;
             this.label4.Text = "Tổng tiền:";
             // 
@@ -162,7 +162,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label5.Location = new System.Drawing.Point(57, 272);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(94, 22);
+            this.label5.Size = new System.Drawing.Size(114, 27);
             this.label5.TabIndex = 5;
             this.label5.Text = "Khách trả:";
             // 
@@ -173,7 +173,7 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label6.Location = new System.Drawing.Point(57, 536);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 28);
+            this.label6.Size = new System.Drawing.Size(108, 37);
             this.label6.TabIndex = 5;
             this.label6.Text = "Trả lại:";
             // 
@@ -240,64 +240,32 @@
             this.bunifuButton1.TextMarginLeft = 0;
             this.bunifuButton1.UseDefaultRadiusAndThickness = true;
             // 
-            // bunifuDropdown1
+            // txtTongTien
             // 
-            this.bunifuDropdown1.BackColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.BorderRadius = 1;
-            this.bunifuDropdown1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
-            this.bunifuDropdown1.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.bunifuDropdown1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuDropdown1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.bunifuDropdown1.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thick;
-            this.bunifuDropdown1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.bunifuDropdown1.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.bunifuDropdown1.FillDropDown = false;
-            this.bunifuDropdown1.FillIndicator = false;
-            this.bunifuDropdown1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bunifuDropdown1.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuDropdown1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
-            this.bunifuDropdown1.FormattingEnabled = true;
-            this.bunifuDropdown1.Icon = null;
-            this.bunifuDropdown1.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
-            this.bunifuDropdown1.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.bunifuDropdown1.ItemBackColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.ItemBorderColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.ItemForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
-            this.bunifuDropdown1.ItemHeight = 26;
-            this.bunifuDropdown1.ItemHighLightColor = System.Drawing.Color.Thistle;
-            this.bunifuDropdown1.Items.AddRange(new object[] {
-            "Tết - GIảm 10%"});
-            this.bunifuDropdown1.Location = new System.Drawing.Point(217, 135);
-            this.bunifuDropdown1.Name = "bunifuDropdown1";
-            this.bunifuDropdown1.Size = new System.Drawing.Size(270, 32);
-            this.bunifuDropdown1.TabIndex = 0;
-            this.bunifuDropdown1.Text = null;
+            this.txtTongTien.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTongTien.Location = new System.Drawing.Point(217, 224);
+            this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.ReadOnly = true;
+            this.txtTongTien.Size = new System.Drawing.Size(270, 35);
+            this.txtTongTien.TabIndex = 2;
             // 
-            // textBox1
+            // txtKhachTra
             // 
-            this.textBox1.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(217, 224);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(270, 29);
-            this.textBox1.TabIndex = 2;
+            this.txtKhachTra.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKhachTra.Location = new System.Drawing.Point(217, 269);
+            this.txtKhachTra.Name = "txtKhachTra";
+            this.txtKhachTra.Size = new System.Drawing.Size(270, 35);
+            this.txtKhachTra.TabIndex = 0;
             // 
-            // textBox2
+            // txtGiam
             // 
-            this.textBox2.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(217, 269);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(270, 29);
-            this.textBox2.TabIndex = 3;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(217, 181);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(270, 29);
-            this.textBox3.TabIndex = 1;
+            this.txtGiam.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGiam.Location = new System.Drawing.Point(217, 181);
+            this.txtGiam.Name = "txtGiam";
+            this.txtGiam.ReadOnly = true;
+            this.txtGiam.Size = new System.Drawing.Size(270, 35);
+            this.txtGiam.TabIndex = 1;
+            this.txtGiam.Text = "0";
             // 
             // label7
             // 
@@ -306,7 +274,7 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label7.Location = new System.Drawing.Point(138, 536);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(92, 28);
+            this.label7.Size = new System.Drawing.Size(118, 37);
             this.label7.TabIndex = 5;
             this.label7.Text = "10,000đ";
             // 
@@ -381,17 +349,18 @@
             this.bunifuDragControl1.TargetControl = this;
             this.bunifuDragControl1.Vertical = true;
             // 
-            // checkBox1
+            // chkKhachHang
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
-            this.checkBox1.Location = new System.Drawing.Point(61, 466);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(161, 26);
-            this.checkBox1.TabIndex = 7;
-            this.checkBox1.Text = "Khách hàng mới";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkKhachHang.AutoSize = true;
+            this.chkKhachHang.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkKhachHang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
+            this.chkKhachHang.Location = new System.Drawing.Point(61, 466);
+            this.chkKhachHang.Name = "chkKhachHang";
+            this.chkKhachHang.Size = new System.Drawing.Size(194, 31);
+            this.chkKhachHang.TabIndex = 7;
+            this.chkKhachHang.Text = "Khách hàng mới";
+            this.chkKhachHang.UseVisualStyleBackColor = true;
+            this.chkKhachHang.CheckedChanged += new System.EventHandler(this.chkKhachHang_CheckedChanged);
             // 
             // label8
             // 
@@ -400,7 +369,7 @@
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label8.Location = new System.Drawing.Point(57, 360);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(143, 22);
+            this.label8.Size = new System.Drawing.Size(174, 27);
             this.label8.TabIndex = 5;
             this.label8.Text = "Tên khách hàng:";
             // 
@@ -411,7 +380,7 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label9.Location = new System.Drawing.Point(57, 404);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(45, 22);
+            this.label9.Size = new System.Drawing.Size(56, 27);
             this.label9.TabIndex = 5;
             this.label9.Text = "SĐT:";
             // 
@@ -422,48 +391,81 @@
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label10.Location = new System.Drawing.Point(57, 316);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(139, 22);
+            this.label10.Size = new System.Drawing.Size(168, 27);
             this.label10.TabIndex = 5;
             this.label10.Text = "Mã khách hàng:";
             // 
-            // textBox4
+            // txtMaKH
             // 
-            this.textBox4.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(217, 313);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(270, 29);
-            this.textBox4.TabIndex = 3;
+            this.txtMaKH.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaKH.Location = new System.Drawing.Point(217, 313);
+            this.txtMaKH.Name = "txtMaKH";
+            this.txtMaKH.Size = new System.Drawing.Size(270, 35);
+            this.txtMaKH.TabIndex = 1;
             // 
-            // textBox5
+            // txtTenKH
             // 
-            this.textBox5.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(217, 357);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(270, 29);
-            this.textBox5.TabIndex = 3;
+            this.txtTenKH.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenKH.Location = new System.Drawing.Point(217, 357);
+            this.txtTenKH.Name = "txtTenKH";
+            this.txtTenKH.ReadOnly = true;
+            this.txtTenKH.Size = new System.Drawing.Size(270, 35);
+            this.txtTenKH.TabIndex = 2;
             // 
-            // textBox6
+            // txtSDT
             // 
-            this.textBox6.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(217, 401);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(270, 29);
-            this.textBox6.TabIndex = 2;
+            this.txtSDT.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSDT.Location = new System.Drawing.Point(217, 401);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.ReadOnly = true;
+            this.txtSDT.Size = new System.Drawing.Size(270, 35);
+            this.txtSDT.TabIndex = 2;
+            // 
+            // cbKhuyeMai
+            // 
+            this.cbKhuyeMai.BackColor = System.Drawing.Color.White;
+            this.cbKhuyeMai.BorderRadius = 0;
+            this.cbKhuyeMai.Color = System.Drawing.Color.Silver;
+            this.cbKhuyeMai.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.cbKhuyeMai.DisabledColor = System.Drawing.Color.Gray;
+            this.cbKhuyeMai.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbKhuyeMai.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.cbKhuyeMai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKhuyeMai.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.cbKhuyeMai.FillDropDown = false;
+            this.cbKhuyeMai.FillIndicator = false;
+            this.cbKhuyeMai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbKhuyeMai.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbKhuyeMai.ForeColor = System.Drawing.Color.Black;
+            this.cbKhuyeMai.FormattingEnabled = true;
+            this.cbKhuyeMai.Icon = null;
+            this.cbKhuyeMai.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
+            this.cbKhuyeMai.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.cbKhuyeMai.ItemBackColor = System.Drawing.Color.White;
+            this.cbKhuyeMai.ItemBorderColor = System.Drawing.Color.White;
+            this.cbKhuyeMai.ItemForeColor = System.Drawing.Color.Black;
+            this.cbKhuyeMai.ItemHeight = 26;
+            this.cbKhuyeMai.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
+            this.cbKhuyeMai.Location = new System.Drawing.Point(217, 135);
+            this.cbKhuyeMai.Name = "cbKhuyeMai";
+            this.cbKhuyeMai.Size = new System.Drawing.Size(270, 32);
+            this.cbKhuyeMai.TabIndex = 26;
+            this.cbKhuyeMai.Text = null;
+            this.cbKhuyeMai.SelectedIndexChanged += new System.EventHandler(this.cbKhuyeMai_SelectedIndexChanged);
             // 
             // frThanhToan
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(550, 626);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.bunifuDropdown1);
+            this.Controls.Add(this.cbKhuyeMai);
+            this.Controls.Add(this.chkKhachHang);
+            this.Controls.Add(this.txtGiam);
+            this.Controls.Add(this.txtTenKH);
+            this.Controls.Add(this.txtMaKH);
+            this.Controls.Add(this.txtKhachTra);
+            this.Controls.Add(this.txtSDT);
+            this.Controls.Add(this.txtTongTien);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.bunifuButton1);
             this.Controls.Add(this.label7);
@@ -506,19 +508,19 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton1;
-        private Bunifu.UI.WinForms.BunifuDropdown bunifuDropdown1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTongTien;
+        private System.Windows.Forms.TextBox txtKhachTra;
+        private System.Windows.Forms.TextBox txtGiam;
         private System.Windows.Forms.Label label7;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnThoat;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.CheckBox chkKhachHang;
+        private System.Windows.Forms.TextBox txtTenKH;
+        private System.Windows.Forms.TextBox txtMaKH;
+        private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
+        private Bunifu.UI.WinForms.BunifuDropdown cbKhuyeMai;
     }
 }

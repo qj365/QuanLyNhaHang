@@ -314,10 +314,10 @@
             this.pageDanhMuc.Location = new System.Drawing.Point(0, 77);
             this.pageDanhMuc.Multiline = true;
             this.pageDanhMuc.Name = "pageDanhMuc";
-            this.pageDanhMuc.Page = this.tabPage5;
-            this.pageDanhMuc.PageIndex = 4;
-            this.pageDanhMuc.PageName = "tabPage5";
-            this.pageDanhMuc.PageTitle = "tabPage5";
+            this.pageDanhMuc.Page = this.tabPage1;
+            this.pageDanhMuc.PageIndex = 0;
+            this.pageDanhMuc.PageName = "tabPage1";
+            this.pageDanhMuc.PageTitle = "tabPage1";
             this.pageDanhMuc.SelectedIndex = 0;
             this.pageDanhMuc.Size = new System.Drawing.Size(1148, 554);
             this.pageDanhMuc.TabIndex = 1;
@@ -347,7 +347,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1140, 528);
+            this.tabPage1.Size = new System.Drawing.Size(1140, 525);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -364,7 +364,7 @@
             this.dtgvMonAn.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -389,7 +389,7 @@
             this.dtgvMonAn.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
@@ -427,7 +427,7 @@
             this.grbChinhSuaMon.Controls.Add(this.btnThemMA);
             this.grbChinhSuaMon.Controls.Add(this.label9);
             this.grbChinhSuaMon.Controls.Add(this.btnXoaMA);
-            this.grbChinhSuaMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbChinhSuaMon.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbChinhSuaMon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.grbChinhSuaMon.Location = new System.Drawing.Point(726, 2);
             this.grbChinhSuaMon.Name = "grbChinhSuaMon";
@@ -460,7 +460,7 @@
             this.bunifuButton10.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.bunifuButton10.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.bunifuButton10.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuButton10.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuButton10.ForeColor = System.Drawing.Color.White;
             this.bunifuButton10.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuButton10.IconMarginLeft = 11;
@@ -523,7 +523,7 @@
             this.bunifuButton11.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.bunifuButton11.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.bunifuButton11.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuButton11.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuButton11.ForeColor = System.Drawing.Color.White;
             this.bunifuButton11.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuButton11.IconMarginLeft = 11;
@@ -836,7 +836,7 @@
             this.btnSuaMA.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnSuaMA.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnSuaMA.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnSuaMA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSuaMA.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuaMA.ForeColor = System.Drawing.Color.White;
             this.btnSuaMA.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
             this.btnSuaMA.IconMarginLeft = 11;
@@ -879,11 +879,11 @@
             // 
             this.label13.AutoSize = true;
             this.label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label13.Location = new System.Drawing.Point(19, 286);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(82, 20);
+            this.label13.Size = new System.Drawing.Size(103, 27);
             this.label13.TabIndex = 20;
             this.label13.Text = "Loại món";
             // 
@@ -891,11 +891,11 @@
             // 
             this.label12.AutoSize = true;
             this.label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label12.Location = new System.Drawing.Point(25, 234);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(71, 20);
+            this.label12.Size = new System.Drawing.Size(88, 27);
             this.label12.TabIndex = 20;
             this.label12.Text = "Đơn giá";
             // 
@@ -976,11 +976,11 @@
             // 
             this.label10.AutoSize = true;
             this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label10.Location = new System.Drawing.Point(9, 128);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(103, 20);
+            this.label10.Size = new System.Drawing.Size(129, 27);
             this.label10.TabIndex = 20;
             this.label10.Text = "Tên món ăn";
             // 
@@ -988,11 +988,11 @@
             // 
             this.label11.AutoSize = true;
             this.label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label11.Location = new System.Drawing.Point(41, 181);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(44, 20);
+            this.label11.Size = new System.Drawing.Size(52, 27);
             this.label11.TabIndex = 21;
             this.label11.Text = "ĐVT";
             // 
@@ -1020,7 +1020,7 @@
             this.btnThemMA.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnThemMA.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnThemMA.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnThemMA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnThemMA.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemMA.ForeColor = System.Drawing.Color.White;
             this.btnThemMA.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
             this.btnThemMA.IconMarginLeft = 11;
@@ -1063,11 +1063,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label9.Location = new System.Drawing.Point(11, 75);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(97, 20);
+            this.label9.Size = new System.Drawing.Size(123, 27);
             this.label9.TabIndex = 21;
             this.label9.Text = "Mã món ăn";
             // 
@@ -1095,7 +1095,7 @@
             this.btnXoaMA.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnXoaMA.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.btnXoaMA.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnXoaMA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnXoaMA.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaMA.ForeColor = System.Drawing.Color.White;
             this.btnXoaMA.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoaMA.IconMarginLeft = 11;
@@ -1141,7 +1141,7 @@
             this.groupBox3.Controls.Add(this.bunifuTextBox10);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.groupBox3.Location = new System.Drawing.Point(20, 2);
             this.groupBox3.Name = "groupBox3";
@@ -1174,7 +1174,7 @@
             this.bunifuButton17.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.bunifuButton17.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
             this.bunifuButton17.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.bunifuButton17.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuButton17.ForeColor = System.Drawing.Color.White;
             this.bunifuButton17.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
             this.bunifuButton17.IconMarginLeft = 11;
@@ -1363,11 +1363,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label7.Location = new System.Drawing.Point(22, 87);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 20);
+            this.label7.Size = new System.Drawing.Size(129, 27);
             this.label7.TabIndex = 20;
             this.label7.Text = "Tên món ăn";
             // 
@@ -1375,11 +1375,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label8.Location = new System.Drawing.Point(24, 33);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 20);
+            this.label8.Size = new System.Drawing.Size(123, 27);
             this.label8.TabIndex = 21;
             this.label8.Text = "Mã món ăn";
             // 
@@ -1392,7 +1392,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1140, 528);
+            this.tabPage2.Size = new System.Drawing.Size(1140, 525);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1409,7 +1409,7 @@
             this.dtgvLoaiMon.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1434,7 +1434,7 @@
             this.dtgvLoaiMon.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
@@ -1464,7 +1464,7 @@
             this.bunifuCustomDataGrid6.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.SeaGreen;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1899,7 +1899,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label5.Location = new System.Drawing.Point(12, 115);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 20);
+            this.label5.Size = new System.Drawing.Size(129, 25);
             this.label5.TabIndex = 35;
             this.label5.Text = "Mã loại món";
             // 
@@ -1984,7 +1984,7 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label6.Location = new System.Drawing.Point(10, 177);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 20);
+            this.label6.Size = new System.Drawing.Size(137, 25);
             this.label6.TabIndex = 36;
             this.label6.Text = "Tên loại món";
             // 
@@ -2051,7 +2051,7 @@
             this.bunifuTextBox6.SelectionLength = 0;
             this.bunifuTextBox6.SelectionStart = 0;
             this.bunifuTextBox6.ShortcutsEnabled = true;
-            this.bunifuTextBox6.Size = new System.Drawing.Size(316, 38);
+            this.bunifuTextBox6.Size = new System.Drawing.Size(316, 35);
             this.bunifuTextBox6.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox6.TabIndex = 31;
             this.bunifuTextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -2070,7 +2070,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1140, 528);
+            this.tabPage3.Size = new System.Drawing.Size(1140, 525);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -2512,7 +2512,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label3.Location = new System.Drawing.Point(22, 87);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 20);
+            this.label3.Size = new System.Drawing.Size(150, 25);
             this.label3.TabIndex = 20;
             this.label3.Text = "Tên nhân viên";
             // 
@@ -2524,7 +2524,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label4.Location = new System.Drawing.Point(24, 33);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 20);
+            this.label4.Size = new System.Drawing.Size(142, 25);
             this.label4.TabIndex = 21;
             this.label4.Text = "Mã nhân viên";
             // 
@@ -2537,7 +2537,7 @@
             this.bunifuCustomDataGrid2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle10.ForeColor = System.Drawing.Color.SeaGreen;
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -2563,7 +2563,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1140, 528);
+            this.tabPage4.Size = new System.Drawing.Size(1140, 525);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -2989,7 +2989,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label1.Location = new System.Drawing.Point(35, 81);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 20);
+            this.label1.Size = new System.Drawing.Size(81, 25);
             this.label1.TabIndex = 21;
             this.label1.Text = "Số bàn";
             // 
@@ -3074,7 +3074,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label2.Location = new System.Drawing.Point(17, 143);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 20);
+            this.label2.Size = new System.Drawing.Size(127, 25);
             this.label2.TabIndex = 21;
             this.label2.Text = "Số chỗ ngồi";
             // 
@@ -3140,7 +3140,7 @@
             this.bunifuTextBox5.SelectionLength = 0;
             this.bunifuTextBox5.SelectionStart = 0;
             this.bunifuTextBox5.ShortcutsEnabled = true;
-            this.bunifuTextBox5.Size = new System.Drawing.Size(316, 38);
+            this.bunifuTextBox5.Size = new System.Drawing.Size(316, 35);
             this.bunifuTextBox5.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox5.TabIndex = 23;
             this.bunifuTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -3160,7 +3160,7 @@
             this.bunifuCustomDataGridBanAn.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Honeydew;
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -3187,7 +3187,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 4);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1140, 528);
+            this.tabPage5.Size = new System.Drawing.Size(1140, 525);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -3617,7 +3617,7 @@
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label14.Location = new System.Drawing.Point(11, 75);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(129, 20);
+            this.label14.Size = new System.Drawing.Size(159, 25);
             this.label14.TabIndex = 21;
             this.label14.Text = "Mã nguyên liệu";
             // 
@@ -3702,7 +3702,7 @@
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label17.Location = new System.Drawing.Point(41, 228);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(71, 20);
+            this.label17.Size = new System.Drawing.Size(86, 25);
             this.label17.TabIndex = 21;
             this.label17.Text = "Đơn giá";
             // 
@@ -3787,7 +3787,7 @@
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label16.Location = new System.Drawing.Point(57, 177);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(44, 20);
+            this.label16.Size = new System.Drawing.Size(56, 25);
             this.label16.TabIndex = 21;
             this.label16.Text = "ĐVT";
             // 
@@ -3872,7 +3872,7 @@
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label15.Location = new System.Drawing.Point(9, 132);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(135, 20);
+            this.label15.Size = new System.Drawing.Size(167, 25);
             this.label15.TabIndex = 21;
             this.label15.Text = "Tên nguyên liệu";
             // 
@@ -3938,7 +3938,7 @@
             this.bunifuTextBox17.SelectionLength = 0;
             this.bunifuTextBox17.SelectionStart = 0;
             this.bunifuTextBox17.ShortcutsEnabled = true;
-            this.bunifuTextBox17.Size = new System.Drawing.Size(316, 38);
+            this.bunifuTextBox17.Size = new System.Drawing.Size(316, 35);
             this.bunifuTextBox17.Style = Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox._Style.Bunifu;
             this.bunifuTextBox17.TabIndex = 43;
             this.bunifuTextBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -3958,7 +3958,7 @@
             this.bunifuCustomDataGridNL.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle14.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Honeydew;
             dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -4000,7 +4000,7 @@
             this.btnBan.IconZoom = 65D;
             this.btnBan.IsTab = true;
             this.btnBan.Location = new System.Drawing.Point(656, 17);
-            this.btnBan.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBan.Name = "btnBan";
             this.btnBan.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.btnBan.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(137)))), ((int)(((byte)(175)))));
@@ -4037,7 +4037,7 @@
             this.btnNhanVien.IconZoom = 65D;
             this.btnNhanVien.IsTab = true;
             this.btnNhanVien.Location = new System.Drawing.Point(457, 17);
-            this.btnNhanVien.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNhanVien.Name = "btnNhanVien";
             this.btnNhanVien.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.btnNhanVien.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(137)))), ((int)(((byte)(175)))));
@@ -4074,7 +4074,7 @@
             this.btnLoai.IconZoom = 65D;
             this.btnLoai.IsTab = true;
             this.btnLoai.Location = new System.Drawing.Point(256, 17);
-            this.btnLoai.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLoai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLoai.Name = "btnLoai";
             this.btnLoai.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.btnLoai.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(137)))), ((int)(((byte)(175)))));
@@ -4111,7 +4111,7 @@
             this.btnMon.IconZoom = 65D;
             this.btnMon.IsTab = true;
             this.btnMon.Location = new System.Drawing.Point(71, 17);
-            this.btnMon.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMon.Name = "btnMon";
             this.btnMon.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.btnMon.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(137)))), ((int)(((byte)(175)))));
@@ -4148,7 +4148,7 @@
             this.btnNguyenLieu.IconZoom = 65D;
             this.btnNguyenLieu.IsTab = true;
             this.btnNguyenLieu.Location = new System.Drawing.Point(849, 17);
-            this.btnNguyenLieu.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNguyenLieu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNguyenLieu.Name = "btnNguyenLieu";
             this.btnNguyenLieu.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.btnNguyenLieu.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(137)))), ((int)(((byte)(175)))));

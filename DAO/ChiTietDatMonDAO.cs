@@ -36,5 +36,12 @@ namespace QuanLyKhachHang.DAO
         {
             DataProvider.Instance.executeNonQuery("exec [dbo].[ThemCTDatMon] @mapyc , @mama , @soluong", new object[] { mapyc, mama, soluong });
         }
+
+        public int kiemTraCTDatMon(string mapyc)
+        {
+            
+            int data = (int)DataProvider.Instance.executeScalar("select count(*) from CHITIETDATMON where MAPYC = '" + mapyc + "'");
+            return data;
+        }
     }
 }
