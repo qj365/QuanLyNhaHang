@@ -38,6 +38,8 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
             pageDanhMuc.SelectTab(2);
+            LoadListAllNV();
+            NVBinding();
         }
 
         private void btnBan_Click(object sender, EventArgs e)
@@ -55,12 +57,7 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
             Load_NL();
             MacDinhNL();
         }
-
-        private void btnThemNV_Click(object sender, EventArgs e)
-        {
-            using (Add_NhanVien f = new Add_NhanVien())
-                f.ShowDialog();
-        }
+ 
 
         void clearAllBindings()
         {
@@ -132,6 +129,55 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
 
 
         #region Nhân viên
+
+        void LoadListAllNV()
+        {
+            dtgvNV.DataSource = DAO.NhanVienDAO.Instance.GetListNV();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtSMaNV.Clear();
+            txtSTenNV.Clear();
+            LoadListAllNV();
+        }
+
+        private void btnThemNV_Click(object sender, EventArgs e)
+        {
+            using (Add_NhanVien f = new Add_NhanVien())
+                f.ShowDialog();
+        }
+
+        private void btnSuaNV_Click(object sender, EventArgs e)
+        {
+            Add_NhanVien nv = new Add_NhanVien();
+            nv.ShowDialog();
+        }
+
+        public void NVBinding()
+        {
+            txtSMaNV.DataBindings.Add(new Binding("text", dtgvNV.DataSource, "MANV", true, DataSourceUpdateMode.Never));
+            txtSTenNV.DataBindings.Add(new Binding("text", dtgvNV.DataSource, "TENNV", true, DataSourceUpdateMode.Never));
+        }
+
+        private void btnXoaNV_Click(object sender, EventArgs e)
+        {
+            string manv = txtSMaNV.Text;
+            if (DAO.NhanVienDAO.Instance.XoaNV(manv))
+            {
+                MessageBox.Show("Xóa thành công");
+                LoadListAllNV();
+            }
+            else
+            {
+                MessageBox.Show("Xóa thất bại");
+            }
+        }
+
+        private void txtSMaNV_TextChange(object sender, EventArgs e)
+        {
+
+        }
 
         #endregion
 
