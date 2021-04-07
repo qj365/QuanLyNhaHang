@@ -12,19 +12,19 @@ namespace QuanLyKhachHang.DTO
         public LoaiMon(string malm, string tenlm)
         {
             Malm = malm;
-            Tenlm = tenlm;
+            Tenloaimon = tenlm;
         }
 
         public LoaiMon(DataRow row)
         {
             Malm = row["maloai"].ToString();
-            Tenlm = row["tenloaimon"].ToString();
+            Tenloaimon = row["tenloaimon"].ToString();
         }
 
         private string malm;
         private string tenlm;
 
         public string Malm { get => malm; set => malm = value; }
-        public string Tenlm { get => tenlm; set => tenlm = value; }
+        public string Tenloaimon { get => tenlm; set => tenlm = value; }
     }
 }

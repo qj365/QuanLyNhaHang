@@ -42,5 +42,23 @@ namespace QuanLyKhachHang.DAO
             }
             return list;
         }
+        public bool InsertFood(string mama, string tenmonan, string dvt, int dongia, string maloai)
+        {
+            string query = string.Format("THEMMONAN '{0}','{1}','{2}','{3}','{4}'", mama, tenmonan, dvt, dongia, maloai);
+            int result = DataProvider.Instance.executeNonQuery(query);
+            return result > 0;
+        }
+        public bool UpdateFood(string mama, string tenmonan, string dvt, int dongia, string maloai)
+        {
+            string query = string.Format("SUAMONAN '{0}','{1}','{2}','{3}','{4}'", mama, tenmonan, dvt, dongia, maloai);
+            int result = DataProvider.Instance.executeNonQuery(query);
+            return result > 0;
+        }
+        public bool DeleteFood(string mama)
+        {
+            string query = string.Format("Delete from MONAN where MAMA = '{0}'", mama);
+            int result = DataProvider.Instance.executeNonQuery(query);
+            return result > 0;
+        }
     }
 }

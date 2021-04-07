@@ -15,10 +15,12 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
 {
     public partial class UC_DanhMucNew : UserControl
     {
+        string thread;
         public UC_DanhMucNew()
         {
             InitializeComponent();
             loadMonAn();
+            DisEnbBtn(false);
         }
 
         private void btnMon_Click(object sender, EventArgs e)
@@ -68,11 +70,11 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
         #region Món ăn
         void loadMonAn()
         {
+            ClearAllBindingsMonAn();
             loadMonAnList();
             monAnBinding();
             loadLoaiMonComboBox();
-            
-            
+
         }
         void loadMonAnList()
         {
@@ -83,7 +85,7 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
         {
             List<LoaiMon> list = LoaiMonDAO.Instance.getListLoaiMon();
             cbbLoaiMon.DataSource = list;
-            cbbLoaiMon.DisplayMember = "Tenlm";
+            cbbLoaiMon.DisplayMember = "Tenloaimon";
 
         }
 
@@ -93,12 +95,79 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
             txtTenMon.DataBindings.Add(new Binding("text", dtgvMonAn.DataSource, "tenmonan"));
             txtDVT.DataBindings.Add(new Binding("text", dtgvMonAn.DataSource, "dvt"));
             txtDonGia.DataBindings.Add(new Binding("text", dtgvMonAn.DataSource, "dongia"));
-            cbbLoaiMon.DataBindings.Add(new Binding("Text", dtgvMonAn.DataSource, "Maloai"));
+            cbbLoaiMon.DataBindings.Add(new Binding("Text", dtgvMonAn.DataSource, "Tenloaimon"));
         }
         void ClearAllBindingsMonAn()
         {
             foreach (Control c in grbChinhSuaMon.Controls)
                 c.DataBindings.Clear();
+        }
+        private void btnThemMA_Click(object sender, EventArgs e)
+        {
+            thread = txtMaMon.Text;
+            DisEnbBtn(true);
+            txtMaMon.Text = DataProvider.Instance.executeScalar("select MAMA = dbo.TAOMAMON()").ToString();
+            txtTenMon.Text = "";
+            txtDVT.Text = "";
+            txtDonGia.Text = "";
+        }
+        private void btnSuaMA_Click(object sender, EventArgs e)
+        {
+            thread = txtMaMon.Text;
+            DisEnbBtn(true);
+        }
+        private void btnXoaMA_Click(object sender, EventArgs e)
+        {
+            string MaMa = txtMaMon.Text;
+            if (MessageBox.Show("Bạn có thực sự muốn xoá món này?", "Xác nhận", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                if (MonAnDAO.Instance.DeleteFood(MaMa))
+                {
+                    MessageBox.Show("Xoá món thành công");
+
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi khi xoá món");
+                }
+                loadMonAn();
+            }
+        }
+        private void bunifuButton11_Click(object sender, EventArgs e)
+        {
+            string MaMa = txtMaMon.Text;
+            string TenMa = txtTenMon.Text;
+            string DVT = txtDVT.Text;
+            int Dongia = Convert.ToInt32(txtDonGia.Text);
+            string MaLM = (cbbLoaiMon.SelectedItem as LoaiMon).Malm;
+            if (string.Compare(thread, txtMaMon.Text, true) != 0)
+            {
+                if (MonAnDAO.Instance.InsertFood(MaMa, TenMa, DVT, Dongia, MaLM))
+                {
+                    MessageBox.Show("Thêm món thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi khi thêm món");
+                }
+            }
+            else
+            {
+                if (MonAnDAO.Instance.UpdateFood(MaMa, TenMa, DVT, Dongia, MaLM))
+                {
+                    MessageBox.Show("Sửa món thành công");
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi khi thêm món");
+                }
+            }
+            loadMonAn();
+            DisEnbBtn(false);
+        }
+        private void bunifuButton10_Click(object sender, EventArgs e)
+        {
+            DisEnbBtn(false);
         }
         #endregion
 
@@ -107,9 +176,10 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
 
         void loadLoaiMon()
         {
+            ClearAllBindingsLoaiMon();
             loadLoaiMonList();
             loaiMonBinding();
-            
+
         }
         void loadLoaiMonList()
         {
@@ -118,12 +188,93 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
         void loaiMonBinding()
         {
             txtMaLoaiMon.DataBindings.Add(new Binding("Text", dtgvLoaiMon.DataSource, "Malm"));
-            txtTenLoaiMon.DataBindings.Add(new Binding("text", dtgvLoaiMon.DataSource, "Tenlm"));
+            txtTenLoaiMon.DataBindings.Add(new Binding("text", dtgvLoaiMon.DataSource, "Tenloaimon"));
         }
         void ClearAllBindingsLoaiMon()
         {
             foreach (Control c in grbChinhSuaLoai.Controls)
                 c.DataBindings.Clear();
+        }
+        void DisEnbBtn(bool e)
+        {
+            bunifuButton10.Enabled = e;
+            bunifuButton11.Enabled = e;
+            bunifuButton12.Enabled = e;
+            bunifuButton13.Enabled = e;
+            btnThemLoaiMon.Enabled = !e;
+            btnThemMA.Enabled = !e;
+            btnSuaLoaiMon.Enabled = !e;
+            btnSuaMA.Enabled = !e;
+            btnXoaMA.Enabled = !e;
+            btnXoaLoaiMon.Enabled = !e;
+        }
+        private void btnThemLoaiMon_Click(object sender, EventArgs e)
+        {
+            thread = txtMaLoaiMon.Text;
+            DisEnbBtn(true);
+            txtMaLoaiMon.Text = DataProvider.Instance.executeScalar("select MALOAI = dbo.TAOMALOAIMON()").ToString();
+            txtTenLoaiMon.Text = "";
+
+        }
+        private void bunifuButton13_Click(object sender, EventArgs e)
+        {
+            string MaLM = txtMaLoaiMon.Text;
+            string TenLM = txtTenLoaiMon.Text;
+            if (string.Compare(thread, txtMaLoaiMon.Text, true) != 0)
+            {
+                if (LoaiMonDAO.Instance.InsertFoodCategory(MaLM, TenLM))
+                {
+                    MessageBox.Show("Thêm loại món thành công");
+
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi khi thêm loại món");
+                }
+            }
+            else
+            {
+                if (LoaiMonDAO.Instance.UpdateFoodCategory(MaLM, TenLM))
+                {
+                    MessageBox.Show("Sửa loại món thành công");
+
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi khi thêm loại món");
+                }
+            }
+
+
+            loadLoaiMon();
+            DisEnbBtn(false);
+        }
+        private void bunifuButton12_Click(object sender, EventArgs e)
+        {
+            DisEnbBtn(false);
+        }
+        private void btnSuaLoaiMon_Click(object sender, EventArgs e)
+        {
+            thread = txtMaLoaiMon.Text;
+            DisEnbBtn(true);
+        }
+        private void btnXoaLoaiMon_Click(object sender, EventArgs e)
+        {
+            string MaLM = txtMaLoaiMon.Text;
+            string TenLM = txtTenLoaiMon.Text;
+            if (MessageBox.Show("Bạn có thực sự muốn xoá loại món này?", "Xác nhận", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                if (LoaiMonDAO.Instance.DeleteFoodCategory(MaLM, TenLM))
+                {
+                    MessageBox.Show("Xoá loại món thành công");
+
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi khi xoá loại món");
+                }
+                loadLoaiMon();
+            }
         }
         #endregion
 

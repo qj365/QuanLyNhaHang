@@ -35,6 +35,23 @@ namespace QuanLyKhachHang.DAO
 
             return list;
         }
-        
+        public bool InsertFoodCategory(string maloai, string tenloai)
+        {
+            string query = string.Format("THEMLOAIMON '{0}','{1}'", maloai, tenloai);
+            int result = DataProvider.Instance.executeNonQuery(query);
+            return result > 0;
+        }
+        public bool UpdateFoodCategory(string maloai, string tenloai)
+        {
+            string query = string.Format("SUALOAIMON '{0}','{1}'", maloai, tenloai);
+            int result = DataProvider.Instance.executeNonQuery(query);
+            return result > 0;
+        }
+        public bool DeleteFoodCategory(string maloai, string tenloai)
+        {
+            string query = string.Format("Delete from LOAIMON where MALOAI = '{0}'", maloai);
+            int result = DataProvider.Instance.executeNonQuery(query);
+            return result > 0;
+        }
     }
 }
