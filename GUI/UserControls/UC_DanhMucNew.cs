@@ -174,6 +174,11 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
             }
         }
 
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void txtSMaNV_TextChange(object sender, EventArgs e)
         {
 
