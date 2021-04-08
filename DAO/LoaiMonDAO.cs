@@ -53,5 +53,11 @@ namespace QuanLyKhachHang.DAO
             int result = DataProvider.Instance.executeNonQuery(query);
             return result > 0;
         }
+        public DataTable SearchFoodCategory(string malm)
+        {
+            string query = string.Format("SELECT * FROM LOAIMON WHERE(MALOAI LIKE '%' + '{0}' + '%' OR '{0}' = '') ", malm);
+            DataTable table = DataProvider.Instance.executeQuery(query);
+            return table;
+        }
     }
 }

@@ -60,5 +60,11 @@ namespace QuanLyKhachHang.DAO
             int result = DataProvider.Instance.executeNonQuery(query);
             return result > 0;
         }
+        public DataTable SearchFood(string mama, string tenmonan)
+        {
+            string query = string.Format("SELECT * FROM MONAN WHERE(MAMA LIKE '%' + '{0}' + '%' OR '{0}' = '') AND(TENMONAN LIKE N'%' + '{1}' + '%' OR '{1}' = '')", mama, tenmonan);
+            DataTable table = DataProvider.Instance.executeQuery(query);
+            return table;
+        }
     }
 }

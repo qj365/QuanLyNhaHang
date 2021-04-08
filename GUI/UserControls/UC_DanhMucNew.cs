@@ -169,6 +169,19 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
         {
             DisEnbBtn(false);
         }
+        private void bunifuTextBox10_TextChange(object sender, EventArgs e)
+        {
+            string MaMa = bunifuTextBox10.Text;
+            string TenMa = bunifuTextBox9.Text;
+            dtgvMonAn.DataSource = MonAnDAO.Instance.SearchFood(MaMa, TenMa);
+        }
+        private void bunifuTextBox9_TextChange(object sender, EventArgs e)
+        {
+            string MaMa = bunifuTextBox10.Text;
+            string TenMa = bunifuTextBox9.Text;
+            dtgvMonAn.DataSource = MonAnDAO.Instance.SearchFood(MaMa, TenMa);
+
+        }
         #endregion
 
 
@@ -275,6 +288,11 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
                 }
                 loadLoaiMon();
             }
+        }
+        private void bunifuTextBox6_TextChange(object sender, EventArgs e)
+        {
+            string MaLM = bunifuTextBox6.Text;
+            dtgvLoaiMon.DataSource = LoaiMonDAO.Instance.SearchFoodCategory(MaLM);
         }
         #endregion
 
