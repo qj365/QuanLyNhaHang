@@ -182,6 +182,11 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
             dtgvMonAn.DataSource = MonAnDAO.Instance.SearchFood(MaMa, TenMa);
 
         }
+        private void bunifuButton17_Click(object sender, EventArgs e)
+        {
+            bunifuTextBox9.Text = "";
+            bunifuTextBox10.Text = "";
+        }
         #endregion
 
 
