@@ -41,7 +41,7 @@ namespace QuanLyKhachHang.DAO
 
         public Boolean XoaKM(string makm)
         {
-            string query = string.Format("delete KHUYENMAI where MAKM='{0}'",makm);
+            string query = string.Format("delete KHUYENMAI where MAKM='{0}'", makm);
             int result = DataProvider.Instance.executeNonQuery(query);
             return result > 0;
         }
@@ -68,3 +68,4 @@ namespace QuanLyKhachHang.DAO
         }
     }
 }
+

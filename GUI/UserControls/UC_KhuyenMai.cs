@@ -31,10 +31,6 @@ namespace QuanLyKhachHang.UserControls
 
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
         public void LoadKMList()
         {
             dtgvKMList.DataSource = DAO.KhuyenMaiDAO.Instance.GetListKM();
