@@ -28,7 +28,7 @@ namespace QuanLyKhachHang.DAO
         }
         public DataTable getMonAnList()
         {
-            DataTable table = DataProvider.Instance.executeQuery("select * from monan");
+            DataTable table = DataProvider.Instance.executeQuery("select MAMA,TENMONAN,DVT,DONGIA,TENLOAIMON from MONAN,LOAIMON WHERE MONAN.MALOAI = LOAIMON.MALOAI");
             return table;
         }
         public List<MonAn> getMonAnByLoaiMon(string maloai)
