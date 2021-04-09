@@ -219,9 +219,9 @@ namespace QuanLyKhachHang.GUI.UserControls
                     showBill(table.Maban);
                 }
             }
-            catch (Exception a)
+            catch 
             {
-                return;
+                
             }
         }
 
