@@ -141,6 +141,7 @@
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\BanAnDAO.cs" />
     <Compile Include="DAO\ChiTietDatMonDAO.cs" />
+    <Compile Include="DAO\Data.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\HoaDonDAO.cs" />
     <Compile Include="DAO\KhachHangDAO.cs" />
@@ -154,6 +155,7 @@
     <Compile Include="DTO\BanAnDTO.cs" />
     <Compile Include="DTO\ChiTietDatMon.cs" />
     <Compile Include="DTO\HoaDon.cs" />
+    <Compile Include="DTO\KhachHang.cs" />
     <Compile Include="DTO\KhuyenmaiDTO.cs" />
     <Compile Include="DTO\LoaiMon.cs" />
     <Compile Include="DTO\MonAn.cs" />
