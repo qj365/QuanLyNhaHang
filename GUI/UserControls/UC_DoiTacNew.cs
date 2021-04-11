@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using QuanLyKhachHang.DAO;
 
 namespace QuanLyKhachHang.GUI.UserControls.DoiTac
 {
@@ -16,11 +17,15 @@ namespace QuanLyKhachHang.GUI.UserControls.DoiTac
         public UC_DoiTacNew()
         {
             InitializeComponent();
+            loadKH();
+            disEnableBtnKH(true);
         }
 
-        private void btnKhach_Click(object sender, EventArgs e)
+        private void btnKhachHang_Click(object sender, EventArgs e)
         {
             pageDoiTac.SelectTab(0);
+            loadKH();
+            clearAllBindings();
         }
 
         private void btnNhaCungCap_Click(object sender, EventArgs e)
@@ -28,93 +33,127 @@ namespace QuanLyKhachHang.GUI.UserControls.DoiTac
             pageDoiTac.SelectTab(1);
         }
 
-        private string connectionStr = @"Data Source=.\sqlexpress;Initial Catalog=QUANLYNHAHANG;Integrated Security=True";
-
-        #region KhachHang
-        private void bunifuButton8_Click(object sender, EventArgs e)
+        private void clearAllBindings()
         {
-            SqlConnection sqlCon = new SqlConnection(connectionStr);
-            if (sqlCon.State == ConnectionState.Closed)
-            {
-                sqlCon.Open();
-            }
-            SqlCommand ThemNCC = new SqlCommand("ThemKhachHang", sqlCon);
-            ThemNCC.CommandType = CommandType.StoredProcedure;
-            ThemNCC.Parameters.AddWithValue("@MAKH", bunifuTextBox11.Text.Trim());
-            ThemNCC.Parameters.AddWithValue("@TENKH", bunifuTextBox12.Text.Trim());
-            ThemNCC.Parameters.AddWithValue("@SDT", bunifuTextBox13.Text.Trim());
-            ThemNCC.ExecuteNonQuery();
-            MessageBox.Show("Thanh cong");
+            clearBindingsKH();
         }
 
-        /*
-CREATE PROCEDURE dbo.ThemKhachHang
-    @MAKH AS CHAR(10),
-	@TENKH AS NVARCHAR(50),
-	@SDT AS CHAR(10)
-AS
-BEGIN
-    INSERT dbo.KHACHHANG
-    (
-        MAKH,
-        TENKH,
-        SDT
-    )
-    VALUES
-    (   @MAKH,  -- MAKH - char(10)
-        @TENKH, -- TENKH - nvarchar(50)
-        @SDT   -- SDT - char(10)
-        )
-END
-GO
-         */
+        #region KhachHang
+
+        private void loadKH()
+        {
+            clearBindingsKH();
+            loadListKH();
+            kHBinding();
+        }
+
+        private void clearBindingsKH()
+        {
+            foreach (Control c in gbChinhSuaKH.Controls)
+            {
+                c.DataBindings.Clear();
+            }
+            foreach (Control c in gbTimKiemKH.Controls)
+            {
+                c.DataBindings.Clear();
+            }
+        }
+
+        private void loadListKH()
+        {
+            dtgvKH.DataSource = KhachHangDAO.Instance.getKHList();
+        }
+
+        void kHBinding()
+        {
+            tbChinhSuaMaKH.DataBindings.Add(new Binding("text", dtgvKH.DataSource, "makh"));
+            tbChinhSuaTenKH.DataBindings.Add(new Binding("text", dtgvKH.DataSource, "tenkh"));
+            tbChinhSuaSDTKH.DataBindings.Add(new Binding("text", dtgvKH.DataSource, "sdt"));
+        }
+
+        private void disEnableBtnKH(bool x)
+        {
+            btnThemKH.Enabled = x;
+            btnSuaKH.Enabled = x;
+            btnXoaKH.Enabled = x;
+            btnLuuKH.Enabled = !x;
+            btnHuyKH.Enabled = !x;
+        }
+
+        private void btnThemKH_Click(object sender, EventArgs e)
+        {
+            disEnableBtnKH(false);
+            clearBindingsKH();
+            tbChinhSuaMaKH.Text = DataProvider.Instance.executeScalar("SELECT [dbo].[TAOMAKH]()").ToString();
+            tbChinhSuaTenKH.Text = "";
+            tbChinhSuaSDTKH.Text = "";
+        }
+
+        private void btnSuaKH_Click(object sender, EventArgs e)
+        {
+            disEnableBtnKH(false);
+            clearBindingsKH();
+            tbChinhSuaMaKH.DataBindings.Add(new Binding("text", dtgvKH.DataSource, "makh"));
+            tbChinhSuaTenKH.DataBindings.Add(new Binding("text", dtgvKH.DataSource, "tenkh"));
+            tbChinhSuaSDTKH.DataBindings.Add(new Binding("text", dtgvKH.DataSource, "sdt"));
+        }
+
+        private void themSuaKH(string makh, string tenkh, string sdtkh)
+        {
+            DataProvider.Instance.executeNonQuery("exec [dbo].[ThemSuaKH] @makh , @tenkh , @sdtkh",
+                new object[] {makh, tenkh, sdtkh});
+        }
+
+        private void btnLuuKH_Click(object sender, EventArgs e)
+        {
+            string makh = tbChinhSuaMaKH.Text;
+            string tenkh = tbChinhSuaTenKH.Text;
+            string sdtkh = tbChinhSuaSDTKH.Text;
+            themSuaKH(makh, tenkh, sdtkh);
+            clearBindingsKH();
+            loadKH();
+            disEnableBtnKH(true);
+        }
+
+        private void btnHuyKH_Click(object sender, EventArgs e)
+        {
+            disEnableBtnKH(true);
+            loadKH();
+        }
+
+        private void tbTimKiemMaKH_TextChange(object sender, EventArgs e)
+        {
+            string makh = tbTimKiemMaKH.Text;
+            string tenkh = tbTimKiemTenKH.Text;
+            dtgvKH.DataSource = KhachHangDAO.Instance.timKiemKH(makh, tenkh);
+        }
+
+        private void tbTimKiemTenKH_TextChange(object sender, EventArgs e)
+        {
+            string makh = tbTimKiemMaKH.Text;
+            string tenkh = tbTimKiemTenKH.Text;
+            dtgvKH.DataSource = KhachHangDAO.Instance.timKiemKH(makh, tenkh);
+        }
+
 
         #endregion
 
         #region NhaCungCap
-        private void btnThem_Click(object sender, EventArgs e)
+
+        private void disEnableBtnNCC(bool x)
         {
-            SqlConnection sqlCon = new SqlConnection(connectionStr);
-            if (sqlCon.State == ConnectionState.Closed)
-            {
-                sqlCon.Open();
-            }
-            SqlCommand ThemNCC = new SqlCommand("ThemNCC", sqlCon);
-            ThemNCC.CommandType = CommandType.StoredProcedure;
-            ThemNCC.Parameters.AddWithValue("@MANCC", bunifuTextBox3.Text.Trim());
-            ThemNCC.Parameters.AddWithValue("@TENNCC", bunifuTextBox1.Text.Trim());
-            ThemNCC.Parameters.AddWithValue("@DIACHI", bunifuTextBox6.Text.Trim());
-            ThemNCC.Parameters.AddWithValue("@SDT", bunifuTextBox2.Text.Trim());
-            ThemNCC.ExecuteNonQuery();
-            MessageBox.Show("Thanh cong");
+            btnThemNCC.Enabled = x;
+            btnSuaNCC.Enabled = x;
+            btnXoaNCC.Enabled = x;
+            btnLuuNCC.Enabled = !x;
+            btnHuyNCC.Enabled = !x;
         }
 
-        /*
-CREATE PROCEDURE dbo.ThemNCC
-    @MANCC AS CHAR(10),
-	@TENNCC AS nvarchar(50),
-	@DIACHI AS nvarchar(100),
-	@SDT AS CHAR(10)
-AS
-BEGIN
-    INSERT dbo.NHACUNGCAP
-    (
-        MANCC,
-        TENNCC,
-        DIACHI,
-        SDT
-    )
-    VALUES
-    (   @MANCC,  -- MANCC - char(10)
-        @TENNCC, -- TENNCC - nvarchar(50)
-        @DIACHI, -- DIACHI - nvarchar(100)
-        @SDT   -- SDT - char(10)
-        )
-END
-GO        
-        */
+
+
+
+
+
         #endregion
-
-
     }
 }
