@@ -143,6 +143,7 @@
     <Compile Include="DAO\ChiTietDatMonDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\HoaDonDAO.cs" />
+    <Compile Include="DAO\KhachHangDAO.cs" />
     <Compile Include="DAO\KhuyenMaiDAO.cs" />
     <Compile Include="DAO\LoaiMonDAO.cs" />
     <Compile Include="DAO\MonAnDAO.cs" />
