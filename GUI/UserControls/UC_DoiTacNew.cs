@@ -47,6 +47,7 @@ namespace QuanLyKhachHang.GUI.UserControls.DoiTac
             clearBindingsKH();
             loadListKH();
             kHBinding();
+            disEnableBtnKH(true);
         }
 
         private void clearBindingsKH()
@@ -81,6 +82,8 @@ namespace QuanLyKhachHang.GUI.UserControls.DoiTac
             btnXoaKH.Enabled = x;
             btnLuuKH.Enabled = !x;
             btnHuyKH.Enabled = !x;
+            tbChinhSuaTenKH.Enabled = !x;
+            tbChinhSuaSDTKH.Enabled = !x;
         }
 
         private void btnThemKH_Click(object sender, EventArgs e)
@@ -147,6 +150,7 @@ namespace QuanLyKhachHang.GUI.UserControls.DoiTac
             clearBindingsNCC();
             loadListNCC();
             nCCBinding();
+            disEnableBtnNCC(true);
         }
 
         private void clearBindingsNCC()
@@ -182,6 +186,9 @@ namespace QuanLyKhachHang.GUI.UserControls.DoiTac
             btnXoaNCC.Enabled = x;
             btnLuuNCC.Enabled = !x;
             btnHuyNCC.Enabled = !x;
+            tbChinhSuaTenNCC.Enabled = !x;
+            tbChinhSuaSDTNCC.Enabled = !x;
+            tbChinhSuaDiaChiNCC.Enabled = !x;
         }
 
         private void btnThemNCC_Click(object sender, EventArgs e)
@@ -198,10 +205,10 @@ namespace QuanLyKhachHang.GUI.UserControls.DoiTac
         {
             disEnableBtnNCC(false);
             clearBindingsNCC();
-            tbChinhSuaMaNCC.DataBindings.Add(new Binding("text", dtgvKH.DataSource, "mancc"));
-            tbChinhSuaTenNCC.DataBindings.Add(new Binding("text", dtgvKH.DataSource, "tenncc"));
-            tbChinhSuaSDTNCC.DataBindings.Add(new Binding("text", dtgvKH.DataSource, "sdt"));
-            tbChinhSuaDiaChiNCC.DataBindings.Add(new Binding("text", dtgvKH.DataSource, "diachi"));
+            tbChinhSuaMaNCC.DataBindings.Add(new Binding("text", dtgvNCC.DataSource, "mancc"));
+            tbChinhSuaTenNCC.DataBindings.Add(new Binding("text", dtgvNCC.DataSource, "tenncc"));
+            tbChinhSuaSDTNCC.DataBindings.Add(new Binding("text", dtgvNCC.DataSource, "sdt"));
+            tbChinhSuaDiaChiNCC.DataBindings.Add(new Binding("text", dtgvNCC.DataSource, "diachi"));
         }
 
         private void btnXoaNCC_Click(object sender, EventArgs e)
@@ -229,8 +236,8 @@ namespace QuanLyKhachHang.GUI.UserControls.DoiTac
 
         private void btnHuyNCC_Click(object sender, EventArgs e)
         {
-            disEnableBtnKH(true);
-            loadKH();
+            disEnableBtnNCC(true);
+            loadNCC();
         }
 
         private void tbTimKiemMaNCC_TextChange(object sender, EventArgs e)
