@@ -253,10 +253,10 @@
             this.pageDoiTac.Location = new System.Drawing.Point(3, 66);
             this.pageDoiTac.Multiline = true;
             this.pageDoiTac.Name = "pageDoiTac";
-            this.pageDoiTac.Page = this.pageKH;
-            this.pageDoiTac.PageIndex = 0;
-            this.pageDoiTac.PageName = "pageKH";
-            this.pageDoiTac.PageTitle = "pageKH";
+            this.pageDoiTac.Page = this.tabPage2;
+            this.pageDoiTac.PageIndex = 1;
+            this.pageDoiTac.PageName = "tabPage2";
+            this.pageDoiTac.PageTitle = "pageNCC";
             this.pageDoiTac.SelectedIndex = 0;
             this.pageDoiTac.Size = new System.Drawing.Size(1145, 559);
             this.pageDoiTac.TabIndex = 3;
@@ -1265,6 +1265,7 @@
             this.btnHuyNCC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnHuyNCC.TextMarginLeft = 15;
             this.btnHuyNCC.UseDefaultRadiusAndThickness = true;
+            this.btnHuyNCC.Click += new System.EventHandler(this.btnHuyNCC_Click);
             // 
             // btnLuuNCC
             // 
@@ -1328,6 +1329,7 @@
             this.btnLuuNCC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLuuNCC.TextMarginLeft = 15;
             this.btnLuuNCC.UseDefaultRadiusAndThickness = true;
+            this.btnLuuNCC.Click += new System.EventHandler(this.btnLuuNCC_Click);
             // 
             // tbChinhSuaTenNCC
             // 
@@ -1610,6 +1612,7 @@
             this.btnSuaNCC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSuaNCC.TextMarginLeft = 15;
             this.btnSuaNCC.UseDefaultRadiusAndThickness = true;
+            this.btnSuaNCC.Click += new System.EventHandler(this.btnSuaNCC_Click);
             // 
             // tbChinhSuaMaNCC
             // 
@@ -1783,6 +1786,7 @@
             this.btnThemNCC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnThemNCC.TextMarginLeft = 15;
             this.btnThemNCC.UseDefaultRadiusAndThickness = true;
+            this.btnThemNCC.Click += new System.EventHandler(this.btnThemNCC_Click);
             // 
             // label3
             // 
@@ -1858,6 +1862,7 @@
             this.btnXoaNCC.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnXoaNCC.TextMarginLeft = 15;
             this.btnXoaNCC.UseDefaultRadiusAndThickness = true;
+            this.btnXoaNCC.Click += new System.EventHandler(this.btnXoaNCC_Click);
             // 
             // gbTimKiemNCC
             // 
@@ -2010,6 +2015,7 @@
             this.tbTimKiemTenNCC.TextPlaceholder = "";
             this.tbTimKiemTenNCC.UseSystemPasswordChar = false;
             this.tbTimKiemTenNCC.WordWrap = true;
+            this.tbTimKiemTenNCC.TextChange += new System.EventHandler(this.tbTimKiemTenNCC_TextChange);
             // 
             // tbTimKiemMaNCC
             // 
@@ -2083,6 +2089,7 @@
             this.tbTimKiemMaNCC.TextPlaceholder = "";
             this.tbTimKiemMaNCC.UseSystemPasswordChar = false;
             this.tbTimKiemMaNCC.WordWrap = true;
+            this.tbTimKiemMaNCC.TextChange += new System.EventHandler(this.tbTimKiemMaNCC_TextChange);
             // 
             // label4
             // 
