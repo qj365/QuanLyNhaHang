@@ -59,7 +59,7 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
             Load_NL();
             MacDinhNL();
         }
- 
+
 
         void clearAllBindings()
         {
@@ -111,11 +111,13 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
             txtDVT.Text = "";
             txtDonGia.Text = "";
         }
+
         private void btnSuaMA_Click(object sender, EventArgs e)
         {
             thread = txtMaMon.Text;
             DisEnbBtn(true);
         }
+
         private void btnXoaMA_Click(object sender, EventArgs e)
         {
             string MaMa = txtMaMon.Text;
@@ -133,7 +135,8 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
                 loadMonAn();
             }
         }
-        private void bunifuButton11_Click(object sender, EventArgs e)
+
+        private void btnSave1_Click_1(object sender, EventArgs e)
         {
             string MaMa = txtMaMon.Text;
             string TenMa = txtTenMon.Text;
@@ -165,27 +168,30 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
             loadMonAn();
             DisEnbBtn(false);
         }
-        private void bunifuButton10_Click(object sender, EventArgs e)
+
+        private void btnCancel1_Click_1(object sender, EventArgs e)
         {
             DisEnbBtn(false);
+            ClearAllBindingsMonAn();
+            monAnBinding();
         }
-        private void bunifuTextBox10_TextChange(object sender, EventArgs e)
+        private void txtTKMA1_TextChange(object sender, EventArgs e)
         {
-            string MaMa = bunifuTextBox10.Text;
-            string TenMa = bunifuTextBox9.Text;
+            string MaMa = txtTKMA1.Text;
+            string TenMa = txtTKMA2.Text;
             dtgvMonAn.DataSource = MonAnDAO.Instance.SearchFood(MaMa, TenMa);
         }
-        private void bunifuTextBox9_TextChange(object sender, EventArgs e)
-        {
-            string MaMa = bunifuTextBox10.Text;
-            string TenMa = bunifuTextBox9.Text;
-            dtgvMonAn.DataSource = MonAnDAO.Instance.SearchFood(MaMa, TenMa);
 
-        }
-        private void bunifuButton17_Click(object sender, EventArgs e)
+        private void txtTKMA2_TextChange(object sender, EventArgs e)
         {
-            bunifuTextBox9.Text = "";
-            bunifuTextBox10.Text = "";
+            string MaMa = txtTKMA1.Text;
+            string TenMa = txtTKMA2.Text;
+            dtgvMonAn.DataSource = MonAnDAO.Instance.SearchFood(MaMa, TenMa);
+        }
+        private void btnClearMA_Click_1(object sender, EventArgs e)
+        {
+            txtTKMA2.Text = "";
+            txtTKMA1.Text = "";
         }
         #endregion
 
@@ -215,26 +221,62 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
         }
         void DisEnbBtn(bool e)
         {
-            bunifuButton10.Enabled = e;
-            bunifuButton11.Enabled = e;
-            bunifuButton12.Enabled = e;
-            bunifuButton13.Enabled = e;
+            btnCancel1.Enabled = e;
+            btnSave1.Enabled = e;
+            btnCancel2.Enabled = e;
+            btnSave2.Enabled = e;
             btnThemLoaiMon.Enabled = !e;
             btnThemMA.Enabled = !e;
             btnSuaLoaiMon.Enabled = !e;
             btnSuaMA.Enabled = !e;
             btnXoaMA.Enabled = !e;
             btnXoaLoaiMon.Enabled = !e;
+            txtTenLoaiMon.Enabled = e;
+            txtTenMon.Enabled = e;
+            txtDonGia.Enabled = e;
+            txtDVT.Enabled = e;
+            cbbLoaiMon.Enabled = e;
         }
-        private void btnThemLoaiMon_Click(object sender, EventArgs e)
+        private void btnThemLoaiMon_Click_1(object sender, EventArgs e)
         {
             thread = txtMaLoaiMon.Text;
             DisEnbBtn(true);
             txtMaLoaiMon.Text = DataProvider.Instance.executeScalar("select MALOAI = dbo.TAOMALOAIMON()").ToString();
             txtTenLoaiMon.Text = "";
-
         }
-        private void bunifuButton13_Click(object sender, EventArgs e)
+
+        private void btnSuaLoaiMon_Click_1(object sender, EventArgs e)
+        {
+            thread = txtMaLoaiMon.Text;
+            DisEnbBtn(true);
+        }
+
+        private void btnXoaLoaiMon_Click_1(object sender, EventArgs e)
+        {
+            string MaLM = txtMaLoaiMon.Text;
+            string TenLM = txtTenLoaiMon.Text;
+            if (MessageBox.Show("Bạn có thực sự muốn xoá loại món này?", "Xác nhận", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                if (LoaiMonDAO.Instance.DeleteFoodCategory(MaLM, TenLM))
+                {
+                    MessageBox.Show("Xoá loại món thành công");
+
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi khi xoá loại món");
+                }
+                loadLoaiMon();
+            }
+        }
+
+        private void txtTKLM_TextChange(object sender, EventArgs e)
+        {
+            string MaLM = txtTKLM.Text;
+            dtgvLoaiMon.DataSource = LoaiMonDAO.Instance.SearchFoodCategory(MaLM);
+        }
+
+        private void btnSave2_Click_1(object sender, EventArgs e)
         {
             string MaLM = txtMaLoaiMon.Text;
             string TenLM = txtTenLoaiMon.Text;
@@ -267,38 +309,14 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
             loadLoaiMon();
             DisEnbBtn(false);
         }
-        private void bunifuButton12_Click(object sender, EventArgs e)
+
+        private void btnCancel2_Click_1(object sender, EventArgs e)
         {
             DisEnbBtn(false);
+            ClearAllBindingsLoaiMon();
+            loaiMonBinding();
         }
-        private void btnSuaLoaiMon_Click(object sender, EventArgs e)
-        {
-            thread = txtMaLoaiMon.Text;
-            DisEnbBtn(true);
-        }
-        private void btnXoaLoaiMon_Click(object sender, EventArgs e)
-        {
-            string MaLM = txtMaLoaiMon.Text;
-            string TenLM = txtTenLoaiMon.Text;
-            if (MessageBox.Show("Bạn có thực sự muốn xoá loại món này?", "Xác nhận", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
-            {
-                if (LoaiMonDAO.Instance.DeleteFoodCategory(MaLM, TenLM))
-                {
-                    MessageBox.Show("Xoá loại món thành công");
 
-                }
-                else
-                {
-                    MessageBox.Show("Có lỗi khi xoá loại món");
-                }
-                loadLoaiMon();
-            }
-        }
-        private void bunifuTextBox6_TextChange(object sender, EventArgs e)
-        {
-            string MaLM = bunifuTextBox6.Text;
-            dtgvLoaiMon.DataSource = LoaiMonDAO.Instance.SearchFoodCategory(MaLM);
-        }
         #endregion
 
 
@@ -463,13 +481,13 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
         {
             bandto.MABAN = bunifuTextBoxmabanan.Text.ToString().Trim();
             bandto.SOCHONGOI = int.Parse(bunifuTextBoxsochongoi.Text.ToString().Trim());
-            DialogResult x = MessageBox.Show("Xóa", "Bạn có chắc chắn muốn xóa bàn số " + bandto.MABAN + " chứ ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);  
+            DialogResult x = MessageBox.Show("Xóa", "Bạn có chắc chắn muốn xóa bàn số " + bandto.MABAN + " chứ ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             bool xoaban = bandao.XoaBA(bandto);
-            if(xoaban == true && x == DialogResult.Yes)
+            if (xoaban == true && x == DialogResult.Yes)
             {
                 DialogResult result = MessageBox.Show("Thành công", "Xóa", MessageBoxButtons.OK);
                 Load_Lai_BanAn();
-            }    
+            }
 
         }
 
@@ -591,9 +609,9 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
             NLdto.TENNL = bunifuTextBoxTenNL.Text;
             NLdto.DVT = bunifuTextBoxDVT.Text;
             NLdto.DONGIA = int.Parse(bunifuTextBoxDonGia.Text);
-            DialogResult xoa = MessageBox.Show("Xóa", "Bạn chắc chắn muốn xóa nguyên liệu "+ NLdto.TENNL+ " chứ", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            DialogResult xoa = MessageBox.Show("Xóa", "Bạn chắc chắn muốn xóa nguyên liệu " + NLdto.TENNL + " chứ", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             bool xoanl = NLdao.XoaNL(NLdto);
-            if(xoanl == true && xoa == DialogResult.Yes)
+            if (xoanl == true && xoa == DialogResult.Yes)
             {
                 DialogResult result = MessageBox.Show("Thành công", "Xóa", MessageBoxButtons.OK);
                 if (result == DialogResult.OK)
@@ -601,12 +619,12 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
                     Load_lai_NL();
                     MacDinhNL();
                 }
-            }    
+            }
         }
 
         private void BtnLuuNguyenLieu_Click(object sender, EventArgs e)
         {
-           
+
             if (CheckThemNL() && luu == "them")
             {
                 NLdto.MANL = bunifuTextBoxMaNL.Text;
@@ -614,7 +632,7 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
                 NLdto.DVT = bunifuTextBoxDVT.Text;
                 NLdto.DONGIA = int.Parse(bunifuTextBoxDonGia.Text);
                 bool themnl = NLdao.ThemNL(NLdto);
-                if ( themnl == true)
+                if (themnl == true)
                 {
 
                     DialogResult result = MessageBox.Show("Thành công", "Thêm", MessageBoxButtons.OK);
@@ -664,6 +682,20 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
         }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
         #endregion
+
+       
     }
 }
