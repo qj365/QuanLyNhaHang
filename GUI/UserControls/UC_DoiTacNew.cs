@@ -31,6 +31,8 @@ namespace QuanLyKhachHang.GUI.UserControls.DoiTac
         private void btnNhaCungCap_Click(object sender, EventArgs e)
         {
             pageDoiTac.SelectTab(1);
+            loadNCC();
+            clearAllBindings();
         }
 
         private void clearAllBindings()
@@ -45,6 +47,7 @@ namespace QuanLyKhachHang.GUI.UserControls.DoiTac
             clearBindingsKH();
             loadListKH();
             kHBinding();
+            disEnableBtnKH(true);
         }
 
         private void clearBindingsKH()
@@ -53,6 +56,7 @@ namespace QuanLyKhachHang.GUI.UserControls.DoiTac
             {
                 c.DataBindings.Clear();
             }
+
             foreach (Control c in gbTimKiemKH.Controls)
             {
                 c.DataBindings.Clear();
@@ -78,6 +82,8 @@ namespace QuanLyKhachHang.GUI.UserControls.DoiTac
             btnXoaKH.Enabled = x;
             btnLuuKH.Enabled = !x;
             btnHuyKH.Enabled = !x;
+            tbChinhSuaTenKH.Enabled = !x;
+            tbChinhSuaSDTKH.Enabled = !x;
         }
 
         private void btnThemKH_Click(object sender, EventArgs e)
@@ -135,10 +141,43 @@ namespace QuanLyKhachHang.GUI.UserControls.DoiTac
             dtgvKH.DataSource = KhachHangDAO.Instance.timKiemKH(makh, tenkh);
         }
 
-
         #endregion
 
         #region NhaCungCap
+
+        private void loadNCC()
+        {
+            clearBindingsNCC();
+            loadListNCC();
+            nCCBinding();
+            disEnableBtnNCC(true);
+        }
+
+        private void clearBindingsNCC()
+        {
+            foreach (Control c in gbChinhSuaNCC.Controls)
+            {
+                c.DataBindings.Clear();
+            }
+
+            foreach (Control c in gbTimKiemNCC.Controls)
+            {
+                c.DataBindings.Clear();
+            }
+        }
+
+        private void loadListNCC()
+        {
+            dtgvNCC.DataSource = NhaCungCapDAO.Instance.getNCCList();
+        }
+
+        private void nCCBinding()
+        {
+            tbChinhSuaMaNCC.DataBindings.Add(new Binding("text", dtgvNCC.DataSource, "mancc"));
+            tbChinhSuaTenNCC.DataBindings.Add(new Binding("text", dtgvNCC.DataSource, "tenncc"));
+            tbChinhSuaSDTNCC.DataBindings.Add(new Binding("text", dtgvNCC.DataSource, "sdt"));
+            tbChinhSuaDiaChiNCC.DataBindings.Add(new Binding("text", dtgvNCC.DataSource, "diachi"));
+        }
 
         private void disEnableBtnNCC(bool x)
         {
@@ -147,13 +186,76 @@ namespace QuanLyKhachHang.GUI.UserControls.DoiTac
             btnXoaNCC.Enabled = x;
             btnLuuNCC.Enabled = !x;
             btnHuyNCC.Enabled = !x;
+            tbChinhSuaTenNCC.Enabled = !x;
+            tbChinhSuaSDTNCC.Enabled = !x;
+            tbChinhSuaDiaChiNCC.Enabled = !x;
         }
 
+        private void btnThemNCC_Click(object sender, EventArgs e)
+        {
+            disEnableBtnNCC(false);
+            clearBindingsNCC();
+            tbChinhSuaMaNCC.Text = DataProvider.Instance.executeScalar("SELECT [dbo].[TAOMANCC]()").ToString();
+            tbChinhSuaTenNCC.Text = "";
+            tbChinhSuaSDTNCC.Text = "";
+            tbChinhSuaDiaChiNCC.Text = "";
+        }
 
+        private void btnSuaNCC_Click(object sender, EventArgs e)
+        {
+            disEnableBtnNCC(false);
+            clearBindingsNCC();
+            tbChinhSuaMaNCC.DataBindings.Add(new Binding("text", dtgvNCC.DataSource, "mancc"));
+            tbChinhSuaTenNCC.DataBindings.Add(new Binding("text", dtgvNCC.DataSource, "tenncc"));
+            tbChinhSuaSDTNCC.DataBindings.Add(new Binding("text", dtgvNCC.DataSource, "sdt"));
+            tbChinhSuaDiaChiNCC.DataBindings.Add(new Binding("text", dtgvNCC.DataSource, "diachi"));
+        }
 
+        private void btnXoaNCC_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void themSuaNCC(string mancc, string tenncc, string sdtncc, string diachincc)
+        {
+            DataProvider.Instance.executeNonQuery("exec [dbo].[ThemSuaNCC] @mancc , @tenncc , @sdtncc , @diachincc",
+                new object[] {mancc, tenncc, sdtncc, diachincc});
+        }
+
+        private void btnLuuNCC_Click(object sender, EventArgs e)
+        {
+            string mancc = tbChinhSuaMaNCC.Text;
+            string tenncc = tbChinhSuaTenNCC.Text;
+            string sdtncc = tbChinhSuaSDTNCC.Text;
+            string diachincc = tbChinhSuaDiaChiNCC.Text;
+            themSuaNCC(mancc, tenncc, sdtncc, diachincc);
+            clearBindingsNCC();
+            loadNCC();
+            disEnableBtnNCC(true);
+        }
+
+        private void btnHuyNCC_Click(object sender, EventArgs e)
+        {
+            disEnableBtnNCC(true);
+            loadNCC();
+        }
+
+        private void tbTimKiemMaNCC_TextChange(object sender, EventArgs e)
+        {
+            string mancc = tbTimKiemMaNCC.Text;
+            string tenncc = tbTimKiemTenNCC.Text;
+            dtgvKH.DataSource = NhaCungCapDAO.Instance.timKiemNCC(mancc, tenncc);
+        }
+
+        private void tbTimKiemTenNCC_TextChange(object sender, EventArgs e)
+        {
+            string mancc = tbTimKiemMaNCC.Text;
+            string tenncc = tbTimKiemTenNCC.Text;
+            dtgvKH.DataSource = NhaCungCapDAO.Instance.timKiemNCC(mancc, tenncc);
+        }
 
         #endregion
+
+        
     }
 }

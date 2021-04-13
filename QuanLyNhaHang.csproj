@@ -149,6 +149,7 @@
     <Compile Include="DAO\LoaiMonDAO.cs" />
     <Compile Include="DAO\MonAnDAO.cs" />
     <Compile Include="DAO\NguyenLieuDAO.cs" />
+    <Compile Include="DAO\NhaCungCapDAO.cs" />
     <Compile Include="DAO\NhanVienDAO.cs" />
     <Compile Include="DAO\PhieuYeuCauDAO.cs" />
     <Compile Include="DAO\TableDAO.cs" />
