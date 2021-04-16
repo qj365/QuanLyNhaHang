@@ -95,7 +95,7 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
             txtTenMon.DataBindings.Add(new Binding("text", dtgvMonAn.DataSource, "tenmonan"));
             txtDVT.DataBindings.Add(new Binding("text", dtgvMonAn.DataSource, "dvt"));
             txtDonGia.DataBindings.Add(new Binding("text", dtgvMonAn.DataSource, "dongia"));
-            cbbLoaiMon.DataBindings.Add(new Binding("Text", dtgvMonAn.DataSource, "Tenloaimon"));
+            //cbbLoaiMon.DataBindings.Add(new Binding("Text", dtgvMonAn.DataSource, "Tenloaimon"));
         }
         void ClearAllBindingsMonAn()
         {
