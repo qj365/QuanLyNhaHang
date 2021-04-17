@@ -14,6 +14,7 @@ namespace QuanLyKhachHang.DAO
 
         static string connectionStr = @"Data Source=.\sqlexpress;Initial Catalog=QUANLYNHAHANG;Integrated Security=True";
         private static readonly SqlConnection con = new SqlConnection(connectionStr);
+        //asdasdasd
         internal static DataProvider Instance 
         {
             get { if (instance == null) instance = new DataProvider(); return DataProvider.instance; }
