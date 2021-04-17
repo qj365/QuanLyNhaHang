@@ -166,6 +166,7 @@
     <Compile Include="DTO\NhanvienDTO.cs" />
     <Compile Include="DTO\PhieuYeuCau.cs" />
     <Compile Include="DTO\Table.cs" />
+    <Compile Include="DTO\TaiKhoanDTO.cs" />
     <Compile Include="GUI\Form\DanhMuc\Add_BanAn.cs">
       <SubType>Form</SubType>
     </Compile>
