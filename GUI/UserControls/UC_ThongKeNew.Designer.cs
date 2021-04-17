@@ -152,6 +152,7 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties96 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pageThongKe = new Bunifu.UI.WinForms.BunifuPages();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -219,6 +220,7 @@
             this.bunifuCustomDataGrid4 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.CbbPhanQuyen = new Bunifu.UI.WinForms.BunifuDropdown();
             this.txtName = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.txtUsername = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.btnSuaTk = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -233,13 +235,12 @@
             this.txtTkUsername = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.btnClearUsername = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuCustomDataGrid5 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.btnBan = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnPhieuNhap = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnHoaDon = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMon = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.CbbPhanQuyen = new Bunifu.UI.WinForms.BunifuDropdown();
+            this.dtgvTaiKhoan = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.pageThongKe.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -256,7 +257,7 @@
             this.tabPage5.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvTaiKhoan)).BeginInit();
             this.SuspendLayout();
             // 
             // pageThongKe
@@ -2584,9 +2585,9 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.dtgvTaiKhoan);
             this.tabPage5.Controls.Add(this.groupBox2);
             this.tabPage5.Controls.Add(this.groupBox5);
-            this.tabPage5.Controls.Add(this.bunifuCustomDataGrid5);
             this.tabPage5.Location = new System.Drawing.Point(4, 4);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -2616,6 +2617,41 @@
             this.groupBox2.TabIndex = 46;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chỉnh sửa";
+            // 
+            // CbbPhanQuyen
+            // 
+            this.CbbPhanQuyen.BackColor = System.Drawing.Color.Transparent;
+            this.CbbPhanQuyen.BorderRadius = 0;
+            this.CbbPhanQuyen.Color = System.Drawing.Color.Silver;
+            this.CbbPhanQuyen.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.CbbPhanQuyen.DisabledColor = System.Drawing.Color.Gray;
+            this.CbbPhanQuyen.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CbbPhanQuyen.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.CbbPhanQuyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbbPhanQuyen.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.CbbPhanQuyen.FillDropDown = false;
+            this.CbbPhanQuyen.FillIndicator = false;
+            this.CbbPhanQuyen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CbbPhanQuyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbbPhanQuyen.ForeColor = System.Drawing.Color.Black;
+            this.CbbPhanQuyen.FormattingEnabled = true;
+            this.CbbPhanQuyen.Icon = null;
+            this.CbbPhanQuyen.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
+            this.CbbPhanQuyen.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.CbbPhanQuyen.ItemBackColor = System.Drawing.Color.White;
+            this.CbbPhanQuyen.ItemBorderColor = System.Drawing.Color.White;
+            this.CbbPhanQuyen.ItemForeColor = System.Drawing.Color.Black;
+            this.CbbPhanQuyen.ItemHeight = 26;
+            this.CbbPhanQuyen.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
+            this.CbbPhanQuyen.Items.AddRange(new object[] {
+            "Quản lý",
+            "Thu ngân ",
+            "Đầu bếp"});
+            this.CbbPhanQuyen.Location = new System.Drawing.Point(156, 212);
+            this.CbbPhanQuyen.Name = "CbbPhanQuyen";
+            this.CbbPhanQuyen.Size = new System.Drawing.Size(260, 32);
+            this.CbbPhanQuyen.TabIndex = 31;
+            this.CbbPhanQuyen.Text = null;
             // 
             // txtName
             // 
@@ -3276,33 +3312,6 @@
             this.btnClearUsername.TextMarginLeft = 15;
             this.btnClearUsername.UseDefaultRadiusAndThickness = true;
             // 
-            // bunifuCustomDataGrid5
-            // 
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid5.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.bunifuCustomDataGrid5.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCustomDataGrid5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bunifuCustomDataGrid5.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.bunifuCustomDataGrid5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bunifuCustomDataGrid5.DoubleBuffered = true;
-            this.bunifuCustomDataGrid5.EnableHeadersVisualStyles = false;
-            this.bunifuCustomDataGrid5.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid5.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid5.Location = new System.Drawing.Point(4, 142);
-            this.bunifuCustomDataGrid5.Name = "bunifuCustomDataGrid5";
-            this.bunifuCustomDataGrid5.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.bunifuCustomDataGrid5.RowHeadersWidth = 51;
-            this.bunifuCustomDataGrid5.Size = new System.Drawing.Size(640, 397);
-            this.bunifuCustomDataGrid5.TabIndex = 44;
-            // 
             // btnBan
             // 
             this.btnBan.Active = false;
@@ -3488,40 +3497,63 @@
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton1.Click += new System.EventHandler(this.btnTaiKhoan);
             // 
-            // CbbPhanQuyen
+            // dtgvTaiKhoan
             // 
-            this.CbbPhanQuyen.BackColor = System.Drawing.Color.Transparent;
-            this.CbbPhanQuyen.BorderRadius = 0;
-            this.CbbPhanQuyen.Color = System.Drawing.Color.Silver;
-            this.CbbPhanQuyen.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.CbbPhanQuyen.DisabledColor = System.Drawing.Color.Gray;
-            this.CbbPhanQuyen.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CbbPhanQuyen.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
-            this.CbbPhanQuyen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CbbPhanQuyen.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.CbbPhanQuyen.FillDropDown = false;
-            this.CbbPhanQuyen.FillIndicator = false;
-            this.CbbPhanQuyen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CbbPhanQuyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbbPhanQuyen.ForeColor = System.Drawing.Color.Black;
-            this.CbbPhanQuyen.FormattingEnabled = true;
-            this.CbbPhanQuyen.Icon = null;
-            this.CbbPhanQuyen.IndicatorColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
-            this.CbbPhanQuyen.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.CbbPhanQuyen.ItemBackColor = System.Drawing.Color.White;
-            this.CbbPhanQuyen.ItemBorderColor = System.Drawing.Color.White;
-            this.CbbPhanQuyen.ItemForeColor = System.Drawing.Color.Black;
-            this.CbbPhanQuyen.ItemHeight = 26;
-            this.CbbPhanQuyen.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
-            this.CbbPhanQuyen.Items.AddRange(new object[] {
-            "Quản lý",
-            "Thu ngân ",
-            "Đầu bếp"});
-            this.CbbPhanQuyen.Location = new System.Drawing.Point(156, 212);
-            this.CbbPhanQuyen.Name = "CbbPhanQuyen";
-            this.CbbPhanQuyen.Size = new System.Drawing.Size(260, 32);
-            this.CbbPhanQuyen.TabIndex = 31;
-            this.CbbPhanQuyen.Text = null;
+            this.dtgvTaiKhoan.AllowCustomTheming = false;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.dtgvTaiKhoan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dtgvTaiKhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgvTaiKhoan.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dtgvTaiKhoan.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvTaiKhoan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dtgvTaiKhoan.ColumnHeadersHeight = 40;
+            this.dtgvTaiKhoan.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.dtgvTaiKhoan.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dtgvTaiKhoan.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dtgvTaiKhoan.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.dtgvTaiKhoan.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtgvTaiKhoan.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.dtgvTaiKhoan.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.dtgvTaiKhoan.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.dtgvTaiKhoan.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.dtgvTaiKhoan.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dtgvTaiKhoan.CurrentTheme.Name = null;
+            this.dtgvTaiKhoan.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dtgvTaiKhoan.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dtgvTaiKhoan.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dtgvTaiKhoan.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.dtgvTaiKhoan.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvTaiKhoan.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dtgvTaiKhoan.EnableHeadersVisualStyles = false;
+            this.dtgvTaiKhoan.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.dtgvTaiKhoan.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.dtgvTaiKhoan.HeaderBgColor = System.Drawing.Color.Empty;
+            this.dtgvTaiKhoan.HeaderForeColor = System.Drawing.Color.White;
+            this.dtgvTaiKhoan.Location = new System.Drawing.Point(0, 131);
+            this.dtgvTaiKhoan.Name = "dtgvTaiKhoan";
+            this.dtgvTaiKhoan.RowHeadersVisible = false;
+            this.dtgvTaiKhoan.RowHeadersWidth = 51;
+            this.dtgvTaiKhoan.RowTemplate.Height = 40;
+            this.dtgvTaiKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvTaiKhoan.Size = new System.Drawing.Size(644, 408);
+            this.dtgvTaiKhoan.TabIndex = 45;
+            this.dtgvTaiKhoan.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
             // UC_ThongKeNew
             // 
@@ -3559,7 +3591,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvTaiKhoan)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3637,7 +3669,6 @@
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox txtTkUsername;
         private System.Windows.Forms.Label label24;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnClearUsername;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid5;
         private System.Windows.Forms.GroupBox groupBox6;
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox bunifuTextBox1;
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox bunifuTextBox9;
@@ -3654,5 +3685,6 @@
         private System.Windows.Forms.Label label25;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton16;
         private Bunifu.UI.WinForms.BunifuDropdown CbbPhanQuyen;
+        private Bunifu.UI.WinForms.BunifuDataGridView dtgvTaiKhoan;
     }
 }
