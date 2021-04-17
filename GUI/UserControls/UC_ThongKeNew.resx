@@ -511,7 +511,30 @@
         fwmdqB9DhfHHcAV8X0Qr4PsqXgl4IH8nNEFm9cU5cK72n+MQvgBZz+KyvnIGmgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="bunifuDatePicker4.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnClearMA.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAHYAAAAtCAYAAAB77p8lAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEtSURBVHhe7dO9TcNQGEbhWzIaA1yLkooh2IGKQZIb/0jp
+        MgIbsAAFQkIUUBBDThV5gfvqfNKRJfvtHrl44Vfnw22d2sswt1/rr3+7pT3Aebm7+TCsH9+vx9ZZU/uo
+        0+4R1r+/df+6ObTuqnP7grWUrYH1G6zCpgWrsGnBKmxasAqbFqzCpgWrsGnBKmxasAqbFqzCpgWrsGnB
+        KmxasAqbFqzCpgWrsGnBKmxasAqbFqzCpgWrsGnBKmxasAqbFqzCpgWrsGnBKmxasAqbFqzCpgWrsGnB
+        KmxasAqbFqzCpgWrsGnBKmxasAqbFqzCpgWrsGnBKmxasAqbFqyl1GX/tjWw/qpT+4F1/WPH3dP64nNr
+        aP1Ux/a9Po+wXm5YxufroXXX8f50uoHUy7tSzqn57mJwq6wKAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btnClearMA.IdleIconLeftImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAXBJREFUSEvt
+        ljtOw0AURb0BohSEIvTAMtkDHwn2AghRQQdU0IVPAStAojDnDm+QSWzPG4+hypGuYs+8+25iz8Su1uRS
+        1/UGOkFPplON2fTfQMAM3aFlbtHMysZFjVFbaGT8cBrO0YO6J1DN3GxlqJE19FIeToPU5e3iHk2sTR4Y
+        h4ZGDqyVH0yloWJh7XxgUKguVSkv1jINxVsohr7b51AOrW0/FDZDdZn1y/fDWT6+xUVRc8tco6lNaS43
+        /Ab9+DuhaBu1hkYY84ZnhT7KAa2hEeZS4e7QCYr31PU/S01XeFgTVtYPhUfB8h26acNJqF0O94cKip+D
+        ra53bMgF9Vrtb8GZGyowvAZrRjC1K1vOpvxgOg52//0tDxUY3YuLuXFCIzSYIm0D0focZSy5zwehRqg1
+        nGP3Ph8EDZuPQV3SXbRnx2L896mIGqMY7uHSrPJeoDM7XTlPQnF8Z/5AfXyic7PJd4WaX+TX+Zp/pKq+
+        AC8x5ae2NI85AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="dpToMA.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFzSURBVFhH7ZbfTcQwDMaD2ICLkFiARx55ZgCGQSwAEyDu
@@ -523,7 +546,7 @@
         fwmdqB9DhfHHcAV8X0Qr4PsqXgl4IH8nNEFm9cU5cK72n+MQvgBZz+KyvnIGmgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="bunifuDatePicker3.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="dpFromMA.Icon" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFzSURBVFhH7ZbfTcQwDMaD2ICLkFiARx55ZgCGQSwAEyDu

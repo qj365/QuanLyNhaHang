@@ -33,7 +33,7 @@ namespace QuanLyKhachHang.DAO
         }
         public DataTable timKiemKH(string makh, string tenkh)
         {
-            string query = string.Format("SELECT * FROM KHACHHANG WHERE(MAKH LIKE '%' + '{0}' + '%' OR '{0}' = '') AND(TENKH LIKE N'%' + '{1}' + N'%' OR '{1}' = '')", makh, tenkh);
+            string query = string.Format("SELECT * FROM KHACHHANG WHERE(MAKH LIKE '%' + N'{0}' + '%' OR N'{0}' = '') AND(TENKH LIKE N'%' + N'{1}' + N'%' OR N'{1}' = '')", makh, tenkh);
             DataTable table = DataProvider.Instance.executeQuery(query);
             return table;
         }

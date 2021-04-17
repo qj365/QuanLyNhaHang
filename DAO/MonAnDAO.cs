@@ -66,5 +66,24 @@ namespace QuanLyKhachHang.DAO
             DataTable table = DataProvider.Instance.executeQuery(query);
             return table;
         }
+
+        public DataTable DemSoMonAn()
+        {
+            string query = string.Format(
+                "SELECT MONAN.MAMA AS 'Ma mon an', MONAN.TENMONAN AS 'Ten mon an', COUNT(*) AS 'So Luong' FROM dbo.MONAN AS Monan FULL OUTER JOIN dbo.PHIEUYEUCAU AS phieuyeucau ON PHIEUYEUCAU.NGAYLAP < GETDATE() GROUP BY MONAN.MAMA, MONAN.TENMONAN");
+                DataTable table =
+                DataProvider.Instance.executeQuery(query);
+            return table;
+        }
+
+        public DataTable DemSoMonAn(DateTime from, DateTime to)
+        {
+            string query = string.Format(
+                "SELECT MONAN.MAMA AS 'Ma mon an', MONAN.TENMONAN AS 'Ten mon an', COUNT(*) AS 'So Luong' FROM dbo.MONAN AS Monan FULL OUTER JOIN dbo.PHIEUYEUCAU AS phieuyeucau ON (PHIEUYEUCAU.NGAYLAP > '{0}' AND PHIEUYEUCAU.NGAYLAP < '{1}') GROUP BY MONAN.MAMA, MONAN.TENMONAN",
+                from, to);
+            DataTable table =
+                DataProvider.Instance.executeQuery(query);
+            return table;
+        }
     }
 }

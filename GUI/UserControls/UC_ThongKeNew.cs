@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using QuanLyKhachHang.DAO;
 
 namespace QuanLyKhachHang.GUI.UserControls.ThongKe
 {
@@ -29,6 +30,7 @@ namespace QuanLyKhachHang.GUI.UserControls.ThongKe
         private void btnMon_Click(object sender, EventArgs e)
         {
             pageThongKe.SelectTab(2);
+            loadMA();
         }
 
         private void btnPhieuNhap_Click(object sender, EventArgs e)
@@ -65,5 +67,43 @@ namespace QuanLyKhachHang.GUI.UserControls.ThongKe
         {
 
         }
+
+        #region Mon An
+
+        private void loadMA()
+        {
+            setInitDtpMA();
+            loadListMA();
+        }
+
+        private void loadListMA()
+        {
+            dtgvMA.DataSource = DAO.MonAnDAO.Instance.DemSoMonAn();
+        }
+
+        private void setInitDtpMA()
+        {
+            dpFromMA.CustomFormat = " ";
+            dpToMA.CustomFormat = " ";
+        }
+
+        private void dpFromMA_ValueChanged(object sender, EventArgs e)
+        {
+            dpFromMA.CustomFormat = "dd-MM-yyyy";
+            dtgvMA.DataSource = DAO.MonAnDAO.Instance.DemSoMonAn(dpFromMA.Value, dpToMA.Value);
+        }
+
+        private void dpToMA_ValueChanged(object sender, EventArgs e)
+        {
+            dpToMA.CustomFormat = "dd-MM-yyyy";
+            dtgvMA.DataSource = DAO.MonAnDAO.Instance.DemSoMonAn(dpFromMA.Value, dpToMA.Value);
+        }
+
+        private void btnClearMA_Click(object sender, EventArgs e)
+        {
+            loadMA();
+        }
+
+        #endregion
     }
 }
