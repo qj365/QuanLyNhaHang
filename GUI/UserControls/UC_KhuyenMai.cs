@@ -7,14 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyKhachHang.DAO;
 
 namespace QuanLyKhachHang.UserControls
 {
     public partial class UC_KhuyenMai : UserControl
     {
+        string luunv = "";
+        DateTime today = DateTime.Now;
+
         public UC_KhuyenMai()
         {
             InitializeComponent();
+            Refresh();
+            luunv = "";
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -28,6 +34,10 @@ namespace QuanLyKhachHang.UserControls
             KMBinding();
             btnLuuKM.Enabled = false;
             btnHuyKM.Enabled = false;
+            txtMaKM.Enabled = false;
+            txtNgayBatDau.Enabled = false;
+            txtNgayKetThuc.Enabled = false;
+            txtPhanTram.Enabled = false;
 
         }
 
@@ -46,11 +56,18 @@ namespace QuanLyKhachHang.UserControls
 
         private void btnThemKM_Click(object sender, EventArgs e)
         {
+            txtMaKM.Text = DataProvider.Instance.executeScalar("select dbo.TAOMAKM()").ToString();
             btnLuuKM.Enabled = true;
             btnHuyKM.Enabled = false;
             txtPhanTram.Clear();
-            txtMaKM.Enabled = true;
+            txtMaKM.Enabled = false;
             txtNgayKetThuc.Value = Convert.ToDateTime(txtNgayBatDau.Text);
+            luunv = "themnv";
+            txtNgayBatDau.Value = new DateTime(today.Year, today.Month, today.Day);
+            txtNgayKetThuc.Value = new DateTime(today.Year, today.Month, today.Day);
+            txtNgayBatDau.Enabled = true;
+            txtNgayKetThuc.Enabled = true;
+            txtPhanTram.Enabled = true;
         }
 
         public Boolean CheckKM()
@@ -88,7 +105,7 @@ namespace QuanLyKhachHang.UserControls
 
         private void btnLuuKM_Click(object sender, EventArgs e)
         {
-            if (CheckKM())
+            if (CheckKM() && (luunv == "themnv"))
             {
                 string makm = txtMaKM.Text;
                 DateTime ngaybatdau = Convert.ToDateTime(txtNgayBatDau.Text);
@@ -104,19 +121,7 @@ namespace QuanLyKhachHang.UserControls
                     MessageBox.Show("Thêm mới thất bại");
                 }
             }
-        }
-
-        private void btnSuaKM_Click(object sender, EventArgs e)
-        {
-            btnHuyKM.Enabled = true;
-            btnLuuKM.Enabled = false;
-            txtMaKM.Enabled = false;
-            txtNgayKetThuc.MinDate = Convert.ToDateTime(txtNgayBatDau.Text);
-        }
-
-        private void btnHuyKM_Click(object sender, EventArgs e)
-        {
-            if (CheckKM())
+            else if (CheckKM() && (luunv == "suanv"))
             {
                 string makm = txtMaKM.Text;
                 DateTime ngaybatdau = Convert.ToDateTime(txtNgayBatDau.Text);
@@ -132,6 +137,22 @@ namespace QuanLyKhachHang.UserControls
                     MessageBox.Show("Sửa thất bại");
                 }
             }
+        }
+
+        private void btnSuaKM_Click(object sender, EventArgs e)
+        {
+            btnHuyKM.Enabled = false;
+            btnLuuKM.Enabled = true;
+            txtMaKM.Enabled = false;
+            txtNgayKetThuc.MinDate = Convert.ToDateTime(txtNgayBatDau.Text);
+            luunv = "suanv";
+            txtNgayBatDau.Enabled = true;
+            txtNgayKetThuc.Enabled = true;
+            txtPhanTram.Enabled = true;
+        }
+
+        private void btnHuyKM_Click(object sender, EventArgs e)
+        {
         }
 
         private void btnXoaKM_Click(object sender, EventArgs e)
