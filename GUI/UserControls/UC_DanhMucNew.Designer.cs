@@ -116,6 +116,9 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges14 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties63 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties64 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges15 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties65 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties66 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges16 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties67 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties68 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
@@ -127,8 +130,6 @@
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties74 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties75 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties76 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges17 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties77 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties78 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
@@ -156,8 +157,8 @@
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties96 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties97 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties98 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges22 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties99 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties100 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
@@ -193,11 +194,11 @@
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties126 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties127 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties128 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges15 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties65 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties66 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pageDanhMuc = new Bunifu.UI.WinForms.BunifuPages();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dtgvMonAn = new Bunifu.UI.WinForms.BunifuDataGridView();
@@ -243,12 +244,12 @@
             this.btnThemNV = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnXoaNV = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSearch = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnClear = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.txtSTenNV = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.txtSMaNV = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dtgvNV = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.BtnHuyBanAn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -284,7 +285,7 @@
             this.btnLoai = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMon = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnNguyenLieu = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnSearch = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.dtgvNV = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.pageDanhMuc.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMonAn)).BeginInit();
@@ -297,13 +298,13 @@
             this.tabPage3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGridBanAn)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGridNL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).BeginInit();
             this.SuspendLayout();
             // 
             // pageDanhMuc
@@ -2069,9 +2070,9 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.dtgvNV);
             this.tabPage3.Controls.Add(this.groupBox2);
             this.tabPage3.Controls.Add(this.groupBox1);
-            this.tabPage3.Controls.Add(this.dtgvNV);
             this.tabPage3.Location = new System.Drawing.Point(4, 4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -2300,6 +2301,69 @@
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.AllowToggling = false;
+            this.btnSearch.AnimationSpeed = 200;
+            this.btnSearch.AutoGenerateColors = true;
+            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
+            this.btnSearch.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(180)))), ((int)(((byte)(176)))));
+            this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
+            this.btnSearch.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnSearch.ButtonText = "Search";
+            this.btnSearch.ButtonTextMarginLeft = 15;
+            this.btnSearch.ColorContrastOnClick = 45;
+            this.btnSearch.ColorContrastOnHover = 45;
+            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges15.BottomLeft = true;
+            borderEdges15.BottomRight = true;
+            borderEdges15.TopLeft = true;
+            borderEdges15.TopRight = true;
+            this.btnSearch.CustomizableEdges = borderEdges15;
+            this.btnSearch.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSearch.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnSearch.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnSearch.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnSearch.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.IconMarginLeft = 11;
+            this.btnSearch.IconPadding = 10;
+            this.btnSearch.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSearch.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(180)))), ((int)(((byte)(176)))));
+            this.btnSearch.IdleBorderRadius = 5;
+            this.btnSearch.IdleBorderThickness = 1;
+            this.btnSearch.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(180)))), ((int)(((byte)(176)))));
+            this.btnSearch.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.IdleIconLeftImage")));
+            this.btnSearch.IdleIconRightImage = null;
+            this.btnSearch.IndicateFocus = false;
+            this.btnSearch.Location = new System.Drawing.Point(434, 25);
+            this.btnSearch.Name = "btnSearch";
+            stateProperties65.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(213)))), ((int)(((byte)(211)))));
+            stateProperties65.BorderRadius = 5;
+            stateProperties65.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties65.BorderThickness = 1;
+            stateProperties65.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(213)))), ((int)(((byte)(211)))));
+            stateProperties65.ForeColor = System.Drawing.Color.White;
+            stateProperties65.IconLeftImage = null;
+            stateProperties65.IconRightImage = null;
+            this.btnSearch.onHoverState = stateProperties65;
+            stateProperties66.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(99)))), ((int)(((byte)(96)))));
+            stateProperties66.BorderRadius = 5;
+            stateProperties66.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties66.BorderThickness = 1;
+            stateProperties66.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(99)))), ((int)(((byte)(96)))));
+            stateProperties66.ForeColor = System.Drawing.Color.White;
+            stateProperties66.IconLeftImage = null;
+            stateProperties66.IconRightImage = null;
+            this.btnSearch.OnPressedState = stateProperties66;
+            this.btnSearch.Size = new System.Drawing.Size(118, 37);
+            this.btnSearch.TabIndex = 26;
+            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSearch.TextMarginLeft = 15;
+            this.btnSearch.UseDefaultRadiusAndThickness = true;
             // 
             // btnClear
             // 
@@ -2533,34 +2597,6 @@
             this.label4.Size = new System.Drawing.Size(115, 20);
             this.label4.TabIndex = 21;
             this.label4.Text = "Mã nhân viên";
-            // 
-            // dtgvNV
-            // 
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dtgvNV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.dtgvNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvNV.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.dtgvNV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtgvNV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvNV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.dtgvNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvNV.DoubleBuffered = true;
-            this.dtgvNV.EnableHeadersVisualStyles = false;
-            this.dtgvNV.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.dtgvNV.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.dtgvNV.Location = new System.Drawing.Point(6, 140);
-            this.dtgvNV.Name = "dtgvNV";
-            this.dtgvNV.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dtgvNV.RowHeadersWidth = 51;
-            this.dtgvNV.Size = new System.Drawing.Size(1128, 377);
-            this.dtgvNV.TabIndex = 25;
             // 
             // tabPage4
             // 
@@ -3160,19 +3196,19 @@
             // 
             // bunifuCustomDataGridBanAn
             // 
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGridBanAn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGridBanAn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
             this.bunifuCustomDataGridBanAn.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGridBanAn.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGridBanAn.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Honeydew;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGridBanAn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Honeydew;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGridBanAn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.bunifuCustomDataGridBanAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bunifuCustomDataGridBanAn.DoubleBuffered = true;
             this.bunifuCustomDataGridBanAn.EnableHeadersVisualStyles = false;
@@ -3958,19 +3994,19 @@
             // 
             // bunifuCustomDataGridNL
             // 
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGridNL.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGridNL.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
             this.bunifuCustomDataGridNL.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGridNL.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGridNL.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Honeydew;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGridNL.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Honeydew;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGridNL.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.bunifuCustomDataGridNL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bunifuCustomDataGridNL.DoubleBuffered = true;
             this.bunifuCustomDataGridNL.EnableHeadersVisualStyles = false;
@@ -4169,68 +4205,63 @@
             this.btnNguyenLieu.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNguyenLieu.Click += new System.EventHandler(this.btnNguyenLieu_Click);
             // 
-            // btnSearch
+            // dtgvNV
             // 
-            this.btnSearch.AllowToggling = false;
-            this.btnSearch.AnimationSpeed = 200;
-            this.btnSearch.AutoGenerateColors = true;
-            this.btnSearch.BackColor = System.Drawing.Color.Transparent;
-            this.btnSearch.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(180)))), ((int)(((byte)(176)))));
-            this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
-            this.btnSearch.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnSearch.ButtonText = "Search";
-            this.btnSearch.ButtonTextMarginLeft = 15;
-            this.btnSearch.ColorContrastOnClick = 45;
-            this.btnSearch.ColorContrastOnHover = 45;
-            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges15.BottomLeft = true;
-            borderEdges15.BottomRight = true;
-            borderEdges15.TopLeft = true;
-            borderEdges15.TopRight = true;
-            this.btnSearch.CustomizableEdges = borderEdges15;
-            this.btnSearch.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSearch.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnSearch.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnSearch.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnSearch.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.IconMarginLeft = 11;
-            this.btnSearch.IconPadding = 10;
-            this.btnSearch.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(180)))), ((int)(((byte)(176)))));
-            this.btnSearch.IdleBorderRadius = 5;
-            this.btnSearch.IdleBorderThickness = 1;
-            this.btnSearch.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(180)))), ((int)(((byte)(176)))));
-            this.btnSearch.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.IdleIconLeftImage")));
-            this.btnSearch.IdleIconRightImage = null;
-            this.btnSearch.IndicateFocus = false;
-            this.btnSearch.Location = new System.Drawing.Point(434, 25);
-            this.btnSearch.Name = "btnSearch";
-            stateProperties65.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(213)))), ((int)(((byte)(211)))));
-            stateProperties65.BorderRadius = 5;
-            stateProperties65.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties65.BorderThickness = 1;
-            stateProperties65.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(213)))), ((int)(((byte)(211)))));
-            stateProperties65.ForeColor = System.Drawing.Color.White;
-            stateProperties65.IconLeftImage = null;
-            stateProperties65.IconRightImage = null;
-            this.btnSearch.onHoverState = stateProperties65;
-            stateProperties66.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(99)))), ((int)(((byte)(96)))));
-            stateProperties66.BorderRadius = 5;
-            stateProperties66.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties66.BorderThickness = 1;
-            stateProperties66.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(99)))), ((int)(((byte)(96)))));
-            stateProperties66.ForeColor = System.Drawing.Color.White;
-            stateProperties66.IconLeftImage = null;
-            stateProperties66.IconRightImage = null;
-            this.btnSearch.OnPressedState = stateProperties66;
-            this.btnSearch.Size = new System.Drawing.Size(118, 37);
-            this.btnSearch.TabIndex = 26;
-            this.btnSearch.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSearch.TextMarginLeft = 15;
-            this.btnSearch.UseDefaultRadiusAndThickness = true;
+            this.dtgvNV.AllowCustomTheming = false;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.dtgvNV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dtgvNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvNV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgvNV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dtgvNV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvNV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dtgvNV.ColumnHeadersHeight = 40;
+            this.dtgvNV.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.dtgvNV.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dtgvNV.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dtgvNV.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.dtgvNV.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtgvNV.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.dtgvNV.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.dtgvNV.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.dtgvNV.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.dtgvNV.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dtgvNV.CurrentTheme.Name = null;
+            this.dtgvNV.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dtgvNV.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dtgvNV.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dtgvNV.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.dtgvNV.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvNV.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dtgvNV.EnableHeadersVisualStyles = false;
+            this.dtgvNV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.dtgvNV.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.dtgvNV.HeaderBgColor = System.Drawing.Color.Empty;
+            this.dtgvNV.HeaderForeColor = System.Drawing.Color.White;
+            this.dtgvNV.Location = new System.Drawing.Point(3, 140);
+            this.dtgvNV.Name = "dtgvNV";
+            this.dtgvNV.RowHeadersVisible = false;
+            this.dtgvNV.RowHeadersWidth = 51;
+            this.dtgvNV.RowTemplate.Height = 40;
+            this.dtgvNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvNV.Size = new System.Drawing.Size(1131, 389);
+            this.dtgvNV.TabIndex = 46;
+            this.dtgvNV.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
             // UC_DanhMucNew
             // 
@@ -4260,7 +4291,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
@@ -4269,6 +4299,7 @@
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGridNL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -4292,7 +4323,6 @@
         private System.Windows.Forms.Label label1;
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox bunifuTextBoxsochongoi;
         private System.Windows.Forms.Label label2;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid dtgvNV;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnXoaNV;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSuaNV;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnThemNV;
@@ -4362,5 +4392,6 @@
         private Bunifu.UI.WinForms.BunifuDataGridView dtgvLoaiMon;
         private Bunifu.UI.WinForms.BunifuDataGridView dtgvMonAn;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSearch;
+        private Bunifu.UI.WinForms.BunifuDataGridView dtgvNV;
     }
 }

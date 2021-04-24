@@ -17,8 +17,8 @@ namespace QuanLyKhachHang.DTO
 
         public LoaiMon(DataRow row)
         {
-            Malm = row["maloai"].ToString();
-            Tenloaimon = row["tenloaimon"].ToString();
+            Malm = row["MALOAI"].ToString();
+            Tenloaimon = row["TENLOAIMON"].ToString();
         }
 
         private string malm;

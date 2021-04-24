@@ -150,20 +150,45 @@ namespace QuanLyKhachHang.UserControls
 
         private void btnClearSKM_Click(object sender, EventArgs e)
         {
-            txtSMaKM.Clear();
-            txtSPhanTram.Clear();
+            txtSMaKM.Text = "";
+            txtSPhanTram.Text = "";
+            dateTimePicker1.CustomFormat = " ";
+            dateTimePicker2.CustomFormat = " ";
             LoadKMList();
         }
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
-            decimal phantram = Convert.ToDecimal(txtSPhanTram.Text);
-            dtgvKMList.DataSource = DAO.KhuyenMaiDAO.Instance.SearchListKMByPT(phantram);
+            dateTimePicker2.CustomFormat = "MM/dd/yyyy";
+            string ngaybatdau = dateTimePicker1.Text;
+            string ngayketthuc = dateTimePicker2.Text;
+            string makm = txtSMaKM.Text;
+            string phantram = txtSPhanTram.Text;
+            dtgvKMList.DataSource = DAO.KhuyenMaiDAO.Instance.SearchKM(ngaybatdau, ngayketthuc, makm, phantram);
         }
 
-        private void txtSMaKM_TextChanged(object sender, EventArgs e)
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
+            dateTimePicker1.CustomFormat = "MM/dd/yyyy";
+            string ngaybatdau = dateTimePicker1.Text;
+            string makm = txtSMaKM.Text;
+            string phantram = txtSPhanTram.Text;
+            dtgvKMList.DataSource = DAO.KhuyenMaiDAO.Instance.SearchKMByNBD(makm, phantram, ngaybatdau);
+        }
 
+        private void txtSMaKM_TextChange(object sender, EventArgs e)
+        {
+            string makm = txtSMaKM.Text;
+            string phantram = txtSPhanTram.Text;
+            dtgvKMList.DataSource = DAO.KhuyenMaiDAO.Instance.SearchKMBy(makm, phantram);
+        }
+
+        private void txtSPhanTram_TextChange(object sender, EventArgs e)
+        {
+            string makm = txtSMaKM.Text;
+            string phantram = txtSPhanTram.Text;
+            dtgvKMList.DataSource = DAO.KhuyenMaiDAO.Instance.SearchKMBy(makm, phantram);
         }
     }
 }
