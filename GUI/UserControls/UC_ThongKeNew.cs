@@ -104,7 +104,6 @@ namespace QuanLyKhachHang.GUI.UserControls.ThongKe
             btnCancel3.Enabled = e;
             btnThemTk.Enabled = !e;
             btnSuaTk.Enabled = !e;
-            btnXoaTk.Enabled = !e;
             txtName.Enabled = e;
             txtUsername.Enabled = e;
             cbbPhanQuyen.Enabled = e;
