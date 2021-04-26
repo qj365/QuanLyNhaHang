@@ -78,7 +78,7 @@ namespace QuanLyKhachHang.GUI.UserControls.ThongKe
 
         private void loadListMA()
         {
-            dtgvMA.DataSource = DAO.MonAnDAO.Instance.DemSoMonAn();
+            dtgvMA.DataSource = DAO.MonAnDAO.Instance.DemSoMonAn(DateTime.MinValue, DateTime.MaxValue);
         }
 
         private void setInitDtpMA()

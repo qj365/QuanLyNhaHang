@@ -78,11 +78,9 @@ namespace QuanLyKhachHang.DAO
 
         public DataTable DemSoMonAn(DateTime from, DateTime to)
         {
-            string query = string.Format(
-                "SELECT MONAN.MAMA AS 'Ma mon an', MONAN.TENMONAN AS 'Ten mon an', COUNT(*) AS 'So Luong' FROM dbo.MONAN AS Monan FULL OUTER JOIN dbo.PHIEUYEUCAU AS phieuyeucau ON (PHIEUYEUCAU.NGAYLAP > '{0}' AND PHIEUYEUCAU.NGAYLAP < '{1}') GROUP BY MONAN.MAMA, MONAN.TENMONAN",
-                from, to);
+            string query = "EXEC [dbo].[DEMSOMONAN] @From , @To";
             DataTable table =
-                DataProvider.Instance.executeQuery(query);
+                DataProvider.Instance.executeQuery(query, new object[] {from, to});
             return table;
         }
     }
