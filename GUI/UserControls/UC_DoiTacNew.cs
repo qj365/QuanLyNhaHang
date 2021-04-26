@@ -141,6 +141,11 @@ namespace QuanLyKhachHang.GUI.UserControls.DoiTac
             dtgvKH.DataSource = KhachHangDAO.Instance.timKiemKH(makh, tenkh);
         }
 
+        private void btnXoaKH_Click(object sender, EventArgs e)
+        {
+            disEnableBtnKH(false);
+        }
+
         #endregion
 
         #region NhaCungCap
@@ -213,7 +218,7 @@ namespace QuanLyKhachHang.GUI.UserControls.DoiTac
 
         private void btnXoaNCC_Click(object sender, EventArgs e)
         {
-
+            disEnableBtnNCC(false);
         }
 
         private void themSuaNCC(string mancc, string tenncc, string sdtncc, string diachincc)
@@ -253,6 +258,7 @@ namespace QuanLyKhachHang.GUI.UserControls.DoiTac
             string tenncc = tbTimKiemTenNCC.Text;
             dtgvKH.DataSource = NhaCungCapDAO.Instance.timKiemNCC(mancc, tenncc);
         }
+
 
         #endregion
 

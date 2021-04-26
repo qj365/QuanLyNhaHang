@@ -12,7 +12,7 @@ namespace QuanLyKhachHang.DAO
     {
         private static DataProvider instance;
 
-        static string connectionStr = @"Data Source=.\sqlexpress;Initial Catalog=QUANLYNHAHANG;Integrated Security=True";
+        static string connectionStr = @"Data Source=(local);Initial Catalog=QUANLYNHAHANG;Integrated Security=True";
         private static readonly SqlConnection con = new SqlConnection(connectionStr);
         //asdasdasd
         internal static DataProvider Instance 
@@ -38,7 +38,7 @@ namespace QuanLyKhachHang.DAO
                     {
                         if (item.Contains('@'))
                         {
-                            command.Parameters.AddWithValue(item, listPara[i]);
+                            command.Parameters.AddWithValue(item, parameter[i]);
                             i++;
                         }
                     }
@@ -98,7 +98,7 @@ namespace QuanLyKhachHang.DAO
                     {
                         if (item.Contains('@'))
                         {
-                            command.Parameters.AddWithValue(item, listPara[i]);
+                            command.Parameters.AddWithValue(item, parameter[i]);
                             i++;
                         }
                     }

@@ -28,7 +28,7 @@ namespace QuanLyKhachHang.DAO
         }
         public DataTable getMonAnList()
         {
-            DataTable table = DataProvider.Instance.executeQuery("select MAMA,TENMONAN,DVT,DONGIA,TENLOAIMON from MONAN,LOAIMON WHERE MONAN.MALOAI = LOAIMON.MALOAI");
+            DataTable table = DataProvider.Instance.executeQuery("select * from monan");
             return table;
         }
         public List<MonAn> getMonAnByLoaiMon(string maloai)
@@ -64,6 +64,14 @@ namespace QuanLyKhachHang.DAO
         {
             string query = string.Format("SELECT * FROM MONAN WHERE(MAMA LIKE '%' + '{0}' + '%' OR '{0}' = '') AND(TENMONAN LIKE N'%' + '{1}' + '%' OR '{1}' = '')", mama, tenmonan);
             DataTable table = DataProvider.Instance.executeQuery(query);
+            return table;
+        }
+
+        public DataTable DemSoMonAn(DateTime from, DateTime to)
+        {
+            string query = "EXEC [dbo].[DEMSOMONAN] @From , @To";
+            DataTable table =
+                DataProvider.Instance.executeQuery(query, new object[] {from, to});
             return table;
         }
     }

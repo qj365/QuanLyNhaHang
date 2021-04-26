@@ -31,7 +31,7 @@ namespace QuanLyKhachHang.DAO
         }
         public DataTable timKiemNCC(string mancc, string tenncc)
         {
-            string query = string.Format("SELECT * FROM NHACUNGCAP WHERE(MANCC LIKE '%' + '{0}' + '%' OR '{0}' = '') AND(TENNCC LIKE N'%' + '{1}' + N'%' OR '{1}' = '')", mancc, tenncc);
+            string query = string.Format("SELECT * FROM NHACUNGCAP WHERE(MANCC LIKE '%' + N'{0}' + '%' OR N'{0}' = '') AND(TENNCC LIKE N'%' + N'{1}' + N'%' OR N'{1}' = '')", mancc, tenncc);
             DataTable table = DataProvider.Instance.executeQuery(query);
             return table;
         }
