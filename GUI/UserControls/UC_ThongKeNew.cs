@@ -43,6 +43,7 @@ namespace QuanLyKhachHang.GUI.UserControls.ThongKe
         private void btnPhieuNhap_Click(object sender, EventArgs e)
         {
             pageThongKe.SelectTab(1);
+            Load_PhieuNhap();
         }
 
         private void btnTaiKhoan(object sender, EventArgs e)
@@ -175,7 +176,243 @@ namespace QuanLyKhachHang.GUI.UserControls.ThongKe
 
 
         #endregion
+        #region Phiếu Nhập
 
+
+        private void Load_PhieuNhap()
+        {
+            Load_Lai_PhieuNhap();
+            DisEnabledPN(true);
+            bunifuCustomDataGridPhieuNhap.Columns["MaPN"].HeaderText = "Mã Phiếu Nhập";
+            bunifuCustomDataGridPhieuNhap.Columns["NgayLap"].HeaderText = "Ngày Lập";
+            bunifuCustomDataGridPhieuNhap.Columns["TenNCC"].HeaderText = "Nhà Cung Cấp";
+            bunifuCustomDataGridPhieuNhap.Columns["TongTien"].HeaderText = "Tổng Tiền";
+            bunifuCustomDataGridPhieuNhap.Columns["UserName"].HeaderText = "Người Lập";
+
+        }
+        private void DisEnabledPN(bool a)
+        {
+
+            bunifuDropdownNguoiLap.Enabled = !a;
+            bunifuDatePickerNgayLap.Enabled = !a;
+            bunifuDropdownNhaCungCap.Enabled = !a;
+            bunifuTextBoxTongTien.Enabled = !a;
+
+            bunifuButtonSuaPhieuNhap.Enabled = a;
+            bunifuButtonXoaPhieuNhap.Enabled = a;
+            bunifuButtonLuuPhieuNhap.Enabled = !a;
+            bunifuButtonHuyPhieuNhap.Enabled = !a;
+        }
+        private void Load_Lai_PhieuNhap()
+        {
+            bunifuCustomDataGridPhieuNhap.DataSource = PhieuNhapDAO.Instance.getPhieuNhapList();
+        }
+        private void bunifuCustomDataGridPhieuNhap_SelectionChanged(object sender, EventArgs e)
+        {
+            int index = bunifuCustomDataGridPhieuNhap.CurrentCell == null ? -1 : bunifuCustomDataGridPhieuNhap.CurrentCell.RowIndex;
+            if (index != -1)
+            {
+                bunifuTextBoxMaPhieuNhap.Text = bunifuCustomDataGridPhieuNhap.Rows[index].Cells[0].Value.ToString();
+                bunifuDropdownNguoiLap.Text = bunifuCustomDataGridPhieuNhap.Rows[index].Cells[4].Value.ToString();
+                if (bunifuCustomDataGridPhieuNhap.Rows[index].Cells[1].Value.ToString() != "")
+                {
+                    bunifuDatePickerNgayLap.Value = DateTime.Parse(bunifuCustomDataGridPhieuNhap.Rows[index].Cells[1].Value.ToString());
+                }
+                else bunifuDatePickerNgayLap.Value = DateTime.Now;
+                bunifuDropdownNhaCungCap.Text = bunifuCustomDataGridPhieuNhap.Rows[index].Cells[3].Value.ToString();
+                bunifuTextBoxTongTien.Text = bunifuCustomDataGridPhieuNhap.Rows[index].Cells[2].Value.ToString();
+            }
+        }
+        private void bunifuButtonClearTimKiem_Click(object sender, EventArgs e)
+        {
+            bunifuTextBoxTimKiemMaPhieuNhap.Text = "";
+            bunifuTextBoxTimKiemNguoiLap.Text = "";
+            bunifuTextBoxTimKiemNCC.Text = "";
+            bunifuDatePickerTimKiemNgayLap.Value = DateTime.Now;
+            Load_PhieuNhap();
+        }
+        private void bunifuTextBoxTimKiemMaPhieuNhap_TextChanged(object sender, EventArgs e)
+        {
+            string mapn = bunifuTextBoxTimKiemMaPhieuNhap.Text;
+            string username = bunifuTextBoxTimKiemNguoiLap.Text;
+            string ncc = bunifuTextBoxTimKiemNCC.Text;
+            DateTime ngaylap = DateTime.Parse(bunifuDatePickerNgayLap.Value.ToString());
+            bunifuCustomDataGridPhieuNhap.DataSource = PhieuNhapDAO.Instance.TimPhieuNhap(mapn, username, ncc, ngaylap);
+        }
+        private void bunifuButtonSuaPhieuNhap_Click(object sender, EventArgs e)
+        {
+            DisEnabledPN(false);
+            bunifuDropdownNguoiLap.DataSource = PhieuNhapDAO.Instance.getUserName();
+            bunifuDropdownNhaCungCap.DataSource = PhieuNhapDAO.Instance.getNhaCungCap();
+
+        }
+
+        private void bunifuButtonXoaPhieuNhap_Click(object sender, EventArgs e)
+        {
+            string mapn = bunifuTextBoxMaPhieuNhap.Text;
+            DialogResult result = MessageBox.Show("Bạn chắc chắn muốn xóa Phiếu nhập: " + mapn + " này chứ?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (DialogResult.Yes == result)
+            {
+                if (PhieuNhapDAO.Instance.XoaPN(mapn))
+                {
+                    MessageBox.Show("Xóa Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Load_PhieuNhap();
+                }
+                else
+                {
+                    MessageBox.Show("Xóa Thất Bại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    bunifuButtonHuyPhieuNhap_Click(sender, e);
+                }
+            }
+
+        }
+
+        private void bunifuButtonLuuPhieuNhap_Click(object sender, EventArgs e)
+        {
+            string mapn = bunifuTextBoxMaPhieuNhap.Text;
+            string username = bunifuDropdownNguoiLap.Text;
+            string ncc = bunifuDropdownNhaCungCap.Text;
+            DateTime ngaylap = DateTime.Parse(bunifuDatePickerNgayLap.Value.ToString());
+            int tong = 0;
+            int.TryParse(bunifuTextBoxTongTien.Text.ToString(), out tong);
+            if (PhieuNhapDAO.Instance.SuaPN(mapn, ngaylap, tong, ncc, username))
+            {
+                MessageBox.Show("Lưu Thành Công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Load_PhieuNhap();
+            }
+            else
+            {
+                MessageBox.Show("Lưu Thất Bại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                bunifuButtonHuyPhieuNhap_Click(sender, e);
+            }
+        }
+
+        private void bunifuButtonHuyPhieuNhap_Click(object sender, EventArgs e)
+        {
+            DisEnabledPN(true);
+            Load_PhieuNhap();
+        }
+
+        /* #region cái cũ
+         //PhieuNhapDTO _phieunhapdto = new PhieuNhapDTO();
+         PhieuNhapDAO _phieunhapdao = new PhieuNhapDAO();
+         public void Macdinh_phieunhap()
+         {
+             bunifuTextBoxMaPhieuNhap.Enabled = false;
+             bunifuDropdownNguoiLap.Enabled = false;
+             bunifuDatePickerNgayLap.Enabled = false;
+             bunifuDropdownNhaCungCap.Enabled = false;
+             bunifuTextBoxTongTien.Enabled = false;
+             bunifuDropdownTimKiemNhaCungCap.Text = "";
+             bunifuDropdownTimKiemNguoiLap.Text = "";
+             //bunifuDatePickerTimKiemNgayLap.Format = DateTimePickerFormat.Custom;
+
+             bunifuButtonSuaPhieuNhap.Enabled = true;
+             bunifuButtonXoaPhieuNhap.Enabled = true;
+             bunifuButtonLuuPhieuNhap.Enabled = false;
+             bunifuButtonHuyPhieuNhap.Enabled = false;
+         }
+         public void Sua_phieunhap()
+         {
+             bunifuTextBoxMaPhieuNhap.Enabled = false;
+             bunifuDropdownNguoiLap.Enabled = true;
+             bunifuDatePickerNgayLap.Enabled = true;
+             bunifuDropdownNhaCungCap.Enabled = true;
+             bunifuTextBoxTongTien.Enabled = true;
+
+             bunifuButtonSuaPhieuNhap.Enabled = false;
+             bunifuButtonXoaPhieuNhap.Enabled = false;
+             bunifuButtonLuuPhieuNhap.Enabled = true;
+             bunifuButtonHuyPhieuNhap.Enabled = true;
+         }
+         public void Load_PhieuNhap()
+         {
+             bunifuCustomDataGridPhieuNhap.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+             bunifuCustomDataGridPhieuNhap.DataSource = _phieunhapdao.GetListPhieuNhap();
+             bunifuDropdownTimKiemNhaCungCap.DataSource = _phieunhapdao.getNhaCungCap();
+             bunifuDropdownTimKiemNguoiLap.DataSource = _phieunhapdao.getUserName();
+             bunifuDropdownNhaCungCap.DataSource = _phieunhapdao.getNhaCungCap();
+             bunifuDropdownNguoiLap.DataSource = _phieunhapdao.getUserName();
+
+             bunifuCustomDataGridPhieuNhap.Columns["MaPN"].HeaderText = "Mã Phiếu Nhập";
+             bunifuCustomDataGridPhieuNhap.Columns["NgayLap"].HeaderText = "Ngày Lập";
+             bunifuCustomDataGridPhieuNhap.Columns["MaNCC"].HeaderText = "Nhà Cung Cấp";
+             bunifuCustomDataGridPhieuNhap.Columns["TongTien"].HeaderText = "Tổng Tiền";
+             bunifuCustomDataGridPhieuNhap.Columns["UserName"].HeaderText = "Người Lập";
+
+             bunifuCustomDataGridPhieuNhap.Columns["MaPN"].Width = 100;
+             bunifuCustomDataGridPhieuNhap.Columns["MaNCC"].Width = 100;
+
+         }
+         public void Load_lai_PhieuNhap()
+         {
+             bunifuCustomDataGridPhieuNhap.DataSource = _phieunhapdao.GetListPhieuNhap();
+             bunifuDropdownTimKiemNhaCungCap.DataSource = _phieunhapdao.getNhaCungCap();
+             bunifuDropdownTimKiemNguoiLap.DataSource = _phieunhapdao.getUserName();
+             bunifuDropdownNhaCungCap.DataSource = _phieunhapdao.getNhaCungCap();
+             bunifuDropdownNguoiLap.DataSource = _phieunhapdao.getUserName();
+         }
+         private void bunifuCustomDataGridPhieuNhap_SelectionChanged(object sender, EventArgs e)
+         {
+             int index = bunifuCustomDataGridPhieuNhap.CurrentCell == null ? -1 : bunifuCustomDataGridPhieuNhap.CurrentCell.RowIndex;
+             if (index != -1)
+             {
+                 bunifuTextBoxMaPhieuNhap.Text = bunifuCustomDataGridPhieuNhap.Rows[index].Cells[0].Value.ToString();
+                 bunifuDropdownNguoiLap.Text = bunifuCustomDataGridPhieuNhap.Rows[index].Cells[4].Value.ToString();
+                 bunifuDatePickerNgayLap.Value = DateTime.Parse(bunifuCustomDataGridPhieuNhap.Rows[index].Cells[1].Value.ToString());
+                 bunifuDropdownNhaCungCap.Text = bunifuCustomDataGridPhieuNhap.Rows[index].Cells[3].Value.ToString();
+                 bunifuTextBoxTongTien.Text = bunifuCustomDataGridPhieuNhap.Rows[index].Cells[2].Value.ToString();
+             }
+         }
+         private void bunifuButton2_Click(object sender, EventArgs e)
+         {
+             Sua_phieunhap();
+
+         }
+         private void bunifuButtonXoaPhieuNhap_Click(object sender, EventArgs e)
+         {
+             _phieunhapdto.MaPN = bunifuTextBoxMaPhieuNhap.Text;
+
+             DialogResult xoa = MessageBox.Show("Bạn chắc chắn muốn xóa phiếu nhập có mã: " + _phieunhapdto.MaPN + " chứ", "Cảnh Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+             if (xoa == DialogResult.Yes && _phieunhapdao.XoaPhieuNhap(_phieunhapdto.MaPN))
+             {
+                 DialogResult result = MessageBox.Show("Thành công", "Xóa", MessageBoxButtons.OK);
+                 if (result == DialogResult.OK)
+                 {
+                     Load_lai_PhieuNhap();
+                 }
+             }
+         }
+
+         private void bunifuButtonLuuPhieuNhap_Click(object sender, EventArgs e)
+         {
+             _phieunhapdto.MaPN = bunifuTextBoxMaPhieuNhap.Text;
+             _phieunhapdto.NgayLap = bunifuDatePickerNgayLap.Value;
+             _phieunhapdto.TongTien = int.Parse(bunifuTextBoxTongTien.Text);
+             _phieunhapdto.MaNCC = _phieunhapdao.getMaNhaCungCap(bunifuDropdownNhaCungCap.Text);
+             _phieunhapdto.UserName = bunifuDropdownNguoiLap.Text;
+             if (_phieunhapdao.SuaPhieuNhap(_phieunhapdto))
+             {
+                 DialogResult result = MessageBox.Show("Thành công", "Sửa", MessageBoxButtons.OK);
+                 if (result == DialogResult.OK)
+                 {
+                     Load_lai_PhieuNhap();
+                     Macdinh_phieunhap();
+                 }
+             }
+
+         }
+         private void bunifuButtonHuyPhieuNhap_Click(object sender, EventArgs e)
+         {
+             Macdinh_phieunhap();
+         }
+         private void bunifuButtonClearTimKiem_Click(object sender, EventArgs e)
+         {
+             Macdinh_phieunhap();
+         }
+         #endregion*/
+
+        #endregion
 
     }
 }

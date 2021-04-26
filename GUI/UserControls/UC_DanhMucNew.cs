@@ -47,17 +47,13 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
         private void btnBan_Click(object sender, EventArgs e)
         {
             pageDanhMuc.SelectTab(3);
-            bunifuCustomDataGridBanAn.DataSource = (new BanAnDAO()).GetListBanAn();
-            Load_BanAN();
-            MacDinhBanAn();
+            LoadBanAn();
         }
 
         private void btnNguyenLieu_Click(object sender, EventArgs e)
         {
             pageDanhMuc.SelectTab(4);
-            bunifuCustomDataGridNL.DataSource = (new NguyenLieuDAO()).GetListNguyenLieu();
             Load_NL();
-            MacDinhNL();
         }
 
 
@@ -380,191 +376,254 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
 
 
         #region Bàn ăn
-        readonly BanAnDTO bandto = new BanAnDTO();
-        readonly BanAnDAO bandao = new BanAnDAO();
-        public void MacDinhBanAn()
+        string a = "";
+        private void LoadBanAn()
         {
+            Load_Lai_BanAn();
+            disEnabledBanAn(true);
             bunifuTextBoxmabanan.Enabled = false;
-            bunifuTextBoxsochongoi.Enabled = false;
-
-            BtnThemBanAn.Enabled = true;
-            BtnSuaBanAn.Enabled = true;
-            BtnXoaBanAn.Enabled = true;
-            BtnLuuBanAn.Enabled = false;
-            BtnHuyBanAn.Enabled = false;
+            bunifuCustomDataGridBanAn.Columns["MaBan"].HeaderText = "Mã Bàn Ăn";
+            bunifuCustomDataGridBanAn.Columns["SoChoNgoi"].HeaderText = "Số Ngồi Tối Đa";
         }
-        public void SuaBanAn()
+        private void Load_Lai_BanAn()
         {
-            bunifuTextBoxsochongoi.Enabled = true;
-            bunifuTextBoxmabanan.Enabled = true;
-
-            BtnThemBanAn.Enabled = false;
-            BtnSuaBanAn.Enabled = true;
-            BtnXoaBanAn.Enabled = false;
-            BtnLuuBanAn.Enabled = true;
-            BtnHuyBanAn.Enabled = true;
+            bunifuCustomDataGridBanAn.DataSource = BanAnDAO.Instance.getBanList();
         }
-
-        private void Load_BanAN()
+        private void bunifuCustomDataGridBanAn_SelectionChanged(object sender, EventArgs e)
         {
-
-            bunifuCustomDataGridBanAn.Columns["MABAN"].HeaderText = "Mã Bàn Ăn";
-            bunifuCustomDataGridBanAn.Columns["SOCHONGOI"].HeaderText = "Số Ngồi Tối Đa";
-            bunifuCustomDataGridBanAn.Columns["MAPYC"].HeaderText = "Mã Phiếu Yêu Cầu";
-            bunifuCustomDataGridBanAn.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            //bunifuCustomDataGridBanAn.Columns["MABANAN"].Width = 100;
-            //bunifuCustomDataGridBanAn.Columns["SOCHONGOI"].Width = 200;
-            //bunifuCustomDataGridBanAn.Columns["MAPYC"].Width = 200;
-            bunifuCustomDataGridBanAn.DataSource = bandao.GetListBanAn();
-        }
-        public bool CheckThemBA()
-        {
-
-            if (bunifuTextBoxmabanan.Text.Trim().Equals(""))
+            int index = bunifuCustomDataGridBanAn.CurrentCell == null ? -1 : bunifuCustomDataGridBanAn.CurrentCell.RowIndex;
+            if (index != -1)
             {
-                MessageBox.Show("Lỗi", "Bạn chưa nhập số bàn!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                bunifuTextBoxmabanan.Text = bunifuCustomDataGridBanAn.Rows[index].Cells[0].Value.ToString().Trim();
+                bunifuTextBoxsochongoi.Text = bunifuCustomDataGridBanAn.Rows[index].Cells[1].Value.ToString().Trim();
+
+            }
+        }
+        private void disEnabledBanAn(bool x)
+        {
+            BtnThemBanAn.Enabled = x;
+            BtnSuaBanAn.Enabled = x;
+            BtnXoaBanAn.Enabled = x;
+            BtnLuuBanAn.Enabled = !x;
+            BtnHuyBanAn.Enabled = !x;
+            bunifuTextBoxsochongoi.Enabled = !x;
+        }
+        private void BtnThemBanAn_Click(object sender, EventArgs e)
+        {
+            a = "them";
+            disEnabledBanAn(false);
+            bunifuTextBoxmabanan.Text = "Ban" + DataProvider.Instance.LaySTT(bunifuCustomDataGridBanAn.Rows.Count);
+            bunifuTextBoxsochongoi.Text = "";
+        }
+
+        private void BtnSuaBanAn_Click(object sender, EventArgs e)
+        {
+            a = "sua";
+            disEnabledBanAn(false);
+            bunifuTextBoxmabanan.Enabled = false;
+        }
+
+        private void BtnXoaBanAn_Click(object sender, EventArgs e)
+        {
+            string maban = bunifuTextBoxmabanan.Text;
+            DialogResult result = MessageBox.Show("Ban chắc chắn muốn xóa bàn số " + maban + " chứ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (result == DialogResult.Yes)
+            {
+                if (BanAnDAO.Instance.XoaBan(maban))
+                {
+                    MessageBox.Show("Xóa Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Load_Lai_BanAn();
+                    disEnabledBanAn(true);
+                }
+                else
+                {
+                    MessageBox.Show("Xóa Thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Load_Lai_BanAn();
+                    disEnabledBanAn(true);
+                }
+            }
+        }
+
+        private bool Check()
+        {
+            if (bunifuTextBoxmabanan.Text == "")
+            {
+                MessageBox.Show("Bạn chưa nhập số bàn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 bunifuTextBoxmabanan.Focus();
                 return false;
             }
-
-            if (bunifuTextBoxsochongoi.Text.Trim().Equals(""))
+            if (bunifuTextBoxsochongoi.Text == "")
             {
-                MessageBox.Show("Lỗi", "Bạn chưa nhập số chỗ ngồi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Bạn chưa nhập số chỗ ngòi", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 bunifuTextBoxsochongoi.Focus();
                 return false;
             }
             return true;
         }
-        public void Load_Lai_BanAn()
+        private void BtnLuuBanAn_Click(object sender, EventArgs e)
         {
-            bunifuCustomDataGridBanAn.DataSource = (bandao.GetListBanAn());
-        }
-
-
-        private void BunifuCustomDataGridBanAn_SelectionChanged(object sender, EventArgs e)
-        {
-            int index = bunifuCustomDataGridBanAn.CurrentCell == null ? -1 : bunifuCustomDataGridBanAn.CurrentCell.RowIndex;
-            if (index != -1)
+            string maban = bunifuTextBoxmabanan.Text;
+            if (a == "them" && Check())
             {
-                bunifuTextBoxmabanan.Text = bunifuCustomDataGridBanAn.Rows[bunifuCustomDataGridBanAn.CurrentRow.Index].Cells[0].Value.ToString().Trim();
-                bunifuTextBoxsochongoi.Text = bunifuCustomDataGridBanAn.Rows[bunifuCustomDataGridBanAn.CurrentRow.Index].Cells[2].Value.ToString().Trim();
+                int sochongoi = int.Parse(bunifuTextBoxsochongoi.Text);
+                if (BanAnDAO.Instance.ThemBan(maban, sochongoi))
+                    MessageBox.Show("Thêm Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-        private void BtnThemBanAn_Click(object sender, EventArgs e)
-        {
 
-            Add_BanAn BanAn = new Add_BanAn();
-            BanAn.ShowDialog();
+            else if (a == "sua" && Check())
+            {
+                int sochongoi = int.Parse(bunifuTextBoxsochongoi.Text);
+                if (BanAnDAO.Instance.SuaBan(maban, sochongoi))
+                    MessageBox.Show("Sủa Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             Load_Lai_BanAn();
-        }
-        private void BtnSuaBanAn_Click(object sender, EventArgs e)
-        {
-            SuaBanAn();
-        }
-        private void BunifuButtonLuuBanAn_Click(object sender, EventArgs e)
-        {
-            MacDinhBanAn();
-            if (CheckThemBA())
-            {
-                bandto.MABAN = bunifuTextBoxmabanan.Text.ToString().Trim();
-                bandto.SOCHONGOI = int.Parse(bunifuTextBoxsochongoi.Text.ToString().Trim());
-                bandto.MAPYC = "";
-                bool suaban = bandao.Update_ban(bandto);
-                if (suaban == true)
-                {
-                    DialogResult result = MessageBox.Show("Thành công", "Chỉnh sửa", MessageBoxButtons.OK);
-                    Load_Lai_BanAn();
-                }
-            }
-        }
-        private void BtnXoaBanAn_Click(object sender, EventArgs e)
-        {
-            bandto.MABAN = bunifuTextBoxmabanan.Text.ToString().Trim();
-            bandto.SOCHONGOI = int.Parse(bunifuTextBoxsochongoi.Text.ToString().Trim());
-            DialogResult x = MessageBox.Show("Xóa", "Bạn có chắc chắn muốn xóa bàn số " + bandto.MABAN + " chứ ?", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            bool xoaban = bandao.XoaBA(bandto);
-            if (xoaban == true && x == DialogResult.Yes)
-            {
-                DialogResult result = MessageBox.Show("Thành công", "Xóa", MessageBoxButtons.OK);
-                Load_Lai_BanAn();
-            }
-
+            disEnabledBanAn(true);
         }
 
         private void BtnHuyBanAn_Click(object sender, EventArgs e)
         {
             Load_Lai_BanAn();
-            MacDinhBanAn();
+            disEnabledBanAn(true);
         }
+
+        private void bunifuTextBox5_TextChanged(object sender, EventArgs e)
+        {
+            string ma = bunifuTextBox5.Text;
+            bunifuCustomDataGridBanAn.DataSource = BanAnDAO.Instance.TimBan(ma);
+        }
+
+
+
+        //---------------------------------------------------------------------------------------------------------------------------------
+        /* #region cái cũ
+         readonly BanAnDTO bandto = new BanAnDTO();
+         readonly BanAnDAO bandao = new BanAnDAO();
+         public void MacDinhBanAn()
+         {
+             bunifuTextBoxmabanan.Enabled = false;
+             bunifuTextBoxsochongoi.Enabled = false;
+
+             BtnThemBanAn.Enabled = true;
+             BtnSuaBanAn.Enabled = true;
+             BtnXoaBanAn.Enabled = true;
+             BtnLuuBanAn.Enabled = false;
+             BtnHuyBanAn.Enabled = false;
+         }
+         public void SuaBanAn()
+         {
+             bunifuTextBoxsochongoi.Enabled = true;
+             bunifuTextBoxmabanan.Enabled = true;
+
+             BtnThemBanAn.Enabled = false;
+             BtnSuaBanAn.Enabled = true;
+             BtnXoaBanAn.Enabled = false;
+             BtnLuuBanAn.Enabled = true;
+             BtnHuyBanAn.Enabled = true;
+         }
+
+         private void Load_BanAN()
+         {
+             bunifuCustomDataGridBanAn.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+             bunifuCustomDataGridBanAn.DataSource = bandao.GetListBanAn();
+
+             bunifuCustomDataGridBanAn.Columns["MABAN"].HeaderText = "Mã Bàn Ăn";
+             bunifuCustomDataGridBanAn.Columns["SOCHONGOI"].HeaderText = "Số Ngồi Tối Đa";
+             bunifuCustomDataGridBanAn.Columns["MAPYC"].HeaderText = "Mã Phiếu Yêu Cầu";
+             //bunifuCustomDataGridBanAn.Columns["MABANAN"].Width = 100;
+             //bunifuCustomDataGridBanAn.Columns["SOCHONGOI"].Width = 200;
+             //bunifuCustomDataGridBanAn.Columns["MAPYC"].Width = 200;
+         }
+         public bool CheckThemBA()
+         {
+
+             if (bunifuTextBoxmabanan.Text.Trim().Equals(""))
+             {
+                 MessageBox.Show("Lỗi", "Bạn chưa nhập số bàn!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 bunifuTextBoxmabanan.Focus();
+                 return false;
+             }
+
+             if (bunifuTextBoxsochongoi.Text.Trim().Equals(""))
+             {
+                 MessageBox.Show("Lỗi", "Bạn chưa nhập số chỗ ngồi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 bunifuTextBoxsochongoi.Focus();
+                 return false;
+             }
+             return true;
+         }
+         public void Load_Lai_BanAn()
+         {
+             //bunifuCustomDataGridBanAn.DataSource = (bandao.GetListBanAn());
+         }
+
+
+         private void BunifuCustomDataGridBanAn_SelectionChanged(object sender, EventArgs e)
+         {
+
+         }
+         private void BtnThemBanAn_Click(object sender, EventArgs e)
+         {
+
+             Add_BanAn BanAn = new Add_BanAn();
+             BanAn.ShowDialog();
+             Load_Lai_BanAn();
+         }
+         private void BtnSuaBanAn_Click(object sender, EventArgs e)
+         {
+             SuaBanAn();
+         }
+
+         private void BtnHuyBanAn_Click(object sender, EventArgs e)
+         {
+             Load_Lai_BanAn();
+             MacDinhBanAn();
+         }
+         #endregion*/
         #endregion
 
         #region Nguyên liệu
-        readonly NguyenLieuDAO NLdao = new NguyenLieuDAO();
-        readonly NguyenLieuDTO NLdto = new NguyenLieuDTO();
-        string luu = "";
-        public void MacDinhNL()
+        string b = "";
+        private void Load_NL()
         {
-            BtnThemNguyenLieu.Text = "Thêm";
+            Load_Lai_NL();
             bunifuTextBoxMaNL.Enabled = false;
-            bunifuTextBoxTenNL.Enabled = false;
-            bunifuTextBoxDVT.Enabled = false;
-            bunifuTextBoxDonGia.Enabled = false;
-
-            BtnThemNguyenLieu.Enabled = true;
-            BtnSuaNguyenLieu.Enabled = true;
-            BtnXoaNguyenLieu.Enabled = true;
-            BtnLuuNguyenLieu.Enabled = false;
-            BtnHuyNguyenLieu.Enabled = false;
-        }
-        public void SuaNL()
-        {
-            BtnThemNguyenLieu.Text = "Thêm";
-            bunifuTextBoxMaNL.Enabled = true;
-            bunifuTextBoxTenNL.Enabled = true;
-            bunifuTextBoxDVT.Enabled = true;
-            bunifuTextBoxDonGia.Enabled = true;
-
-            BtnThemNguyenLieu.Enabled = false;
-            BtnSuaNguyenLieu.Enabled = true;
-            BtnXoaNguyenLieu.Enabled = false;
-            BtnLuuNguyenLieu.Enabled = true;
-            BtnHuyNguyenLieu.Enabled = true;
-        }
-        public void ThemNL()
-        {
-            bunifuTextBoxMaNL.Text = "";
-            bunifuTextBoxTenNL.Text = "";
-            bunifuTextBoxDVT.Text = "";
-            bunifuTextBoxDonGia.Text = "";
-            bunifuTextBoxMaNL.Enabled = true;
-            bunifuTextBoxTenNL.Enabled = true;
-            bunifuTextBoxDVT.Enabled = true;
-            bunifuTextBoxDonGia.Enabled = true;
-
-            BtnThemNguyenLieu.Enabled = true;
-            BtnThemNguyenLieu.Text = "Làm Mới";
-            BtnSuaNguyenLieu.Enabled = false;
-            BtnXoaNguyenLieu.Enabled = false;
-            BtnLuuNguyenLieu.Enabled = true;
-            BtnHuyNguyenLieu.Enabled = true;
+            DisEnabledNL(true);
+            dgvNguyLieu.Columns["MANL"].HeaderText = "Mã Nguyên Liệu";
+            dgvNguyLieu.Columns["TENNL"].HeaderText = "Tên Nguyên Liệu";
+            dgvNguyLieu.Columns["DVT"].HeaderText = "Đơn Vị Tính";
+            dgvNguyLieu.Columns["DONGIA"].HeaderText = "Đơn Giá";
 
         }
-        public void Load_NL()
+        private void Load_Lai_NL()
         {
-            bunifuCustomDataGridNL.Columns["MANL"].HeaderText = "Mã Nguyên Liệu";
-            bunifuCustomDataGridNL.Columns["TENNL"].HeaderText = "Tên Nguyên Liệu";
-            bunifuCustomDataGridNL.Columns["DVT"].HeaderText = "Đơn Vị Tính";
-            bunifuCustomDataGridNL.Columns["DONGIA"].HeaderText = "Đơn Giá";
-            bunifuCustomDataGridNL.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            bunifuCustomDataGridNL.DataSource = NLdao.GetListNguyenLieu();
-        }
-        public void Load_lai_NL()
-        {
-            bunifuCustomDataGridNL.DataSource = NLdao.GetListNguyenLieu();
-        }
-        public bool CheckThemNL()
-        {
+            dgvNguyLieu.DataSource = NguyenLieuDAO.Instance.getNguyeLieuList();
 
+        }
+        private void DisEnabledNL(bool a)
+        {
+            bunifuTextBoxTenNL.Enabled = !a;
+            bunifuTextBoxDVT.Enabled = !a;
+            bunifuTextBoxDonGia.Enabled = !a;
+
+            BtnThemNguyenLieu.Enabled = a;
+            BtnSuaNguyenLieu.Enabled = a;
+            BtnXoaNguyenLieu.Enabled = a;
+            BtnLuuNguyenLieu.Enabled = !a;
+            BtnHuyNguyenLieu.Enabled = !a;
+        }
+        private void dgvNguyLieu_SelectionChanged(object sender, EventArgs e)
+        {
+            int index = dgvNguyLieu.CurrentCell == null ? -1 : dgvNguyLieu.CurrentCell.RowIndex;
+            if (index != -1)
+            {
+                bunifuTextBoxMaNL.Text = dgvNguyLieu.Rows[index].Cells[0].Value.ToString().Trim();
+                bunifuTextBoxTenNL.Text = dgvNguyLieu.Rows[index].Cells[1].Value.ToString().Trim();
+                bunifuTextBoxDVT.Text = dgvNguyLieu.Rows[index].Cells[2].Value.ToString().Trim();
+                bunifuTextBoxDonGia.Text = dgvNguyLieu.Rows[index].Cells[3].Value.ToString().Trim();
+            }
+        }
+        private bool CheckNL()
+        {
             if (bunifuTextBoxMaNL.Text.Trim().Equals(""))
             {
                 MessageBox.Show("Lỗi", "Bạn chưa nhập mã nguyên liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -594,108 +653,221 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
         }
         private void BtnThemNguyenLieu_Click(object sender, EventArgs e)
         {
-            ThemNL();
-            luu = "them";
+            b = "them";
+            DisEnabledNL(false);
+            bunifuTextBoxMaNL.Text = "NL" + DataProvider.Instance.LaySTT(dgvNguyLieu.Rows.Count);
+            bunifuTextBoxTenNL.Text = "";
+            bunifuTextBoxDVT.Text = "";
+            bunifuTextBoxDonGia.Text = "";
         }
+
         private void BtnSuaNguyenLieu_Click(object sender, EventArgs e)
         {
-            SuaNL();
-            luu = "sua";
+            b = "sua";
+            DisEnabledNL(false);
+            bunifuTextBoxMaNL.Enabled = false;
         }
 
         private void BtnXoaNguyenLieu_Click(object sender, EventArgs e)
         {
-            NLdto.MANL = bunifuTextBoxMaNL.Text;
-            NLdto.TENNL = bunifuTextBoxTenNL.Text;
-            NLdto.DVT = bunifuTextBoxDVT.Text;
-            NLdto.DONGIA = int.Parse(bunifuTextBoxDonGia.Text);
-            DialogResult xoa = MessageBox.Show("Xóa", "Bạn chắc chắn muốn xóa nguyên liệu " + NLdto.TENNL + " chứ", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            bool xoanl = NLdao.XoaNL(NLdto);
-            if (xoanl == true && xoa == DialogResult.Yes)
+            string ma = bunifuTextBoxMaNL.Text;
+            string ten = bunifuTextBoxTenNL.Text;
+            DialogResult result = MessageBox.Show("Bạn chắc chắm muốn xóa Nguyên Liệu: " + ten + " có mã là " + ma + " này chứ?", "Cảnh Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (DialogResult.Yes == result)
             {
-                DialogResult result = MessageBox.Show("Thành công", "Xóa", MessageBoxButtons.OK);
-                if (result == DialogResult.OK)
+                if (NguyenLieuDAO.Instance.XoaNL(ma))
                 {
-                    Load_lai_NL();
-                    MacDinhNL();
+                    MessageBox.Show("Xóa Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Load_Lai_NL();
+                    DisEnabledNL(true);
+                }
+                else
+                {
+                    MessageBox.Show("Xóa Thất Bại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    BtnHuyNguyenLieu_Click(sender, e);
                 }
             }
         }
 
         private void BtnLuuNguyenLieu_Click(object sender, EventArgs e)
         {
+            string ma = bunifuTextBoxMaNL.Text;
+            string ten = bunifuTextBoxTenNL.Text;
+            string dvt = bunifuTextBoxDVT.Text;
 
-            if (CheckThemNL() && luu == "them")
+            if (b == "them" && CheckNL())
             {
-                NLdto.MANL = bunifuTextBoxMaNL.Text;
-                NLdto.TENNL = bunifuTextBoxTenNL.Text;
-                NLdto.DVT = bunifuTextBoxDVT.Text;
-                NLdto.DONGIA = int.Parse(bunifuTextBoxDonGia.Text);
-                bool themnl = NLdao.ThemNL(NLdto);
-                if (themnl == true)
+                int dongia = int.Parse(bunifuTextBoxDonGia.Text);
+                if (NguyenLieuDAO.Instance.ThemNguyenLieu(ma, ten, dvt, dongia))
                 {
-
-                    DialogResult result = MessageBox.Show("Thành công", "Thêm", MessageBoxButtons.OK);
-                    if (result == DialogResult.OK)
-                    {
-                        Load_lai_NL();
-                        MacDinhNL();
-                    }
+                    MessageBox.Show("Thêm Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Load_Lai_NL();
+                    DisEnabledNL(true);
+                }
+                else
+                {
+                    MessageBox.Show("Thêm Thất Bại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    BtnHuyNguyenLieu_Click(sender, e);
                 }
             }
-            if (CheckThemNL() && luu == "sua")
+            else if (b == "sua" && CheckNL())
             {
-                NLdto.MANL = bunifuTextBoxMaNL.Text;
-                NLdto.TENNL = bunifuTextBoxTenNL.Text;
-                NLdto.DVT = bunifuTextBoxDVT.Text;
-                NLdto.DONGIA = int.Parse(bunifuTextBoxDonGia.Text);
-                bool suanl = NLdao.Update_NL(NLdto);
-                if (suanl == true)
+                int dongia = int.Parse(bunifuTextBoxDonGia.Text);
+                if (NguyenLieuDAO.Instance.SuaNL(ma, ten, dvt, dongia))
                 {
-                    DialogResult result = MessageBox.Show("Thành công", "Chỉnh sửa", MessageBoxButtons.OK);
-                    if (result == DialogResult.OK)
-                    {
-                        Load_lai_NL();
-                        MacDinhNL();
-                    }
+                    MessageBox.Show("Sửa Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Load_Lai_NL();
+                    DisEnabledNL(true);
+                }
+                else
+                {
+                    MessageBox.Show("Sửa Thất Bại", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    BtnHuyNguyenLieu_Click(sender, e);
                 }
             }
-
         }
 
         private void BtnHuyNguyenLieu_Click(object sender, EventArgs e)
         {
-            MacDinhNL();
-            Load_lai_NL();
+            Load_Lai_NL();
+            DisEnabledNL(true);
         }
 
-        private void BunifuCustomDataGridNL_SelectionChanged(object sender, EventArgs e)
+        private void bunifuTextBox17_TextChanged(object sender, EventArgs e)
         {
-            int index = bunifuCustomDataGridNL.CurrentCell == null ? -1 : bunifuCustomDataGridNL.CurrentCell.RowIndex;
-            if (index != -1)
-            {
-                bunifuTextBoxMaNL.Text = bunifuCustomDataGridNL.Rows[bunifuCustomDataGridNL.CurrentRow.Index].Cells[0].Value.ToString().Trim();
-                bunifuTextBoxTenNL.Text = bunifuCustomDataGridNL.Rows[bunifuCustomDataGridNL.CurrentRow.Index].Cells[1].Value.ToString().Trim();
-                bunifuTextBoxDVT.Text = bunifuCustomDataGridNL.Rows[bunifuCustomDataGridNL.CurrentRow.Index].Cells[2].Value.ToString().Trim();
-                bunifuTextBoxDonGia.Text = bunifuCustomDataGridNL.Rows[bunifuCustomDataGridNL.CurrentRow.Index].Cells[3].Value.ToString().Trim();
-            }
+            string ten = bunifuTextBox17.Text;
+            dgvNguyLieu.DataSource = NguyenLieuDAO.Instance.TimNguyenLieu(ten);
         }
 
 
 
 
+        /* #region cái cũ
+         readonly NguyenLieuDAO NLdao = new NguyenLieuDAO();
+         //readonly NguyenLieuDTO NLdto = new NguyenLieuDTO();
+         string luu = "";
+         public void MacDinhNL()
+         {
+             BtnThemNguyenLieu.Text = "Thêm";
+             bunifuTextBoxMaNL.Enabled = false;
+             bunifuTextBoxTenNL.Enabled = false;
+             bunifuTextBoxDVT.Enabled = false;
+             bunifuTextBoxDonGia.Enabled = false;
+
+             BtnThemNguyenLieu.Enabled = true;
+             BtnSuaNguyenLieu.Enabled = true;
+             BtnXoaNguyenLieu.Enabled = true;
+             BtnLuuNguyenLieu.Enabled = false;
+             BtnHuyNguyenLieu.Enabled = false;
+         }
+         public void SuaNL()
+         {
+             BtnThemNguyenLieu.Text = "Thêm";
+             bunifuTextBoxMaNL.Enabled = true;
+             bunifuTextBoxTenNL.Enabled = true;
+             bunifuTextBoxDVT.Enabled = true;
+             bunifuTextBoxDonGia.Enabled = true;
+
+             BtnThemNguyenLieu.Enabled = false;
+             BtnSuaNguyenLieu.Enabled = true;
+             BtnXoaNguyenLieu.Enabled = false;
+             BtnLuuNguyenLieu.Enabled = true;
+             BtnHuyNguyenLieu.Enabled = true;
+         }
+         public void ThemNL()
+         {
+             bunifuTextBoxMaNL.Text = "";
+             bunifuTextBoxTenNL.Text = "";
+             bunifuTextBoxDVT.Text = "";
+             bunifuTextBoxDonGia.Text = "";
+             bunifuTextBoxMaNL.Enabled = true;
+             bunifuTextBoxTenNL.Enabled = true;
+             bunifuTextBoxDVT.Enabled = true;
+             bunifuTextBoxDonGia.Enabled = true;
+
+             BtnThemNguyenLieu.Enabled = true;
+             BtnThemNguyenLieu.Text = "Làm Mới";
+             BtnSuaNguyenLieu.Enabled = false;
+             BtnXoaNguyenLieu.Enabled = false;
+             BtnLuuNguyenLieu.Enabled = true;
+             BtnHuyNguyenLieu.Enabled = true;
+
+         }
+         public void Load_NL()
+         {
+             bunifuCustomDataGridNL.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+             bunifuCustomDataGridNL.DataSource = NLdao.GetListNguyenLieu();
+
+             bunifuCustomDataGridNL.Columns["MANL"].HeaderText = "Mã Nguyên Liệu";
+             bunifuCustomDataGridNL.Columns["TENNL"].HeaderText = "Tên Nguyên Liệu";
+             bunifuCustomDataGridNL.Columns["DVT"].HeaderText = "Đơn Vị Tính";
+             bunifuCustomDataGridNL.Columns["DONGIA"].HeaderText = "Đơn Giá";
+         }
+         public void Load_lai_NL()
+         {
+             //bunifuCustomDataGridNL.DataSource = NLdao.GetListNguyenLieu();
+         }
+         public bool CheckThemNL()
+         {
+
+             if (bunifuTextBoxMaNL.Text.Trim().Equals(""))
+             {
+                 MessageBox.Show("Lỗi", "Bạn chưa nhập mã nguyên liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 bunifuTextBoxMaNL.Focus();
+                 return false;
+             }
+
+             if (bunifuTextBoxTenNL.Text.Trim().Equals(""))
+             {
+                 MessageBox.Show("Lỗi", "Bạn chưa nhập tên nguyên liệu!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 bunifuTextBoxTenNL.Focus();
+                 return false;
+             }
+             if (bunifuTextBoxDVT.Text.Trim().Equals(""))
+             {
+                 MessageBox.Show("Lỗi", "Bạn chưa nhập đơn vị tính!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 bunifuTextBoxDVT.Focus();
+                 return false;
+             }
+             if (bunifuTextBoxDonGia.Text.Trim().Equals(""))
+             {
+                 MessageBox.Show("Lỗi", "Bạn chưa nhập đơn giá!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 bunifuTextBoxDonGia.Focus();
+                 return false;
+             }
+             return true;
+         }
+         private void BtnThemNguyenLieu_Click(object sender, EventArgs e)
+         {
+             ThemNL();
+             luu = "them";
+         }
+         private void BtnSuaNguyenLieu_Click(object sender, EventArgs e)
+         {
+             SuaNL();
+             luu = "sua";
+         }
+
+         private void BtnHuyNguyenLieu_Click(object sender, EventArgs e)
+         {
+             MacDinhNL();
+             Load_lai_NL();
+         }
+
+         private void BunifuCustomDataGridNL_SelectionChanged(object sender, EventArgs e)
+         {
+             int index = bunifuCustomDataGridNL.CurrentCell == null ? -1 : bunifuCustomDataGridNL.CurrentCell.RowIndex;
+             if (index != -1)
+             {
+                 bunifuTextBoxMaNL.Text = bunifuCustomDataGridNL.Rows[bunifuCustomDataGridNL.CurrentRow.Index].Cells[0].Value.ToString().Trim();
+                 bunifuTextBoxTenNL.Text = bunifuCustomDataGridNL.Rows[bunifuCustomDataGridNL.CurrentRow.Index].Cells[1].Value.ToString().Trim();
+                 bunifuTextBoxDVT.Text = bunifuCustomDataGridNL.Rows[bunifuCustomDataGridNL.CurrentRow.Index].Cells[2].Value.ToString().Trim();
+                 bunifuTextBoxDonGia.Text = bunifuCustomDataGridNL.Rows[bunifuCustomDataGridNL.CurrentRow.Index].Cells[3].Value.ToString().Trim();
+             }
+         }
 
 
-
-
-
-
-
-
-
-
+         #endregion*/
         #endregion
-
-       
     }
 }

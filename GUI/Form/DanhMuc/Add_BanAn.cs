@@ -16,8 +16,7 @@ namespace QuanLyKhachHang
 {
     public partial class Add_BanAn : Form
     {
-        readonly BanAnDTO bandto = new BanAnDTO();
-        readonly BanAnDAO bandao = new BanAnDAO();
+        
         public Add_BanAn()
         {
             InitializeComponent();
@@ -33,41 +32,7 @@ namespace QuanLyKhachHang
             this.Close();
         }
 
-        private void bunifuButtonXacNhan_Click(object sender, EventArgs e)
-        {
-
-            if (CheckThemBA())
-            {
-                bandto.MABAN = textBoxmabanan.Text.ToString().Trim();
-                bandto.SOCHONGOI = int.Parse(textBoxsochongoi.Text.ToString().Trim());
-                bool themBan = bandao.ThemBA(bandto);
-                if (themBan == true)
-                {
-                    DialogResult result = MessageBox.Show("Thành công", "Thêm", MessageBoxButtons.OK);
-                    if (result == DialogResult.OK)
-                    {
-                        btnThoat_Click(sender, e);
-                    }
-                }
-            }
-        }
-        public bool CheckThemBA()
-        {
-
-            if (textBoxmabanan.Text.Trim().Equals(""))
-            {
-                MessageBox.Show("Lỗi", "Bạn chưa nhập số bàn!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBoxmabanan.Focus();
-                return false;
-            }
-
-            if (textBoxsochongoi.Text.Trim().Equals(""))
-            {
-                MessageBox.Show("Lỗi", "Bạn chưa nhập số chỗ ngồi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                textBoxmabanan.Focus();
-                return false;
-            }
-            return true;
-        }
+        
+        
     }
 }
