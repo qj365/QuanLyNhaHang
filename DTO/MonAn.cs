@@ -24,7 +24,7 @@ namespace QuanLyKhachHang.DTO
             Tenmon = row["tenmonan"].ToString();
             Dvt = row["dvt"].ToString();
             Dongia = (int)row["dongia"];
-            Tenloaimon = row["maloai"].ToString();
+            Tenloaimon = row["tenloaimon"].ToString();
         }
         private string mama;
         private string tenmon;
