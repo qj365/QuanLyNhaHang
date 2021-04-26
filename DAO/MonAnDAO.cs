@@ -70,8 +70,7 @@ namespace QuanLyKhachHang.DAO
         public DataTable DemSoMonAn(DateTime from, DateTime to)
         {
             string query = "EXEC [dbo].[DEMSOMONAN] @From , @To";
-            DataTable table =
-                DataProvider.Instance.executeQuery(query, new object[] {from, to});
+            DataTable table = DataProvider.Instance.executeQuery(query, new object[] {from, to});
             return table;
         }
     }

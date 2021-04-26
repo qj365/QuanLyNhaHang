@@ -143,7 +143,7 @@
             this.tbTimKiemMaKH = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pageNCC = new System.Windows.Forms.TabPage();
             this.dtgvNCC = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.gbChinhSuaNCC = new System.Windows.Forms.GroupBox();
             this.btnHuyNCC = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -170,7 +170,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgvKH)).BeginInit();
             this.gbChinhSuaKH.SuspendLayout();
             this.gbTimKiemKH.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.pageNCC.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNCC)).BeginInit();
             this.gbChinhSuaNCC.SuspendLayout();
             this.gbTimKiemNCC.SuspendLayout();
@@ -255,14 +255,14 @@
             this.pageDoiTac.Alignment = System.Windows.Forms.TabAlignment.Bottom;
             this.pageDoiTac.AllowTransitions = true;
             this.pageDoiTac.Controls.Add(this.pageKH);
-            this.pageDoiTac.Controls.Add(this.tabPage2);
+            this.pageDoiTac.Controls.Add(this.pageNCC);
             this.pageDoiTac.Location = new System.Drawing.Point(3, 66);
             this.pageDoiTac.Multiline = true;
             this.pageDoiTac.Name = "pageDoiTac";
-            this.pageDoiTac.Page = this.pageKH;
-            this.pageDoiTac.PageIndex = 0;
-            this.pageDoiTac.PageName = "pageKH";
-            this.pageDoiTac.PageTitle = "pageKH";
+            this.pageDoiTac.Page = this.pageNCC;
+            this.pageDoiTac.PageIndex = 1;
+            this.pageDoiTac.PageName = "pageNCC";
+            this.pageDoiTac.PageTitle = "pageNCC";
             this.pageDoiTac.SelectedIndex = 0;
             this.pageDoiTac.Size = new System.Drawing.Size(1145, 559);
             this.pageDoiTac.TabIndex = 3;
@@ -1277,18 +1277,18 @@
             this.label8.TabIndex = 21;
             this.label8.Text = "Mã khách hàng";
             // 
-            // tabPage2
+            // pageNCC
             // 
-            this.tabPage2.Controls.Add(this.dtgvNCC);
-            this.tabPage2.Controls.Add(this.gbChinhSuaNCC);
-            this.tabPage2.Controls.Add(this.gbTimKiemNCC);
-            this.tabPage2.Location = new System.Drawing.Point(4, 4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1137, 530);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "pageNCC";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.pageNCC.Controls.Add(this.dtgvNCC);
+            this.pageNCC.Controls.Add(this.gbChinhSuaNCC);
+            this.pageNCC.Controls.Add(this.gbTimKiemNCC);
+            this.pageNCC.Location = new System.Drawing.Point(4, 4);
+            this.pageNCC.Name = "pageNCC";
+            this.pageNCC.Padding = new System.Windows.Forms.Padding(3);
+            this.pageNCC.Size = new System.Drawing.Size(1137, 530);
+            this.pageNCC.TabIndex = 1;
+            this.pageNCC.Text = "pageNCC";
+            this.pageNCC.UseVisualStyleBackColor = true;
             // 
             // dtgvNCC
             // 
@@ -2309,7 +2309,7 @@
             this.gbChinhSuaKH.PerformLayout();
             this.gbTimKiemKH.ResumeLayout(false);
             this.gbTimKiemKH.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
+            this.pageNCC.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNCC)).EndInit();
             this.gbChinhSuaNCC.ResumeLayout(false);
             this.gbChinhSuaNCC.PerformLayout();
@@ -2325,7 +2325,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton btnNhaCungCap;
         private Bunifu.UI.WinForms.BunifuPages pageDoiTac;
         private System.Windows.Forms.TabPage pageKH;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage pageNCC;
         private System.Windows.Forms.GroupBox gbTimKiemKH;
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox tbTimKiemTenKH;
         private Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox tbTimKiemMaKH;

@@ -38,6 +38,7 @@ namespace QuanLyKhachHang.GUI.UserControls.ThongKe
         private void btnMon_Click(object sender, EventArgs e)
         {
             pageThongKe.SelectTab(2);
+            loadMA();
         }
 
         private void btnPhieuNhap_Click(object sender, EventArgs e)
@@ -176,6 +177,38 @@ namespace QuanLyKhachHang.GUI.UserControls.ThongKe
 
         #endregion
 
+        #region Món ăn
 
+        private void loadMA()
+        {
+            setInitDtpMA();
+            loadListMA();
+        }
+
+        private void loadListMA()
+        {
+            dtgvMA.DataSource = MonAnDAO.Instance.DemSoMonAn(dpFromMA.Value, dpToMA.Value);
+        }
+
+        private void setInitDtpMA()
+        {
+            dpFromMA.CustomFormat = " ";
+            dpToMA.CustomFormat = " ";
+        }
+
+        private void dpFromMA_ValueChanged(object sender, EventArgs e)
+        {
+            dpFromMA.CustomFormat = "dd-MM-yyyy";
+            dtgvMA.DataSource = DAO.MonAnDAO.Instance.DemSoMonAn(dpFromMA.Value, dpToMA.Value);
+        }
+
+        private void dpToMA_ValueChanged(object sender, EventArgs e)
+        {
+            dpToMA.CustomFormat = "dd-MM-yyyy";
+            dtgvMA.DataSource = DAO.MonAnDAO.Instance.DemSoMonAn(dpFromMA.Value, dpToMA.Value);
+        }
+
+
+        #endregion
     }
 }
