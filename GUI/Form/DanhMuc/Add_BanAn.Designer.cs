@@ -173,7 +173,7 @@
             this.bunifuButtonXacNhan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuButtonXacNhan.TextMarginLeft = 0;
             this.bunifuButtonXacNhan.UseDefaultRadiusAndThickness = true;
-            
+            this.bunifuButtonXacNhan.Click += new System.EventHandler(this.bunifuButtonXacNhan_Click);
             // 
             // panel1
             // 
