@@ -60,5 +60,18 @@ namespace QuanLyKhachHang.DAO
             int result = DataProvider.Instance.executeNonQuery(query);
             return result > 0;
         }
+        public DataTable SearchFood(string mama, string tenmonan)
+        {
+            string query = string.Format("SELECT * FROM MONAN WHERE(MAMA LIKE '%' + '{0}' + '%' OR '{0}' = '') AND(TENMONAN LIKE N'%' + '{1}' + '%' OR '{1}' = '')", mama, tenmonan);
+            DataTable table = DataProvider.Instance.executeQuery(query);
+            return table;
+        }
+
+        public DataTable DemSoMonAn(DateTime from, DateTime to)
+        {
+            string query = "EXEC [dbo].[DEMSOMONAN] @From , @To";
+            DataTable table = DataProvider.Instance.executeQuery(query, new object[] {from, to});
+            return table;
+        }
     }
 }

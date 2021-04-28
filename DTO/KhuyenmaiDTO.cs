@@ -24,7 +24,7 @@ namespace QuanLyKhachHang.DTO
             Ngayketthuc = (DateTime)row["NGAYKETTHUC"];
             Phantram = (decimal)row["PHANTRAM"];
         }
-
+        
         private string makm;
         public string Makm
         {
@@ -52,5 +52,7 @@ namespace QuanLyKhachHang.DTO
             get => phantram;
             set => phantram = value;
         }
+        
     }
 }
+

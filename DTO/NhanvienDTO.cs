@@ -9,7 +9,7 @@ namespace QuanLyKhachHang.DTO
 {
     class NhanVienDTO
     {
-        public NhanVienDTO(string manv, string tennv, string diachi, string gioitinh, string sdt, string chucvu, DateTime ngaysinh, DateTime ngayvaolam, decimal luong )
+        public NhanVienDTO(string manv, string tennv, string diachi, string gioitinh, string sdt, string chucvu, DateTime ngaysinh, DateTime ngayvaolam, decimal luong)
         {
             Manv = manv;
             Tennv = tennv;

@@ -27,7 +27,7 @@ namespace QuanLyKhachHang.DAO
 
         public Boolean ThemNV(string manv, string tennv, DateTime ngaysinh, string diachi, string sdt, string gioitinh, decimal luong, string chucvu)
         {
-            string query = string.Format("insert into NHANVIEN(MANV,TENNV,NGAYSINH,SDT,DIACHI,GIOITINH,LUONG,CHUCVU) VALUES (N'{0}',N'{1}','{2}','{3}',N'{4}',N'{5}','{6}',N'{7}') ", manv, tennv, ngaysinh,sdt,diachi,gioitinh,luong,chucvu);
+            string query = string.Format("insert into NHANVIEN(MANV,TENNV,NGAYSINH,SDT,DIACHI,GIOITINH,LUONG,CHUCVU) VALUES (N'{0}',N'{1}','{2}','{3}',N'{4}',N'{5}','{6}',N'{7}') ", manv, tennv, ngaysinh, sdt, diachi, gioitinh, luong, chucvu);
             int result = DataProvider.Instance.executeNonQuery(query);
             return result > 0;
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyKhachHang.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -41,7 +42,7 @@ namespace QuanLyKhachHang.DAO
 
         public Boolean XoaKM(string makm)
         {
-            string query = string.Format("delete KHUYENMAI where MAKM='{0}'",makm);
+            string query = string.Format("delete KHUYENMAI where MAKM='{0}'", makm);
             int result = DataProvider.Instance.executeNonQuery(query);
             return result > 0;
         }
@@ -66,5 +67,18 @@ namespace QuanLyKhachHang.DAO
             DataTable data = DataProvider.Instance.executeQuery(query);
             return data;
         }
+
+        public List<KhuyenMaiDTO> TimKiemKMChuaHetHan()
+        {
+            List<KhuyenMaiDTO> list = new List<KhuyenMaiDTO>();
+            DataTable table = DataProvider.Instance.executeQuery("select * from KHUYENMAI where NGAYKETTHUC >= GETDATE()");
+            foreach (DataRow row in table.Rows)
+            {
+                KhuyenMaiDTO km = new KhuyenMaiDTO(row);
+                list.Add(km);
+            }
+            return list;
+        }
     }
 }
+

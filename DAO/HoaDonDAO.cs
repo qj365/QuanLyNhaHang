@@ -17,5 +17,11 @@ namespace QuanLyKhachHang.DAO
         }
 
         private HoaDonDAO() { }
+
+        public string ThanhToan(string mapyc, float km)
+        {
+            string data = DataProvider.Instance.executeScalar("select [dbo].thanhtoan( '" + mapyc +"', '"+km+"')").ToString();
+            return data;
+        }
     }
 }
