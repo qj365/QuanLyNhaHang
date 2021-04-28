@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyKhachHang.DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -34,6 +35,24 @@ namespace QuanLyKhachHang.DAO
             string query = string.Format("SELECT * FROM NHACUNGCAP WHERE(MANCC LIKE '%' + N'{0}' + '%' OR N'{0}' = '') AND(TENNCC LIKE N'%' + N'{1}' + N'%' OR N'{1}' = '')", mancc, tenncc);
             DataTable table = DataProvider.Instance.executeQuery(query);
             return table;
+        }
+
+        public List<NhaCungCap> getListNCC()
+        {
+            List<NhaCungCap> tableList = new List<NhaCungCap>();
+            DataTable data = DataProvider.Instance.executeQuery("select * from nhacungcap");
+            foreach (DataRow item in data.Rows)
+            {
+                NhaCungCap table = new NhaCungCap(item);
+                tableList.Add(table);
+            }
+            return tableList;
+        }
+
+        public DataTable timNCCbangTen(string tenncc)
+        {
+            DataTable data = DataProvider.Instance.executeQuery("select * from NHACUNGCAP where TENNCC = '"+tenncc+"'");
+            return data;
         }
     }
 }

@@ -31,6 +31,7 @@ namespace QuanLyKhachHang
             addControltoPanel(uctq);
             lblHoTen.Text = AccountDAO.hoten;
             lblPhanQuyen.Text = AccountDAO.phanquyen;
+            phanQuyen();
 
         }
         #region Giao diện
@@ -70,7 +71,7 @@ namespace QuanLyKhachHang
         private void timerDongHo_Tick(object sender, EventArgs e)
         {
             DateTime dt = DateTime.Now;
-            lblTime.Text = dt.ToString("HH:MM:ss");
+            lblTime.Text = dt.ToString("HH:mm:ss");
         }
         private void moveSidePanel(Control btn)
         {
@@ -118,8 +119,6 @@ namespace QuanLyKhachHang
         private void btnDoiTac_Click(object sender, EventArgs e)
         {
             moveSidePanel(btnDoiTac);
-            //UC_DoiTac ucdt = new UC_DoiTac();
-            //addControltoPanel(ucdt);
             UC_DoiTacNew ucdt = new UC_DoiTacNew();
             addControltoPanel(ucdt);
 
@@ -140,6 +139,13 @@ namespace QuanLyKhachHang
             
 
         }
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            using (frDoiMK f = new frDoiMK())
+            {
+                f.ShowDialog();
+            }
+        }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
@@ -156,6 +162,29 @@ namespace QuanLyKhachHang
         }
 
 
+
+
         #endregion
+
+        void phanQuyen()
+        {
+            switch (AccountDAO.phanquyen)
+            {
+                case "Thu ngân":
+                    btnNhapHang.Visible = false;
+                    btnDanhMuc.Visible = false;
+                    btnDoiTac.Visible = false;
+                    btnKhuyenMai.Visible = false;
+                    btnThongKe.Visible = false;
+                    break;
+                case "Đầu bếp":
+                    btnBanHang.Visible = false;
+                    btnDanhMuc.Visible = false;
+                    btnDoiTac.Visible = false;
+                    btnKhuyenMai.Visible = false;
+                    btnThongKe.Visible = false;
+                    break;
+            }
+        }
     }
 }

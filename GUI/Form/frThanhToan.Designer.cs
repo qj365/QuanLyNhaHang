@@ -266,7 +266,7 @@
             borderEdges2.TopLeft = true;
             borderEdges2.TopRight = true;
             this.btnThanhToan.CustomizableEdges = borderEdges2;
-            this.btnThanhToan.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnThanhToan.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnThanhToan.DisabledBorderColor = System.Drawing.Color.Empty;
             this.btnThanhToan.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btnThanhToan.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));

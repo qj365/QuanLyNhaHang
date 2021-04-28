@@ -1,10 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QuanLyKhachHang.DTO;
+
 
 namespace QuanLyKhachHang.DAO
 {
@@ -23,8 +24,8 @@ namespace QuanLyKhachHang.DAO
         public static string phanquyen;
         public bool Login(string user, string pass)
         {
-            string q = "select * from TAIKHOAN where USERNAME = '" + @user + "' and PASSWORD = '" + @pass + "'";
-            DataTable result = DataProvider.Instance.executeQuery(q);
+            string q = "select * from TAIKHOAN where USERNAME = @user and PASSWORD = @pass";
+            DataTable result = DataProvider.Instance.executeQuery(q, new object[] { user, pass });
             if (result.Rows.Count > 0)
             {
                 username = result.Rows[0].Field<string>(0);
@@ -73,6 +74,10 @@ namespace QuanLyKhachHang.DAO
             string query = string.Format("SELECT * FROM TAIKHOAN WHERE(USERNAME LIKE '%' + '{0}' + '%' OR '{0}' = '') ", username);
             DataTable table = DataProvider.Instance.executeQuery(query);
             return table;
+        public void doiMK(string user, string pass)
+        {
+            string q = "update TAIKHOAN set PASSWORD = '" + @pass + "' where USERNAME = '" + @user + "'";
+            DataProvider.Instance.executeNonQuery(q, new object[] { user, pass });
         }
 
     }

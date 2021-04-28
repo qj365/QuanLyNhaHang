@@ -170,13 +170,14 @@ namespace QuanLyKhachHang
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
+
             if (txtMaKH.Text == "")
                 MessageBox.Show("Vui lòng nhập thông tin khách hàng");
             else
             {
                 if (chkKhachHang.Checked)
                 {
-                    if(txtTenKH.Text == "" || txtSDT.Text == "")
+                    if (txtTenKH.Text == "" || txtSDT.Text == "")
                         MessageBox.Show("Vui lòng nhập đủ thông tin khách hàng");
                     else
                     {
@@ -189,19 +190,19 @@ namespace QuanLyKhachHang
 
                         if (cbKhuyeMai.SelectedIndex == -1)
                         {
-                            
+
                             DataProvider.Instance.executeNonQuery("exec ThanhToanHoaDon @tongtien , @user , @mapyc , @makm , @makhn ",
-                            new object[] { tt, "nv1", Data.MaPYC, DBNull.Value, makh}); //chú ý
+                            new object[] { tt, AccountDAO.username, Data.MaPYC, DBNull.Value, makh }); //chú ý
                         }
                         else
                         {
                             string makm = ((cbKhuyeMai.SelectedItem) as KhuyenMaiDTO).Makm;
                             DataProvider.Instance.executeNonQuery("exec ThanhToanHoaDon @tongtien , @user , @mapyc , @makm , @makhn ",
-                            new object[] { tt, "nv1", Data.MaPYC, makm, makh }); //chú ý
+                            new object[] { tt, AccountDAO.username, Data.MaPYC, makm, makh }); //chú ý
                         }
-  
+
                     }
-                    
+
                 }
                 else
                 {
@@ -212,24 +213,21 @@ namespace QuanLyKhachHang
                         if (cbKhuyeMai.SelectedIndex == -1)
                         {
                             DataProvider.Instance.executeNonQuery("exec ThanhToanHoaDon @tongtien , @user , @mapyc , @makm , @makhn ",
-                                new object[] { tt, "nv1", Data.MaPYC, DBNull.Value, txtMaKH.Text }); //chú ý
+                                new object[] { tt, AccountDAO.username, Data.MaPYC, DBNull.Value, txtMaKH.Text }); //chú ý
                         }
                         else
                         {
                             string makm = ((cbKhuyeMai.SelectedItem) as KhuyenMaiDTO).Makm;
                             DataProvider.Instance.executeNonQuery("exec ThanhToanHoaDon @tongtien , @user , @mapyc , @makm , @makhn ",
-                                new object[] { tt, "nv1", Data.MaPYC, makm, txtMaKH.Text }); //chú ý
+                                new object[] { tt, AccountDAO.username, Data.MaPYC, makm, txtMaKH.Text }); //chú ý
                         }
                     }
                     else
                         MessageBox.Show("Mã khách hàng không tồn tại");
-                    
-                    
-                    
                 }
-                this.Close();
                 MessageBox.Show("Thanh toán thành công");
-                
+                this.Close();
+
 
 
             }
