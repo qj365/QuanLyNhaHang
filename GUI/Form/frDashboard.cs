@@ -71,7 +71,7 @@ namespace QuanLyKhachHang
         private void timerDongHo_Tick(object sender, EventArgs e)
         {
             DateTime dt = DateTime.Now;
-            lblTime.Text = dt.ToString("HH:MM:ss");
+            lblTime.Text = dt.ToString("HH:mm:ss");
         }
         private void moveSidePanel(Control btn)
         {
