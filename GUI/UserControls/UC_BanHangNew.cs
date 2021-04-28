@@ -18,6 +18,7 @@ namespace QuanLyKhachHang.GUI.UserControls
         {
             InitializeComponent();
             loadBanHang();
+            
         }
 
         List<Table> lstTables = new List<Table>();
@@ -170,14 +171,14 @@ namespace QuanLyKhachHang.GUI.UserControls
                     using (frThanhToan frtt = new frThanhToan())
                     {
                         frtt.ShowDialog();
-                        if(frtt.DialogResult == DialogResult.OK)
-                        {
+                        
                             fpnlBanAn.Controls.Clear();
                             loadTable();
-                            
-                            showBill(table.Maban);
-                        }
+
+                        showBill(table.Maban);
+                        
                     }
+
                 }
                 else
                 {
@@ -233,7 +234,7 @@ namespace QuanLyKhachHang.GUI.UserControls
 
                             if (mapyc == "-1")
                             {
-                                PhieuYeuCauDAO.Instance.insertPYC("NV1", table.Maban); // chú ý
+                                PhieuYeuCauDAO.Instance.insertPYC(AccountDAO.username, table.Maban); // chú ý
                                 ChiTietDatMonDAO.Instance.insertCTDatMon(PhieuYeuCauDAO.Instance.getMaxPYC(), mamon, soluong);
                             }
                             else
@@ -258,7 +259,7 @@ namespace QuanLyKhachHang.GUI.UserControls
 
                         if (mapyc == "-1")
                         {
-                            PhieuYeuCauDAO.Instance.insertPYC("NV1", table.Maban); // chú ý
+                            PhieuYeuCauDAO.Instance.insertPYC(AccountDAO.username, table.Maban); // chú ý
                             ChiTietDatMonDAO.Instance.insertCTDatMon(PhieuYeuCauDAO.Instance.getMaxPYC(), mamon, soluong);
                         }
                         else
@@ -403,7 +404,7 @@ namespace QuanLyKhachHang.GUI.UserControls
                 List<ChiTietDatMon> list = ChiTietDatMonDAO.Instance.getChiTietDatMon(mapyc1);
                 if (mapyc2 == "-1")
                 {
-                    PhieuYeuCauDAO.Instance.insertPYC("NV1", ban2); // chú ý                  
+                    PhieuYeuCauDAO.Instance.insertPYC(AccountDAO.username, ban2); // chú ý                  
                     foreach (ChiTietDatMon item in list)
                     {
                         ChiTietDatMonDAO.Instance.insertCTDatMon(PhieuYeuCauDAO.Instance.getMaxPYC(), item.Mama, item.Soluong);
@@ -450,9 +451,23 @@ namespace QuanLyKhachHang.GUI.UserControls
             }
         }
 
+        private void txtSoLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '-'))
+            {
+                e.Handled = true;
+            }
 
-        
+            // only allow one decimal point
+            if ((e.KeyChar == '-') && ((sender as TextBox).Text.IndexOf('-') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
 
         #endregion
+
+
     }
 }

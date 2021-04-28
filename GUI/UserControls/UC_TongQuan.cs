@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyKhachHang.DAO;
 
 namespace QuanLyKhachHang.UserControls
 {
@@ -15,43 +16,39 @@ namespace QuanLyKhachHang.UserControls
         public UC_TongQuan()
         {
             InitializeComponent();
-            bunifuDropdown1.SelectedIndex = 0;
+            cbThoiGian.SelectedIndex = 0;
         }
-        private void loadChart()
+        private void loadChart(int index)
         {
-            var r = new Random();
             var canvas = new Bunifu.Dataviz.WinForms.BunifuDatavizBasic.Canvas();
             var doanhthu = new Bunifu.Dataviz.WinForms.BunifuDatavizBasic.DataPoint(Bunifu.Dataviz.WinForms.BunifuDatavizBasic._type.Bunifu_spline);
-            doanhthu.addLabely("SUN", r.Next(0, 100).ToString());
-            doanhthu.addLabely("MON", r.Next(0, 100).ToString());
-            doanhthu.addLabely("TUE", r.Next(0, 100).ToString());
-            doanhthu.addLabely("WED", r.Next(0, 100).ToString());
-            doanhthu.addLabely("THU", r.Next(0, 100).ToString());
-            doanhthu.addLabely("FRI", r.Next(0, 100).ToString());
-            doanhthu.addLabely("SAT", r.Next(0, 100).ToString());
-
-            
             var tongchi = new Bunifu.Dataviz.WinForms.BunifuDatavizBasic.DataPoint(Bunifu.Dataviz.WinForms.BunifuDatavizBasic._type.Bunifu_spline);
-            tongchi.addLabely("SUN", r.Next(0, 100).ToString());
-            tongchi.addLabely("MON", r.Next(0, 100).ToString());
-            tongchi.addLabely("TUE", r.Next(0, 100).ToString());
-            tongchi.addLabely("WED", r.Next(0, 100).ToString());
-            tongchi.addLabely("THU", r.Next(0, 100).ToString());
-            tongchi.addLabely("FRI", r.Next(0, 100).ToString());
-            tongchi.addLabely("SAT", r.Next(0, 100).ToString());
-            // Add data sets to canvas   
+
+            List<DateTime> lst = PhieuNhapDAO.Instance.dsNgay(index);
+
+            foreach (DateTime item in lst)
+            {
+                string dm = item.ToString("dd/MM");
+                string ymd = item.ToString("yyyy-MM-dd");
+                doanhthu.addLabely(dm,HoaDonDAO.Instance.doanhThuNgay(ymd));
+                tongchi.addLabely(dm, PhieuNhapDAO.Instance.tongChiNgay(ymd));
+            }
+
             canvas.addData(doanhthu);
             canvas.addData(tongchi);
-            //render canvas   
+            
             chartTongQuan.Render(canvas);
         }
 
-        
-
-        private void UC_TongQuan_Load(object sender, EventArgs e)
+        private void cbThoiGian_SelectedIndexChanged(object sender, EventArgs e)
         {
-            loadChart();
-
+            lblHoaDon.Text = HoaDonDAO.Instance.soHoaDon(cbThoiGian.SelectedIndex);
+            int dt = int.Parse(HoaDonDAO.Instance.DoanhThu(cbThoiGian.SelectedIndex));
+            int tc = int.Parse(PhieuNhapDAO.Instance.TongChi(cbThoiGian.SelectedIndex));
+            lblDoanhThu.Text = dt.ToString("N0");
+            lblTongChi.Text = tc.ToString("N0");
+            loadChart(cbThoiGian.SelectedIndex);
+            PhieuNhapDAO.Instance.dsNgay(cbThoiGian.SelectedIndex);
         }
     }
 }

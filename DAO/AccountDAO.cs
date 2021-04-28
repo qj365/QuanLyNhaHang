@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 
 namespace QuanLyKhachHang.DAO
 {
@@ -11,8 +6,8 @@ namespace QuanLyKhachHang.DAO
     {
         private static AccountDAO instance;
 
-        internal static AccountDAO Instance 
-        { 
+        internal static AccountDAO Instance
+        {
             get { if (instance == null) instance = new AccountDAO(); return instance; }
             private set { instance = value; }
         }
@@ -20,11 +15,11 @@ namespace QuanLyKhachHang.DAO
         public static string username;
         public static string hoten;
         public static string phanquyen;
-        public bool Login(string user,string pass)
+        public bool Login(string user, string pass)
         {
             string q = "select * from TAIKHOAN where USERNAME = '" + @user + "' and PASSWORD = '" + @pass + "'";
-            DataTable result = DataProvider.Instance.executeQuery(q); 
-            if (result.Rows.Count>0)
+            DataTable result = DataProvider.Instance.executeQuery(q, new object[] { user, pass });
+            if (result.Rows.Count > 0)
             {
                 username = result.Rows[0].Field<string>(0);
                 hoten = result.Rows[0].Field<string>(2);
@@ -38,6 +33,11 @@ namespace QuanLyKhachHang.DAO
             string data = DataProvider.Instance.executeScalar("select HOTEN from TAIKHOAN where USERNAME = '" + username + "'").ToString();
             return data;
         }
-        
+        public void doiMK(string user, string pass)
+        {
+            string q = "update TAIKHOAN set PASSWORD = '" + @pass + "' where USERNAME = '" + @user + "'";
+            DataProvider.Instance.executeNonQuery(q, new object[] { user, pass });
+        }
+
     }
 }

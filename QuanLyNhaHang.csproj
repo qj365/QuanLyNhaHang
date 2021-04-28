@@ -151,8 +151,10 @@
     <Compile Include="DAO\LoaiMonDAO.cs" />
     <Compile Include="DAO\MonAnDAO.cs" />
     <Compile Include="DAO\NguyenLieuDAO.cs" />
+    <Compile Include="DAO\NguyenLieuDAONew.cs" />
     <Compile Include="DAO\NhaCungCapDAO.cs" />
     <Compile Include="DAO\NhanVienDAO.cs" />
+    <Compile Include="DAO\PhieuNhapDAO.cs" />
     <Compile Include="DAO\PhieuYeuCauDAO.cs" />
     <Compile Include="DAO\TableDAO.cs" />
     <Compile Include="DTO\BanAnDTO.cs" />
@@ -162,7 +164,9 @@
     <Compile Include="DTO\KhuyenmaiDTO.cs" />
     <Compile Include="DTO\LoaiMon.cs" />
     <Compile Include="DTO\MonAn.cs" />
+    <Compile Include="DTO\NguyenLieu.cs" />
     <Compile Include="DTO\NguyenLieuDTO.cs" />
+    <Compile Include="DTO\NhaCungCap.cs" />
     <Compile Include="DTO\NhanvienDTO.cs" />
     <Compile Include="DTO\PhieuYeuCau.cs" />
     <Compile Include="DTO\Table.cs" />

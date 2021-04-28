@@ -359,6 +359,8 @@
             // dtgvMonAn
             // 
             this.dtgvMonAn.AllowCustomTheming = false;
+            this.dtgvMonAn.AllowUserToAddRows = false;
+            this.dtgvMonAn.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.dtgvMonAn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -404,8 +406,10 @@
             this.dtgvMonAn.HeaderBackColor = System.Drawing.Color.DodgerBlue;
             this.dtgvMonAn.HeaderBgColor = System.Drawing.Color.Empty;
             this.dtgvMonAn.HeaderForeColor = System.Drawing.Color.White;
+            this.dtgvMonAn.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.dtgvMonAn.Location = new System.Drawing.Point(6, 136);
             this.dtgvMonAn.Name = "dtgvMonAn";
+            this.dtgvMonAn.ReadOnly = true;
             this.dtgvMonAn.RowHeadersVisible = false;
             this.dtgvMonAn.RowHeadersWidth = 51;
             this.dtgvMonAn.RowTemplate.Height = 40;
