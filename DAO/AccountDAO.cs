@@ -74,6 +74,7 @@ namespace QuanLyKhachHang.DAO
             string query = string.Format("SELECT * FROM TAIKHOAN WHERE(USERNAME LIKE '%' + '{0}' + '%' OR '{0}' = '') ", username);
             DataTable table = DataProvider.Instance.executeQuery(query);
             return table;
+        }
         public void doiMK(string user, string pass)
         {
             string q = "update TAIKHOAN set PASSWORD = '" + @pass + "' where USERNAME = '" + @user + "'";

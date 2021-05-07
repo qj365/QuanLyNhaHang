@@ -168,7 +168,7 @@ namespace QuanLyKhachHang
 
         void phanQuyen()
         {
-            switch (AccountDAO.phanquyen)
+            switch (AccountDAO.phanquyen.Trim())
             {
                 case "Thu ngân":
                     btnNhapHang.Visible = false;

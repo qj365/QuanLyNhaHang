@@ -26,8 +26,8 @@ namespace QuanLyKhachHang.UserControls
         {
             LoadKMList();
             KMBinding();
-            btnLuuKM.Enabled = false;
-            btnHuyKM.Enabled = false;
+            //btnLuuKM.Enabled = false;
+            //btnHuyKM.Enabled = false;
 
         }
 
@@ -46,8 +46,8 @@ namespace QuanLyKhachHang.UserControls
 
         private void btnThemKM_Click(object sender, EventArgs e)
         {
-            btnLuuKM.Enabled = true;
-            btnHuyKM.Enabled = false;
+            //btnLuuKM.Enabled = true;
+            //btnHuyKM.Enabled = false;
             txtPhanTram.Clear();
             txtMaKM.Enabled = true;
             txtNgayKetThuc.Value = Convert.ToDateTime(txtNgayBatDau.Text);
@@ -108,8 +108,8 @@ namespace QuanLyKhachHang.UserControls
 
         private void btnSuaKM_Click(object sender, EventArgs e)
         {
-            btnHuyKM.Enabled = true;
-            btnLuuKM.Enabled = false;
+            //btnHuyKM.Enabled = true;
+            //btnLuuKM.Enabled = false;
             txtMaKM.Enabled = false;
             txtNgayKetThuc.MinDate = Convert.ToDateTime(txtNgayBatDau.Text);
         }
