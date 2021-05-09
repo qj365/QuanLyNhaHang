@@ -592,6 +592,7 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
             dgvNguyLieu.Columns["TENNL"].HeaderText = "Tên Nguyên Liệu";
             dgvNguyLieu.Columns["DVT"].HeaderText = "Đơn Vị Tính";
             dgvNguyLieu.Columns["DONGIA"].HeaderText = "Đơn Giá";
+            dgvNguyLieu.Columns["SOLUONG"].HeaderText = "Số Lượng";
 
         }
         private void Load_Lai_NL()
@@ -604,6 +605,7 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
             bunifuTextBoxTenNL.Enabled = !a;
             bunifuTextBoxDVT.Enabled = !a;
             bunifuTextBoxDonGia.Enabled = !a;
+            bunifuTextBoxSoLuong.Enabled = !a;
 
             BtnThemNguyenLieu.Enabled = a;
             BtnSuaNguyenLieu.Enabled = a;
@@ -620,6 +622,7 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
                 bunifuTextBoxTenNL.Text = dgvNguyLieu.Rows[index].Cells[1].Value.ToString().Trim();
                 bunifuTextBoxDVT.Text = dgvNguyLieu.Rows[index].Cells[2].Value.ToString().Trim();
                 bunifuTextBoxDonGia.Text = dgvNguyLieu.Rows[index].Cells[3].Value.ToString().Trim();
+                bunifuTextBoxSoLuong.Text = dgvNguyLieu.Rows[index].Cells[4].Value.ToString().Trim();
             }
         }
         private bool CheckNL()
@@ -649,6 +652,12 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
                 bunifuTextBoxDonGia.Focus();
                 return false;
             }
+            if (bunifuTextBoxSoLuong.Text.Trim().Equals(""))
+            {
+                MessageBox.Show("Lỗi", "Bạn chưa nhập số lượng!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                bunifuTextBoxSoLuong.Focus();
+                return false;
+            }
             return true;
         }
         private void BtnThemNguyenLieu_Click(object sender, EventArgs e)
@@ -659,6 +668,7 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
             bunifuTextBoxTenNL.Text = "";
             bunifuTextBoxDVT.Text = "";
             bunifuTextBoxDonGia.Text = "";
+            bunifuTextBoxSoLuong.Text = "";
         }
 
         private void BtnSuaNguyenLieu_Click(object sender, EventArgs e)
@@ -698,7 +708,8 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
             if (b == "them" && CheckNL())
             {
                 int dongia = int.Parse(bunifuTextBoxDonGia.Text);
-                if (NguyenLieuDAO.Instance.ThemNguyenLieu(ma, ten, dvt, dongia))
+                int soluong = int.Parse(bunifuTextBoxSoLuong.Text);
+                if (NguyenLieuDAO.Instance.ThemNguyenLieu(ma, ten, dvt, dongia, soluong))
                 {
                     MessageBox.Show("Thêm Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Load_Lai_NL();
@@ -713,7 +724,9 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
             else if (b == "sua" && CheckNL())
             {
                 int dongia = int.Parse(bunifuTextBoxDonGia.Text);
-                if (NguyenLieuDAO.Instance.SuaNL(ma, ten, dvt, dongia))
+                int soluong = int.Parse(bunifuTextBoxSoLuong.Text);
+
+                if (NguyenLieuDAO.Instance.SuaNL(ma, ten, dvt, dongia, soluong))
                 {
                     MessageBox.Show("Sửa Thành Công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Load_Lai_NL();

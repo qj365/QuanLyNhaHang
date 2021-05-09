@@ -46,35 +46,36 @@ namespace QuanLyKhachHang.DAO
             }
             return tableList;
         }
-        public bool ThemNguyenLieu(string ma, string ten, string dvt, int dongia)
+        public bool ThemNguyenLieu(string ma, string ten, string dvt, int dongia, int soluong)
         {
-            string query = string.Format("[dbo].[proc_insertNL] N'{0}',N'{1}',N'{2}',{3}", ma, ten, dvt, dongia);
+            string query = string.Format("[dbo].[proc_insertNL] N'{0}',N'{1}',N'{2}',{3},{4}", ma, ten, dvt, dongia, soluong);
             int result = DataProvider.Instance.executeNonQuery(query);
             return result > 0;
         }
-        /*create proc[dbo].[proc_insertNL] (@ma nchar (10),@ten nvarchar(50), @dvt nvarchar(30), @dongia int)
+        /*create proc[dbo].[proc_insertNL] (@ma nchar (10),@ten nvarchar(50), @dvt nvarchar(30), @dongia int, @soluong int)
            as
            begin
-               insert into NGUYENLIEU(MANL, TENNL, DVT, DONGIA)
-               values(@Ma, @ten, @dvt, @dongia)
+               insert into NGUYENLIEU(MANL, TENNL, DVT, DONGIA, SoLuong)
+               values(@Ma, @ten, @dvt, @dongia, @soluong)
            end*/
-        public bool SuaNL(string ma, string ten, string dvt, int dongia)
+        public bool SuaNL(string ma, string ten, string dvt, int dongia, int soluong)
         {
-            string query = string.Format("[dbo].[updateNL] N'{0}',N'{1}',N'{2}',{3}", ma, ten, dvt, dongia);
+            string query = string.Format("[dbo].[updateNL] N'{0}',N'{1}',N'{2}',{3},{4}", ma, ten, dvt, dongia, soluong);
             int result = DataProvider.Instance.executeNonQuery(query);
             return result > 0;
         }
-        /* create proc[dbo].[updateNL] (@ma nchar (10), @ten nvarchar(50), @dvt nvarchar(30), @dongia int )
+        /* create proc[dbo].[updateNL] (@ma nchar (10), @ten nvarchar(50), @dvt nvarchar(30), @dongia int, @soluong int )
            as
            begin
-             update NGUYENLIEU set DVT = @dvt, DONGIA = @dongia, TenNL = @ten where MaNL = @ma
+             update NGUYENLIEU set DVT = @dvt, DONGIA = @dongia, TenNL = @ten, SoLuong = @soluong where MaNL = @ma
           end*/
         public bool XoaNL(string ma)
         {
             string ten = "Nguyên Liệu Này Đã Xóa";
             string dvt = "";
             int dongia = 0;
-            string query = string.Format("[dbo].[updateNL] N'{0}',N'{1}',N'{2}',{3}", ma, ten, dvt, dongia);
+            int soluong = 0;
+            string query = string.Format("[dbo].[updateNL] N'{0}',N'{1}',N'{2}',{3},{4}", ma, ten, dvt, dongia, soluong);
             int result = DataProvider.Instance.executeNonQuery(query);
             return result > 0;
         }
