@@ -41,7 +41,6 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
         {
             pageDanhMuc.SelectTab(2);
             LoadListAllNV();
-            NVBinding();
         }
 
         private void btnBan_Click(object sender, EventArgs e)
@@ -322,6 +321,8 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
 
         #region Nhân viên
 
+        Add_NhanVien f = new Add_NhanVien();
+
         void LoadListAllNV()
         {
             dtgvNV.DataSource = DAO.NhanVienDAO.Instance.GetListNV();
@@ -336,25 +337,31 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
 
         private void btnThemNV_Click(object sender, EventArgs e)
         {
-            using (Add_NhanVien f = new Add_NhanVien())
-                f.ShowDialog();
+            f.txtMaNV.Text = DataProvider.Instance.executeScalar("select dbo.TAOMANV()").ToString();
+            f.txtMaNV.Enabled = false;
+            f.txtTenNV.Text = "";
+            f.txtNgaySinh.CustomFormat = " ";
+            f.txtSDT.Text = "";
+            f.txtDiaChi.Text = "";
+            f.txtGioiTinh.Text = "";
+            f.txtLuong.Text = "";
+            f.txtChucVu.Text = "";
+            f.btnLuuNV.Text = "Thêm NV";
+            f.ShowDialog();
+            dtgvNV.DataSource = DAO.NhanVienDAO.Instance.GetListNV();
         }
 
         private void btnSuaNV_Click(object sender, EventArgs e)
         {
-            Add_NhanVien nv = new Add_NhanVien();
-            nv.ShowDialog();
-        }
-
-        public void NVBinding()
-        {
-            txtSMaNV.DataBindings.Add(new Binding("text", dtgvNV.DataSource, "MANV", true, DataSourceUpdateMode.Never));
-            txtSTenNV.DataBindings.Add(new Binding("text", dtgvNV.DataSource, "TENNV", true, DataSourceUpdateMode.Never));
+            f.txtMaNV.Enabled = false;
+            f.btnLuuNV.Text = "Sửa NV";
+            f.ShowDialog();
+            dtgvNV.DataSource = DAO.NhanVienDAO.Instance.GetListNV();
         }
 
         private void btnXoaNV_Click(object sender, EventArgs e)
         {
-            string manv = txtSMaNV.Text;
+            string manv = f.txtMaNV.Text;
             if (DAO.NhanVienDAO.Instance.XoaNV(manv))
             {
                 MessageBox.Show("Xóa thành công");
@@ -366,14 +373,32 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void dtgvNV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.RowIndex == -1) return;
+            DataGridViewRow row = dtgvNV.Rows[e.RowIndex];
+            f.txtMaNV.Text = row.Cells[0].Value.ToString();
+            f.txtTenNV.Text = row.Cells[1].Value.ToString();
+            f.txtSDT.Text = row.Cells[5].Value.ToString();
+            f.txtDiaChi.Text = row.Cells[3].Value.ToString();
+            f.txtGioiTinh.Text = row.Cells[4].Value.ToString();
+            f.txtLuong.Text = row.Cells[6].Value.ToString();
+            f.txtNgaySinh.Text = row.Cells[2].Value.ToString();
+            f.txtChucVu.Text = row.Cells[7].Value.ToString();
         }
 
         private void txtSMaNV_TextChange(object sender, EventArgs e)
         {
+            string manv = txtSMaNV.Text;
+            string tennv = txtSTenNV.Text;
+            dtgvNV.DataSource = DAO.NhanVienDAO.Instance.SearchNV(manv, tennv);
+        }
 
+        private void txtSTenNV_TextChange(object sender, EventArgs e)
+        {
+            string manv = txtSMaNV.Text;
+            string tennv = txtSTenNV.Text;
+            dtgvNV.DataSource = DAO.NhanVienDAO.Instance.SearchNV(manv, tennv);
         }
 
         #endregion
@@ -694,8 +719,10 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
 
 
 
+
+
         #endregion
 
-       
+
     }
 }

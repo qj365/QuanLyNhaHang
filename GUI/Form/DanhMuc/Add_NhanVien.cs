@@ -19,7 +19,15 @@ namespace QuanLyKhachHang
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
+                txtMaNV.Clear();
+                txtTenNV.Clear();
+                txtGioiTinh.Text = "";
+                txtChucVu.Text = "";
+                txtLuong.Clear();
+                txtDiaChi.Clear();
+                txtSDT.Clear();
+                txtNgaySinh.CustomFormat = " ";
+                this.Close();
         }
 
         public Boolean CheckNV()
@@ -83,32 +91,10 @@ namespace QuanLyKhachHang
             return true;
         }
 
-        private void btnXacNhanSua_Click(object sender, EventArgs e)
-        {
-            if (CheckNV())
-            {
-                string manv = txtMaNV.Text;
-                string tennv = txtTenNV.Text;
-                string diachi = txtDiaChi.Text;
-                string sdt = txtSDT.Text;
-                string gioitin = txtGioiTinh.Text;
-                string chucvu = txtChucVu.Text;
-                DateTime ngaysinh = Convert.ToDateTime(txtNgaySinh.Text);
-                decimal luong = Convert.ToDecimal(txtLuong.Text);
-                if (DAO.NhanVienDAO.Instance.SuaNV(manv, tennv, ngaysinh, diachi, sdt, gioitin, luong, chucvu))
-                {
-                    MessageBox.Show("Sửa thông tin thành công");
-                }
-                else
-                {
-                    MessageBox.Show("Sửa thất bại");
-                }
-            }
-        }
 
-        private void btnXacNhanThem_Click(object sender, EventArgs e)
+        private void btnLuuNV_Click(object sender, EventArgs e)
         {
-            if (CheckNV())
+            if (CheckNV() && (btnLuuNV.Text == "Thêm NV"))
             {
                 string manv = txtMaNV.Text;
                 string tennv = txtTenNV.Text;
@@ -121,13 +107,39 @@ namespace QuanLyKhachHang
                 if (DAO.NhanVienDAO.Instance.ThemNV(manv, tennv, ngaysinh, diachi, sdt, gioitin, luong, chucvu))
                 {
                     MessageBox.Show("Thêm nhân viên thành công");
+                    this.Close();
                 }
                 else
                 {
                     MessageBox.Show("Thêm mới thất bại");
                 }
             }
+            else if (CheckNV() && (btnLuuNV.Text == "Sửa NV"))
+            {
+                string manv = txtMaNV.Text;
+                string tennv = txtTenNV.Text;
+                string diachi = txtDiaChi.Text;
+                string sdt = txtSDT.Text;
+                string gioitin = txtGioiTinh.Text;
+                string chucvu = txtChucVu.Text;
+                DateTime ngaysinh = Convert.ToDateTime(txtNgaySinh.Text);
+                decimal luong = Convert.ToDecimal(txtLuong.Text);
+                if (DAO.NhanVienDAO.Instance.SuaNV(manv, tennv, ngaysinh, diachi, sdt, gioitin, luong, chucvu))
+                {
+                    MessageBox.Show("Sửa nhân viên thành công");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Sửa thất bại");
+                }
 
+            }
+        }
+
+        private void txtNgaySinh_ValueChanged(object sender, EventArgs e)
+        {
+            txtNgaySinh.CustomFormat = "MM/dd/yyyy";
         }
     }
 }

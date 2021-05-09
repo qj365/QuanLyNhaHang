@@ -46,9 +46,9 @@ namespace QuanLyKhachHang.DAO
             return result > 0;
         }
 
-        public DataTable SearchListNVByTenNV(string tennv)
+        public DataTable SearchNV(string manv, string tennv)
         {
-            string query = string.Format("select * from NHANVIEN where TENNV like N'%{0}%' ", tennv);
+            string query = string.Format("select * from NHANVIEN where (MANV like N'%' + N'{0}' +N'%' or N'{0}'='') and (TENNV like N'%' + N'{1}' +N'%' or N'{1}'='') ", manv, tennv);
             DataTable data = DataProvider.Instance.executeQuery(query);
             return data;
         }
