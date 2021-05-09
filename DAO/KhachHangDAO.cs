@@ -61,5 +61,12 @@ namespace QuanLyKhachHang.DAO
             int data = (int)DataProvider.Instance.executeScalar("select count(*) from khachhang where makh = '" + makh + "'");
             return data;
         }
+
+        public KhachHang getKHbyMaHD(string mahd)
+        {
+            DataTable table = DataProvider.Instance.executeQuery("select KHACHHANG.MAKH, TENKH, SDT from KHACHHANG, PHIEUYEUCAU, HOADON where KHACHHANG.MAKH = PHIEUYEUCAU.MAKH and PHIEUYEUCAU.MAPYC = HOADON.MAPYC and MAHD = '"+mahd+"'");
+            KhachHang kh = new KhachHang(table.Rows[0]);
+            return kh;
+        }
     }
 }

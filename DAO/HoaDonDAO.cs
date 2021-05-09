@@ -1,4 +1,7 @@
-﻿namespace QuanLyKhachHang.DAO
+﻿using QuanLyKhachHang.DTO;
+using System.Data;
+
+namespace QuanLyKhachHang.DAO
 {
     class HoaDonDAO
     {
@@ -87,6 +90,17 @@
                 return "0";
             return dt;
         }
+        public string getMaxMaHD()
+        {
+            return DataProvider.Instance.executeScalar("select max(mahd) from hoadon").ToString();
+        }
+        public HoaDon getHoaDon(string mahd)
+        {
+            DataTable data = DataProvider.Instance.executeQuery("select * from hoadon where mahd = '"+mahd+"'");
+            HoaDon hd = new HoaDon(data.Rows[0]);
+            return hd;
+        }
+
         
     }
 }

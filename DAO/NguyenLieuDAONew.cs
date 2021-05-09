@@ -50,6 +50,10 @@ namespace QuanLyKhachHang.DAO
             return data;
         }
 
+        public void themSLNguyenLieu(string manl,int sl)
+        {
+            DataProvider.Instance.executeNonQuery("exec themNL  @manl , @sl", new object[] { manl, sl});
+        }
 
     }
 }
