@@ -183,6 +183,7 @@
     <Compile Include="DTO\NguyenLieuDTO.cs" />
     <Compile Include="DTO\NhaCungCap.cs" />
     <Compile Include="DTO\NhanvienDTO.cs" />
+    <Compile Include="DTO\PhieuNhapDTO.cs" />
     <Compile Include="DTO\PhieuYeuCau.cs" />
     <Compile Include="DTO\Table.cs" />
     <Compile Include="DTO\TaiKhoanDTO.cs" />

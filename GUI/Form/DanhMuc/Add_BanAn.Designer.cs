@@ -71,7 +71,6 @@
             this.label1.Size = new System.Drawing.Size(75, 24);
             this.label1.TabIndex = 3;
             this.label1.Text = "Bàn ăn";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBoxsochongoi
             // 
@@ -173,7 +172,6 @@
             this.bunifuButtonXacNhan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bunifuButtonXacNhan.TextMarginLeft = 0;
             this.bunifuButtonXacNhan.UseDefaultRadiusAndThickness = true;
-            this.bunifuButtonXacNhan.Click += new System.EventHandler(this.bunifuButtonXacNhan_Click);
             // 
             // panel1
             // 
@@ -274,7 +272,6 @@
             this.btnThoat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnThoat.TextMarginLeft = 0;
             this.btnThoat.UseDefaultRadiusAndThickness = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // Add_BanAn
             // 
