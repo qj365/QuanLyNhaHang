@@ -107,6 +107,9 @@
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties56 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties57 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties58 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges12 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties59 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties60 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
@@ -203,9 +206,6 @@
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties128 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties129 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties130 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pageDanhMuc = new Bunifu.UI.WinForms.BunifuPages();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dtgvMonAn = new Bunifu.UI.WinForms.BunifuDataGridView();
@@ -246,6 +246,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtTKLM = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.dtgvNV = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnSuaNV = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnThemNV = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -295,7 +296,6 @@
             this.btnLoai = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMon = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnNguyenLieu = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.dtgvNV = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.pageDanhMuc.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvMonAn)).BeginInit();
@@ -306,6 +306,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid6)).BeginInit();
             this.grbChinhSuaLoai.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPage4.SuspendLayout();
@@ -316,7 +317,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid2)).BeginInit();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).BeginInit();
             this.SuspendLayout();
             // 
             // pageDanhMuc
@@ -2118,6 +2118,65 @@
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // dtgvNV
+            // 
+            this.dtgvNV.AllowCustomTheming = false;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.dtgvNV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dtgvNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvNV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtgvNV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dtgvNV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvNV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dtgvNV.ColumnHeadersHeight = 40;
+            this.dtgvNV.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            this.dtgvNV.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dtgvNV.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dtgvNV.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.dtgvNV.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            this.dtgvNV.CurrentTheme.BackColor = System.Drawing.Color.White;
+            this.dtgvNV.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.dtgvNV.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
+            this.dtgvNV.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            this.dtgvNV.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dtgvNV.CurrentTheme.Name = null;
+            this.dtgvNV.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dtgvNV.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.dtgvNV.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
+            this.dtgvNV.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            this.dtgvNV.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvNV.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dtgvNV.EnableHeadersVisualStyles = false;
+            this.dtgvNV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
+            this.dtgvNV.HeaderBackColor = System.Drawing.Color.DodgerBlue;
+            this.dtgvNV.HeaderBgColor = System.Drawing.Color.Empty;
+            this.dtgvNV.HeaderForeColor = System.Drawing.Color.White;
+            this.dtgvNV.Location = new System.Drawing.Point(6, 139);
+            this.dtgvNV.Name = "dtgvNV";
+            this.dtgvNV.RowHeadersVisible = false;
+            this.dtgvNV.RowHeadersWidth = 51;
+            this.dtgvNV.RowTemplate.Height = 40;
+            this.dtgvNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgvNV.Size = new System.Drawing.Size(1131, 389);
+            this.dtgvNV.TabIndex = 46;
+            this.dtgvNV.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.dtgvNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvNV_CellClick);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnSuaNV);
@@ -2194,6 +2253,7 @@
             this.btnSuaNV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSuaNV.TextMarginLeft = 15;
             this.btnSuaNV.UseDefaultRadiusAndThickness = true;
+            this.btnSuaNV.Click += new System.EventHandler(this.btnSuaNV_Click);
             // 
             // btnThemNV
             // 
@@ -2321,6 +2381,7 @@
             this.btnXoaNV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnXoaNV.TextMarginLeft = 15;
             this.btnXoaNV.UseDefaultRadiusAndThickness = true;
+            this.btnXoaNV.Click += new System.EventHandler(this.btnXoaNV_Click);
             // 
             // groupBox1
             // 
@@ -2400,6 +2461,7 @@
             this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnClear.TextMarginLeft = 15;
             this.btnClear.UseDefaultRadiusAndThickness = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // txtSTenNV
             // 
@@ -2547,6 +2609,7 @@
             this.txtSMaNV.TextPlaceholder = "";
             this.txtSMaNV.UseSystemPasswordChar = false;
             this.txtSMaNV.WordWrap = true;
+            this.txtSMaNV.TextChange += new System.EventHandler(this.txtSMaNV_TextChange);
             // 
             // label3
             // 
@@ -4396,65 +4459,6 @@
             this.btnNguyenLieu.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNguyenLieu.Click += new System.EventHandler(this.btnNguyenLieu_Click);
             // 
-            // dtgvNV
-            // 
-            this.dtgvNV.AllowCustomTheming = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            this.dtgvNV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.dtgvNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvNV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtgvNV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dtgvNV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvNV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.dtgvNV.ColumnHeadersHeight = 40;
-            this.dtgvNV.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            this.dtgvNV.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.dtgvNV.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.dtgvNV.CurrentTheme.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            this.dtgvNV.CurrentTheme.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dtgvNV.CurrentTheme.BackColor = System.Drawing.Color.White;
-            this.dtgvNV.CurrentTheme.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.dtgvNV.CurrentTheme.HeaderStyle.BackColor = System.Drawing.Color.DodgerBlue;
-            this.dtgvNV.CurrentTheme.HeaderStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            this.dtgvNV.CurrentTheme.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dtgvNV.CurrentTheme.Name = null;
-            this.dtgvNV.CurrentTheme.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dtgvNV.CurrentTheme.RowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.dtgvNV.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
-            this.dtgvNV.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            this.dtgvNV.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvNV.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dtgvNV.EnableHeadersVisualStyles = false;
-            this.dtgvNV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
-            this.dtgvNV.HeaderBackColor = System.Drawing.Color.DodgerBlue;
-            this.dtgvNV.HeaderBgColor = System.Drawing.Color.Empty;
-            this.dtgvNV.HeaderForeColor = System.Drawing.Color.White;
-            this.dtgvNV.Location = new System.Drawing.Point(6, 139);
-            this.dtgvNV.Name = "dtgvNV";
-            this.dtgvNV.RowHeadersVisible = false;
-            this.dtgvNV.RowHeadersWidth = 51;
-            this.dtgvNV.RowTemplate.Height = 40;
-            this.dtgvNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvNV.Size = new System.Drawing.Size(1131, 389);
-            this.dtgvNV.TabIndex = 46;
-            this.dtgvNV.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
-            this.dtgvNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvNV_CellClick);
-            // 
             // UC_DanhMucNew
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -4480,6 +4484,7 @@
             this.grbChinhSuaLoai.ResumeLayout(false);
             this.grbChinhSuaLoai.PerformLayout();
             this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -4493,7 +4498,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid2)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvNV)).EndInit();
             this.ResumeLayout(false);
 
         }

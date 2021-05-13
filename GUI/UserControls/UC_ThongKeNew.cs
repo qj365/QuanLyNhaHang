@@ -225,6 +225,8 @@ namespace QuanLyKhachHang.GUI.UserControls.ThongKe
             txtTongTien.Enabled = false;
             txtPhanTram.Enabled = false;
             txtDoanhThu.Enabled = false;
+            clearBindingHD();
+            HDBinding();
         }
 
         public void HDBinding()
@@ -245,6 +247,8 @@ namespace QuanLyKhachHang.GUI.UserControls.ThongKe
             txtSNgayLapCuoi.CustomFormat = " ";
             txtDoanhThu.Text = " ";
             LoadListHD();
+            clearBindingHD();
+            HDBinding();
         }
 
         private void txtSMaHD_TextChange(object sender, EventArgs e)
@@ -279,6 +283,31 @@ namespace QuanLyKhachHang.GUI.UserControls.ThongKe
             string nguoilap = txtSNguoiLap.Text;
             dtgvListHD.DataSource = DAO.HoaDonDAO.Instance.SearchHD(mahd, nguoilap, ngaydau, ngaycuoi);
             txtDoanhThu.Text = DataProvider.Instance.executeScalar("select dbo.ThongKeTongTien('" + ngaydau + "','" + ngaycuoi + "')").ToString();
+        }
+
+        private void btnXoaHD_Click(object sender, EventArgs e)
+        {
+            string mahd = txtMaHD.Text;
+            if (DAO.HoaDonDAO.Instance.DeleteHD(mahd))
+            {
+                MessageBox.Show("Xóa thành công");
+                LoadListHD();
+            }
+            else
+            {
+                MessageBox.Show("Xóa thất bại");
+                LoadListHD();
+            }
+        }
+
+        private void clearBindingHD()
+        {
+            txtMaHD.DataBindings.Clear();
+            txtNgayLap.DataBindings.Clear();
+            txtNguoiLap.DataBindings.Clear();
+            txtPhanTram.DataBindings.Clear();
+            txtTongTien.DataBindings.Clear();
+            txtKH.DataBindings.Clear();
         }
 
         #endregion
