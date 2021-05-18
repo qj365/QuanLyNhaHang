@@ -178,6 +178,7 @@
             this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnClear.TextMarginLeft = 15;
             this.btnClear.UseDefaultRadiusAndThickness = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClearSKM_Click);
             // 
             // txtSPhanTram
             // 
@@ -325,6 +326,7 @@
             this.txtSMaKM.TextPlaceholder = "";
             this.txtSMaKM.UseSystemPasswordChar = false;
             this.txtSMaKM.WordWrap = true;
+            this.txtSMaKM.TextChange += new System.EventHandler(this.txtSMaKM_TextChanged);
             // 
             // txtSNgayKetThuc
             // 
@@ -510,6 +512,7 @@
             this.btnHuyKM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnHuyKM.TextMarginLeft = 15;
             this.btnHuyKM.UseDefaultRadiusAndThickness = true;
+            this.btnHuyKM.Click += new System.EventHandler(this.btnHuyKM_Click);
             // 
             // btnLuuKM
             // 
@@ -573,6 +576,7 @@
             this.btnLuuKM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnLuuKM.TextMarginLeft = 15;
             this.btnLuuKM.UseDefaultRadiusAndThickness = true;
+            this.btnLuuKM.Click += new System.EventHandler(this.btnLuuKM_Click);
             // 
             // txtNgayKetThuc
             // 
@@ -757,6 +761,7 @@
             this.btnSuaKM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSuaKM.TextMarginLeft = 15;
             this.btnSuaKM.UseDefaultRadiusAndThickness = true;
+            this.btnSuaKM.Click += new System.EventHandler(this.btnSuaKM_Click);
             // 
             // txtMaKM
             // 
@@ -929,6 +934,7 @@
             this.btnThemKM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnThemKM.TextMarginLeft = 15;
             this.btnThemKM.UseDefaultRadiusAndThickness = true;
+            this.btnThemKM.Click += new System.EventHandler(this.btnThemKM_Click);
             // 
             // label3
             // 
@@ -1004,6 +1010,7 @@
             this.btnXoaKM.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnXoaKM.TextMarginLeft = 15;
             this.btnXoaKM.UseDefaultRadiusAndThickness = true;
+            this.btnXoaKM.Click += new System.EventHandler(this.btnXoaKM_Click);
             // 
             // dtgvKMList
             // 

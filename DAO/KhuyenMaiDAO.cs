@@ -26,14 +26,14 @@ namespace QuanLyKhachHang.DAO
             return data;
         }
 
-        public Boolean ThemKM(string makm, DateTime ngaybatdau, DateTime ngayketthuc, decimal phantram)
+        public Boolean ThemKM(string makm, string ngaybatdau, string ngayketthuc, decimal phantram)
         {
             string query = string.Format("insert into KHUYENMAI VALUES (N'{0}',N'{1}','{2}',N'{3}') ", makm, ngaybatdau, ngayketthuc, phantram);
             int result = DataProvider.Instance.executeNonQuery(query);
             return result > 0;
         }
 
-        public Boolean SuaKM(string makm, DateTime ngaybatdau, DateTime ngayketthuc, decimal phantram)
+        public Boolean SuaKM(string makm, string ngaybatdau, string ngayketthuc, decimal phantram)
         {
             string query = string.Format("update KHUYENMAI set NGAYBATDAU='{1}',NGAYKETTHUC='{2}',PHANTRAM='{3}' where MAKM=N'{0}'", makm, ngaybatdau, ngayketthuc, phantram);
             int result = DataProvider.Instance.executeNonQuery(query);

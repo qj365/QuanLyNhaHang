@@ -331,10 +331,10 @@
             this.pageDanhMuc.Location = new System.Drawing.Point(0, 77);
             this.pageDanhMuc.Multiline = true;
             this.pageDanhMuc.Name = "pageDanhMuc";
-            this.pageDanhMuc.Page = this.tabPage4;
-            this.pageDanhMuc.PageIndex = 3;
-            this.pageDanhMuc.PageName = "tabPage4";
-            this.pageDanhMuc.PageTitle = "tabPage4";
+            this.pageDanhMuc.Page = this.tabPage3;
+            this.pageDanhMuc.PageIndex = 2;
+            this.pageDanhMuc.PageName = "tabPage3";
+            this.pageDanhMuc.PageTitle = "tabPage3";
             this.pageDanhMuc.SelectedIndex = 0;
             this.pageDanhMuc.Size = new System.Drawing.Size(1148, 554);
             this.pageDanhMuc.TabIndex = 1;
@@ -2253,6 +2253,7 @@
             this.btnSuaNV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSuaNV.TextMarginLeft = 15;
             this.btnSuaNV.UseDefaultRadiusAndThickness = true;
+            this.btnSuaNV.Click += new System.EventHandler(this.btnSuaNV_Click);
             // 
             // btnThemNV
             // 
@@ -2380,6 +2381,7 @@
             this.btnXoaNV.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnXoaNV.TextMarginLeft = 15;
             this.btnXoaNV.UseDefaultRadiusAndThickness = true;
+            this.btnXoaNV.Click += new System.EventHandler(this.btnXoaNV_Click);
             // 
             // groupBox1
             // 
@@ -2459,6 +2461,7 @@
             this.btnClear.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnClear.TextMarginLeft = 15;
             this.btnClear.UseDefaultRadiusAndThickness = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // txtSTenNV
             // 
@@ -2606,6 +2609,7 @@
             this.txtSMaNV.TextPlaceholder = "";
             this.txtSMaNV.UseSystemPasswordChar = false;
             this.txtSMaNV.WordWrap = true;
+            this.txtSMaNV.TextChange += new System.EventHandler(this.txtSMaNV_TextChange);
             // 
             // label3
             // 

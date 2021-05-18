@@ -21,9 +21,15 @@ namespace QuanLyKhachHang.UserControls
         public UC_KhuyenMai()
         {
             InitializeComponent();
-            Refresh();
+            LoadKMList();
             luunv = "";
             KMBinding();
+            btnLuuKM.Enabled = false;
+            btnHuyKM.Enabled = false;
+            txtMaKM.Enabled = false;
+            txtNgayBatDau.Enabled = false;
+            txtNgayKetThuc.Enabled = false;
+            txtPhanTram.Enabled = false;
         }
 
 
@@ -32,16 +38,20 @@ namespace QuanLyKhachHang.UserControls
 
         }
 
-        public void Refresh()
+        public void reLoad()
         {
             LoadKMList();
+            btnThemKM.Enabled = true;
+            btnSuaKM.Enabled = true;
+            btnXoaKM.Enabled = true;
             btnLuuKM.Enabled = false;
             btnHuyKM.Enabled = false;
             txtMaKM.Enabled = false;
             txtNgayBatDau.Enabled = false;
             txtNgayKetThuc.Enabled = false;
             txtPhanTram.Enabled = false;
-
+            clearBindingKM();
+            KMBinding();
         }
 
         public void LoadKMList()
@@ -60,8 +70,10 @@ namespace QuanLyKhachHang.UserControls
         private void btnThemKM_Click(object sender, EventArgs e)
         {
             txtMaKM.Text = DataProvider.Instance.executeScalar("select dbo.TAOMAKM()").ToString();
+            btnSuaKM.Enabled = false;
+            btnXoaKM.Enabled = false;
             btnLuuKM.Enabled = true;
-            btnHuyKM.Enabled = false;
+            btnHuyKM.Enabled = true;
             txtPhanTram.Clear();
             txtMaKM.Enabled = false;
             txtNgayKetThuc.Value = Convert.ToDateTime(txtNgayBatDau.Text);
@@ -111,8 +123,8 @@ namespace QuanLyKhachHang.UserControls
             if (CheckKM() && (luunv == "themkm"))
             {
                 string makm = txtMaKM.Text;
-                DateTime ngaybatdau = Convert.ToDateTime(txtNgayBatDau.Text);
-                DateTime ngayketthuc = Convert.ToDateTime(txtNgayKetThuc.Text);
+                string ngaybatdau = txtNgayBatDau.Text;
+                string ngayketthuc = txtNgayKetThuc.Text;
                 decimal phantram = Convert.ToDecimal(txtPhanTram.Text);
                 if (DAO.KhuyenMaiDAO.Instance.ThemKM(makm, ngaybatdau, ngayketthuc, phantram))
                 {
@@ -127,8 +139,8 @@ namespace QuanLyKhachHang.UserControls
             else if (CheckKM() && (luunv == "suakm"))
             {
                 string makm = txtMaKM.Text;
-                DateTime ngaybatdau = Convert.ToDateTime(txtNgayBatDau.Text);
-                DateTime ngayketthuc = Convert.ToDateTime(txtNgayKetThuc.Text);
+                string ngaybatdau = txtNgayBatDau.Text;
+                string ngayketthuc = txtNgayKetThuc.Text;
                 decimal phantram = Convert.ToDecimal(txtPhanTram.Text);
                 if (DAO.KhuyenMaiDAO.Instance.SuaKM(makm, ngaybatdau, ngayketthuc, phantram))
                 {
@@ -144,8 +156,10 @@ namespace QuanLyKhachHang.UserControls
 
         private void btnSuaKM_Click(object sender, EventArgs e)
         {
-            btnHuyKM.Enabled = false;
+            btnHuyKM.Enabled = true;
             btnLuuKM.Enabled = true;
+            btnThemKM.Enabled = false;
+            btnXoaKM.Enabled = false;
             txtMaKM.Enabled = false;
             txtNgayKetThuc.MinDate = Convert.ToDateTime(txtNgayBatDau.Text);
             luunv = "suakm";
@@ -156,8 +170,10 @@ namespace QuanLyKhachHang.UserControls
 
         private void btnHuyKM_Click(object sender, EventArgs e)
         {
-
+            reLoad();
         }
+
+
 
         private void btnXoaKM_Click(object sender, EventArgs e)
         {
@@ -179,7 +195,15 @@ namespace QuanLyKhachHang.UserControls
             txtSPhanTram.Text = "";
             txtSNgayBatDau.CustomFormat = " ";
             txtSNgayKetThuc.CustomFormat = " ";
-            LoadKMList();
+            reLoad();
+        }
+
+        private void clearBindingKM()
+        {
+            txtMaKM.DataBindings.Clear();
+            txtNgayBatDau.DataBindings.Clear();
+            txtNgayKetThuc.DataBindings.Clear();
+            txtPhanTram.DataBindings.Clear();
         }
 
 
