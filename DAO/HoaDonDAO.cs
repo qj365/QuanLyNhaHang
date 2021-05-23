@@ -117,6 +117,13 @@ namespace QuanLyKhachHang.DAO
             return result > 0;
         }
 
+        public Boolean DeleteHD(string mahd)
+        {
+            string query = string.Format("delete HOADON where MAHD='{0}'", mahd);
+            int result = DataProvider.Instance.executeNonQuery(query);
+            return result > 0;
+        }
+
         public DataTable SearchHD(string mahd, string nguoilap, string ngaydau, string ngaycuoi)
         {
             string query = string.Format("select h.MAHD, h.NGAYLAP, t.HOTEN, kh.TENKH, k.PHANTRAM, h.TONGTIEN  from HOADON h, TAIKHOAN t, KHUYENMAI k, KHACHHANG kh, PHIEUYEUCAU p where (h.MAHD like '%'+'{0}'+'%' or '{0}'='') and (t.HOTEN like N'%'+N'{1}'+N'%' or N'{1}'='') and (h.NGAYLAP between '{2}' and '{3}') and h.MAKM = k.MAKM and h.USERNAME = t.USERNAME and h.MAPYC = p.MAPYC and p.MAKH = kh.MAKH", mahd, nguoilap, ngaydau, ngaycuoi);
