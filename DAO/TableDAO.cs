@@ -33,5 +33,9 @@ namespace QuanLyKhachHang.DAO
             }
             return tableList;
         }
+        public string getMaBanbyPYC(string mapyc)
+        {
+            return DataProvider.Instance.executeScalar("select maban from banan where mapyc = '"+mapyc+"'").ToString();
+        }
     }
 }

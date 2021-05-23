@@ -1,4 +1,5 @@
-﻿using System;
+using QuanLyKhachHang.DTO;
+using System;
 using System.Data;
 
 namespace QuanLyKhachHang.DAO
@@ -91,6 +92,20 @@ namespace QuanLyKhachHang.DAO
             return dt;
         }
 
+        public string getMaxMaHD()
+        {
+            return DataProvider.Instance.executeScalar("select max(mahd) from hoadon").ToString();
+        }
+        public HoaDon getHoaDon(string mahd)
+        {
+            DataTable data = DataProvider.Instance.executeQuery("select * from hoadon where mahd = '"+mahd+"'");
+            HoaDon hd = new HoaDon(data.Rows[0]);
+            return hd;
+        }
+
+        
+
+
         public DataTable GetListHD(DateTime ngaydau, DateTime ngaycuoi)
         {
             string query = string.Format("select h.MAHD, h.NGAYLAP, t.HOTEN,kh.TENKH, k.PHANTRAM, h.TONGTIEN  from HOADON h, TAIKHOAN t, KHUYENMAI k, KHACHHANG kh, PHIEUYEUCAU p where (h.NGAYLAP between '{0}' and '{1}') and h.MAKM = k.MAKM and h.USERNAME = t.USERNAME and h.MAPYC = p.MAPYC and p.MAKH = kh.MAKH", ngaydau, ngaycuoi);
@@ -144,5 +159,6 @@ namespace QuanLyKhachHang.DAO
             DataTable data = DataProvider.Instance.executeQuery(query);
             return data;
         }
+
     }
 }
