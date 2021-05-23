@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using QuanLyKhachHang.DTO;
 using QuanLyKhachHang.DAO;
 
+
 namespace QuanLyKhachHang.UserControls
 {
     public partial class UC_NhapHang : UserControl
@@ -279,6 +280,7 @@ namespace QuanLyKhachHang.UserControls
             {
                 if(txtNCC.Text != "")
                 {
+                    Data.TenNCC = txtNCC.Text;
                     if(lsvNhapHang.Items.Count > 0)
                     {
                         DataTable data = NhaCungCapDAO.Instance.timNCCbangTen(txtNCC.Text);
@@ -294,13 +296,19 @@ namespace QuanLyKhachHang.UserControls
                                 int thanhtien = int.Parse(lsvNhapHang.Items[i].SubItems[4].Text);
 
                                 PhieuNhapDAO.Instance.themCTPN(PhieuNhapDAO.Instance.getMaxPhieuNhap(), manl, dongia, sl, thanhtien);
-                                MessageBox.Show("Nhập hàng thành công");
-                                lsvNhapHang.Items.Clear();
-                                txtMaNL.Text = "";
-                                txtTenNL.Text = "";
-                                txtNCC.Text = "";
-                                txtSL.Text = "";
+                                NguyenLieuDAONew.Instance.themSLNguyenLieu(manl, sl);
                             }
+                            MessageBox.Show("Nhập hàng thành công");
+                            using(Form fr = new frNhapHangIn())
+                            {
+                                fr.ShowDialog();
+                            }
+                            lsvNhapHang.Items.Clear();
+                            txtMaNL.Text = "";
+                            txtTenNL.Text = "";
+                            txtNCC.Text = "";
+                            txtSL.Text = "";
+                            
 
                         }
 

@@ -1,14 +1,6 @@
 ﻿using QuanLyKhachHang.DAO;
 using QuanLyKhachHang.DTO;
-using QuanLyKhachHang.GUI.UserControls;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuanLyKhachHang
@@ -19,7 +11,7 @@ namespace QuanLyKhachHang
         {
             InitializeComponent();
             loadBanDau();
-            
+
         }
 
         void loadBanDau()
@@ -78,15 +70,15 @@ namespace QuanLyKhachHang
                 float tongtien = float.Parse(HoaDonDAO.Instance.ThanhToan(Data.MaPYC, 0));
                 txtTongTien.Text = tongtien.ToString("N0") + " đ";
             }
-                
+
             else
             {
                 string mapyc = Data.MaPYC.ToString();
                 float km = (float)((cbKhuyeMai.SelectedItem) as KhuyenMaiDTO).Phantram;
                 float tongtien = float.Parse(HoaDonDAO.Instance.ThanhToan(mapyc, 0));
                 float tienthanhtoan = float.Parse(HoaDonDAO.Instance.ThanhToan(mapyc, km));
-                txtTongTien.Text = tienthanhtoan.ToString("N0") + " đ" ;
-                txtGiam.Text = (tongtien-tienthanhtoan).ToString("N0") + " đ";
+                txtTongTien.Text = tienthanhtoan.ToString("N0") + " đ";
+                txtGiam.Text = (tongtien - tienthanhtoan).ToString("N0") + " đ";
 
                 if (txtKhachTra.Text != "")
                 {
@@ -99,27 +91,27 @@ namespace QuanLyKhachHang
                     else
                         lblTraLai.Text = "0 đ";
                 }
-                
+
             }
-                
+
         }
 
         private void cbKhuyeMai_Format(object sender, ListControlConvertEventArgs e)
         {
             string makm = ((KhuyenMaiDTO)e.ListItem).Makm;
             string phantram = (((KhuyenMaiDTO)e.ListItem).Phantram.ToString());
-            e.Value = makm + " - Giảm " + phantram+"%";
+            e.Value = makm + " - Giảm " + phantram + "%";
         }
 
         private void btnClearKM_Click(object sender, EventArgs e)
         {
             cbKhuyeMai.SelectedIndex = -1;
             txtGiam.Text = "0 đ";
-            
+
         }
 
 
-        
+
 
         private void txtKhachTra_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -147,14 +139,14 @@ namespace QuanLyKhachHang
         private void txtKhachTra_TextChanged(object sender, EventArgs e)
         {
             float kt = float.Parse(txtKhachTra.Text.Replace(" đ", ""));
-            float tt = float.Parse(txtTongTien.Text.Replace(" đ",""));
+            float tt = float.Parse(txtTongTien.Text.Replace(" đ", ""));
             if (kt >= tt)
             {
                 lblTraLai.Text = (kt - tt).ToString("N0") + " đ";
             }
             else
                 lblTraLai.Text = "0 đ";
-            
+
         }
 
         private void btnLopCN_Click(object sender, EventArgs e)
@@ -170,7 +162,8 @@ namespace QuanLyKhachHang
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-
+            Data.Maban = TableDAO.Instance.getMaBanbyPYC(Data.MaPYC);
+            Data.TongcongHD = txtTongTien.Text;
             if (txtMaKH.Text == "")
                 MessageBox.Show("Vui lòng nhập thông tin khách hàng");
             else
@@ -226,6 +219,14 @@ namespace QuanLyKhachHang
                         MessageBox.Show("Mã khách hàng không tồn tại");
                 }
                 MessageBox.Show("Thanh toán thành công");
+                Data.ChietkhauHD = txtGiam.Text;
+                Data.TongtienHD = txtTongTien.Text;
+                
+                using (Form fr = new frHoaDonIn())
+                {
+                    fr.ShowDialog();
+                    
+                }
                 this.Close();
 
 
@@ -233,6 +234,6 @@ namespace QuanLyKhachHang
             }
         }
 
-        
+
     }
 }

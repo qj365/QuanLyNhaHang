@@ -142,6 +142,12 @@ namespace QuanLyKhachHang.DAO
             return max;
         }
 
+        public DataTable getPhieuNhap(string mapn)
+        {
+            DataTable data = DataProvider.Instance.executeQuery("select * from PHIEUNHAP nhap where mapn = '" + mapn+"'");
+            return data;
+        }
+
 
         public string TongChi(int index)
         {
