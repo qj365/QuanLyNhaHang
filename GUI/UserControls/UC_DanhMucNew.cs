@@ -426,6 +426,19 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
 
             }
         }
+
+        private void bunifuCustomDataGridBanAn_SelectionChanged_1(object sender, EventArgs e)
+        {
+
+            int index = bunifuCustomDataGridBanAn.CurrentCell == null ? -1 : bunifuCustomDataGridBanAn.CurrentCell.RowIndex;
+            if (index != -1)
+            {
+                bunifuTextBoxmabanan.Text = bunifuCustomDataGridBanAn.Rows[index].Cells[0].Value.ToString().Trim();
+                bunifuTextBoxsochongoi.Text = bunifuCustomDataGridBanAn.Rows[index].Cells[1].Value.ToString().Trim();
+
+            }
+        }
+
         private void disEnabledBanAn(bool x)
         {
             BtnThemBanAn.Enabled = x;
@@ -782,6 +795,7 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
 
 
 
+
         /* #region cái cũ
          readonly NguyenLieuDAO NLdao = new NguyenLieuDAO();
          //readonly NguyenLieuDTO NLdto = new NguyenLieuDTO();
@@ -910,6 +924,6 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
          #endregion*/
         #endregion
 
-
+        
     }
 }

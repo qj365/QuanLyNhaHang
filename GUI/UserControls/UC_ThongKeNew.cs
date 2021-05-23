@@ -46,6 +46,7 @@ namespace QuanLyKhachHang.GUI.UserControls.ThongKe
         private void btnPhieuNhap_Click(object sender, EventArgs e)
         {
             pageThongKe.SelectTab(1);
+            Load_PhieuNhap();
         }
 
         private void btnTaiKhoan(object sender, EventArgs e)
@@ -231,6 +232,7 @@ namespace QuanLyKhachHang.GUI.UserControls.ThongKe
 
         public void HDBinding()
         {
+            clearBindingHD();
             txtMaHD.DataBindings.Add(new Binding("text", dtgvListHD.DataSource, "MAHD", true, DataSourceUpdateMode.Never));
             txtNgayLap.DataBindings.Add(new Binding("text", dtgvListHD.DataSource, "NGAYLAP", true, DataSourceUpdateMode.Never));
             txtNguoiLap.DataBindings.Add(new Binding("text", dtgvListHD.DataSource, "HOTEN", true, DataSourceUpdateMode.Never));
@@ -359,6 +361,23 @@ namespace QuanLyKhachHang.GUI.UserControls.ThongKe
                 bunifuTextBoxTongTien.Text = bunifuCustomDataGridPhieuNhap.Rows[index].Cells[2].Value.ToString();
             }
         }
+
+        private void bunifuCustomDataGridPhieuNhap_SelectionChanged_1(object sender, EventArgs e)
+        {
+            int index = bunifuCustomDataGridPhieuNhap.CurrentCell == null ? -1 : bunifuCustomDataGridPhieuNhap.CurrentCell.RowIndex;
+            if (index != -1)
+            {
+                bunifuTextBoxMaPhieuNhap.Text = bunifuCustomDataGridPhieuNhap.Rows[index].Cells[0].Value.ToString();
+                bunifuDropdownNguoiLap.Text = bunifuCustomDataGridPhieuNhap.Rows[index].Cells[4].Value.ToString();
+                if (bunifuCustomDataGridPhieuNhap.Rows[index].Cells[1].Value.ToString() != "")
+                {
+                    bunifuDatePickerNgayLap.Value = DateTime.Parse(bunifuCustomDataGridPhieuNhap.Rows[index].Cells[1].Value.ToString());
+                }
+                else bunifuDatePickerNgayLap.Value = DateTime.Now;
+                bunifuDropdownNhaCungCap.Text = bunifuCustomDataGridPhieuNhap.Rows[index].Cells[3].Value.ToString();
+                bunifuTextBoxTongTien.Text = bunifuCustomDataGridPhieuNhap.Rows[index].Cells[2].Value.ToString();
+            }
+        }
         private void bunifuButtonClearTimKiem_Click(object sender, EventArgs e)
         {
             bunifuTextBoxTimKiemMaPhieuNhap.Text = "";
@@ -428,6 +447,7 @@ namespace QuanLyKhachHang.GUI.UserControls.ThongKe
             DisEnabledPN(true);
             Load_PhieuNhap();
         }
+
 
         /* #region cái cũ
          //PhieuNhapDTO _phieunhapdto = new PhieuNhapDTO();
@@ -550,6 +570,6 @@ namespace QuanLyKhachHang.GUI.UserControls.ThongKe
 
         #endregion
 
-
+        
     }
 }

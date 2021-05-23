@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             Utilities.BunifuPages.BunifuAnimatorNS.Animation animation1 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_ThongKeNew));
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox.StateProperties();
@@ -141,13 +145,10 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges13 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties89 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties90 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_ThongKeNew));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             this.pageThongKe = new Bunifu.UI.WinForms.BunifuPages();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnXoaHD = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.label1 = new System.Windows.Forms.Label();
             this.txtKH = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
             this.txtTongTien = new Bunifu.UI.WinForms.BunifuTextbox.BunifuTextBox();
@@ -233,7 +234,6 @@
             this.btnHoaDon = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMon = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.btnXoaHD = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.pageThongKe.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -264,10 +264,10 @@
             this.pageThongKe.Location = new System.Drawing.Point(0, 63);
             this.pageThongKe.Multiline = true;
             this.pageThongKe.Name = "pageThongKe";
-            this.pageThongKe.Page = this.tabPage1;
-            this.pageThongKe.PageIndex = 0;
-            this.pageThongKe.PageName = "tabPage1";
-            this.pageThongKe.PageTitle = "tabPage1";
+            this.pageThongKe.Page = this.tabPage2;
+            this.pageThongKe.PageIndex = 1;
+            this.pageThongKe.PageName = "tabPage2";
+            this.pageThongKe.PageTitle = "tabPage2";
             this.pageThongKe.SelectedIndex = 0;
             this.pageThongKe.Size = new System.Drawing.Size(1151, 571);
             this.pageThongKe.TabIndex = 0;
@@ -297,7 +297,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1143, 545);
+            this.tabPage1.Size = new System.Drawing.Size(1143, 542);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -326,6 +326,70 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Chỉnh sửa";
             // 
+            // btnXoaHD
+            // 
+            this.btnXoaHD.AllowToggling = false;
+            this.btnXoaHD.AnimationSpeed = 200;
+            this.btnXoaHD.AutoGenerateColors = true;
+            this.btnXoaHD.BackColor = System.Drawing.Color.Transparent;
+            this.btnXoaHD.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(75)))), ((int)(((byte)(72)))));
+            this.btnXoaHD.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnXoaHD.BackgroundImage")));
+            this.btnXoaHD.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btnXoaHD.ButtonText = "Xoá";
+            this.btnXoaHD.ButtonTextMarginLeft = 15;
+            this.btnXoaHD.ColorContrastOnClick = 45;
+            this.btnXoaHD.ColorContrastOnHover = 45;
+            this.btnXoaHD.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btnXoaHD.CustomizableEdges = borderEdges1;
+            this.btnXoaHD.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnXoaHD.DisabledBorderColor = System.Drawing.Color.Empty;
+            this.btnXoaHD.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btnXoaHD.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btnXoaHD.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btnXoaHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnXoaHD.ForeColor = System.Drawing.Color.White;
+            this.btnXoaHD.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXoaHD.IconMarginLeft = 11;
+            this.btnXoaHD.IconPadding = 10;
+            this.btnXoaHD.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.btnXoaHD.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(75)))), ((int)(((byte)(72)))));
+            this.btnXoaHD.IdleBorderRadius = 5;
+            this.btnXoaHD.IdleBorderThickness = 1;
+            this.btnXoaHD.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(75)))), ((int)(((byte)(72)))));
+            this.btnXoaHD.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnXoaHD.IdleIconLeftImage")));
+            this.btnXoaHD.IdleIconRightImage = null;
+            this.btnXoaHD.IndicateFocus = false;
+            this.btnXoaHD.Location = new System.Drawing.Point(184, 350);
+            this.btnXoaHD.Name = "btnXoaHD";
+            stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(156)))), ((int)(((byte)(154)))));
+            stateProperties1.BorderRadius = 5;
+            stateProperties1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties1.BorderThickness = 1;
+            stateProperties1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(156)))), ((int)(((byte)(154)))));
+            stateProperties1.ForeColor = System.Drawing.Color.White;
+            stateProperties1.IconLeftImage = null;
+            stateProperties1.IconRightImage = null;
+            this.btnXoaHD.onHoverState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(41)))), ((int)(((byte)(39)))));
+            stateProperties2.BorderRadius = 5;
+            stateProperties2.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties2.BorderThickness = 1;
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(41)))), ((int)(((byte)(39)))));
+            stateProperties2.ForeColor = System.Drawing.Color.White;
+            stateProperties2.IconLeftImage = null;
+            stateProperties2.IconRightImage = null;
+            this.btnXoaHD.OnPressedState = stateProperties2;
+            this.btnXoaHD.Size = new System.Drawing.Size(118, 45);
+            this.btnXoaHD.TabIndex = 34;
+            this.btnXoaHD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnXoaHD.TextMarginLeft = 15;
+            this.btnXoaHD.UseDefaultRadiusAndThickness = true;
+            this.btnXoaHD.Click += new System.EventHandler(this.btnXoaHD_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -334,7 +398,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label1.Location = new System.Drawing.Point(15, 157);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 20);
+            this.label1.Size = new System.Drawing.Size(131, 25);
             this.label1.TabIndex = 32;
             this.label1.Text = "Khách Hàng";
             // 
@@ -735,7 +799,7 @@
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label16.Location = new System.Drawing.Point(18, 315);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(84, 20);
+            this.label16.Size = new System.Drawing.Size(103, 25);
             this.label16.TabIndex = 21;
             this.label16.Text = "Tổng tiền";
             // 
@@ -747,7 +811,7 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label6.Location = new System.Drawing.Point(15, 256);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(121, 20);
+            this.label6.Size = new System.Drawing.Size(152, 25);
             this.label6.TabIndex = 21;
             this.label6.Text = "% Khuyến Mại";
             // 
@@ -759,7 +823,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label3.Location = new System.Drawing.Point(15, 107);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 20);
+            this.label3.Size = new System.Drawing.Size(103, 25);
             this.label3.TabIndex = 20;
             this.label3.Text = "Người lập";
             // 
@@ -771,7 +835,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label4.Location = new System.Drawing.Point(15, 205);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 20);
+            this.label4.Size = new System.Drawing.Size(97, 25);
             this.label4.TabIndex = 21;
             this.label4.Text = "Ngày lập";
             // 
@@ -783,7 +847,7 @@
             this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label26.Location = new System.Drawing.Point(15, 52);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(103, 20);
+            this.label26.Size = new System.Drawing.Size(126, 25);
             this.label26.TabIndex = 21;
             this.label26.Text = "Mã hoá đơn";
             // 
@@ -875,7 +939,7 @@
             this.label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label28.Location = new System.Drawing.Point(775, 34);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(142, 20);
+            this.label28.Size = new System.Drawing.Size(175, 25);
             this.label28.TabIndex = 36;
             this.label28.Text = "Tổng Doanh Thu";
             // 
@@ -986,7 +1050,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label2.Location = new System.Drawing.Point(395, 88);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 20);
+            this.label2.Size = new System.Drawing.Size(107, 25);
             this.label2.TabIndex = 32;
             this.label2.Text = "Đến Ngày";
             // 
@@ -1024,7 +1088,7 @@
             this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label27.Location = new System.Drawing.Point(408, 28);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(74, 20);
+            this.label27.Size = new System.Drawing.Size(94, 25);
             this.label27.TabIndex = 30;
             this.label27.Text = "Từ Ngày";
             // 
@@ -1184,7 +1248,7 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label7.Location = new System.Drawing.Point(25, 73);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 20);
+            this.label7.Size = new System.Drawing.Size(103, 25);
             this.label7.TabIndex = 20;
             this.label7.Text = "Người lập";
             // 
@@ -1196,7 +1260,7 @@
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label8.Location = new System.Drawing.Point(25, 34);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(103, 20);
+            this.label8.Size = new System.Drawing.Size(126, 25);
             this.label8.TabIndex = 21;
             this.label8.Text = "Mã hoá đơn";
             // 
@@ -1272,7 +1336,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1143, 545);
+            this.tabPage2.Size = new System.Drawing.Size(1143, 542);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1339,6 +1403,7 @@
             this.bunifuCustomDataGridPhieuNhap.Size = new System.Drawing.Size(661, 400);
             this.bunifuCustomDataGridPhieuNhap.TabIndex = 51;
             this.bunifuCustomDataGridPhieuNhap.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.bunifuCustomDataGridPhieuNhap.SelectionChanged += new System.EventHandler(this.bunifuCustomDataGridPhieuNhap_SelectionChanged_1);
             // 
             // groupBox6
             // 
@@ -1587,7 +1652,7 @@
             this.bunifuDatePickerNgayLap.FillDatePicker = false;
             this.bunifuDatePickerNgayLap.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuDatePickerNgayLap.ForeColor = System.Drawing.Color.Black;
-            this.bunifuDatePickerNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.bunifuDatePickerNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.bunifuDatePickerNgayLap.Icon = ((System.Drawing.Image)(resources.GetObject("bunifuDatePickerNgayLap.Icon")));
             this.bunifuDatePickerNgayLap.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.bunifuDatePickerNgayLap.IconLocation = Bunifu.UI.WinForms.BunifuDatePicker.Indicator.Right;
@@ -1605,7 +1670,7 @@
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label17.Location = new System.Drawing.Point(28, 261);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(84, 20);
+            this.label17.Size = new System.Drawing.Size(103, 25);
             this.label17.TabIndex = 21;
             this.label17.Text = "Tổng tiền";
             // 
@@ -1681,7 +1746,7 @@
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label18.Location = new System.Drawing.Point(8, 205);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(119, 20);
+            this.label18.Size = new System.Drawing.Size(145, 25);
             this.label18.TabIndex = 21;
             this.label18.Text = "Nhà cung cấp";
             // 
@@ -1693,7 +1758,7 @@
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label22.Location = new System.Drawing.Point(25, 96);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(84, 20);
+            this.label22.Size = new System.Drawing.Size(103, 25);
             this.label22.TabIndex = 20;
             this.label22.Text = "Người lập";
             // 
@@ -1705,7 +1770,7 @@
             this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label23.Location = new System.Drawing.Point(31, 149);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(78, 20);
+            this.label23.Size = new System.Drawing.Size(97, 25);
             this.label23.TabIndex = 21;
             this.label23.Text = "Ngày lập";
             // 
@@ -1845,7 +1910,7 @@
             this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label25.Location = new System.Drawing.Point(15, 43);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(127, 20);
+            this.label25.Size = new System.Drawing.Size(155, 25);
             this.label25.TabIndex = 21;
             this.label25.Text = "Mã phiếu nhập";
             // 
@@ -2253,7 +2318,7 @@
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label12.Location = new System.Drawing.Point(579, 82);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(78, 20);
+            this.label12.Size = new System.Drawing.Size(97, 25);
             this.label12.TabIndex = 26;
             this.label12.Text = "Ngày lập";
             // 
@@ -2265,7 +2330,7 @@
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label15.Location = new System.Drawing.Point(559, 33);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(119, 20);
+            this.label15.Size = new System.Drawing.Size(145, 25);
             this.label15.TabIndex = 20;
             this.label15.Text = "Nhà cung cấp";
             // 
@@ -2277,7 +2342,7 @@
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label13.Location = new System.Drawing.Point(46, 87);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(84, 20);
+            this.label13.Size = new System.Drawing.Size(103, 25);
             this.label13.TabIndex = 20;
             this.label13.Text = "Người lập";
             // 
@@ -2289,7 +2354,7 @@
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label14.Location = new System.Drawing.Point(48, 33);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(132, 20);
+            this.label14.Size = new System.Drawing.Size(161, 25);
             this.label14.TabIndex = 21;
             this.label14.Text = "Mã  phiếu nhập";
             // 
@@ -2303,7 +2368,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1143, 545);
+            this.tabPage3.Size = new System.Drawing.Size(1143, 542);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -2380,7 +2445,7 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label9.Location = new System.Drawing.Point(621, 34);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(85, 20);
+            this.label9.Size = new System.Drawing.Size(104, 25);
             this.label9.TabIndex = 29;
             this.label9.Text = "Đến ngày";
             // 
@@ -2392,7 +2457,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label5.Location = new System.Drawing.Point(62, 36);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 20);
+            this.label5.Size = new System.Drawing.Size(91, 25);
             this.label5.TabIndex = 29;
             this.label5.Text = "Từ ngày";
             // 
@@ -2457,7 +2522,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1143, 545);
+            this.tabPage4.Size = new System.Drawing.Size(1143, 542);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -2470,7 +2535,7 @@
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label10.Location = new System.Drawing.Point(706, 31);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(85, 20);
+            this.label10.Size = new System.Drawing.Size(104, 25);
             this.label10.TabIndex = 34;
             this.label10.Text = "Đến ngày";
             // 
@@ -2482,7 +2547,7 @@
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label11.Location = new System.Drawing.Point(25, 33);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 20);
+            this.label11.Size = new System.Drawing.Size(91, 25);
             this.label11.TabIndex = 35;
             this.label11.Text = "Từ ngày";
             // 
@@ -2544,7 +2609,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 4);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1143, 545);
+            this.tabPage5.Size = new System.Drawing.Size(1143, 542);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -2887,7 +2952,7 @@
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label19.Location = new System.Drawing.Point(22, 161);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(63, 20);
+            this.label19.Size = new System.Drawing.Size(75, 25);
             this.label19.TabIndex = 20;
             this.label19.Text = "Họ tên";
             // 
@@ -2899,7 +2964,7 @@
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label20.Location = new System.Drawing.Point(12, 212);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(103, 20);
+            this.label20.Size = new System.Drawing.Size(127, 25);
             this.label20.TabIndex = 21;
             this.label20.Text = "Phân quyền";
             // 
@@ -3103,7 +3168,7 @@
             this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label21.Location = new System.Drawing.Point(12, 108);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(91, 20);
+            this.label21.Size = new System.Drawing.Size(110, 25);
             this.label21.TabIndex = 21;
             this.label21.Text = "Username";
             // 
@@ -3266,7 +3331,7 @@
             this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label24.Location = new System.Drawing.Point(34, 34);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(91, 20);
+            this.label24.Size = new System.Drawing.Size(110, 25);
             this.label24.TabIndex = 21;
             this.label24.Text = "Username";
             // 
@@ -3357,7 +3422,7 @@
             this.btnPhieuNhap.IconZoom = 65D;
             this.btnPhieuNhap.IsTab = true;
             this.btnPhieuNhap.Location = new System.Drawing.Point(234, 9);
-            this.btnPhieuNhap.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPhieuNhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPhieuNhap.Name = "btnPhieuNhap";
             this.btnPhieuNhap.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.btnPhieuNhap.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(137)))), ((int)(((byte)(175)))));
@@ -3394,7 +3459,7 @@
             this.btnHoaDon.IconZoom = 65D;
             this.btnHoaDon.IsTab = true;
             this.btnHoaDon.Location = new System.Drawing.Point(36, 9);
-            this.btnHoaDon.Margin = new System.Windows.Forms.Padding(4);
+            this.btnHoaDon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHoaDon.Name = "btnHoaDon";
             this.btnHoaDon.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.btnHoaDon.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(137)))), ((int)(((byte)(175)))));
@@ -3431,7 +3496,7 @@
             this.btnMon.IconZoom = 65D;
             this.btnMon.IsTab = true;
             this.btnMon.Location = new System.Drawing.Point(432, 9);
-            this.btnMon.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMon.Name = "btnMon";
             this.btnMon.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.btnMon.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(137)))), ((int)(((byte)(175)))));
@@ -3468,7 +3533,7 @@
             this.bunifuFlatButton1.IconZoom = 65D;
             this.bunifuFlatButton1.IsTab = true;
             this.bunifuFlatButton1.Location = new System.Drawing.Point(636, 9);
-            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(4);
+            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(137)))), ((int)(((byte)(175)))));
@@ -3481,70 +3546,6 @@
             this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
             this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuFlatButton1.Click += new System.EventHandler(this.btnTaiKhoan);
-            // 
-            // btnXoaHD
-            // 
-            this.btnXoaHD.AllowToggling = false;
-            this.btnXoaHD.AnimationSpeed = 200;
-            this.btnXoaHD.AutoGenerateColors = true;
-            this.btnXoaHD.BackColor = System.Drawing.Color.Transparent;
-            this.btnXoaHD.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(75)))), ((int)(((byte)(72)))));
-            this.btnXoaHD.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnXoaHD.BackgroundImage")));
-            this.btnXoaHD.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btnXoaHD.ButtonText = "Xoá";
-            this.btnXoaHD.ButtonTextMarginLeft = 15;
-            this.btnXoaHD.ColorContrastOnClick = 45;
-            this.btnXoaHD.ColorContrastOnHover = 45;
-            this.btnXoaHD.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.btnXoaHD.CustomizableEdges = borderEdges1;
-            this.btnXoaHD.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnXoaHD.DisabledBorderColor = System.Drawing.Color.Empty;
-            this.btnXoaHD.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btnXoaHD.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btnXoaHD.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btnXoaHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnXoaHD.ForeColor = System.Drawing.Color.White;
-            this.btnXoaHD.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXoaHD.IconMarginLeft = 11;
-            this.btnXoaHD.IconPadding = 10;
-            this.btnXoaHD.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.btnXoaHD.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(75)))), ((int)(((byte)(72)))));
-            this.btnXoaHD.IdleBorderRadius = 5;
-            this.btnXoaHD.IdleBorderThickness = 1;
-            this.btnXoaHD.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(75)))), ((int)(((byte)(72)))));
-            this.btnXoaHD.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnXoaHD.IdleIconLeftImage")));
-            this.btnXoaHD.IdleIconRightImage = null;
-            this.btnXoaHD.IndicateFocus = false;
-            this.btnXoaHD.Location = new System.Drawing.Point(184, 350);
-            this.btnXoaHD.Name = "btnXoaHD";
-            stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(156)))), ((int)(((byte)(154)))));
-            stateProperties1.BorderRadius = 5;
-            stateProperties1.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties1.BorderThickness = 1;
-            stateProperties1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(156)))), ((int)(((byte)(154)))));
-            stateProperties1.ForeColor = System.Drawing.Color.White;
-            stateProperties1.IconLeftImage = null;
-            stateProperties1.IconRightImage = null;
-            this.btnXoaHD.onHoverState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(41)))), ((int)(((byte)(39)))));
-            stateProperties2.BorderRadius = 5;
-            stateProperties2.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties2.BorderThickness = 1;
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(41)))), ((int)(((byte)(39)))));
-            stateProperties2.ForeColor = System.Drawing.Color.White;
-            stateProperties2.IconLeftImage = null;
-            stateProperties2.IconRightImage = null;
-            this.btnXoaHD.OnPressedState = stateProperties2;
-            this.btnXoaHD.Size = new System.Drawing.Size(118, 45);
-            this.btnXoaHD.TabIndex = 34;
-            this.btnXoaHD.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnXoaHD.TextMarginLeft = 15;
-            this.btnXoaHD.UseDefaultRadiusAndThickness = true;
-            this.btnXoaHD.Click += new System.EventHandler(this.btnXoaHD_Click);
             // 
             // UC_ThongKeNew
             // 

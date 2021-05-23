@@ -331,10 +331,10 @@
             this.pageDanhMuc.Location = new System.Drawing.Point(0, 77);
             this.pageDanhMuc.Multiline = true;
             this.pageDanhMuc.Name = "pageDanhMuc";
-            this.pageDanhMuc.Page = this.tabPage3;
-            this.pageDanhMuc.PageIndex = 2;
-            this.pageDanhMuc.PageName = "tabPage3";
-            this.pageDanhMuc.PageTitle = "tabPage3";
+            this.pageDanhMuc.Page = this.tabPage4;
+            this.pageDanhMuc.PageIndex = 3;
+            this.pageDanhMuc.PageName = "tabPage4";
+            this.pageDanhMuc.PageTitle = "tabPage4";
             this.pageDanhMuc.SelectedIndex = 0;
             this.pageDanhMuc.Size = new System.Drawing.Size(1148, 554);
             this.pageDanhMuc.TabIndex = 1;
@@ -364,7 +364,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1140, 528);
+            this.tabPage1.Size = new System.Drawing.Size(1140, 525);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -909,7 +909,7 @@
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label13.Location = new System.Drawing.Point(19, 286);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(82, 20);
+            this.label13.Size = new System.Drawing.Size(100, 25);
             this.label13.TabIndex = 20;
             this.label13.Text = "Loại món";
             // 
@@ -921,7 +921,7 @@
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label12.Location = new System.Drawing.Point(25, 234);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(71, 20);
+            this.label12.Size = new System.Drawing.Size(86, 25);
             this.label12.TabIndex = 20;
             this.label12.Text = "Đơn giá";
             // 
@@ -1007,7 +1007,7 @@
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label10.Location = new System.Drawing.Point(9, 128);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(103, 20);
+            this.label10.Size = new System.Drawing.Size(127, 25);
             this.label10.TabIndex = 20;
             this.label10.Text = "Tên món ăn";
             // 
@@ -1019,7 +1019,7 @@
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label11.Location = new System.Drawing.Point(41, 181);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(44, 20);
+            this.label11.Size = new System.Drawing.Size(56, 25);
             this.label11.TabIndex = 21;
             this.label11.Text = "ĐVT";
             // 
@@ -1095,7 +1095,7 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label9.Location = new System.Drawing.Point(11, 75);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(97, 20);
+            this.label9.Size = new System.Drawing.Size(119, 25);
             this.label9.TabIndex = 21;
             this.label9.Text = "Mã món ăn";
             // 
@@ -1399,7 +1399,7 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label7.Location = new System.Drawing.Point(22, 87);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(103, 20);
+            this.label7.Size = new System.Drawing.Size(127, 25);
             this.label7.TabIndex = 20;
             this.label7.Text = "Tên món ăn";
             // 
@@ -1411,7 +1411,7 @@
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label8.Location = new System.Drawing.Point(24, 33);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(97, 20);
+            this.label8.Size = new System.Drawing.Size(119, 25);
             this.label8.TabIndex = 21;
             this.label8.Text = "Mã món ăn";
             // 
@@ -1424,7 +1424,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 4);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1140, 528);
+            this.tabPage2.Size = new System.Drawing.Size(1140, 525);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1941,7 +1941,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label5.Location = new System.Drawing.Point(12, 115);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 20);
+            this.label5.Size = new System.Drawing.Size(129, 25);
             this.label5.TabIndex = 35;
             this.label5.Text = "Mã loại món";
             // 
@@ -2026,7 +2026,7 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label6.Location = new System.Drawing.Point(10, 177);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(111, 20);
+            this.label6.Size = new System.Drawing.Size(137, 25);
             this.label6.TabIndex = 36;
             this.label6.Text = "Tên loại món";
             // 
@@ -2113,7 +2113,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 4);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1140, 528);
+            this.tabPage3.Size = new System.Drawing.Size(1140, 525);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -2619,7 +2619,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label3.Location = new System.Drawing.Point(22, 87);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(121, 20);
+            this.label3.Size = new System.Drawing.Size(150, 25);
             this.label3.TabIndex = 20;
             this.label3.Text = "Tên nhân viên";
             // 
@@ -2631,7 +2631,7 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label4.Location = new System.Drawing.Point(24, 33);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 20);
+            this.label4.Size = new System.Drawing.Size(142, 25);
             this.label4.TabIndex = 21;
             this.label4.Text = "Mã nhân viên";
             // 
@@ -2643,7 +2643,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 4);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1140, 528);
+            this.tabPage4.Size = new System.Drawing.Size(1140, 525);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -2710,6 +2710,7 @@
             this.bunifuCustomDataGridBanAn.Size = new System.Drawing.Size(677, 419);
             this.bunifuCustomDataGridBanAn.TabIndex = 51;
             this.bunifuCustomDataGridBanAn.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.bunifuCustomDataGridBanAn.SelectionChanged += new System.EventHandler(this.bunifuCustomDataGridBanAn_SelectionChanged_1);
             // 
             // groupBox6
             // 
@@ -3132,7 +3133,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label1.Location = new System.Drawing.Point(35, 81);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 20);
+            this.label1.Size = new System.Drawing.Size(81, 25);
             this.label1.TabIndex = 21;
             this.label1.Text = "Số bàn";
             // 
@@ -3217,7 +3218,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label2.Location = new System.Drawing.Point(17, 143);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 20);
+            this.label2.Size = new System.Drawing.Size(127, 25);
             this.label2.TabIndex = 21;
             this.label2.Text = "Số chỗ ngồi";
             // 
@@ -3306,7 +3307,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 4);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1140, 528);
+            this.tabPage5.Size = new System.Drawing.Size(1140, 525);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -3857,7 +3858,7 @@
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label14.Location = new System.Drawing.Point(11, 43);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(129, 20);
+            this.label14.Size = new System.Drawing.Size(159, 25);
             this.label14.TabIndex = 21;
             this.label14.Text = "Mã nguyên liệu";
             // 
@@ -3942,7 +3943,7 @@
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label18.Location = new System.Drawing.Point(41, 255);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(80, 20);
+            this.label18.Size = new System.Drawing.Size(98, 25);
             this.label18.TabIndex = 21;
             this.label18.Text = "Số lượng";
             // 
@@ -4027,7 +4028,7 @@
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label17.Location = new System.Drawing.Point(41, 196);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(71, 20);
+            this.label17.Size = new System.Drawing.Size(86, 25);
             this.label17.TabIndex = 21;
             this.label17.Text = "Đơn giá";
             // 
@@ -4112,7 +4113,7 @@
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label16.Location = new System.Drawing.Point(57, 145);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(44, 20);
+            this.label16.Size = new System.Drawing.Size(56, 25);
             this.label16.TabIndex = 21;
             this.label16.Text = "ĐVT";
             // 
@@ -4197,7 +4198,7 @@
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label15.Location = new System.Drawing.Point(9, 100);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(135, 20);
+            this.label15.Size = new System.Drawing.Size(167, 25);
             this.label15.TabIndex = 21;
             this.label15.Text = "Tên nguyên liệu";
             // 
@@ -4299,7 +4300,7 @@
             this.btnBan.IconZoom = 65D;
             this.btnBan.IsTab = true;
             this.btnBan.Location = new System.Drawing.Point(656, 17);
-            this.btnBan.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBan.Name = "btnBan";
             this.btnBan.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.btnBan.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(137)))), ((int)(((byte)(175)))));
@@ -4336,7 +4337,7 @@
             this.btnNhanVien.IconZoom = 65D;
             this.btnNhanVien.IsTab = true;
             this.btnNhanVien.Location = new System.Drawing.Point(457, 17);
-            this.btnNhanVien.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNhanVien.Name = "btnNhanVien";
             this.btnNhanVien.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.btnNhanVien.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(137)))), ((int)(((byte)(175)))));
@@ -4373,7 +4374,7 @@
             this.btnLoai.IconZoom = 65D;
             this.btnLoai.IsTab = true;
             this.btnLoai.Location = new System.Drawing.Point(256, 17);
-            this.btnLoai.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLoai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLoai.Name = "btnLoai";
             this.btnLoai.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.btnLoai.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(137)))), ((int)(((byte)(175)))));
@@ -4410,7 +4411,7 @@
             this.btnMon.IconZoom = 65D;
             this.btnMon.IsTab = true;
             this.btnMon.Location = new System.Drawing.Point(71, 17);
-            this.btnMon.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMon.Name = "btnMon";
             this.btnMon.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.btnMon.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(137)))), ((int)(((byte)(175)))));
@@ -4447,7 +4448,7 @@
             this.btnNguyenLieu.IconZoom = 65D;
             this.btnNguyenLieu.IsTab = true;
             this.btnNguyenLieu.Location = new System.Drawing.Point(849, 17);
-            this.btnNguyenLieu.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNguyenLieu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNguyenLieu.Name = "btnNguyenLieu";
             this.btnNguyenLieu.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.btnNguyenLieu.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(137)))), ((int)(((byte)(175)))));
