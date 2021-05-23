@@ -26,14 +26,14 @@ namespace QuanLyKhachHang.DAO
             return data;
         }
 
-        public Boolean ThemKM(string makm, DateTime ngaybatdau, DateTime ngayketthuc, decimal phantram)
+        public Boolean ThemKM(string makm, string ngaybatdau, string ngayketthuc, decimal phantram)
         {
             string query = string.Format("insert into KHUYENMAI VALUES (N'{0}',N'{1}','{2}',N'{3}') ", makm, ngaybatdau, ngayketthuc, phantram);
             int result = DataProvider.Instance.executeNonQuery(query);
             return result > 0;
         }
 
-        public Boolean SuaKM(string makm, DateTime ngaybatdau, DateTime ngayketthuc, decimal phantram)
+        public Boolean SuaKM(string makm, string ngaybatdau, string ngayketthuc, decimal phantram)
         {
             string query = string.Format("update KHUYENMAI set NGAYBATDAU='{1}',NGAYKETTHUC='{2}',PHANTRAM='{3}' where MAKM=N'{0}'", makm, ngaybatdau, ngayketthuc, phantram);
             int result = DataProvider.Instance.executeNonQuery(query);
@@ -42,6 +42,7 @@ namespace QuanLyKhachHang.DAO
 
         public Boolean XoaKM(string makm)
         {
+            DAO.HoaDonDAO.Instance.DeleteHDByKM(makm);
             string query = string.Format("delete KHUYENMAI where MAKM='{0}'", makm);
             int result = DataProvider.Instance.executeNonQuery(query);
             return result > 0;
@@ -54,16 +55,23 @@ namespace QuanLyKhachHang.DAO
 
         }
 
-        public DataTable SearchListKMByPT(decimal phantram)
+        public DataTable SearchKM(string ngaybatdau, string ngayketthuc, string makm, string phantram)
         {
-            string query = string.Format("select * from KHUYENMAI where PHANTRAM like '%{0}%' ", phantram);
+            string query = string.Format("select * from KHUYENMAI where (NGAYBATDAU ='{0}') and (NGAYKETTHUC ='{1}') and  (MAKM LIKE '%' + '{2}' + '%' OR '{2}' = '') and (PHANTRAM like '%'+'{3}'+'%' or '{3}'='')", ngaybatdau, ngayketthuc, makm, phantram);
             DataTable data = DataProvider.Instance.executeQuery(query);
             return data;
         }
 
-        public DataTable SerchListKMByMaKM(string makm)
+        public DataTable SearchKMByNBD(string makm, string phantram, string ngaybatdau)
         {
-            string query = string.Format("select * from KHUYENMAI where MAKM like '%0%'", makm);
+            string query = string.Format("select * from KHUYENMAI where (MAKM LIKE '%' + '{0}' + '%' OR '{0}' = '') and (PHANTRAM like '%'+'{1}'+'%' or '{1}'='') and (NGAYBATDAU ='{2}')", makm, phantram, ngaybatdau);
+            DataTable data = DataProvider.Instance.executeQuery(query);
+            return data;
+        }
+
+        public DataTable SearchKMBy(string makm, string phantram)
+        {
+            string query = string.Format("select * from KHUYENMAI where (MAKM LIKE '%' + '{0}' + '%' OR '{0}' = '') and (PHANTRAM like '%'+'{1}'+'%' or '{1}'='')", makm, phantram);
             DataTable data = DataProvider.Instance.executeQuery(query);
             return data;
         }

@@ -145,5 +145,22 @@ namespace QuanLyKhachHang.DAO
             con.Close();
             return dt;
         }
+        public String LaySTT(int autoNum)
+        {
+            if (autoNum < 10)
+                return "000" + autoNum;
+
+            else if (autoNum >= 10 && autoNum < 100)
+                return "00" + autoNum;
+
+            else if (autoNum >= 100 && autoNum < 1000)
+                return "0" + autoNum;
+
+            else if (autoNum >= 1000 && autoNum < 10000)
+                return "" + autoNum;
+
+            else
+                return "";
+        }
     }
 }

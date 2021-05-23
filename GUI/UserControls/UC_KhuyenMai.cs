@@ -7,28 +7,51 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyKhachHang.DAO;
 
 namespace QuanLyKhachHang.UserControls
 {
     public partial class UC_KhuyenMai : UserControl
     {
+
+        string luunv = "";
+
+        DateTime today = DateTime.Now;
+
         public UC_KhuyenMai()
         {
             InitializeComponent();
+            LoadKMList();
+            luunv = "";
+            KMBinding();
+            btnLuuKM.Enabled = false;
+            btnHuyKM.Enabled = false;
+            txtMaKM.Enabled = false;
+            txtNgayBatDau.Enabled = false;
+            txtNgayKetThuc.Enabled = false;
+            txtPhanTram.Enabled = false;
         }
+
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        public void Refresh()
+        public void reLoad()
         {
             LoadKMList();
+            btnThemKM.Enabled = true;
+            btnSuaKM.Enabled = true;
+            btnXoaKM.Enabled = true;
+            btnLuuKM.Enabled = false;
+            btnHuyKM.Enabled = false;
+            txtMaKM.Enabled = false;
+            txtNgayBatDau.Enabled = false;
+            txtNgayKetThuc.Enabled = false;
+            txtPhanTram.Enabled = false;
+            clearBindingKM();
             KMBinding();
-            //btnLuuKM.Enabled = false;
-            //btnHuyKM.Enabled = false;
-
         }
 
         public void LoadKMList()
@@ -38,19 +61,28 @@ namespace QuanLyKhachHang.UserControls
 
         public void KMBinding()
         {
-            txtMaKM.DataBindings.Add(new Binding("text", dtgvKMList.DataSource, "MAKM", true, DataSourceUpdateMode.Never));
-            txtNgayBatDau.DataBindings.Add(new Binding("text", dtgvKMList.DataSource, "NGAYBATDAU", true, DataSourceUpdateMode.Never));
-            txtNgayKetThuc.DataBindings.Add(new Binding("text", dtgvKMList.DataSource, "NGAYKETTHUC", true, DataSourceUpdateMode.Never));
-            txtPhanTram.DataBindings.Add(new Binding("text", dtgvKMList.DataSource, "PHANTRAM", true, DataSourceUpdateMode.Never));
+            txtMaKM.DataBindings.Add(new Binding("text", dtgvKMList.DataSource, "MAKM"));
+            txtNgayBatDau.DataBindings.Add(new Binding("text", dtgvKMList.DataSource, "NGAYBATDAU"));
+            txtNgayKetThuc.DataBindings.Add(new Binding("text", dtgvKMList.DataSource, "NGAYKETTHUC"));
+            txtPhanTram.DataBindings.Add(new Binding("text", dtgvKMList.DataSource, "PHANTRAM"));
         }
 
         private void btnThemKM_Click(object sender, EventArgs e)
         {
-            //btnLuuKM.Enabled = true;
-            //btnHuyKM.Enabled = false;
+            txtMaKM.Text = DataProvider.Instance.executeScalar("select dbo.TAOMAKM()").ToString();
+            btnSuaKM.Enabled = false;
+            btnXoaKM.Enabled = false;
+            btnLuuKM.Enabled = true;
+            btnHuyKM.Enabled = true;
             txtPhanTram.Clear();
-            txtMaKM.Enabled = true;
+            txtMaKM.Enabled = false;
             txtNgayKetThuc.Value = Convert.ToDateTime(txtNgayBatDau.Text);
+            luunv = "themkm";
+            txtNgayBatDau.Value = new DateTime(today.Year, today.Month, today.Day);
+            txtNgayKetThuc.Value = new DateTime(today.Year, today.Month, today.Day);
+            txtNgayBatDau.Enabled = true;
+            txtNgayKetThuc.Enabled = true;
+            txtPhanTram.Enabled = true;
         }
 
         public Boolean CheckKM()
@@ -88,11 +120,11 @@ namespace QuanLyKhachHang.UserControls
 
         private void btnLuuKM_Click(object sender, EventArgs e)
         {
-            if (CheckKM())
+            if (CheckKM() && (luunv == "themkm"))
             {
                 string makm = txtMaKM.Text;
-                DateTime ngaybatdau = Convert.ToDateTime(txtNgayBatDau.Text);
-                DateTime ngayketthuc = Convert.ToDateTime(txtNgayKetThuc.Text);
+                string ngaybatdau = txtNgayBatDau.Text;
+                string ngayketthuc = txtNgayKetThuc.Text;
                 decimal phantram = Convert.ToDecimal(txtPhanTram.Text);
                 if (DAO.KhuyenMaiDAO.Instance.ThemKM(makm, ngaybatdau, ngayketthuc, phantram))
                 {
@@ -104,23 +136,11 @@ namespace QuanLyKhachHang.UserControls
                     MessageBox.Show("Thêm mới thất bại");
                 }
             }
-        }
-
-        private void btnSuaKM_Click(object sender, EventArgs e)
-        {
-            //btnHuyKM.Enabled = true;
-            //btnLuuKM.Enabled = false;
-            txtMaKM.Enabled = false;
-            txtNgayKetThuc.MinDate = Convert.ToDateTime(txtNgayBatDau.Text);
-        }
-
-        private void btnHuyKM_Click(object sender, EventArgs e)
-        {
-            if (CheckKM())
+            else if (CheckKM() && (luunv == "suakm"))
             {
                 string makm = txtMaKM.Text;
-                DateTime ngaybatdau = Convert.ToDateTime(txtNgayBatDau.Text);
-                DateTime ngayketthuc = Convert.ToDateTime(txtNgayKetThuc.Text);
+                string ngaybatdau = txtNgayBatDau.Text;
+                string ngayketthuc = txtNgayKetThuc.Text;
                 decimal phantram = Convert.ToDecimal(txtPhanTram.Text);
                 if (DAO.KhuyenMaiDAO.Instance.SuaKM(makm, ngaybatdau, ngayketthuc, phantram))
                 {
@@ -133,6 +153,27 @@ namespace QuanLyKhachHang.UserControls
                 }
             }
         }
+
+        private void btnSuaKM_Click(object sender, EventArgs e)
+        {
+            btnHuyKM.Enabled = true;
+            btnLuuKM.Enabled = true;
+            btnThemKM.Enabled = false;
+            btnXoaKM.Enabled = false;
+            txtMaKM.Enabled = false;
+            txtNgayKetThuc.MinDate = Convert.ToDateTime(txtNgayBatDau.Text);
+            luunv = "suakm";
+            txtNgayBatDau.Enabled = true;
+            txtNgayKetThuc.Enabled = true;
+            txtPhanTram.Enabled = true;
+        }
+
+        private void btnHuyKM_Click(object sender, EventArgs e)
+        {
+            reLoad();
+        }
+
+
 
         private void btnXoaKM_Click(object sender, EventArgs e)
         {
@@ -150,20 +191,53 @@ namespace QuanLyKhachHang.UserControls
 
         private void btnClearSKM_Click(object sender, EventArgs e)
         {
-            txtSMaKM.Clear();
-            txtSPhanTram.Clear();
-            LoadKMList();
+            txtSMaKM.Text = "";
+            txtSPhanTram.Text = "";
+            txtSNgayBatDau.CustomFormat = " ";
+            txtSNgayKetThuc.CustomFormat = " ";
+            reLoad();
         }
 
-        private void btnTimKiem_Click(object sender, EventArgs e)
+        private void clearBindingKM()
         {
-            decimal phantram = Convert.ToDecimal(txtSPhanTram.Text);
-            dtgvKMList.DataSource = DAO.KhuyenMaiDAO.Instance.SearchListKMByPT(phantram);
+            txtMaKM.DataBindings.Clear();
+            txtNgayBatDau.DataBindings.Clear();
+            txtNgayKetThuc.DataBindings.Clear();
+            txtPhanTram.DataBindings.Clear();
         }
+
 
         private void txtSMaKM_TextChanged(object sender, EventArgs e)
         {
+            string makm = txtSMaKM.Text;
+            string phantram = txtSPhanTram.Text;
+            dtgvKMList.DataSource = DAO.KhuyenMaiDAO.Instance.SearchKMBy(makm, phantram);
+        }
 
+        private void txtSNgayBatDau_ValueChanged(object sender, EventArgs e)
+        {
+            txtSNgayBatDau.CustomFormat = "MM/dd/yyyy";
+            string ngaybatdau = txtSNgayBatDau.Text;
+            string makm = txtSMaKM.Text;
+            string phantram = txtSPhanTram.Text;
+            dtgvKMList.DataSource = DAO.KhuyenMaiDAO.Instance.SearchKMByNBD(makm, phantram, ngaybatdau);
+        }
+
+        private void txtSNgayKetThuc_ValueChanged(object sender, EventArgs e)
+        {
+            txtSNgayKetThuc.CustomFormat = "MM/dd/yyyy";
+            string ngaybatdau = txtSNgayBatDau.Text;
+            string ngayketthuc = txtSNgayKetThuc.Text;
+            string makm = txtSMaKM.Text;
+            string phantram = txtSPhanTram.Text;
+            dtgvKMList.DataSource = DAO.KhuyenMaiDAO.Instance.SearchKM(ngaybatdau, ngayketthuc, makm, phantram);
+        }
+
+        private void txtSPhanTram_TextChange(object sender, EventArgs e)
+        {
+            string makm = txtSMaKM.Text;
+            string phantram = txtSPhanTram.Text;
+            dtgvKMList.DataSource = DAO.KhuyenMaiDAO.Instance.SearchKMBy(makm, phantram);
         }
     }
 }
