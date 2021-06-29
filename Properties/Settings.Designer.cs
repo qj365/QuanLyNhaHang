@@ -32,5 +32,16 @@ namespace QuanLyKhachHang.Properties {
                 return ((string)(this["QUANLYNHAHANGConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=QJ\\SQLEXPRESS;Initial Catalog=QUANLYNHAHANGNEW;Integrated Security=Tr" +
+            "ue")]
+        public string QUANLYNHAHANGNEWConnectionString {
+            get {
+                return ((string)(this["QUANLYNHAHANGNEWConnectionString"]));
+            }
+        }
     }
 }

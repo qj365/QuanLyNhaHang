@@ -108,7 +108,7 @@ namespace QuanLyKhachHang.GUI.UserControls.ThongKe
             btnCancel3.Enabled = e;
             btnThemTk.Enabled = !e;
             btnSuaTk.Enabled = !e;
-            btnXoaTk.Enabled = !e;
+            
             txtName.Enabled = e;
             txtUsername.Enabled = e;
             cbbPhanQuyen.Enabled = e;
@@ -449,6 +449,7 @@ namespace QuanLyKhachHang.GUI.UserControls.ThongKe
         }
 
 
+
         /* #region cái cũ
          //PhieuNhapDTO _phieunhapdto = new PhieuNhapDTO();
          PhieuNhapDAO _phieunhapdao = new PhieuNhapDAO();
@@ -569,7 +570,5 @@ namespace QuanLyKhachHang.GUI.UserControls.ThongKe
          #endregion*/
 
         #endregion
-
-        
     }
 }
