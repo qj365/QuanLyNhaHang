@@ -138,14 +138,18 @@ namespace QuanLyKhachHang
 
         private void txtKhachTra_TextChanged(object sender, EventArgs e)
         {
-            float kt = float.Parse(txtKhachTra.Text.Replace(" đ", ""));
-            float tt = float.Parse(txtTongTien.Text.Replace(" đ", ""));
-            if (kt >= tt)
+            try
             {
-                lblTraLai.Text = (kt - tt).ToString("N0") + " đ";
+                float kt = float.Parse(txtKhachTra.Text.Replace(" đ", ""));
+                float tt = float.Parse(txtTongTien.Text.Replace(" đ", ""));
+                if (kt >= tt)
+                {
+                    lblTraLai.Text = (kt - tt).ToString("N0") + " đ";
+                }
+                else
+                    lblTraLai.Text = "0 đ";
             }
-            else
-                lblTraLai.Text = "0 đ";
+            catch { }
 
         }
 

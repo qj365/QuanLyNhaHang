@@ -52,7 +52,9 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
         private void btnNguyenLieu_Click(object sender, EventArgs e)
         {
             pageDanhMuc.SelectTab(4);
+            clearAllBindings();
             Load_NL();
+            nguyenLieuBinding();
         }
 
 
@@ -60,6 +62,7 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
         {
             ClearAllBindingsLoaiMon();
             ClearAllBindingsMonAn();
+            ClearAllBindingsNL();
         }
 
         #region Món ăn
@@ -176,7 +179,6 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
             string TenMa = txtTKMA2.Text;
             dtgvMonAn.DataSource = MonAnDAO.Instance.SearchFood(MaMa, TenMa);
         }
-
         private void txtTKMA2_TextChange(object sender, EventArgs e)
         {
             string MaMa = txtTKMA1.Text;
@@ -398,9 +400,9 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
         }
 
         #endregion
+        
 
 
-    
 
         #region Bàn ăn
         string a = "";
@@ -452,7 +454,7 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
         {
             a = "them";
             disEnabledBanAn(false);
-            bunifuTextBoxmabanan.Text = "Ban" + DataProvider.Instance.LaySTT(bunifuCustomDataGridBanAn.Rows.Count);
+            bunifuTextBoxmabanan.Text = DataProvider.Instance.LaySTT(bunifuCustomDataGridBanAn.Rows.Count);
             bunifuTextBoxsochongoi.Text = "";
         }
 
@@ -622,6 +624,24 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
         #endregion
 
         #region Nguyên liệu
+
+        void ClearAllBindingsNL()
+        {
+            foreach (Control c in grbNL.Controls)
+                c.DataBindings.Clear();
+        }
+
+        void nguyenLieuBinding()
+        {
+            bunifuTextBoxMaNL.DataBindings.Add(new Binding("text", bunifuCustomDataGridNL.DataSource, "manl"));
+            bunifuTextBoxTenNL.DataBindings.Add(new Binding("text", bunifuCustomDataGridNL.DataSource, "tennl"));
+            bunifuTextBoxDVT.DataBindings.Add(new Binding("text", bunifuCustomDataGridNL.DataSource, "dvt"));
+            bunifuTextBoxDonGia.DataBindings.Add(new Binding("text", bunifuCustomDataGridNL.DataSource, "dongia"));
+            bunifuTextBoxSoLuong.DataBindings.Add(new Binding("text", bunifuCustomDataGridNL.DataSource, "soluong"));
+
+            //cbbLoaiMon.DataBindings.Add(new Binding("Text", dtgvMonAn.DataSource, "Tenloaimon"));
+        }
+
         string b = "";
         private void Load_NL()
         {
@@ -783,14 +803,17 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
         private void BtnHuyNguyenLieu_Click(object sender, EventArgs e)
         {
             Load_Lai_NL();
+            ClearAllBindingsNL();
+            nguyenLieuBinding();
             DisEnabledNL(true);
         }
 
         private void bunifuTextBox17_TextChanged(object sender, EventArgs e)
         {
-            string ten = bunifuTextBox17.Text;
-            bunifuCustomDataGridNL.DataSource = NguyenLieuDAO.Instance.TimNguyenLieu(ten);
+            string tennl = bunifuTextBox17.Text;
+            bunifuCustomDataGridNL.DataSource = NguyenLieuDAO.Instance.TimNguyenLieu(tennl);
         }
+
 
 
 
@@ -923,6 +946,16 @@ namespace QuanLyKhachHang.GUI.UserControls.DanhMuc
 
          #endregion*/
         #endregion
+
+        private void txtTKMA1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTKMA2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
         
     }

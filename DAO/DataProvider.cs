@@ -12,7 +12,7 @@ namespace QuanLyKhachHang.DAO
     {
         private static DataProvider instance;
 
-        static string connectionStr = @"Data Source=.\sqlexpress;Initial Catalog=QUANLYNHAHANG;Integrated Security=True";
+        static string connectionStr = @"Data Source=.\sqlexpress;Initial Catalog=QUANLYNHAHANGNEW;Integrated Security=True";
         private static readonly SqlConnection con = new SqlConnection(connectionStr);
         //asdasdasd
         internal static DataProvider Instance 
@@ -147,20 +147,8 @@ namespace QuanLyKhachHang.DAO
         }
         public String LaySTT(int autoNum)
         {
-            if (autoNum < 10)
-                return "000" + autoNum;
-
-            else if (autoNum >= 10 && autoNum < 100)
-                return "00" + autoNum;
-
-            else if (autoNum >= 100 && autoNum < 1000)
-                return "0" + autoNum;
-
-            else if (autoNum >= 1000 && autoNum < 10000)
-                return "" + autoNum;
-
-            else
-                return "";
+            int newNum = autoNum +1 ;
+            return newNum.ToString();
         }
     }
 }

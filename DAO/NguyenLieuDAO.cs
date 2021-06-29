@@ -22,9 +22,9 @@ namespace QuanLyKhachHang.DAO
             DataTable table = DataProvider.Instance.executeQuery("select * from NguyenLieu");
             return table;
         }
-        public DataTable TimNguyenLieu(string ten)
+        public DataTable TimNguyenLieu(string tennl)
         {
-            string query = string.Format("SELECT * FROM NguyenLieu WHERE(TenNL LIKE N'%" + ten + "%' OR '" + ten + "' = '')");
+            string query = string.Format("SELECT * FROM nguyenlieu WHERE manl LIKE '%' + '{0}' + '%' OR '{0}' = ''", tennl);
             DataTable table = DataProvider.Instance.executeQuery(query);
             return table;
         }
@@ -65,11 +65,7 @@ namespace QuanLyKhachHang.DAO
           end*/
         public bool XoaNL(string ma)
         {
-            string ten = "Nguyên Liệu Này Đã Xóa";
-            string dvt = "";
-            int dongia = 0;
-            int soluong = 0;
-            string query = string.Format("[dbo].[updateNL] N'{0}',N'{1}',N'{2}',{3},{4}", ma, ten, dvt, dongia, soluong);
+            string query = string.Format("DELETE FROM nguyenlieu WHERE manl = '{0}' ", ma);
             int result = DataProvider.Instance.executeNonQuery(query);
             return result > 0;
         }

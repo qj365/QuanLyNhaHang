@@ -274,7 +274,7 @@
             this.bunifuCustomDataGridNL = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.bunifuCustomDataGrid5 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.bunifuCustomDataGrid2 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.grbNL = new System.Windows.Forms.GroupBox();
             this.BtnHuyNguyenLieu = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.BtnLuuNguyenLieu = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.BtnSuaNguyenLieu = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -316,7 +316,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGridNL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid2)).BeginInit();
-            this.groupBox7.SuspendLayout();
+            this.grbNL.SuspendLayout();
             this.SuspendLayout();
             // 
             // pageDanhMuc
@@ -331,10 +331,10 @@
             this.pageDanhMuc.Location = new System.Drawing.Point(0, 77);
             this.pageDanhMuc.Multiline = true;
             this.pageDanhMuc.Name = "pageDanhMuc";
-            this.pageDanhMuc.Page = this.tabPage4;
-            this.pageDanhMuc.PageIndex = 3;
-            this.pageDanhMuc.PageName = "tabPage4";
-            this.pageDanhMuc.PageTitle = "tabPage4";
+            this.pageDanhMuc.Page = this.tabPage1;
+            this.pageDanhMuc.PageIndex = 0;
+            this.pageDanhMuc.PageName = "tabPage1";
+            this.pageDanhMuc.PageTitle = "tabPage1";
             this.pageDanhMuc.SelectedIndex = 0;
             this.pageDanhMuc.Size = new System.Drawing.Size(1148, 554);
             this.pageDanhMuc.TabIndex = 1;
@@ -1316,6 +1316,7 @@
             this.txtTKMA2.UseSystemPasswordChar = false;
             this.txtTKMA2.WordWrap = true;
             this.txtTKMA2.TextChange += new System.EventHandler(this.txtTKMA2_TextChange);
+            this.txtTKMA2.TextChanged += new System.EventHandler(this.txtTKMA2_TextChanged);
             // 
             // txtTKMA1
             // 
@@ -1390,6 +1391,7 @@
             this.txtTKMA1.UseSystemPasswordChar = false;
             this.txtTKMA1.WordWrap = true;
             this.txtTKMA1.TextChange += new System.EventHandler(this.txtTKMA1_TextChange);
+            this.txtTKMA1.TextChanged += new System.EventHandler(this.txtTKMA1_TextChanged);
             // 
             // label7
             // 
@@ -1815,6 +1817,7 @@
             this.txtMaLoaiMon.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMaLoaiMon.DefaultFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.txtMaLoaiMon.DefaultText = "";
+            this.txtMaLoaiMon.Enabled = false;
             this.txtMaLoaiMon.FillColor = System.Drawing.Color.White;
             this.txtMaLoaiMon.HideSelection = true;
             this.txtMaLoaiMon.IconLeft = null;
@@ -3302,7 +3305,7 @@
             this.tabPage5.Controls.Add(this.bunifuCustomDataGridNL);
             this.tabPage5.Controls.Add(this.bunifuCustomDataGrid5);
             this.tabPage5.Controls.Add(this.bunifuCustomDataGrid2);
-            this.tabPage5.Controls.Add(this.groupBox7);
+            this.tabPage5.Controls.Add(this.grbNL);
             this.tabPage5.Controls.Add(this.bunifuTextBox17);
             this.tabPage5.Location = new System.Drawing.Point(4, 4);
             this.tabPage5.Name = "tabPage5";
@@ -3431,31 +3434,31 @@
             this.bunifuCustomDataGrid2.Size = new System.Drawing.Size(8, 8);
             this.bunifuCustomDataGrid2.TabIndex = 46;
             // 
-            // groupBox7
+            // grbNL
             // 
-            this.groupBox7.Controls.Add(this.BtnHuyNguyenLieu);
-            this.groupBox7.Controls.Add(this.BtnLuuNguyenLieu);
-            this.groupBox7.Controls.Add(this.BtnSuaNguyenLieu);
-            this.groupBox7.Controls.Add(this.BtnThemNguyenLieu);
-            this.groupBox7.Controls.Add(this.bunifuTextBoxMaNL);
-            this.groupBox7.Controls.Add(this.BtnXoaNguyenLieu);
-            this.groupBox7.Controls.Add(this.label14);
-            this.groupBox7.Controls.Add(this.bunifuTextBoxSoLuong);
-            this.groupBox7.Controls.Add(this.label18);
-            this.groupBox7.Controls.Add(this.bunifuTextBoxDonGia);
-            this.groupBox7.Controls.Add(this.label17);
-            this.groupBox7.Controls.Add(this.bunifuTextBoxDVT);
-            this.groupBox7.Controls.Add(this.label16);
-            this.groupBox7.Controls.Add(this.bunifuTextBoxTenNL);
-            this.groupBox7.Controls.Add(this.label15);
-            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
-            this.groupBox7.Location = new System.Drawing.Point(703, 84);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(427, 431);
-            this.groupBox7.TabIndex = 44;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Chỉnh sửa";
+            this.grbNL.Controls.Add(this.BtnHuyNguyenLieu);
+            this.grbNL.Controls.Add(this.BtnLuuNguyenLieu);
+            this.grbNL.Controls.Add(this.BtnSuaNguyenLieu);
+            this.grbNL.Controls.Add(this.BtnThemNguyenLieu);
+            this.grbNL.Controls.Add(this.bunifuTextBoxMaNL);
+            this.grbNL.Controls.Add(this.BtnXoaNguyenLieu);
+            this.grbNL.Controls.Add(this.label14);
+            this.grbNL.Controls.Add(this.bunifuTextBoxSoLuong);
+            this.grbNL.Controls.Add(this.label18);
+            this.grbNL.Controls.Add(this.bunifuTextBoxDonGia);
+            this.grbNL.Controls.Add(this.label17);
+            this.grbNL.Controls.Add(this.bunifuTextBoxDVT);
+            this.grbNL.Controls.Add(this.label16);
+            this.grbNL.Controls.Add(this.bunifuTextBoxTenNL);
+            this.grbNL.Controls.Add(this.label15);
+            this.grbNL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbNL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
+            this.grbNL.Location = new System.Drawing.Point(703, 84);
+            this.grbNL.Name = "grbNL";
+            this.grbNL.Size = new System.Drawing.Size(427, 431);
+            this.grbNL.TabIndex = 44;
+            this.grbNL.TabStop = false;
+            this.grbNL.Text = "Chỉnh sửa";
             // 
             // BtnHuyNguyenLieu
             // 
@@ -4299,7 +4302,7 @@
             this.btnBan.IconVisible = true;
             this.btnBan.IconZoom = 65D;
             this.btnBan.IsTab = true;
-            this.btnBan.Location = new System.Drawing.Point(656, 17);
+            this.btnBan.Location = new System.Drawing.Point(447, 17);
             this.btnBan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBan.Name = "btnBan";
             this.btnBan.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
@@ -4336,7 +4339,7 @@
             this.btnNhanVien.IconVisible = true;
             this.btnNhanVien.IconZoom = 65D;
             this.btnNhanVien.IsTab = true;
-            this.btnNhanVien.Location = new System.Drawing.Point(457, 17);
+            this.btnNhanVien.Location = new System.Drawing.Point(963, 17);
             this.btnNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNhanVien.Name = "btnNhanVien";
             this.btnNhanVien.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
@@ -4349,6 +4352,7 @@
             this.btnNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnNhanVien.Textcolor = System.Drawing.Color.White;
             this.btnNhanVien.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhanVien.Visible = false;
             this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
             // 
             // btnLoai
@@ -4447,7 +4451,7 @@
             this.btnNguyenLieu.IconVisible = true;
             this.btnNguyenLieu.IconZoom = 65D;
             this.btnNguyenLieu.IsTab = true;
-            this.btnNguyenLieu.Location = new System.Drawing.Point(849, 17);
+            this.btnNguyenLieu.Location = new System.Drawing.Point(640, 17);
             this.btnNguyenLieu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNguyenLieu.Name = "btnNguyenLieu";
             this.btnNguyenLieu.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
@@ -4499,8 +4503,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGridNL)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid2)).EndInit();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
+            this.grbNL.ResumeLayout(false);
+            this.grbNL.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -4572,7 +4576,7 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnClear;
         private System.Windows.Forms.TabPage tabPage5;
         private Bunifu.Framework.UI.BunifuFlatButton btnNguyenLieu;
-        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox grbNL;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnHuyNguyenLieu;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnLuuNguyenLieu;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton BtnSuaNguyenLieu;

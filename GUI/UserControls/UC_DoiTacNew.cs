@@ -143,7 +143,20 @@ namespace QuanLyKhachHang.GUI.UserControls.DoiTac
 
         private void btnXoaKH_Click(object sender, EventArgs e)
         {
-            disEnableBtnKH(false);
+            string makh = tbChinhSuaMaKH.Text;
+            if (MessageBox.Show("Bạn có thực sự muốn xoá khách hàng này?", "Xác nhận", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                if (KhachHangDAO.Instance.deleteKH(makh))
+                {
+                    MessageBox.Show("Xoá món thành công");
+
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi khi xoá món");
+                }
+                loadKH();
+            }
         }
 
         #endregion
@@ -218,7 +231,20 @@ namespace QuanLyKhachHang.GUI.UserControls.DoiTac
 
         private void btnXoaNCC_Click(object sender, EventArgs e)
         {
-            disEnableBtnNCC(false);
+            string mancc = tbChinhSuaMaNCC.Text;
+            if (MessageBox.Show("Bạn có thực sự muốn xoá nhà cung cấp này?", "Xác nhận", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                if (NhaCungCapDAO.Instance.deleteNCC(mancc))
+                {
+                    MessageBox.Show("Xoá món thành công");
+
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi khi xoá món");
+                }
+                loadNCC();
+            }
         }
 
         private void themSuaNCC(string mancc, string tenncc, string sdtncc, string diachincc)

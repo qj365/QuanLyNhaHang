@@ -44,13 +44,13 @@ namespace QuanLyKhachHang.DAO
         }
         public bool InsertFood(string mama, string tenmonan, string dvt, int dongia, string maloai)
         {
-            string query = string.Format("THEMMONAN '{0}','{1}','{2}','{3}','{4}'", mama, tenmonan, dvt, dongia, maloai);
+            string query = string.Format("THEMMONAN '{0}',N'{1}',N'{2}','{3}','{4}'", mama, tenmonan, dvt, dongia, maloai);
             int result = DataProvider.Instance.executeNonQuery(query);
             return result > 0;
         }
         public bool UpdateFood(string mama, string tenmonan, string dvt, int dongia, string maloai)
         {
-            string query = string.Format("SUAMONAN '{0}','{1}','{2}','{3}','{4}'", mama, tenmonan, dvt, dongia, maloai);
+            string query = string.Format("SUAMONAN '{0}',N'{1}','{2}','{3}','{4}'", mama, tenmonan, dvt, dongia, maloai);
             int result = DataProvider.Instance.executeNonQuery(query);
             return result > 0;
         }

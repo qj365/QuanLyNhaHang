@@ -153,7 +153,7 @@
             this.btnClear.IdleIconLeftImage = ((System.Drawing.Image)(resources.GetObject("btnClear.IdleIconLeftImage")));
             this.btnClear.IdleIconRightImage = null;
             this.btnClear.IndicateFocus = false;
-            this.btnClear.Location = new System.Drawing.Point(925, 51);
+            this.btnClear.Location = new System.Drawing.Point(448, 41);
             this.btnClear.Name = "btnClear";
             stateProperties1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(213)))), ((int)(((byte)(211)))));
             stateProperties1.BorderRadius = 5;
@@ -351,6 +351,7 @@
             this.txtSNgayKetThuc.Name = "txtSNgayKetThuc";
             this.txtSNgayKetThuc.Size = new System.Drawing.Size(259, 32);
             this.txtSNgayKetThuc.TabIndex = 25;
+            this.txtSNgayKetThuc.Visible = false;
             this.txtSNgayKetThuc.ValueChanged += new System.EventHandler(this.txtSNgayKetThuc_ValueChanged);
             // 
             // txtSNgayBatDau
@@ -376,6 +377,7 @@
             this.txtSNgayBatDau.Name = "txtSNgayBatDau";
             this.txtSNgayBatDau.Size = new System.Drawing.Size(259, 32);
             this.txtSNgayBatDau.TabIndex = 25;
+            this.txtSNgayBatDau.Visible = false;
             this.txtSNgayBatDau.ValueChanged += new System.EventHandler(this.txtSNgayBatDau_ValueChanged);
             // 
             // label7
@@ -386,7 +388,7 @@
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label7.Location = new System.Drawing.Point(22, 87);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(119, 20);
+            this.label7.Size = new System.Drawing.Size(147, 25);
             this.label7.TabIndex = 20;
             this.label7.Text = "% khuyến mại";
             // 
@@ -398,7 +400,7 @@
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label8.Location = new System.Drawing.Point(24, 33);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(128, 20);
+            this.label8.Size = new System.Drawing.Size(158, 25);
             this.label8.TabIndex = 21;
             this.label8.Text = "Mã khuyến mại";
             // 
@@ -410,9 +412,10 @@
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label4.Location = new System.Drawing.Point(480, 89);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(119, 20);
+            this.label4.Size = new System.Drawing.Size(144, 25);
             this.label4.TabIndex = 21;
             this.label4.Text = "Ngày kết thúc";
+            this.label4.Visible = false;
             // 
             // label5
             // 
@@ -422,9 +425,10 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label5.Location = new System.Drawing.Point(483, 36);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(115, 20);
+            this.label5.Size = new System.Drawing.Size(140, 25);
             this.label5.TabIndex = 20;
             this.label5.Text = "Ngày bắt đầu";
+            this.label5.Visible = false;
             // 
             // groupBox1
             // 
@@ -844,7 +848,7 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label6.Location = new System.Drawing.Point(23, 221);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(119, 20);
+            this.label6.Size = new System.Drawing.Size(147, 25);
             this.label6.TabIndex = 21;
             this.label6.Text = "% khuyến mại";
             // 
@@ -856,7 +860,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label1.Location = new System.Drawing.Point(27, 115);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 20);
+            this.label1.Size = new System.Drawing.Size(140, 25);
             this.label1.TabIndex = 20;
             this.label1.Text = "Ngày bắt đầu";
             // 
@@ -868,7 +872,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label2.Location = new System.Drawing.Point(24, 168);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 20);
+            this.label2.Size = new System.Drawing.Size(144, 25);
             this.label2.TabIndex = 21;
             this.label2.Text = "Ngày kết thúc";
             // 
@@ -944,7 +948,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(114)))), ((int)(((byte)(188)))));
             this.label3.Location = new System.Drawing.Point(18, 62);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 20);
+            this.label3.Size = new System.Drawing.Size(158, 25);
             this.label3.TabIndex = 21;
             this.label3.Text = "Mã khuyến mại";
             // 
