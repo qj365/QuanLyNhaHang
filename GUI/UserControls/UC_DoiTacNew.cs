@@ -143,7 +143,20 @@ namespace QuanLyKhachHang.GUI.UserControls.DoiTac
 
         private void btnXoaKH_Click(object sender, EventArgs e)
         {
-            disEnableBtnKH(false);
+            string MaKh = tbChinhSuaMaKH.Text;
+            if (MessageBox.Show("Bạn có thực sự muốn xoá khách hàng này?", "Xác nhận", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                if (KhachHangDAO.Instance.DeleteKhachHang(MaKh))
+                {
+                    MessageBox.Show("Xoá khách hàng thành công");
+
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi khi xoá khách hàng");
+                }
+                loadKH();
+            }
         }
 
         #endregion
@@ -218,7 +231,20 @@ namespace QuanLyKhachHang.GUI.UserControls.DoiTac
 
         private void btnXoaNCC_Click(object sender, EventArgs e)
         {
-            disEnableBtnNCC(false);
+            string MaNCC = tbChinhSuaMaNCC.Text;
+            if (MessageBox.Show("Bạn có thực sự muốn xoá nhà cung cấp này?", "Xác nhận", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+            {
+                if (NhaCungCapDAO.Instance.DeleteNhaCungCap(MaNCC))
+                {
+                    MessageBox.Show("Xoá nhà cung cấp thành công");
+
+                }
+                else
+                {
+                    MessageBox.Show("Có lỗi khi xoá nhà cung cấp");
+                }
+                loadNCC();
+            }
         }
 
         private void themSuaNCC(string mancc, string tenncc, string sdtncc, string diachincc)
@@ -249,16 +275,15 @@ namespace QuanLyKhachHang.GUI.UserControls.DoiTac
         {
             string mancc = tbTimKiemMaNCC.Text;
             string tenncc = tbTimKiemTenNCC.Text;
-            dtgvKH.DataSource = NhaCungCapDAO.Instance.timKiemNCC(mancc, tenncc);
+            dtgvNCC.DataSource = NhaCungCapDAO.Instance.timKiemNCC(mancc, tenncc);
         }
 
         private void tbTimKiemTenNCC_TextChange(object sender, EventArgs e)
         {
             string mancc = tbTimKiemMaNCC.Text;
             string tenncc = tbTimKiemTenNCC.Text;
-            dtgvKH.DataSource = NhaCungCapDAO.Instance.timKiemNCC(mancc, tenncc);
+            dtgvNCC.DataSource = NhaCungCapDAO.Instance.timKiemNCC(mancc, tenncc);
         }
-
 
         #endregion
 
