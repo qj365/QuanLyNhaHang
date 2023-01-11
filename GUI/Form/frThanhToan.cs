@@ -11,7 +11,7 @@ namespace QuanLyKhachHang
         {
             InitializeComponent();
             loadBanDau();
-
+            Data.TongtienHD = txtTongTien.Text;
         }
 
         void loadBanDau()
@@ -138,14 +138,19 @@ namespace QuanLyKhachHang
 
         private void txtKhachTra_TextChanged(object sender, EventArgs e)
         {
-            float kt = float.Parse(txtKhachTra.Text.Replace(" đ", ""));
-            float tt = float.Parse(txtTongTien.Text.Replace(" đ", ""));
-            if (kt >= tt)
+            try
             {
-                lblTraLai.Text = (kt - tt).ToString("N0") + " đ";
+                float kt = float.Parse(txtKhachTra.Text.Replace(" đ", ""));
+                float tt = float.Parse(txtTongTien.Text.Replace(" đ", ""));
+                if (kt >= tt)
+                {
+                    lblTraLai.Text = (kt - tt).ToString("N0") + " đ";
+                }
+                else
+                    lblTraLai.Text = "0 đ";
+
             }
-            else
-                lblTraLai.Text = "0 đ";
+            catch { }
 
         }
 
@@ -163,7 +168,7 @@ namespace QuanLyKhachHang
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
             Data.Maban = TableDAO.Instance.getMaBanbyPYC(Data.MaPYC);
-            Data.TongcongHD = txtTongTien.Text;
+            
             if (txtMaKH.Text == "")
                 MessageBox.Show("Vui lòng nhập thông tin khách hàng");
             else
@@ -220,7 +225,8 @@ namespace QuanLyKhachHang
                 }
                 MessageBox.Show("Thanh toán thành công");
                 Data.ChietkhauHD = txtGiam.Text;
-                Data.TongtienHD = txtTongTien.Text;
+                Data.TongcongHD = txtTongTien.Text;
+                
                 
                 using (Form fr = new frHoaDonIn())
                 {
