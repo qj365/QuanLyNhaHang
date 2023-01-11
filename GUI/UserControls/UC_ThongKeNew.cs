@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using QuanLyKhachHang.DAO;
 using QuanLyKhachHang.DTO;
 using QuanLyKhachHang.GUI;
+using System.Globalization;
+
 namespace QuanLyKhachHang.GUI.UserControls.ThongKe
 {
     public partial class UC_ThongKeNew : UserControl
@@ -190,7 +192,7 @@ namespace QuanLyKhachHang.GUI.UserControls.ThongKe
 
         private void loadListMA()
         {
-            dtgvMA.DataSource = MonAnDAO.Instance.DemSoMonAn(dpFromMA.Value, dpToMA.Value);
+            dtgvMA.DataSource = MonAnDAO.Instance.DemSoMonAn(DateTime.ParseExact("01/01/1753", "dd/MM/yyyy", CultureInfo.InvariantCulture), DateTime.ParseExact("31/12/9999", "dd/MM/yyyy", CultureInfo.InvariantCulture));
         }
 
         private void setInitDtpMA()
